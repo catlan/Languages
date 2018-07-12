@@ -79,10 +79,10 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 - (BOOL)checkWithErrorReporter: (id<LKCompilerDelegate>)errorReporter
 {
 	NSMutableDictionary *dict = [[NSThread currentThread] threadDictionary];
-	id old = [dict objectForKey: @"LKCompilerContext"];
-	[dict setObject: errorReporter forKey: @"LKCompilerContext"];
+	id old = [dict objectForKey: @"LKCompilerDelegate"];
+	[dict setObject: errorReporter forKey: @"LKCompilerDelegate"];
 	BOOL success = [self check];
-	[dict setValue: old forKey: @"LKCompilerContext"];
+	[dict setValue: old forKey: @"LKCompilerDelegate"];
 
 	return success;
 }

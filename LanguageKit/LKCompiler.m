@@ -793,30 +793,28 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 + (BOOL)reportWarning: (NSString*)aWarning
               details: (NSDictionary*)info
 {
-	LKCompiler *compiler =
-		[[[NSThread currentThread] threadDictionary] 
-			objectForKey: @"LKCompilerContext"];
-	id<LKCompilerDelegate> errorDelegate = [compiler delegate];
+    NSDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+    id<LKCompilerDelegate> errorDelegate = [threadDictionary
+                                            objectForKey: @"LKCompilerDelegate"];
 	if (nil == errorDelegate)
 	{
 		errorDelegate = DefaultDelegate;
 	}
-	return [errorDelegate compiler: compiler
+	return [errorDelegate compiler: [threadDictionary objectForKey: @"LKCompilerContext"]
 	              generatedWarning: aWarning
 	                       details: info];
 }
 + (BOOL)reportError: (NSString*)aWarning
             details: (NSDictionary*)info
 {
-	LKCompiler *compiler =
-		[[[NSThread currentThread] threadDictionary] 
-			objectForKey: @"LKCompilerContext"];
-	id<LKCompilerDelegate> errorDelegate = [compiler delegate];
+    NSDictionary *threadDictionary = [[NSThread currentThread] threadDictionary];
+    id<LKCompilerDelegate> errorDelegate = [threadDictionary
+                                            objectForKey: @"LKCompilerDelegate"];
 	if (nil == errorDelegate)
 	{
 		errorDelegate = DefaultDelegate;
 	}
-	return [errorDelegate compiler: compiler
+    return [errorDelegate compiler: [threadDictionary objectForKey: @"LKCompilerContext"]
 	                generatedError: aWarning
 	                       details: info];
 }
