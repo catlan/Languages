@@ -13,6 +13,8 @@
 	SUPERINIT;
 	ASSIGN(classname, aName);
 	ASSIGN(superclass, aClass);
+    // catlan: register class early that the dependancy resolver in -check works
+    ASSIGN(symbols, [LKSymbolTable symbolTableForClass: classname]);
 	ivars = anIvarList != nil ? [anIvarList mutableCopy] : [NSMutableArray new];
 	cvars = aCvarList != nil ? [aCvarList mutableCopy] : [NSMutableArray new];
 	methods = aMethodList != nil ? [aMethodList mutableCopy] : [NSMutableArray new];
@@ -34,6 +36,7 @@
 {
 	BOOL success = YES;
 	LKSymbolTable* superSymTable = [LKSymbolTable lookupTableForClass: superclass];
+    // catlan: need to figure out where symbols gets set to nil between -init and -check.
 	ASSIGN(symbols, [LKSymbolTable symbolTableForClass: classname]); 
 	if (Nil == superSymTable)
 	{
