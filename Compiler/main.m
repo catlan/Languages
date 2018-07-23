@@ -321,10 +321,11 @@ int main(int argc, char **argv)
 		fprintf(stderr, "Usage: %s -f {smalltalk file}\n", argv[0]);
 		return 1;
 	}
-	NSString *Program = [NSString stringWithContentsOfFile:ProgramFile];
+    NSError *error = nil;
+	NSString *Program = [NSString stringWithContentsOfFile:ProgramFile encoding:NSUTF8StringEncoding error:&error];
 	if (nil == Program)
 	{
-		NSLog(@"Failed to open file %@", ProgramFile);
+		NSLog(@"Failed to open file %@", error);
 		return 1;
 	}
 	NSString *extension = [ProgramFile pathExtension];
