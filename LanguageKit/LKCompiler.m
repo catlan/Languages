@@ -95,8 +95,7 @@ generatedWarning: (NSString*)aWarning
 static NSDate *modificationDateForFile(NSString *file)
 {
 	NSFileManager *fm = [NSFileManager defaultManager];
-	NSDictionary *attrib = [fm fileAttributesAtPath: file
-	                                   traverseLink: YES];
+	NSDictionary *attrib = [fm attributesOfItemAtPath:file error:NULL];
 	return [attrib objectForKey: NSFileModificationDate];
 }
 /**
@@ -178,7 +177,7 @@ int DEBUG_DUMP_MODULES = 0;
 			[[dir stringByAppendingPathComponent:@"Bundles"]
 				stringByAppendingPathComponent:@"LanguageKit"];
 		// Check that the framework exists and is a directory.
-		NSArray *bundles = [fm directoryContentsAtPath:f];
+		NSArray *bundles = [fm contentsOfDirectoryAtPath:f error:NULL];
 		FOREACH(bundles, b, NSString*)
 		{
 			NSString *bundle = [f stringByAppendingPathComponent: b];
@@ -550,7 +549,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 			[dir stringByAppendingPathComponent: 
 				[source lastPathComponent]];
 		outFile = [outFile stringByAppendingPathExtension: @"bc"];
-		NSString *code = [NSString stringWithContentsOfFile: source];
+		NSString *code = [NSString stringWithContentsOfFile: source encoding:NSUTF8StringEncoding error:NULL];
 		
 		LKAST *ast;
 		NS_DURING
@@ -649,7 +648,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 		NSString *pluginDir = 
 			[[dir stringByAppendingPathComponent:@"LKPlugins"]
 				stringByAppendingPathComponent:processName];
-		NSArray *plugins = [fm directoryContentsAtPath:pluginDir];
+        NSArray *plugins = [fm contentsOfDirectoryAtPath:pluginDir error:NULL];
 		BOOL isDir = NO;
 		FOREACH(plugins, p, NSString*)
 		{
@@ -691,7 +690,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 		NSLog(@"Unable to find %@.%@ in bundle %@.", name, extension, bundle);
 		return NO;
 	}
-	return [self compileString:[NSString stringWithContentsOfFile:path]] != nil;
+	return [self compileString:[NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL]] != nil;
 }
 
 + (BOOL) loadApplicationScriptNamed:(NSString*)fileName
@@ -752,7 +751,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 		BOOL success = YES;
 		FOREACH(scripts, scriptFile, NSString*)
 		{
-			NSString *script = [NSString stringWithContentsOfFile: scriptFile];
+			NSString *script = [NSString stringWithContentsOfFile: scriptFile encoding:NSUTF8StringEncoding error:NULL];
 			success &= ([self compileString:script] != nil);
 		}
 		return success;
