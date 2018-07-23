@@ -1017,9 +1017,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				INSTALL_PATH = /usr/local/bin;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = edlc;
 			};
 			name = Debug;
@@ -1028,9 +1029,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				INSTALL_PATH = /usr/local/bin;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = edlc;
 			};
 			name = Release;
@@ -1039,17 +1041,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"",
-					"\"$(SRCROOT)/../../../trunk/Etoile/Frameworks/EtoileUI/build/Debug\"",
-				);
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/local/lib,
+					/usr/local/Cellar/libffi/3.2.1/lib,
 				);
 				OTHER_CFLAGS = (
 					"-D_GNU_SOURCE",
@@ -1058,7 +1056,7 @@
 					"-Wno-unused-value",
 				);
 				PRODUCT_NAME = LanguageKit;
-				USER_HEADER_SEARCH_PATHS = /opt/local/include;
+				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include /usr/local/opt/libffi/lib/libffi-3.2.1/include/";
 			};
 			name = Debug;
 		};
@@ -1066,17 +1064,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"",
-					"\"$(SRCROOT)/../../../trunk/Etoile/Frameworks/EtoileUI/build/Debug\"",
-				);
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/local/lib,
+					/usr/local/Cellar/libffi/3.2.1/lib,
 				);
 				OTHER_CFLAGS = (
 					"-D_GNU_SOURCE",
@@ -1085,7 +1079,7 @@
 					"-Wno-unused-value",
 				);
 				PRODUCT_NAME = LanguageKit;
-				USER_HEADER_SEARCH_PATHS = /opt/local/include;
+				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include /usr/local/opt/libffi/lib/libffi-3.2.1/include/";
 			};
 			name = Release;
 		};
@@ -1093,22 +1087,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
-					"\"$(SRCROOT)/../../../trunk/Etoile/Frameworks/EtoileUI/build/Debug\"",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/local/lib,
+					/usr/local/Cellar/gmp/6.1.2/lib,
 				);
 				PRODUCT_NAME = LanguageKitRuntime;
-				USER_HEADER_SEARCH_PATHS = /opt/local/include;
+				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include";
 			};
 			name = Debug;
 		};
@@ -1116,22 +1103,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
-					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
-					"\"$(SRCROOT)/../../../trunk/Etoile/Frameworks/EtoileUI/build/Debug\"",
-				);
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"";
-				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/local/lib,
+					/usr/local/Cellar/gmp/6.1.2/lib,
 				);
 				PRODUCT_NAME = LanguageKitRuntime;
-				USER_HEADER_SEARCH_PATHS = /opt/local/include;
+				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include";
 			};
 			name = Release;
 		};
@@ -1139,15 +1119,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"",
-					"\"$(SRCROOT)/../../../trunk/Etoile/Frameworks/EtoileUI/build/Debug\"",
-				);
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/local/lib,
+					/usr/local/Cellar/gmp/6.1.2/lib,
 				);
 				PRODUCT_NAME = SmalltalkSupport;
 			};
@@ -1157,15 +1133,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../Frameworks/EtoileUI/build/Debug\"",
-					"\"$(SRCROOT)/../../../trunk/Etoile/Frameworks/EtoileUI/build/Debug\"",
-				);
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/opt/local/lib,
+					/usr/local/Cellar/gmp/6.1.2/lib,
 				);
 				PRODUCT_NAME = SmalltalkSupport;
 			};
