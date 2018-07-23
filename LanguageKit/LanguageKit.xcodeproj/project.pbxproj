@@ -112,18 +112,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
-		66298AE51049FB91000F18C5 /* PBXBuildRule */ = {
+		D10F233420DFAED0002E017C /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = .y;
 			fileType = sourcecode.yacc;
 			isEditable = 1;
 			outputFiles = (
-				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).m",
-				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).out",
-				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).h",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).h",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).out",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).m",
 			);
-			script = "cd $DERIVED_FILES_DIR\ncp $INPUT_FILE_PATH $INPUT_FILE_BASE.y\n/opt/local/bin/lemon $INPUT_FILE_BASE.y\nmv $INPUT_FILE_BASE.c $INPUT_FILE_BASE.m";
+			outputFilesCompilerFlags = (
+				"",
+				"",
+				"-fno-objc-arc",
+			);
+			script = "cd $DERIVED_FILES_DIR\ncp $INPUT_FILE_PATH $INPUT_FILE_BASE.y\n/usr/local/Cellar/lemon/1.69/bin/lemon $INPUT_FILE_BASE.y\nmv $INPUT_FILE_BASE.c $INPUT_FILE_BASE.m\n";
+		};
+		D1BB3FE51F52C94F008262EF /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.yacc;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).m",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).out",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "cd $DERIVED_FILES_DIR\ncp $INPUT_FILE_PATH $INPUT_FILE_BASE.y\n/usr/local/Cellar/lemon/1.69/bin/lemon $INPUT_FILE_BASE.y\nmv $INPUT_FILE_BASE.c $INPUT_FILE_BASE.m\n";
 		};
 /* End PBXBuildRule section */
 
