@@ -103,8 +103,6 @@
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
 		D100F9B71F263F350048FDFA /* LKLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 794B2BBC123D7735008A4663 /* LKLoop.m */; };
 		D100F9B81F2640050048FDFA /* LKEnumReference.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B51F263F100048FDFA /* LKEnumReference.m */; };
-		D10F22FE20DEDD33002E017C /* NSObject+exception.h in Headers */ = {isa = PBXBuildFile; fileRef = D10F22FC20DEDD33002E017C /* NSObject+exception.h */; };
-		D10F22FF20DEDD33002E017C /* NSObject+exception.m in Sources */ = {isa = PBXBuildFile; fileRef = D10F22FD20DEDD33002E017C /* NSObject+exception.m */; };
 		D10F230E20DFA895002E017C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D10F230D20DFA895002E017C /* main.m */; };
 		D10F231220DFA8C4002E017C /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
 		D10F231320DFA8C4002E017C /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
@@ -125,8 +123,6 @@
 		D10F9FA220E2BBF800ECCEC3 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
 		D10F9FA420E37C5F00ECCEC3 /* SmalltalkTests.st in Resources */ = {isa = PBXBuildFile; fileRef = D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */; };
 		D12C059A1F26321A004E0FA6 /* libffi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D12C05991F263219004E0FA6 /* libffi.dylib */; };
-		D17EEE581F561651007BD287 /* NSNumber+operators.h in Headers */ = {isa = PBXBuildFile; fileRef = D17EEE561F561651007BD287 /* NSNumber+operators.h */; };
-		D17EEE591F561651007BD287 /* NSNumber+operators.m in Sources */ = {isa = PBXBuildFile; fileRef = D17EEE571F561651007BD287 /* NSNumber+operators.m */; };
 		D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D2A0D51F65329600B3814A /* LKProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2A0D61F65329600B3814A /* LKProperty.m */; };
 /* End PBXBuildFile section */
@@ -400,8 +396,6 @@
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
 		D100F9B51F263F100048FDFA /* LKEnumReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKEnumReference.m; sourceTree = "<group>"; };
-		D10F22FC20DEDD33002E017C /* NSObject+exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+exception.h"; sourceTree = "<group>"; };
-		D10F22FD20DEDD33002E017C /* NSObject+exception.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+exception.m"; sourceTree = "<group>"; };
 		D10F230B20DFA895002E017C /* GenerateHeaders */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GenerateHeaders; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10F230D20DFA895002E017C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D10F231420DFAC6A002E017C /* SmalltalkFileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmalltalkFileWrapper.h; sourceTree = "<group>"; };
@@ -416,8 +410,6 @@
 		D12C05991F263219004E0FA6 /* libffi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.dylib; path = ../../../../../../usr/local/Cellar/libffi/3.2.1/lib/libffi.dylib; sourceTree = "<group>"; };
 		D15505771F276E9900E5ACFF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D15505791F276FBD00E5ACFF /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
-		D17EEE561F561651007BD287 /* NSNumber+operators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNumber+operators.h"; path = "../Smalltalk/Support/NSNumber+operators.h"; sourceTree = "<group>"; };
-		D17EEE571F561651007BD287 /* NSNumber+operators.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+operators.m"; path = "../Smalltalk/Support/NSNumber+operators.m"; sourceTree = "<group>"; };
 		D1D2A0D51F65329600B3814A /* LKProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKProperty.h; sourceTree = "<group>"; };
 		D1D2A0D61F65329600B3814A /* LKProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -619,13 +611,9 @@
 				6697AFFF1048D16A00456911 /* NSArray+map.m */,
 				6697B0001048D16A00456911 /* NSObject+log.m */,
 				66041ACD1094FE0400513AFD /* NSObject+yourself.m */,
-				D10F22FC20DEDD33002E017C /* NSObject+exception.h */,
-				D10F22FD20DEDD33002E017C /* NSObject+exception.m */,
 				6697B0011048D16A00456911 /* NSString+casting.m */,
 				6697B0021048D16A00456911 /* NSString+comma.m */,
 				6697B0031048D16A00456911 /* NSValue+structs.m */,
-				D17EEE561F561651007BD287 /* NSNumber+operators.h */,
-				D17EEE571F561651007BD287 /* NSNumber+operators.m */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -778,8 +766,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D17EEE581F561651007BD287 /* NSNumber+operators.h in Headers */,
-				D10F22FE20DEDD33002E017C /* NSObject+exception.h in Headers */,
 				6697B0061048D16A00456911 /* NSArray+map.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1138,12 +1124,10 @@
 				6697B0051048D16A00456911 /* BlockClosure.m in Sources */,
 				6697B0071048D16A00456911 /* NSArray+map.m in Sources */,
 				6697B0081048D16A00456911 /* NSObject+log.m in Sources */,
-				D17EEE591F561651007BD287 /* NSNumber+operators.m in Sources */,
 				6697B0091048D16A00456911 /* NSString+casting.m in Sources */,
 				6697B00A1048D16A00456911 /* NSString+comma.m in Sources */,
 				6697B00B1048D16A00456911 /* NSValue+structs.m in Sources */,
 				66041ACE1094FE0400513AFD /* NSObject+yourself.m in Sources */,
-				D10F22FF20DEDD33002E017C /* NSObject+exception.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
