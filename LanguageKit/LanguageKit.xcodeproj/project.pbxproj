@@ -319,22 +319,6 @@
 		6697B0381048D19A00456911 /* LKSymbolTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKSymbolTable.m; sourceTree = "<group>"; };
 		6697B0391048D19A00456911 /* LKToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKToken.m; sourceTree = "<group>"; };
 		6697B03A1048D19A00456911 /* LKVariableDecl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKVariableDecl.m; sourceTree = "<group>"; };
-		6697B06A1048D1B500456911 /* ABI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ABI.h; path = CodeGen/ABI.h; sourceTree = "<group>"; };
-		6697B06B1048D1B500456911 /* CodeGenBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeGenBlock.h; path = CodeGen/CodeGenBlock.h; sourceTree = "<group>"; };
-		6697B06C1048D1B500456911 /* MsgSendSmallInt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MsgSendSmallInt.m; path = CodeGen/MsgSendSmallInt.m; sourceTree = "<group>"; };
-		6697B06D1048D1B500456911 /* UnboxPass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UnboxPass.cpp; path = CodeGen/UnboxPass.cpp; sourceTree = "<group>"; };
-		6697B06E1048D1B500456911 /* CGObjCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGObjCRuntime.h; path = CodeGen/CGObjCRuntime.h; sourceTree = "<group>"; };
-		6697B06F1048D1B500456911 /* CodeGenLexicalScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeGenLexicalScope.h; path = CodeGen/CodeGenLexicalScope.h; sourceTree = "<group>"; };
-		6697B0701048D1B500456911 /* LLVMCodeGen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLVMCodeGen.h; path = CodeGen/LLVMCodeGen.h; sourceTree = "<group>"; };
-		6697B0711048D1B500456911 /* LLVMCodeGen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLVMCodeGen.m; path = CodeGen/LLVMCodeGen.m; sourceTree = "<group>"; };
-		6697B0721048D1B500456911 /* LKCompiler+JTL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LKCompiler+JTL.m"; path = "CodeGen/LKCompiler+JTL.m"; sourceTree = "<group>"; };
-		6697B0731048D1B500456911 /* CGObjCGNU.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CGObjCGNU.cpp; path = CodeGen/CGObjCGNU.cpp; sourceTree = "<group>"; };
-		6697B0741048D1B500456911 /* CodeGenBlock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CodeGenBlock.cpp; path = CodeGen/CodeGenBlock.cpp; sourceTree = "<group>"; };
-		6697B0751048D1B500456911 /* CodeGenLexicalScope.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CodeGenLexicalScope.cpp; path = CodeGen/CodeGenLexicalScope.cpp; sourceTree = "<group>"; };
-		6697B0761048D1B500456911 /* CodeGenModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CodeGenModule.cpp; path = CodeGen/CodeGenModule.cpp; sourceTree = "<group>"; };
-		6697B0771048D1B500456911 /* CodeGenModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeGenModule.h; path = CodeGen/CodeGenModule.h; sourceTree = "<group>"; };
-		6697B0781048D1B500456911 /* LLVMCodeGen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LLVMCodeGen.cpp; path = CodeGen/LLVMCodeGen.cpp; sourceTree = "<group>"; };
-		6697B0791048D1B500456911 /* LLVMCodeGenCAPI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LLVMCodeGenCAPI.cpp; path = CodeGen/LLVMCodeGenCAPI.cpp; sourceTree = "<group>"; };
 		6697B08C1048D1D300456911 /* BigInt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BigInt.h; path = Runtime/BigInt.h; sourceTree = "<group>"; };
 		6697B08D1048D1D300456911 /* BigInt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BigInt.m; path = Runtime/BigInt.m; sourceTree = "<group>"; };
 		6697B08E1048D1D300456911 /* BlockClosure+debug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BlockClosure+debug.m"; path = "Runtime/BlockClosure+debug.m"; sourceTree = "<group>"; };
@@ -445,7 +429,6 @@
 				66AC458B108ADF8B00047C26 /* README */,
 				66AC458C108ADF8B00047C26 /* COPYING */,
 				66A1FB011049C9D800A19C65 /* ObjCConstants.plist */,
-				6697AF9C1048CF1600456911 /* CodeGen */,
 				6697AF9B1048CF1100456911 /* Runtime */,
 				66A1FAA71049C34000A19C65 /* Headers */,
 				6697B0101048D19A00456911 /* LKASTVisitor.m */,
@@ -523,30 +506,6 @@
 				6697B0941048D1D300456911 /* LanguageKitExceptions.m */,
 			);
 			name = Runtime;
-			sourceTree = "<group>";
-		};
-		6697AF9C1048CF1600456911 /* CodeGen */ = {
-			isa = PBXGroup;
-			children = (
-				66A1FAA51049C32700A19C65 /* MsgSendSmallInt.bc */,
-				6697B06A1048D1B500456911 /* ABI.h */,
-				6697B06B1048D1B500456911 /* CodeGenBlock.h */,
-				6697B06C1048D1B500456911 /* MsgSendSmallInt.m */,
-				6697B06D1048D1B500456911 /* UnboxPass.cpp */,
-				6697B06E1048D1B500456911 /* CGObjCRuntime.h */,
-				6697B06F1048D1B500456911 /* CodeGenLexicalScope.h */,
-				6697B0701048D1B500456911 /* LLVMCodeGen.h */,
-				6697B0711048D1B500456911 /* LLVMCodeGen.m */,
-				6697B0721048D1B500456911 /* LKCompiler+JTL.m */,
-				6697B0731048D1B500456911 /* CGObjCGNU.cpp */,
-				6697B0741048D1B500456911 /* CodeGenBlock.cpp */,
-				6697B0751048D1B500456911 /* CodeGenLexicalScope.cpp */,
-				6697B0761048D1B500456911 /* CodeGenModule.cpp */,
-				6697B0771048D1B500456911 /* CodeGenModule.h */,
-				6697B0781048D1B500456911 /* LLVMCodeGen.cpp */,
-				6697B0791048D1B500456911 /* LLVMCodeGenCAPI.cpp */,
-			);
-			name = CodeGen;
 			sourceTree = "<group>";
 		};
 		6697AF9D1048CF2000456911 /* Support */ = {
