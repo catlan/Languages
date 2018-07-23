@@ -103,7 +103,8 @@ static void StoreASTForMethod(NSString *classname, BOOL isClassMethod,
 @implementation LKAST (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
-	[self subclassResponsibility: _cmd];
+    [NSException raise: NSInvalidArgumentException
+                format: @"-[%@ %@] should be overridden by subclass", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
 	return nil;
 }
 @end

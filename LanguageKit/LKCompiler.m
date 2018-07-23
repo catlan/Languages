@@ -769,12 +769,14 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 
 + (NSString*) fileExtension
 {
-	[self subclassResponsibility:_cmd];
+    [NSException raise: NSInvalidArgumentException
+                format: @"+[%@ %@] should be overridden by subclass", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
 	return nil;
 }
 + (NSString*) languageName
 {
-	[self subclassResponsibility:_cmd];
+    [NSException raise: NSInvalidArgumentException
+                format: @"+[%@ %@] should be overridden by subclass", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
 	return nil;
 }
 + (NSArray*) supportedLanguageNames
@@ -819,7 +821,8 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 }
 + (Class) parserClass
 {
-	[self subclassResponsibility:_cmd];
+    [NSException raise: NSInvalidArgumentException
+                format: @"+[%@ %@] should be overridden by subclass", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
 	return Nil;
 }
 
