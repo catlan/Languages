@@ -6,4 +6,15 @@
 }
 + (LKCompare*) comparisonWithLeftExpression: (LKAST*)expr1
 					        rightExpression: (LKAST*)expr2;
+
+/**
+ * Return the left hand expression
+ */
+- (id) leftExpression;
+
+/**
+ * Return the right hand expression
+ */
+- (id) rightExpression;
+
 @end

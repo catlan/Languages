@@ -15,6 +15,17 @@
 	return [[LKCompare alloc] initWithLeftExpression:expr1
 	                                  rightExpression: expr2];
 }
+
+- (id) leftExpression
+{
+    return lhs;
+}
+
+- (id) rightExpression
+{
+    return rhs;
+}
+
 - (NSString*) description
 {
 	return [NSString stringWithFormat:@"%@ = %@", lhs, rhs];
