@@ -138,5 +138,6 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 }
 - (void)dealloc
 {
+    [super dealloc];
 }
 @end
