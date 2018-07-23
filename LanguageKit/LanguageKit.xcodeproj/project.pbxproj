@@ -3,17 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		66041ACE1094FE0400513AFD /* NSObject+yourself.m in Sources */ = {isa = PBXBuildFile; fileRef = 66041ACD1094FE0400513AFD /* NSObject+yourself.m */; };
-		66298AC61049FA4F000F18C5 /* smalltalk.y in Sources */ = {isa = PBXBuildFile; fileRef = 6697B0D11048DA2200456911 /* smalltalk.y */; };
 		663A0DF4108D61F800B921B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663A0DF3108D61F800B921B0 /* Foundation.framework */; };
 		663A0E76108D621200B921B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663A0DF3108D61F800B921B0 /* Foundation.framework */; };
 		663A0E77108D621600B921B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663A0DF3108D61F800B921B0 /* Foundation.framework */; };
 		663A0E83108D622400B921B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663A0DF3108D61F800B921B0 /* Foundation.framework */; };
-		663A0E84108D622800B921B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663A0DF3108D61F800B921B0 /* Foundation.framework */; };
 		663A0E9E108D625800B921B0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663A0E8E108D623C00B921B0 /* Cocoa.framework */; };
 		663A0FC7108FF90300B921B0 /* LKTypeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 663A0FC5108FF90300B921B0 /* LKTypeHelpers.m */; };
 		663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 663A0FC6108FF90300B921B0 /* LKTypeHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -22,17 +20,11 @@
 		668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		668C491610915C17002A20A3 /* LKInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C491010915C17002A20A3 /* LKInterpreter.m */; };
 		668C491710915C17002A20A3 /* LKInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C491110915C17002A20A3 /* LKInterpreter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		668C491810915C17002A20A3 /* LKInterpretedBlockClosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C491210915C17002A20A3 /* LKInterpretedBlockClosure.m */; };
-		668C491910915C17002A20A3 /* LKInterpretedBlockClosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C491310915C17002A20A3 /* LKInterpretedBlockClosure.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		668C494D10915CF1002A20A3 /* libffi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DD61A71079ABA8009FC3B1 /* libffi.dylib */; };
 		668C495910915D63002A20A3 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
 		6697AFE81048D02A00456911 /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
 		6697AFEA1048D02B00456911 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
 		6697AFEB1048D02B00456911 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
 		6697AFF11048D08300456911 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFF01048D08300456911 /* main.m */; };
-		6697AFFA1048D14500456911 /* SmalltalkCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFF71048D14500456911 /* SmalltalkCompiler.m */; };
-		6697AFFB1048D14500456911 /* SmalltalkParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFF91048D14500456911 /* SmalltalkParser.m */; };
-		6697B0041048D16A00456911 /* BlockClosure.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697AFFC1048D16A00456911 /* BlockClosure.h */; };
 		6697B0051048D16A00456911 /* BlockClosure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFFD1048D16A00456911 /* BlockClosure.m */; };
 		6697B0061048D16A00456911 /* NSArray+map.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697AFFE1048D16A00456911 /* NSArray+map.h */; };
 		6697B0071048D16A00456911 /* NSArray+map.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFFF1048D16A00456911 /* NSArray+map.m */; };
@@ -94,21 +86,40 @@
 		6697B09A1048D1D300456911 /* NSValue+structs.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697B0911048D1D300456911 /* NSValue+structs.m */; };
 		6697B09B1048D1D300456911 /* OverflowHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697B0921048D1D300456911 /* OverflowHandler.m */; };
 		6697B09C1048D1D300456911 /* Symbol.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697B0931048D1D300456911 /* Symbol.m */; };
-		6697B1B01049BE0D00456911 /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697B1AF1049BE0D00456911 /* libgmp.dylib */; };
 		66A1FB021049C9D800A19C65 /* ObjCConstants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66A1FB011049C9D800A19C65 /* ObjCConstants.plist */; };
-		66A1FC781049DBD400A19C65 /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
-		66A1FC791049DBD700A19C65 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
-		66A1FC821049DC2000A19C65 /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697B1AF1049BE0D00456911 /* libgmp.dylib */; };
 		66A2E59310F6A17900F5850C /* BoxedFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2E59210F6A17900F5850C /* BoxedFloat.m */; };
 		66A2E61910F6D2FD00F5850C /* BoxedFloat.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A2E61810F6D2FD00F5850C /* BoxedFloat.h */; };
 		66AC4526108ADD1000047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
 		66AC4530108ADD2800047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
 		66AC4533108ADD3200047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
 		66AC4544108ADD5900047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
-		66AC4550108ADD7000047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
 		66CC0B0B1082628100FABEBF /* Symbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CC0B0A1082628100FABEBF /* Symbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC0123D774F008A4663 /* LKLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 794B2BBF123D774F008A4663 /* LKLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
+		D100F9A91F26363A0048FDFA /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D100F9A81F2636350048FDFA /* libgmp.dylib */; };
+		D100F9AA1F26363B0048FDFA /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D100F9A81F2636350048FDFA /* libgmp.dylib */; };
+		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
+		D100F9B71F263F350048FDFA /* LKLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 794B2BBC123D7735008A4663 /* LKLoop.m */; };
+		D100F9B81F2640050048FDFA /* LKEnumReference.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B51F263F100048FDFA /* LKEnumReference.m */; };
+		D10F22FE20DEDD33002E017C /* NSObject+exception.h in Headers */ = {isa = PBXBuildFile; fileRef = D10F22FC20DEDD33002E017C /* NSObject+exception.h */; };
+		D10F22FF20DEDD33002E017C /* NSObject+exception.m in Sources */ = {isa = PBXBuildFile; fileRef = D10F22FD20DEDD33002E017C /* NSObject+exception.m */; };
+		D10F232620DFADA4002E017C /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
+		D10F232720DFADA4002E017C /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
+		D10F232A20DFADCE002E017C /* SmalltalkCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697AFF61048D14500456911 /* SmalltalkCompiler.h */; };
+		D10F232B20DFADCE002E017C /* SmalltalkCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFF71048D14500456911 /* SmalltalkCompiler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D10F232C20DFADCE002E017C /* SmalltalkParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697AFF81048D14500456911 /* SmalltalkParser.h */; };
+		D10F232D20DFADCE002E017C /* SmalltalkParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFF91048D14500456911 /* SmalltalkParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D10F232E20DFADCE002E017C /* SmalltalkFileWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D10F231420DFAC6A002E017C /* SmalltalkFileWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D10F232F20DFADCE002E017C /* SmalltalkFileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D10F231520DFAC6B002E017C /* SmalltalkFileWrapper.m */; };
+		D10F233020DFADF8002E017C /* smalltalk.y in Sources */ = {isa = PBXBuildFile; fileRef = 6697B0D11048DA2200456911 /* smalltalk.y */; };
+		D10F233F20DFB0F3002E017C /* Smalltalk.h in Headers */ = {isa = PBXBuildFile; fileRef = D10F233E20DFB0F3002E017C /* Smalltalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D12C059A1F26321A004E0FA6 /* libffi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D12C05991F263219004E0FA6 /* libffi.dylib */; };
+		D17EEE581F561651007BD287 /* NSNumber+operators.h in Headers */ = {isa = PBXBuildFile; fileRef = D17EEE561F561651007BD287 /* NSNumber+operators.h */; };
+		D17EEE591F561651007BD287 /* NSNumber+operators.m in Sources */ = {isa = PBXBuildFile; fileRef = D17EEE571F561651007BD287 /* NSNumber+operators.m */; };
+		D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D2A0D51F65329600B3814A /* LKProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2A0D61F65329600B3814A /* LKProperty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -151,13 +162,6 @@
 			remoteGlobalIDString = 6697AFC91048CF9200456911;
 			remoteInfo = LanguageKitRuntime;
 		};
-		66298CD4104A4A14000F18C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6697AF801048CE7100456911 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6697AFDE1048CFC800456911;
-			remoteInfo = Smalltalk;
-		};
 		668C495710915D60002A20A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6697AF801048CE7100456911 /* Project object */;
@@ -173,20 +177,6 @@
 			remoteInfo = LanguageKit;
 		};
 		6697AFE61048CFF500456911 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6697AF801048CE7100456911 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6697AFD51048CFB100456911;
-			remoteInfo = SmalltalkSupport;
-		};
-		66A1FC741049DBCC00A19C65 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6697AF801048CE7100456911 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6697AFB41048CF6C00456911;
-			remoteInfo = LanguageKit;
-		};
-		66A1FC761049DBD000A19C65 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6697AF801048CE7100456911 /* Project object */;
 			proxyType = 1;
@@ -249,12 +239,26 @@
 			remoteGlobalIDString = 603647AB0E409244003377E0;
 			remoteInfo = EtoileFoundation;
 		};
-		66AC4546108ADD6800047C26 /* PBXContainerItemProxy */ = {
+		D12C05931F2631E5004E0FA6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 603647AB0E409244003377E0;
-			remoteInfo = EtoileFoundation;
+			proxyType = 2;
+			remoteGlobalIDString = 6072CF691360E144003256C5;
+			remoteInfo = PlugInExample;
+		};
+		D12C05951F2631E5004E0FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 602E12AE18B3A10E004F171B;
+			remoteInfo = "EtoileFoundation (iOS)";
+		};
+		D12C05971F2631E5004E0FA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 609A557718C209FE0096927F;
+			remoteInfo = "TestEtoileFoundation (iOS)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -268,13 +272,10 @@
 		668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKInterpreterRuntime.h; sourceTree = "<group>"; };
 		668C491010915C17002A20A3 /* LKInterpreter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKInterpreter.m; sourceTree = "<group>"; };
 		668C491110915C17002A20A3 /* LKInterpreter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKInterpreter.h; sourceTree = "<group>"; };
-		668C491210915C17002A20A3 /* LKInterpretedBlockClosure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKInterpretedBlockClosure.m; sourceTree = "<group>"; };
-		668C491310915C17002A20A3 /* LKInterpretedBlockClosure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKInterpretedBlockClosure.h; sourceTree = "<group>"; };
 		6697AFAC1048CF6200456911 /* edlc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = edlc; sourceTree = BUILT_PRODUCTS_DIR; };
 		6697AFB51048CF6C00456911 /* LanguageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LanguageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LanguageKitRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6697AFD61048CFB100456911 /* SmalltalkSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SmalltalkSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6697AFDF1048CFC800456911 /* Smalltalk.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Smalltalk.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6697AFF01048D08300456911 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../Compiler/main.m; sourceTree = SOURCE_ROOT; };
 		6697AFF61048D14500456911 /* SmalltalkCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SmalltalkCompiler.h; path = ../Smalltalk/SmalltalkCompiler.h; sourceTree = SOURCE_ROOT; };
 		6697AFF71048D14500456911 /* SmalltalkCompiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SmalltalkCompiler.m; path = ../Smalltalk/SmalltalkCompiler.m; sourceTree = SOURCE_ROOT; };
@@ -345,8 +346,6 @@
 		6697B0931048D1D300456911 /* Symbol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Symbol.m; path = Runtime/Symbol.m; sourceTree = "<group>"; };
 		6697B0941048D1D300456911 /* LanguageKitExceptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LanguageKitExceptions.m; path = Runtime/LanguageKitExceptions.m; sourceTree = "<group>"; };
 		6697B0D11048DA2200456911 /* smalltalk.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = smalltalk.y; path = ../Smalltalk/smalltalk.y; sourceTree = SOURCE_ROOT; };
-		6697B1AF1049BE0D00456911 /* libgmp.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; name = libgmp.dylib; path = /opt/local/lib/libgmp.dylib; sourceTree = "<absolute>"; };
-		66A1FAA51049C32700A19C65 /* MsgSendSmallInt.bc */ = {isa = PBXFileReference; lastKnownFileType = file; name = MsgSendSmallInt.bc; path = CodeGen/MsgSendSmallInt.bc; sourceTree = "<group>"; };
 		66A1FB011049C9D800A19C65 /* ObjCConstants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = ObjCConstants.plist; sourceTree = "<group>"; };
 		66A2E59210F6A17900F5850C /* BoxedFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxedFloat.m; path = Runtime/BoxedFloat.m; sourceTree = "<group>"; };
 		66A2E61810F6D2FD00F5850C /* BoxedFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxedFloat.h; path = Runtime/BoxedFloat.h; sourceTree = "<group>"; };
@@ -359,9 +358,27 @@
 		66AC4590108ADFAE00047C26 /* HACKING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = HACKING; path = ../Compiler/HACKING; sourceTree = SOURCE_ROOT; };
 		66AC4591108ADFAE00047C26 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COPYING; path = ../Compiler/COPYING; sourceTree = SOURCE_ROOT; };
 		66CC0B0A1082628100FABEBF /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Symbol.h; path = Runtime/Symbol.h; sourceTree = "<group>"; };
-		66DD61A71079ABA8009FC3B1 /* libffi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.dylib; path = /opt/local/lib/libffi.dylib; sourceTree = "<absolute>"; };
 		794B2BBC123D7735008A4663 /* LKLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKLoop.m; sourceTree = "<group>"; };
 		794B2BBF123D774F008A4663 /* LKLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKLoop.h; sourceTree = "<group>"; };
+		D100F9A81F2636350048FDFA /* libgmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.dylib; path = ../../../../../../usr/local/Cellar/gmp/6.1.2/lib/libgmp.dylib; sourceTree = "<group>"; };
+		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
+		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
+		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
+		D100F9B51F263F100048FDFA /* LKEnumReference.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKEnumReference.m; sourceTree = "<group>"; };
+		D10F22FC20DEDD33002E017C /* NSObject+exception.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+exception.h"; sourceTree = "<group>"; };
+		D10F22FD20DEDD33002E017C /* NSObject+exception.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+exception.m"; sourceTree = "<group>"; };
+		D10F231420DFAC6A002E017C /* SmalltalkFileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmalltalkFileWrapper.h; sourceTree = "<group>"; };
+		D10F231520DFAC6B002E017C /* SmalltalkFileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmalltalkFileWrapper.m; sourceTree = "<group>"; };
+		D10F231E20DFAD8B002E017C /* Smalltalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Smalltalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10F232120DFAD8B002E017C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Smalltalk/Info.plist; sourceTree = "<group>"; };
+		D10F233E20DFB0F3002E017C /* Smalltalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Smalltalk.h; sourceTree = "<group>"; };
+		D12C05991F263219004E0FA6 /* libffi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.dylib; path = ../../../../../../usr/local/Cellar/libffi/3.2.1/lib/libffi.dylib; sourceTree = "<group>"; };
+		D15505771F276E9900E5ACFF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D15505791F276FBD00E5ACFF /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
+		D17EEE561F561651007BD287 /* NSNumber+operators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSNumber+operators.h"; path = "../Smalltalk/Support/NSNumber+operators.h"; sourceTree = "<group>"; };
+		D17EEE571F561651007BD287 /* NSNumber+operators.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+operators.m"; path = "../Smalltalk/Support/NSNumber+operators.m"; sourceTree = "<group>"; };
+		D1D2A0D51F65329600B3814A /* LKProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKProperty.h; sourceTree = "<group>"; };
+		D1D2A0D61F65329600B3814A /* LKProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,7 +398,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				668C494D10915CF1002A20A3 /* libffi.dylib in Frameworks */,
+				D12C059A1F26321A004E0FA6 /* libffi.dylib in Frameworks */,
 				663A0E76108D621200B921B0 /* Foundation.framework in Frameworks */,
 				66AC4530108ADD2800047C26 /* EtoileFoundation.framework in Frameworks */,
 				668C495910915D63002A20A3 /* LanguageKitRuntime.framework in Frameworks */,
@@ -393,8 +410,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				663A0E77108D621600B921B0 /* Foundation.framework in Frameworks */,
+				D100F9A91F26363A0048FDFA /* libgmp.dylib in Frameworks */,
 				66AC4533108ADD3200047C26 /* EtoileFoundation.framework in Frameworks */,
-				6697B1B01049BE0D00456911 /* libgmp.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,19 +422,17 @@
 				663A0E9E108D625800B921B0 /* Cocoa.framework in Frameworks */,
 				663A0E83108D622400B921B0 /* Foundation.framework in Frameworks */,
 				66AC4544108ADD5900047C26 /* EtoileFoundation.framework in Frameworks */,
-				66A1FC821049DC2000A19C65 /* libgmp.dylib in Frameworks */,
+				D100F9AA1F26363B0048FDFA /* libgmp.dylib in Frameworks */,
 				794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6697AFDD1048CFC800456911 /* Frameworks */ = {
+		D10F231B20DFAD8B002E017C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				663A0E84108D622800B921B0 /* Foundation.framework in Frameworks */,
-				66AC4550108ADD7000047C26 /* EtoileFoundation.framework in Frameworks */,
-				66A1FC781049DBD400A19C65 /* LanguageKit.framework in Frameworks */,
-				66A1FC791049DBD700A19C65 /* SmalltalkSupport.framework in Frameworks */,
+				D10F232620DFADA4002E017C /* LanguageKit.framework in Frameworks */,
+				D10F232720DFADA4002E017C /* EtoileFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,14 +443,15 @@
 			isa = PBXGroup;
 			children = (
 				66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */,
-				6697B1AF1049BE0D00456911 /* libgmp.dylib */,
-				66DD61A71079ABA8009FC3B1 /* libffi.dylib */,
+				D100F9A81F2636350048FDFA /* libgmp.dylib */,
+				D12C05991F263219004E0FA6 /* libffi.dylib */,
 				663A0DF3108D61F800B921B0 /* Foundation.framework */,
 				663A0E8E108D623C00B921B0 /* Cocoa.framework */,
 				6697AF951048CEC100456911 /* LanguageKit */,
 				6697AF961048CEC700456911 /* Smalltalk */,
 				6697AF991048CED700456911 /* Compiler */,
 				6697AFA31048CF3C00456911 /* Products */,
+				D15505761F276E9900E5ACFF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -464,6 +480,7 @@
 				6697B0321048D19A00456911 /* LKDeclRef.m */,
 				6697B0331048D19A00456911 /* LKIfStatement.m */,
 				6697B0341048D19A00456911 /* LKLiteral.m */,
+				D100F9B51F263F100048FDFA /* LKEnumReference.m */,
 				794B2BBC123D7735008A4663 /* LKLoop.m */,
 				6697B0351048D19A00456911 /* LKMessageSend.m */,
 				6697B0361048D19A00456911 /* LKReturn.m */,
@@ -474,7 +491,9 @@
 				6697B03A1048D19A00456911 /* LKVariableDecl.m */,
 				668C490E10915C17002A20A3 /* LKInterpreterRuntime.m */,
 				668C491010915C17002A20A3 /* LKInterpreter.m */,
-				668C491210915C17002A20A3 /* LKInterpretedBlockClosure.m */,
+				D100F9B01F263E070048FDFA /* LKFunctionCall.m */,
+				D1D2A0D51F65329600B3814A /* LKProperty.h */,
+				D1D2A0D61F65329600B3814A /* LKProperty.m */,
 			);
 			name = LanguageKit;
 			sourceTree = "<group>";
@@ -491,6 +510,8 @@
 				6697AFF71048D14500456911 /* SmalltalkCompiler.m */,
 				6697AFF81048D14500456911 /* SmalltalkParser.h */,
 				6697AFF91048D14500456911 /* SmalltalkParser.m */,
+				D10F231420DFAC6A002E017C /* SmalltalkFileWrapper.h */,
+				D10F231520DFAC6B002E017C /* SmalltalkFileWrapper.m */,
 				6697AF9D1048CF2000456911 /* Support */,
 			);
 			name = Smalltalk;
@@ -535,9 +556,13 @@
 				6697AFFF1048D16A00456911 /* NSArray+map.m */,
 				6697B0001048D16A00456911 /* NSObject+log.m */,
 				66041ACD1094FE0400513AFD /* NSObject+yourself.m */,
+				D10F22FC20DEDD33002E017C /* NSObject+exception.h */,
+				D10F22FD20DEDD33002E017C /* NSObject+exception.m */,
 				6697B0011048D16A00456911 /* NSString+casting.m */,
 				6697B0021048D16A00456911 /* NSString+comma.m */,
 				6697B0031048D16A00456911 /* NSValue+structs.m */,
+				D17EEE561F561651007BD287 /* NSNumber+operators.h */,
+				D17EEE571F561651007BD287 /* NSNumber+operators.m */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -585,7 +610,8 @@
 				663A0FC6108FF90300B921B0 /* LKTypeHelpers.h */,
 				668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */,
 				668C491110915C17002A20A3 /* LKInterpreter.h */,
-				668C491310915C17002A20A3 /* LKInterpretedBlockClosure.h */,
+				D100F9AC1F263B400048FDFA /* LKEnumReference.h */,
+				D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -596,8 +622,20 @@
 				66AC44F8108ADCCD00047C26 /* EtoileXML.framework */,
 				66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */,
 				66AC44FC108ADCCD00047C26 /* TestEtoileFoundation.bundle */,
+				D12C05941F2631E5004E0FA6 /* PlugInExample.plugin */,
+				D12C05961F2631E5004E0FA6 /* libEtoileFoundation.a */,
+				D12C05981F2631E5004E0FA6 /* TestEtoileFoundation.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D15505761F276E9900E5ACFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D15505791F276FBD00E5ACFF /* libcurses.tbd */,
+				D15505771F276E9900E5ACFF /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,6 +657,7 @@
 				6697B0461048D19A00456911 /* LKDeclRef.h in Headers */,
 				6697B0471048D19A00456911 /* LKIfStatement.h in Headers */,
 				6697B0481048D19A00456911 /* LKLiteral.h in Headers */,
+				D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */,
 				6697B0491048D19A00456911 /* LKMessageSend.h in Headers */,
 				6697B04A1048D19A00456911 /* LKMethod.h in Headers */,
 				6697B04B1048D19A00456911 /* LKReturn.h in Headers */,
@@ -631,10 +670,11 @@
 				6697B0531048D19A00456911 /* LKCompiler.h in Headers */,
 				6697B0541048D19A00456911 /* LKCompilerErrors.h in Headers */,
 				6697B0571048D19A00456911 /* LKModule.h in Headers */,
+				D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */,
 				663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */,
 				668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */,
 				668C491710915C17002A20A3 /* LKInterpreter.h in Headers */,
-				668C491910915C17002A20A3 /* LKInterpretedBlockClosure.h in Headers */,
+				D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */,
 				794B2BC0123D774F008A4663 /* LKLoop.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,7 +694,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6697B0041048D16A00456911 /* BlockClosure.h in Headers */,
+				D17EEE581F561651007BD287 /* NSNumber+operators.h in Headers */,
+				D10F22FE20DEDD33002E017C /* NSObject+exception.h in Headers */,
 				6697B0061048D16A00456911 /* NSArray+map.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +706,7 @@
 			files = (
 				D10F232A20DFADCE002E017C /* SmalltalkCompiler.h in Headers */,
 				D10F233F20DFB0F3002E017C /* Smalltalk.h in Headers */,
+				D10F232E20DFADCE002E017C /* SmalltalkFileWrapper.h in Headers */,
 				D10F232C20DFADCE002E017C /* SmalltalkParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,7 +727,6 @@
 				6697AFE51048CFF500456911 /* PBXTargetDependency */,
 				6697AFE71048CFF500456911 /* PBXTargetDependency */,
 				66298CCD104A4A10000F18C5 /* PBXTargetDependency */,
-				66298CD5104A4A14000F18C5 /* PBXTargetDependency */,
 				66AC4505108ADCE400047C26 /* PBXTargetDependency */,
 			);
 			name = edlc;
@@ -703,6 +744,7 @@
 				6697AFB31048CF6C00456911 /* Frameworks */,
 			);
 			buildRules = (
+				D1BB3FE51F52C94F008262EF /* PBXBuildRule */,
 			);
 			dependencies = (
 				66AC4528108ADD2100047C26 /* PBXTargetDependency */,
@@ -776,9 +818,22 @@
 /* Begin PBXProject section */
 		6697AF801048CE7100456911 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				TargetAttributes = {
+					D10F231D20DFAD8B002E017C = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = 2WB96AW889;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
 			buildConfigurationList = 6697AF831048CE7100456911 /* Build configuration list for PBXProject "LanguageKit" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 6697AF7E1048CE7100456911;
 			productRefGroup = 6697AFA31048CF3C00456911 /* Products */;
 			projectDirPath = "";
@@ -821,6 +876,27 @@
 			remoteRef = 66AC44FB108ADCCD00047C26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		D12C05941F2631E5004E0FA6 /* PlugInExample.plugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PlugInExample.plugin;
+			remoteRef = D12C05931F2631E5004E0FA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D12C05961F2631E5004E0FA6 /* libEtoileFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libEtoileFoundation.a;
+			remoteRef = D12C05951F2631E5004E0FA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D12C05981F2631E5004E0FA6 /* TestEtoileFoundation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestEtoileFoundation.app;
+			remoteRef = D12C05971F2631E5004E0FA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -846,7 +922,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6697AFDB1048CFC800456911 /* Resources */ = {
+		D10F231C20DFAD8B002E017C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -874,27 +950,30 @@
 				6697B0551048D19A00456911 /* LKCompilerErrors.m in Sources */,
 				6697B0561048D19A00456911 /* LKMethod.m in Sources */,
 				6697B0581048D19A00456911 /* LKModule.m in Sources */,
+				D100F9B81F2640050048FDFA /* LKEnumReference.m in Sources */,
 				6697B0591048D19A00456911 /* LKSymbolRef.m in Sources */,
 				6697B05A1048D19A00456911 /* LKAST.m in Sources */,
 				6697B05B1048D19A00456911 /* LKArrayExpr.m in Sources */,
 				6697B05C1048D19A00456911 /* LKAssignExpr.m in Sources */,
 				6697B05D1048D19A00456911 /* LKCategory.m in Sources */,
+				D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */,
 				6697B05E1048D19A00456911 /* LKComment.m in Sources */,
 				6697B05F1048D19A00456911 /* LKComparison.m in Sources */,
 				6697B0601048D19A00456911 /* LKCompiler.m in Sources */,
 				6697B0611048D19A00456911 /* LKDeclRef.m in Sources */,
+				D100F9B71F263F350048FDFA /* LKLoop.m in Sources */,
 				6697B0621048D19A00456911 /* LKIfStatement.m in Sources */,
 				6697B0631048D19A00456911 /* LKLiteral.m in Sources */,
 				6697B0641048D19A00456911 /* LKMessageSend.m in Sources */,
 				6697B0651048D19A00456911 /* LKReturn.m in Sources */,
 				6697B0661048D19A00456911 /* LKSubclass.m in Sources */,
+				D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */,
 				6697B0671048D19A00456911 /* LKSymbolTable.m in Sources */,
 				6697B0681048D19A00456911 /* LKToken.m in Sources */,
 				6697B0691048D19A00456911 /* LKVariableDecl.m in Sources */,
 				663A0FC7108FF90300B921B0 /* LKTypeHelpers.m in Sources */,
 				668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */,
 				668C491610915C17002A20A3 /* LKInterpreter.m in Sources */,
-				668C491810915C17002A20A3 /* LKInterpretedBlockClosure.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,10 +998,12 @@
 				6697B0051048D16A00456911 /* BlockClosure.m in Sources */,
 				6697B0071048D16A00456911 /* NSArray+map.m in Sources */,
 				6697B0081048D16A00456911 /* NSObject+log.m in Sources */,
+				D17EEE591F561651007BD287 /* NSNumber+operators.m in Sources */,
 				6697B0091048D16A00456911 /* NSString+casting.m in Sources */,
 				6697B00A1048D16A00456911 /* NSString+comma.m in Sources */,
 				6697B00B1048D16A00456911 /* NSValue+structs.m in Sources */,
 				66041ACE1094FE0400513AFD /* NSObject+yourself.m in Sources */,
+				D10F22FF20DEDD33002E017C /* NSObject+exception.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +1012,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D10F232D20DFADCE002E017C /* SmalltalkParser.m in Sources */,
+				D10F232F20DFADCE002E017C /* SmalltalkFileWrapper.m in Sources */,
 				D10F232B20DFADCE002E017C /* SmalltalkCompiler.m in Sources */,
 				D10F233020DFADF8002E017C /* smalltalk.y in Sources */,
 			);
@@ -943,11 +1025,6 @@
 			isa = PBXTargetDependency;
 			target = 6697AFC91048CF9200456911 /* LanguageKitRuntime */;
 			targetProxy = 66298CCC104A4A10000F18C5 /* PBXContainerItemProxy */;
-		};
-		66298CD5104A4A14000F18C5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6697AFDE1048CFC800456911 /* Smalltalk */;
-			targetProxy = 66298CD4104A4A14000F18C5 /* PBXContainerItemProxy */;
 		};
 		668C495810915D60002A20A3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -963,16 +1040,6 @@
 			isa = PBXTargetDependency;
 			target = 6697AFD51048CFB100456911 /* SmalltalkSupport */;
 			targetProxy = 6697AFE61048CFF500456911 /* PBXContainerItemProxy */;
-		};
-		66A1FC751049DBCC00A19C65 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6697AFB41048CF6C00456911 /* LanguageKit */;
-			targetProxy = 66A1FC741049DBCC00A19C65 /* PBXContainerItemProxy */;
-		};
-		66A1FC771049DBD000A19C65 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6697AFD51048CFB100456911 /* SmalltalkSupport */;
-			targetProxy = 66A1FC761049DBD000A19C65 /* PBXContainerItemProxy */;
 		};
 		66A1FC7E1049DBEA00A19C65 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -999,27 +1066,23 @@
 			name = EtoileFoundation;
 			targetProxy = 66AC453B108ADD5000047C26 /* PBXContainerItemProxy */;
 		};
-		66AC4547108ADD6800047C26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EtoileFoundation;
-			targetProxy = 66AC4546108ADD6800047C26 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6697AF811048CE7100456911 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DSTROOT = /;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		6697AF821048CE7100456911 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				DSTROOT = /;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -1345,6 +1408,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D10F232420DFAD8B002E017C /* Debug */,
+				D10F232520DFAD8B002E017C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
