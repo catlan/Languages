@@ -9,14 +9,16 @@
 #import <EtoileFoundation/runtime.h>
 #ifndef GNU_RUNTIME
 #include <objc/objc-runtime.h>
-#include <objc/objc-arc.h>
 #endif
 #include <string.h>
 #include <ffi.h>
 #include <dlfcn.h>
 
+OBJC_EXPORT id objc_retainAutoreleaseReturnValue(id obj);
+
 static id BoxValue(void *value, const char *typestr);
 static void UnboxValue(id value, void *dest, const char *objctype);
+static void RetainValue(id value, const char *objctype);
 
 #ifdef __LP64__
 ffi_type *_ffi_type_nspoint_elements[] = {
@@ -289,6 +291,66 @@ static void UnboxValue(id value, void *dest, const char *objctype)
 	}
 }
 
+OBJC_EXPORT id objc_retain(id value);
+
+static void RetainValue(id value, const char *objctype)
+{
+    LKSkipQualifiers(&objctype);
+    
+    switch(*objctype)
+    {
+        case 'c':
+            break;
+        case 'C':
+            break;
+        case 's':
+            break;
+        case 'S':
+            break;
+        case 'i':
+            break;
+        case 'I':
+            break;
+        case 'l':
+            break;
+        case 'L':
+            break;
+        case 'q':
+            break;
+        case 'Q':
+            break;
+        case 'f':
+            break;
+        case 'd':
+            break;
+        case 'B':
+            break;
+        case ':':
+            break;
+        case '(':
+        case '^':
+            if (strncmp(objctype, @encode(LKObject), strlen(@encode(LKObject))) != 0)
+            {
+                break;
+            }
+        case '#':
+            break;
+        case '@':
+            objc_retain(value);
+            return;
+        case 'v':
+            return;
+        case '{':
+        {
+            break;
+        }
+        default:
+            [NSException raise: LKInterpreterException
+                        format: @"Unable to transmogriy object to"
+             "compound type: %s\n", objctype];
+    }
+}
+
 id LKCallFunction(NSString *functionName, NSString *types,
                  unsigned int argc, const id *args)
 {
@@ -458,6 +520,7 @@ id LKSendMessage(NSString *className, id receiver, NSString *selName,
 	{
 		const char *objCType = [sig getArgumentTypeAtIndex: i + 2];
 		UnboxValue(args[i], unboxedArgumentsBuffer[i + 2], objCType);
+        RetainValue(args[i], objCType);
 		unboxedArguments[i + 2] = unboxedArgumentsBuffer[i + 2];
 	}
 	
