@@ -101,10 +101,10 @@ static NSArray* TypesForMethodName(NSString *methodName)
 	NSEnumerator *e = [aDict keyEnumerator];
 	for (id key = [e nextObject] ; nil != key ; key = [e nextObject])
 	{
-		id value = [NSPropertyListSerialization propertyListFromData: [[aDict objectForKey:key] dataUsingEncoding:NSUTF8StringEncoding]
-		                                            mutabilityOption: NSPropertyListMutableContainersAndLeaves
-		                                                      format: NULL
-		                                            errorDescription: NULL];
+        id value = [NSPropertyListSerialization propertyListWithData: [[aDict objectForKey:key] dataUsingEncoding:NSUTF8StringEncoding]
+                                                             options:NSPropertyListMutableContainersAndLeaves
+                                                              format:NULL
+                                                               error:NULL];
 		id oldValue = [pragmas objectForKey: key];
 		if (nil == oldValue)
 		{
