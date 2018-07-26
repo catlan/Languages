@@ -82,7 +82,7 @@ static inline id LKObjCAutoreleaseReturnValue(id object)
 }
 
 #define op2(name, func) \
-- (LKObject) name:(id)other\
+- (NSObject *) name:(id)other\
 {\
 	if (nil == other)\
 	{\
@@ -107,7 +107,7 @@ static inline id LKObjCAutoreleaseReturnValue(id object)
 		int intValue = mpz_get_si(b->v);\
 		return LKObjectFromNSInteger(intValue);\
 	}\
-	return LKObjectFromObject(LKObjCAutoreleaseReturnValue(b));\
+	return LKObjCAutoreleaseReturnValue(b);\
 }
 
 #define op(name) op2(name, name)

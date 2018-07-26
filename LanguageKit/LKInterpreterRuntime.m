@@ -120,10 +120,6 @@ static ffi_type *FFITypeForObjCType(const char *typestr)
 			return &ffi_type_void;
 		case '(':
 		case '^':
-			if (strncmp(typestr, @encode(LKObject), strlen(@encode(LKObject))) != 0)
-			{
-				break;
-			}
 		case '@':
 		case '#':
 			return &ffi_type_pointer;
@@ -258,11 +254,9 @@ static void UnboxValue(id value, void *dest, const char *objctype)
 			break;
 		case '(':
 		case '^':
-			if (strncmp(objctype, @encode(LKObject), strlen(@encode(LKObject))) != 0)
-			{
-				break;
-			}
+            break;
 		case '#':
+            *(__unsafe_unretained id*)dest = value; // catlan: hmm?
 		case '@':
 			*(__unsafe_unretained id*)dest = value;
 			return;
@@ -342,10 +336,7 @@ static void RetainValue(id value, const char *objctype)
             break;
         case '(':
         case '^':
-            if (strncmp(objctype, @encode(LKObject), strlen(@encode(LKObject))) != 0)
-            {
-                break;
-            }
+            break;
         case '#':
             break;
         case '@':

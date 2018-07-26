@@ -20,14 +20,14 @@
 #define OBJC_SMALL_OBJECT_SHIFT ((sizeof(id) == 4) ? 1 : 3)
 #endif
 
-static inline LKObject LKObjectFromNSInteger(NSInteger integer)
+static inline NSObject *LKObjectFromNSInteger(NSInteger integer)
 {
-	if((integer << OBJC_SMALL_OBJECT_SHIFT >> OBJC_SMALL_OBJECT_SHIFT) != integer)
+	//if((integer << OBJC_SMALL_OBJECT_SHIFT >> OBJC_SMALL_OBJECT_SHIFT) != integer)
 	{
-		return LKObjectFromObject([BigInt bigIntWithLongLong: (long long)integer]);
+		return [BigInt bigIntWithLongLong: (long long)integer];
 	}
-	else
+	/*else
 	{
-		return LKObjectFromObject((__bridge id)(void*)((integer << OBJC_SMALL_OBJECT_SHIFT) | 1));
-	}
+		return (__bridge id)(void*)((integer << OBJC_SMALL_OBJECT_SHIFT) | 1);
+	}*/
 }

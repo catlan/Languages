@@ -150,13 +150,13 @@ static NSArray* TypesForMethodName(NSString *methodName)
 			}
 		}
 		int offset = sizeof(id) + sizeof(SEL);
-		NSMutableString *ty = [NSMutableString stringWithFormat: @"%s%d@0:%d",
-			@encode(LKObject), sizeof(SEL) + sizeof(id) * (argCount + 2),
+        NSMutableString *ty = [NSMutableString stringWithFormat: @"%s%lu@0:%d",
+			@encode(NSObject *), sizeof(SEL) + sizeof(id) * (argCount + 2),
 			offset];
 		for (int i=0 ; i<argCount ; i++)
 		{
 			offset += sizeof(id);
-			[ty appendFormat: @"%s%d", @encode(LKObject), offset];
+			[ty appendFormat: @"%s%d", @encode(NSObject *), offset];
 		}
 		types = [NSArray arrayWithObject: ty];
 	}
