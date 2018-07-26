@@ -258,7 +258,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		}
 		return nil;
 	};
-	return block;
+	return [block copy];
 }
 @end
 
