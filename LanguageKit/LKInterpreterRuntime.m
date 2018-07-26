@@ -468,6 +468,16 @@ id LKSendMessage(NSString *className, id receiver, NSString *selName,
 			default:
 				methodIMP = objc_msgSendSuper;
 		}
+        
+        // catlan: Ughh, need to make this pretty
+        Class aSuperClass = NSClassFromString(className);
+        struct objc_super mySuper = {
+            .receiver = receiver,
+            .super_class = class_isMetaClass(object_getClass(receiver)) //check if we are an instance or Class
+            ? object_getClass(aSuperClass)                //if we are a Class, we need to send our metaclass (our Class's Class)
+            : aSuperClass                                 //if we are an instance, we need to send our Class (which we already have)
+        };
+        receiver = &mySuper;
 	}
 	else
 	{
