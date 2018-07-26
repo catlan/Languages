@@ -5,11 +5,11 @@
 
 NSString *LKSmalltalkBlockNonLocalReturnException =
     @"LKSmalltalkBlockNonLocalReturnException";
-@interface _NSBlock : NSObject
+@interface NSBlock : NSObject
 -value;
 @end
 
-@implementation _NSBlock (BlockClosure)
+@implementation NSBlock (BlockClosure)
 - (id) whileTrue:(id)anotherBlock
 {
 	id last = nil;
