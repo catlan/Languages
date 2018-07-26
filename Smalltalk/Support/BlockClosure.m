@@ -2,11 +2,11 @@
 
 extern NSString *LKSmalltalkBlockNonLocalReturnException;
 
-@interface _NSBlock : NSObject
+@interface NSBlock : NSObject
 - (id)value;
 @end
 
-@implementation _NSBlock (ExceptionHandling)
+@implementation NSBlock (ExceptionHandling)
 - (id) onException: (NSString*) exceptionName do: (id(^)(id)) handler
 {
 	@try 
