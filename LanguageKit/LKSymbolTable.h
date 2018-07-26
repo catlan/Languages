@@ -1,6 +1,7 @@
 #import <EtoileFoundation/EtoileFoundation.h>
 
 @class LKAST;
+@class LKVariableDecl;
 
 /** 
  * Enumerated type representing the scope of a variable.
@@ -90,7 +91,7 @@ typedef enum
  * Adds a set of symbols in one call.  The symbols have the specified scope and
  * initially have no type assigned to them.
  */
-- (void)addSymbolsNamed: (NSArray*)anArray ofKind: (LKSymbolScope)kind;
+- (void)addSymbolsNamed: (NSArray<LKVariableDecl*>*)anArray ofKind: (LKSymbolScope)kind;
 /**
  * Looks up the symbol for a specified name.
  */

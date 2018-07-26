@@ -125,13 +125,13 @@ ivar_list ::= .
 ivars(L) ::= ivars(T) WORD(W).
 {
 	/* First element is the list of instance variables. */
-	[[T objectAtIndex:0] addObject:W];
+    [[T objectAtIndex:0] addObject:[LKVariableDecl variableDeclWithName:W]];
 	L = T;
 }
 ivars(L) ::= ivars(T) PLUS WORD(W).
 {
 	/* Second element is the list of class variables. */
-	[[T objectAtIndex:1] addObject:W];
+	[[T objectAtIndex:1] addObject:[LKVariableDecl variableDeclWithName:W]];
 	L = T;
 }
 ivars(L) ::= .
@@ -196,7 +196,7 @@ local_list ::= .
 
 locals(L) ::= locals(T) WORD(W).
 {
-	[T addObject:W];
+    [T addObject:[LKVariableDecl variableDeclWithName:W]];
 	L = T;
 }
 locals(L) ::= .
@@ -479,7 +479,7 @@ argument_list ::= .
 
 arguments(L) ::= arguments(T) argument(A).
 {
-	[T addObject:A];
+    [T addObject:[LKVariableDecl variableDeclWithName:A]];
 	L = T;
 }
 arguments(L) ::= .

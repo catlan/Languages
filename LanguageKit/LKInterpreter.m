@@ -668,9 +668,9 @@ static uint8_t logBase2(uint8_t x)
 		NSLog(@"LKInterpreter: class %@ is already defined", cls);
 	}
 
-	FOREACH(ivars, ivar, NSString*)
+	FOREACH(ivars, ivar, LKVariableDecl*)
 	{
-		class_addIvar(cls, [ivar UTF8String], sizeof(id), logBase2(__alignof__(id)), "@");
+		class_addIvar(cls, [[ivar name] UTF8String], sizeof(id), logBase2(__alignof__(id)), "@");
 	}
 
     FOREACH(properties, property, LKProperty*)

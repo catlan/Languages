@@ -1,5 +1,6 @@
 #import "LKSymbolTable.h"
 #import "LKCompiler.h"
+#import "LKVariableDecl.h"
 #import "Runtime/LKObject.h"
 #import <EtoileFoundation/runtime.h>
 
@@ -173,10 +174,20 @@ static NSComparisonResult compareSymbolOrder(LKSymbol *a, LKSymbol *b, void *c)
 - (void)addSymbolsNamed: (NSArray*)anArray ofKind: (LKSymbolScope)kind;
 {
 	NSUInteger i = 0;
-	for (NSString *symbol in anArray)
+	for (id element in anArray)
 	{
+        NSString *name = nil;
+        // Maybe change [LKMessageSend arguments] in future to return LKVariableDecls.
+        if ([element isKindOfClass:[LKVariableDecl class]])
+        {
+            name = [(LKVariableDecl *)element name];
+        }
+        else if ([element isKindOfClass:[NSString class]]) // [LKMessageSend arguments]
+        {
+            name = element;
+        }
 		LKSymbol *sym = [LKSymbol new];
-		[sym setName: symbol];
+		[sym setName: name];
 		[sym setTypeEncoding: NSStringFromRuntimeString(@encode(LKObject))];
 		[sym setScope: kind];
 		[sym setIndex: i++];
