@@ -95,7 +95,11 @@ static ffi_type *FFITypeForObjCType(const char *typestr)
 			if (0 == strncmp(typestr, "{_NSRect", 8))
 			{
 				return &ffi_type_nsrect;
-			} 
+			}
+            else if (0 == strncmp(typestr, "{CGRect", 7))
+            {
+                return &ffi_type_nsrect;
+            }
 			else if (0 == strncmp(typestr, "{_NSRange", 9))
 			{
 				return &ffi_type_nsrange;
@@ -167,7 +171,11 @@ static id BoxValue(void *value, const char *typestr)
 			if (0 == strncmp(typestr, "{_NSRect", 8))
 			{
 				return [NSValue valueWithRect: *(NSRect*)value];
-			} 
+			}
+            else if (0 == strncmp(typestr, "{CGRect", 7))
+            {
+                return [NSValue valueWithRect: *(NSRect*)value];
+            }
 			else if (0 == strncmp(typestr, "{_NSRange", 9))
 			{
 				return [NSValue valueWithRange: *(NSRange*)value];
@@ -268,6 +276,11 @@ static void UnboxValue(id value, void *dest, const char *objctype)
 				*(NSRect*)dest = [value rectValue];
 				break;
 			}
+            else if (0 == strncmp(objctype, "{CGRect", 7))
+            {
+                *(NSRect*)dest = [value rectValue];
+                break;
+            }
 			else if (0 == strncmp(objctype, "{_NSRange", 9))
 			{
 				*(NSRange*)dest = [value rangeValue];
