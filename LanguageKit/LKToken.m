@@ -22,7 +22,7 @@ typedef unichar(*CIMP)(id, SEL, unsigned);
 {
 	self = [super init];
 	NSRange r = [e sourceLocation];
-	str = [NSString stringWithFormat: @"%@%@", s, e];
+	str = [[NSString stringWithFormat: @"%@%@", s, e] retain];
 	range.location = [s sourceLocation].location;
 	range.length = r.location - range.location + r.length;
 	return self;
