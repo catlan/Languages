@@ -1,7 +1,6 @@
 #import "LKEnumReference.h"
 #import "LKCompiler.h"
 #import "LKCompilerErrors.h"
-#import "SourceCodeKit/SCKIntrospection.h"
 
 @interface LKCompiler (PrivateStuff)
 + (id)valueOf: (NSString*)enumName inEnumeration: (NSString*)anEnumeration;
@@ -32,8 +31,6 @@
 		}
 		return NO;
 	}
-	SCKEnumerationValue *ev = val;
-	value = [ev longLongValue];
 	return YES;
 }
 - (void*) compileWithGenerator: (id<LKCodeGenerator>)aGenerator
