@@ -1,5 +1,8 @@
 #import <Foundation/NSValue.h>
 
+#include <libc.h>
+#include <assert.h>
+
 id LKBoxValue(void *bytes, const char *typeEncoding)
 {
 	if (NULL == bytes)
