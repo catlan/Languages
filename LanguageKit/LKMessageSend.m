@@ -261,6 +261,17 @@ static NSSet *ARCBannedMessages;
 {
 	[messages addObject:aMessage];
 }
+
+- (id) target
+{
+    return receiver;
+}
+
+- (NSArray *)messages
+{
+    return messages;
+}
+
 - (BOOL) check
 {
 	[receiver setParent:self];

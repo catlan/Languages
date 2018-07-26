@@ -66,4 +66,13 @@
 + (LKMessageCascade*) messageCascadeWithTarget:(LKAST*) aTarget
                                       messages:(NSMutableArray*) messageArray;
 - (void) addMessage:(LKMessageSend*)aMessage;
+
+/**
+ * Return the target
+ */
+- (id) target;
+
+- (NSArray *)messages;
+
+
 @end
