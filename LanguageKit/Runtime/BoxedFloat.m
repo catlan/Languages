@@ -72,15 +72,27 @@ cmp(isEqual, ==)
 }
 - (id) ifTrue:(id)t ifFalse:(id)f
 {
-	if (value == 0)
-	{
-		return [f value];
-	}
-	else
-	{
-		return [t value];
-	}
-	return nil;
+    if (value == 0)
+    {
+        return [f value];
+    }
+    else
+    {
+        return [t value];
+    }
+    return nil;
+}
+- (id) ifFalse:(id)f ifTrue:(id)t 
+{
+    if (value == 0)
+    {
+        return [f value];
+    }
+    else
+    {
+        return [t value];
+    }
+    return nil;
 }
 - (id) timesRepeat:(id) aBlock
 {

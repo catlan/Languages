@@ -394,6 +394,14 @@ CASTMETHOD(BOOL, boolValue, mpz_get_ui)
 	}
 	return falseBlock();
 }
+- (id)ifFalse: (id(^)(void))falseBlock ifTrue: (id(^)(void))block
+{
+    if ([self boolValue])
+    {
+        return block();
+    }
+    return falseBlock();
+}
 - (id)timesRepeat: (id(^)(void))block
 {
 	void *ret = NULL;
