@@ -8,6 +8,7 @@
          superclass:(NSString*)aClass
               cvars:(NSArray*)aCvarList
               ivars:(NSArray*)anIvarList
+         properties:(NSArray*)aPropertyList
             methods:(NSArray*)aMethodList
 {
 	SUPERINIT;
@@ -17,6 +18,7 @@
     ASSIGN(symbols, [LKSymbolTable symbolTableForClass: classname]);
 	ivars = anIvarList != nil ? [anIvarList mutableCopy] : [NSMutableArray new];
 	cvars = aCvarList != nil ? [aCvarList mutableCopy] : [NSMutableArray new];
+    properties = aPropertyList != nil ? [aPropertyList mutableCopy] : [NSMutableArray new];
 	methods = aMethodList != nil ? [aMethodList mutableCopy] : [NSMutableArray new];
 	return self;
 }
@@ -24,12 +26,14 @@
         superclassNamed:(NSString*)aClass
                   cvars:(NSArray*)aCvarList
                   ivars:(NSArray*)anIvarList
+             properties:(NSArray*)aPropertyList
                 methods:(NSArray*)aMethodList
 {
 	return [[self alloc] initWithName: aName
 	                        superclass: aClass
 	                             cvars: aCvarList
 	                             ivars: anIvarList
+                            properties: aPropertyList
 	                           methods: aMethodList];
 }
 - (BOOL)check
@@ -166,5 +170,9 @@
 - (NSArray*)classVariables
 {
 	return cvars;
+}
+- (NSArray*)properties
+{
+    return properties;
 }
 @end

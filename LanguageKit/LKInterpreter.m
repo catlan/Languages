@@ -37,6 +37,37 @@ static void StoreASTForMethod(NSString *classname, BOOL isClassMethod,
 	                                         selectorName]];
 }
 
+OBJC_EXPORT id objc_retain(id value);
+OBJC_EXPORT id objc_retainAutorelease(id value);
+OBJC_EXPORT id objc_retainAutoreleaseReturnValue(id obj);
+
+id LKPropertyGetter(id self, SEL _cmd)
+{
+    return objc_retainAutoreleaseReturnValue(objc_getAssociatedObject(self, _cmd)); // objc_retainAutoreleaseReturnValue() ?
+}
+
+void LKPropertySetter(id self, SEL _cmd, id newObject)
+{
+    NSString *setterString = NSStringFromSelector(_cmd);
+    if (![setterString hasPrefix:@"set"])
+    {
+        NSLog(@"LKPropertySetter warning property setter should start with 'set', %@", setterString);
+    }
+    NSString *getterString = ({
+        NSString *str = [setterString substringFromIndex:3];
+        NSString *firstCharacter = [[str substringToIndex:1]  lowercaseString];
+        str = [firstCharacter stringByAppendingString:[str substringFromIndex:1]];
+        str = [str substringToIndex:[str length]-1];
+        str;
+    });
+    SEL getterSelector = NSSelectorFromString(getterString);
+    
+    id oldObject =  objc_getAssociatedObject(self, getterSelector);
+    if (oldObject != newObject)
+    {
+        objc_setAssociatedObject(self, getterSelector, newObject, OBJC_ASSOCIATION_RETAIN);
+    }
+}
 
 @interface LKBlockReturnException : NSException
 {
@@ -642,6 +673,26 @@ static uint8_t logBase2(uint8_t x)
 		class_addIvar(cls, [ivar UTF8String], sizeof(id), logBase2(__alignof__(id)), "@");
 	}
 
+    FOREACH(properties, property, LKProperty*)
+    {
+        NSString *propertyName = [property name];
+        NSString *propertyBackingIVar = [@"_" stringByAppendingString:propertyName];
+        //class_addIvar(cls, [ivar UTF8String], sizeof(id), logBase2(__alignof__(id)), "@");
+        objc_property_attribute_t type = { "T", "@\"NSObject\"" };
+        objc_property_attribute_t ownership = { "R", "" }; // C = copy
+        objc_property_attribute_t backingivar  = { "V", [propertyBackingIVar UTF8String] };
+        objc_property_attribute_t attrs[] = { type, ownership, backingivar };
+        class_addProperty(cls, [propertyName UTF8String], attrs, 3);
+        
+        NSString *setterString = [[[propertyName substringToIndex:1] uppercaseString] stringByAppendingString:[propertyName substringFromIndex:1]];
+        setterString = [[@"set" stringByAppendingString:setterString] stringByAppendingString:@":"];
+        
+        
+        class_addMethod(cls, NSSelectorFromString(propertyName), (IMP)LKPropertyGetter, "@@:");
+        class_addMethod(cls, NSSelectorFromString(setterString), (IMP)LKPropertySetter, "v@:@");
+        
+    }
+    
 	FOREACH(methods, method, LKMethod*)
 	{
 		BOOL isClassMethod = [method isKindOfClass: [LKClassMethod class]];

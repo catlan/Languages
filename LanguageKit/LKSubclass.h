@@ -14,6 +14,8 @@
   NSMutableArray * cvars;
   /** Array of instance variables defined for this class. */
   NSMutableArray * ivars;
+  /** Array of properties defined for this class. */
+  NSMutableArray * properties;
 }
 /**
  * Return a new Subclass with the specified name, superclass and list of
@@ -25,6 +27,7 @@
         superclassNamed:(NSString*)aClass
                   cvars:(NSArray*)anIvarList
                   ivars:(NSArray*)anotherIvarList
+             properties:(NSArray*)aPropertyList
                 methods:(NSArray*)aMethodList;
 /**
  * Returns the class name for the represented class.
@@ -50,4 +53,8 @@
  * Returns an array of all of the names of class variables.
  */
 - (NSArray*)classVariables;
+/**
+ * Returns an array of all of the names of properties.
+ */
+- (NSArray*)properties;
 @end
