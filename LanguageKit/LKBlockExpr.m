@@ -74,10 +74,10 @@
 	NSUInteger argCount = [args count];
 	// FIXME: We should be able to generate other block signatures
 	NSMutableString *sig =
-		[NSMutableString stringWithFormat: @"%s%d@?", @encode(LKObject), sizeof(id) * (argCount+1)];
+        [NSMutableString stringWithFormat: @"%s%lu@?", @encode(NSObject *), sizeof(id) * (argCount+1)];
 	for (NSUInteger i=0 ; i<argCount ; i++)
 	{
-		[sig appendFormat: @"%d%s", sizeof(id)*i, @encode(LKObject)];
+        [sig appendFormat: @"%lu%s", sizeof(id)*i, @encode(NSObject *)];
 	}
 	[aGenerator beginBlockWithArgs: args
 	                        locals: [symbols locals]
