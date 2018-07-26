@@ -539,8 +539,17 @@ id LKSendMessage(NSString *className, id receiver, NSString *selName,
 	}
 	
 	char msgSendRet[[sig methodReturnLength]];
-	ffi_call(&cif, methodIMP, &msgSendRet, unboxedArguments);
-	
+    if (methodIMP == objc_msgSend_stret )
+    {
+        // http://www.cocoabuilder.com/archive/cocoa/200146-returning-values-from-objc-msgsend-etc.html
+        methodIMP = objc_msgSend;
+        ffi_call(&cif, methodIMP, &msgSendRet, unboxedArguments);
+    }
+    else
+    {
+        ffi_call(&cif, methodIMP, &msgSendRet, unboxedArguments);
+    }
+    
 	id result = BoxValue(msgSendRet, [sig methodReturnType]);
 	if (autoreleaseResult)
 	{
