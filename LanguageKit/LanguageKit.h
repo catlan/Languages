@@ -23,3 +23,5 @@
 #import <LanguageKit/LKSymbolRef.h>
 #import <LanguageKit/LKSymbolTable.h>
 #import <LanguageKit/LKVariableDecl.h>
+#import <LanguageKit/LKProperty.h>
+
