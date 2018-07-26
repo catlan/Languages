@@ -88,7 +88,14 @@ typedef unichar(*CIMP)(id, SEL, unsigned);
 	NSUInteger end = secondRange.location + secondRange.length;
 	if (end < range.location + range.length)
 	{
-		return [super stringByAppendingString: str];
+        if (str)
+        {
+            return [super stringByAppendingString: str];
+        }
+        else
+        {
+            return [super stringByAppendingString: @"<null>"];
+        }
 	}
 	return [[LKCompositeToken alloc] initWithStart: self end: str];
 }
