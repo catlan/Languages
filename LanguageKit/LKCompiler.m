@@ -2,7 +2,6 @@
 #include <EtoileFoundation/glibc_hack_unistd.h>
 #include <sys/resource.h>
 #include <objc/runtime.h>
-#include <objc/hooks.h>
 
 #import <EtoileFoundation/EtoileFoundation.h>
 #import "LKAST.h"
@@ -228,7 +227,8 @@ int DEBUG_DUMP_MODULES = 0;
 	if (nil == loaders)
 	{
 		loaders = [NSMutableArray new];
-		_objc_lookup_class = lookup_class;
+		//_objc_lookup_class = lookup_class;
+        NSLog(@"WARNING addClassLoader isn't implemented. _objc_lookup_class missing.");
 	}
 	[loaders addObject: aBlock];
 }
