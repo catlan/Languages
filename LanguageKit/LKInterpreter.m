@@ -111,7 +111,10 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 }
 - (void) setValue: (id)value forSymbol: (NSString*)symbol
 {
-	[objects setObject: value forKey: symbol];
+    if (value)
+    {
+        [objects setObject: value forKey: symbol];
+    }
 }
 - (id) valueForSymbol: (NSString*)symbol
 {
