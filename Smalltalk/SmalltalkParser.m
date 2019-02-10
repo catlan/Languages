@@ -54,7 +54,7 @@ static void freeParser(void *memory)
 
 - (LKAST*) parse:(NSString*)s
 {
-	unsigned int sLength = [s length];
+	NSUInteger sLength = [s length];
 	/* Cache some IMPs of methods we call a lot */
 	SEL charSel = @selector(characterAtIndex:);
 	SEL substrSel = @selector(tokenWithRange:inSource:);
