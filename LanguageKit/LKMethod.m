@@ -153,7 +153,6 @@ static NSSet *ARCBannedMessages;
                  forSelectorNamed: (NSString*)sel
                      typeEncoding: (NSString*)typeEncoding
 {
-	NSArray *localNames = [symbols locals];
 	[aGenerator beginInstanceMethod: sel
 	               withTypeEncoding: typeEncoding
 	                      arguments: [symbols arguments]
