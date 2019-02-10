@@ -14,6 +14,21 @@
 	}
 	return [NSArray arrayWithObjects:new count:i];
 }
+
+- (NSArray*) flatMap:(id)aClosure
+{
+    NSMutableArray *array = [NSMutableArray array];
+    FOREACHI(self, obj)
+    {
+        NSArray *returnedArray = [aClosure value:obj];
+        if ([returnedArray count])
+        {
+            [array addObjectsFromArray:returnedArray];
+        }
+    }
+    return [array copy];
+}
+
 - (void) foreach:(id)aClosure
 {
 	FOREACHI(self, obj)
