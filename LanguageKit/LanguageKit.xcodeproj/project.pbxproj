@@ -406,7 +406,7 @@
 		D10F9F8D20E2B61100ECCEC3 /* SmalltalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmalltalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10F9F8F20E2B61100ECCEC3 /* SmalltalkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmalltalkTests.m; sourceTree = "<group>"; };
 		D10F9F9120E2B61100ECCEC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SmalltalkTests.st; path = ../Smalltalk/Tests/TestArrayLiterals/SmalltalkTests.st; sourceTree = "<group>"; };
+		D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SmalltalkTests.st; sourceTree = "<group>"; };
 		D12C05991F263219004E0FA6 /* libffi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.dylib; path = ../../../../../../usr/local/Cellar/libffi/3.2.1/lib/libffi.dylib; sourceTree = "<group>"; };
 		D15505771F276E9900E5ACFF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D15505791F276FBD00E5ACFF /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
