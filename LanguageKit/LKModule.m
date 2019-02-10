@@ -65,7 +65,7 @@ static NSArray* TypesForMethodName(NSString *methodName)
 	
 	unsigned int numClasses = objc_getClassList(NULL, 0);
 	Class *classes = NULL;
-	if (numClasses > 0 )
+	if (numClasses > 0)
 	{
 		classes = (__unsafe_unretained Class*)malloc(sizeof(Class) * numClasses);
 		numClasses = objc_getClassList(classes, numClasses);
@@ -102,7 +102,7 @@ static NSArray* TypesForMethodName(NSString *methodName)
 		}
 	}
 	
-	if (numClasses > 0 && NULL != classes)
+	if (classes)
 	{
 		free(classes);
 	}
