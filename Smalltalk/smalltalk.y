@@ -103,12 +103,13 @@ pragma_value(V) ::= WORD(W).   { V = W; }
 pragma_value(V) ::= STRING(S). { V = S; }
 pragma_value(V) ::= NUMBER(N). { V = N; }
 
-subclass(S) ::= WORD(C) SUBCLASS COLON WORD(N) LSQBRACK ivar_list(L) method_list(M) RSQBRACK.
+subclass(S) ::= WORD(C) SUBCLASS COLON WORD(N) LSQBRACK ivar_list(L) property_list(P) method_list(M) RSQBRACK.
 {
 	S = [LKSubclass subclassWithName:N
 	                 superclassNamed:C
 	                           cvars:[L objectAtIndex:1]
 	                           ivars:[L objectAtIndex:0]
+                          properties:P
 	                         methods:M];
 }
 
@@ -149,6 +150,24 @@ ivars(L) ::= .
 	                               [NSMutableArray array],
 	                               nil];
 }
+
+
+property_list(L) ::= BAR BAR  properties(T) BAR BAR.
+{
+    L = T;
+}
+property_list ::= .
+
+properties(L) ::= properties(T) WORD(W).
+{
+    [T addObject:[LKProperty propertyDeclWithName:W]];
+    L = T;
+}
+properties(L) ::= .
+{
+    L = [NSMutableArray array];
+}
+
 
 method_list(L) ::= method_list(T) method(M).
 {
