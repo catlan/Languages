@@ -6,7 +6,9 @@
 #import "LKInterpreter.h"
 #import "LKInterpreterRuntime.h"
 #import <EtoileFoundation/runtime.h>
+
 #include <math.h>
+#include <dlfcn.h>
 
 NSString *LKInterpreterException = @"LKInterpreterException";
 
@@ -779,6 +781,12 @@ static uint8_t logBase2(uint8_t x)
 @implementation LKSymbolRef (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
-	return [Symbol SymbolForString: symbol];
+    id s = nil;//[Symbol SymbolForString: symbol];
+    if (nil == s)
+    {
+        void ** dataPtr = dlsym(RTLD_DEFAULT, [symbol UTF8String]);
+        s = (__bridge NSString *)(dataPtr ? *dataPtr : nil);
+    }
+    return s;
 }
 @end
