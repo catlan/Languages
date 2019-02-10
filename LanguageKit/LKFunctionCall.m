@@ -10,7 +10,7 @@
 @synthesize functionName, typeEncoding, arguments;
 - (BOOL)check
 {
-	ASSIGN(typeEncoding, [LKCompiler typesForFunction: functionName]);
+	typeEncoding = [LKCompiler typesForFunction: functionName];
 	if (nil == typeEncoding)
 	{
         NSDictionary *errorDetails = nil;

@@ -48,19 +48,19 @@ static NSSet *ARCBannedMessages;
 }
 - (void) setTarget:(id)anObject
 {
-	ASSIGN(target, anObject);
+	target = anObject;
 }
 
 - (void) addSelectorComponent:(NSString*)aSelector
 {
 	if(selector == nil)
 	{
-		ASSIGN(selector, aSelector);
+		selector = aSelector;
 	}
 	else
 	{
 		NSString * sel = [selector stringByAppendingString:aSelector];
-		ASSIGN(selector, sel);
+		selector = sel;
 	}
 }
 
@@ -109,7 +109,7 @@ static NSSet *ARCBannedMessages;
 
 	LKModule *module = [self module];
 
-	ASSIGN(type, [module typesForMethod: selector]);
+	type = [module typesForMethod: selector];
 
 	for (LKAST *arg in arguments)
 	{
@@ -221,7 +221,7 @@ static NSSet *ARCBannedMessages;
 	if (nil != target)
 	{
 		id tmp = [aVisitor visitASTNode:target];
-		ASSIGN(target, tmp);
+		target = tmp;
 		[target visitWithVisitor:aVisitor];
 	}
 	[self visitArray: arguments withVisitor: aVisitor];
@@ -255,7 +255,7 @@ static NSSet *ARCBannedMessages;
 - (void) visitWithVisitor:(id<LKASTVisitor>)aVisitor
 {
 	id tmp = [aVisitor visitASTNode:receiver];
-	ASSIGN(receiver, tmp);
+	receiver = tmp;
 	[receiver visitWithVisitor:aVisitor];
 	[self visitArray: messages withVisitor: aVisitor];
 }

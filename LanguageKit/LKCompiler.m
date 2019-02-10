@@ -739,7 +739,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 }
 + (void)setDefaultDelegate: (id<LKCompilerDelegate>)aDelegate
 {
-	ASSIGN(DefaultDelegate, aDelegate);
+	DefaultDelegate = aDelegate;
 }
 - (void)setDelegate: (id<LKCompilerDelegate>)aDelegate
 {

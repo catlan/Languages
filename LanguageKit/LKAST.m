@@ -50,7 +50,7 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 }
 - (void) inheritSymbolTable:(LKSymbolTable*)aSymbolTable
 {
-	ASSIGN(symbols, aSymbolTable);
+	symbols = aSymbolTable;
 }
 - (LKAST*) parent;
 {

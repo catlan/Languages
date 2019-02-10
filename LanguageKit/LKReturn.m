@@ -29,7 +29,7 @@
 - (void) visitWithVisitor:(id<LKASTVisitor>)aVisitor
 {
 	id tmp = [aVisitor visitASTNode:ret];
-	ASSIGN(ret, tmp);
+    ret = tmp;
 	[ret visitWithVisitor:aVisitor];
 }
 - (LKAST*) expression

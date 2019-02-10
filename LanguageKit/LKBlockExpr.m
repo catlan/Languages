@@ -29,7 +29,7 @@
 }
 - (void) setStatements: (NSMutableArray*)anArray
 {
-	ASSIGN(statements, anArray);
+	statements = anArray;
 }
 - (BOOL)check
 {

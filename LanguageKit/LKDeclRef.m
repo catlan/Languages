@@ -21,7 +21,7 @@
 	// If we've already done this check, reset the symbol and do it again
 	if (![symbol isKindOfClass: [NSString class]])
 	{
-		ASSIGN(symbol, [symbol name]);
+		symbol = [symbol name];
 	}
 	if ([symbol characterAtIndex: 0] == '#') { return YES; }
 
@@ -43,7 +43,7 @@
 	}
 	else
 	{
-		ASSIGN(symbol, s);
+		symbol = s;
 	}
 	return YES;
 }

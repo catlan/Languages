@@ -45,11 +45,11 @@
 - (void) visitWithVisitor:(id<LKASTVisitor>)aVisitor
 {
 	id tmp = [aVisitor visitASTNode:lhs];
-	ASSIGN(lhs, tmp);
+	lhs = tmp;
 	[rhs visitWithVisitor:aVisitor];
 
 	tmp = [aVisitor visitASTNode:rhs];
-	ASSIGN(rhs, tmp);
+	rhs = tmp;
 	[rhs visitWithVisitor:aVisitor];
 }
 @end

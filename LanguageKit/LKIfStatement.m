@@ -76,7 +76,7 @@ static void *emitBlock(id<LKCodeGenerator> aGenerator,
 - (void) visitWithVisitor:(id<LKASTVisitor>)aVisitor
 {
 	id tmp = [aVisitor visitASTNode:condition];
-	ASSIGN(condition, tmp);
+	condition = tmp;
 	[condition visitWithVisitor:aVisitor];
 	[self visitArray:thenStatements withVisitor:aVisitor];
 	[self visitArray:elseStatements withVisitor:aVisitor];

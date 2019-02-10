@@ -41,7 +41,7 @@
 	BOOL success = YES;
 	LKSymbolTable* superSymTable = [LKSymbolTable lookupTableForClass: superclass];
     // catlan: need to figure out where symbols gets set to nil between -init and -check.
-	ASSIGN(symbols, [LKSymbolTable symbolTableForClass: classname]); 
+	symbols = [LKSymbolTable symbolTableForClass: classname]; 
 	if (Nil == superSymTable)
 	{
         NSDictionary *errorDetails = nil;
