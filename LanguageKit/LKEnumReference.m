@@ -20,10 +20,12 @@
 	id val = [LKCompiler valueOf: enumValue inEnumeration: enumName];
 	if (val == nil || [val isKindOfClass: [NSArray class]])
 	{
-		NSDictionary *errorDetails = D(
-			[NSString stringWithFormat: @"Value %@ not found in enumeration %@", enumValue, enumName],
-				kLKHumanReadableDescription,
-			self, kLKASTNode);
+        NSDictionary *errorDetails = nil;
+        errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSString stringWithFormat: @"Value %@ not found in enumeration %@", enumValue, enumName],
+                        kLKHumanReadableDescription,
+                        self, kLKASTNode,
+                        nil];
 		if ([LKCompiler reportError: LKEnumError
 		                    details: errorDetails])
 		{

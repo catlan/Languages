@@ -25,10 +25,12 @@
 	BOOL check = [target check] && [expr check];
 	if ( [target isKindOfClass: [LKBuiltinSymbol class]] )
 	{
-		NSDictionary *errorDetails = D(
-			[NSString stringWithFormat: @"Trying to assign to a builtin symbol: %@",
-				target], kLKHumanReadableDescription,
-			self, kLKASTNode);
+        NSDictionary *errorDetails = nil;
+        errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSString stringWithFormat: @"Trying to assign to a builtin symbol: %@",
+                         target], kLKHumanReadableDescription,
+                        self, kLKASTNode,
+                        nil];
 		if ([LKCompiler reportError: LKInvalidSelectorError
 		                    details: errorDetails])
 		{

@@ -91,10 +91,12 @@ static NSSet *ARCBannedMessages;
 	[(LKAST*)target setParent:self];
 	if ([ARCBannedMessages containsObject: selector])
 	{
-		NSDictionary *errorDetails = D(
-			[NSString stringWithFormat: @"%@ may not be used in LanguageKit",
-				selector], kLKHumanReadableDescription,
-			self, kLKASTNode);
+        NSDictionary *errorDetails = nil;
+        errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSString stringWithFormat: @"%@ may not be used in LanguageKit",
+                         selector], kLKHumanReadableDescription,
+                        self, kLKASTNode,
+                        nil];
 		if ([LKCompiler reportError: LKInvalidSelectorError
 		                    details: errorDetails])
 		{

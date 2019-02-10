@@ -44,10 +44,13 @@
 	ASSIGN(symbols, [LKSymbolTable symbolTableForClass: classname]); 
 	if (Nil == superSymTable)
 	{
-	  NSDictionary *errorDetails = D([NSString stringWithFormat:
-			@"Attempting to subclass un unknown superclasss: %@", superclass],
-			kLKHumanReadableDescription,
-			self, kLKASTNode);
+        NSDictionary *errorDetails = nil;
+        errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSString stringWithFormat:
+                         @"Attempting to subclass un unknown superclasss: %@", superclass],
+                        kLKHumanReadableDescription,
+                        self, kLKASTNode,
+                        nil];
 	  if ([LKCompiler reportError: LKUndefinedSuperclassError
 							details: errorDetails] == NO)
 	  {
@@ -58,10 +61,13 @@
 	//Construct symbol table.
 	if (Nil != NSClassFromString(classname))
 	{
-		NSDictionary *errorDetails = D([NSString stringWithFormat:
-			@"Attempting to create class which already exists: %@", classname],
-			kLKHumanReadableDescription,
-			self, kLKASTNode);
+        NSDictionary *errorDetails = nil;
+        errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSString stringWithFormat:
+                         @"Attempting to create class which already exists: %@", classname],
+                        kLKHumanReadableDescription,
+                        self, kLKASTNode,
+                        nil];
 		success &= [LKCompiler reportWarning: LKRedefinedClassWarning
 		                             details: errorDetails];
 	}

@@ -82,7 +82,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 {
 	@throw [LKBlockReturnException exceptionWithName: LKSmalltalkBlockNonLocalReturnException
 	                                    reason: @""
-	                                  userInfo: D(returnValue, @"returnValue", nil)];
+	                                  userInfo: [NSDictionary dictionaryWithObjectsAndKeys:returnValue, @"returnValue", nil]];
 }
 - (id)returnValue
 {

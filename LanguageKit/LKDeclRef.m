@@ -28,10 +28,12 @@
 	LKSymbol *s = [symbols symbolForName: symbol];
 	if (nil == s)
 	{
-		NSDictionary *errorDetails = D(
-			[NSString stringWithFormat: @"Unrecognised symbol: %@",
-				symbol], kLKHumanReadableDescription,
-			self, kLKASTNode);
+        NSDictionary *errorDetails = nil;
+        errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSString stringWithFormat: @"Unrecognised symbol: %@",
+                         symbol], kLKHumanReadableDescription,
+                        self, kLKASTNode,
+                        nil];
 		if ([LKCompiler reportError: LKUndefinedSymbolError
 		                    details: errorDetails])
 		{

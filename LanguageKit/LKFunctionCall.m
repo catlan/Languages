@@ -13,10 +13,12 @@
 	ASSIGN(typeEncoding, [LKCompiler typesForFunction: functionName]);
 	if (nil == typeEncoding)
 	{
-		NSDictionary *errorDetails = D(
-			[NSString stringWithFormat: @"Can not determine type for %@", functionName],
-				kLKHumanReadableDescription,
-			self, kLKASTNode);
+        NSDictionary *errorDetails = nil;
+        errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                        [NSString stringWithFormat: @"Can not determine type for %@", functionName],
+                        kLKHumanReadableDescription,
+                        self, kLKASTNode,
+                        nil];
 		if ([LKCompiler reportError: LKUnknownTypeError
 		                    details: errorDetails])
 		{

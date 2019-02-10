@@ -281,13 +281,15 @@ static void emitParseError(NSException *localException)
 	id lineNumber = [info objectForKey: @"lineNumber"];
 	id character = [info objectForKey: @"character"];
 	id line = [info objectForKey: @"line"];
-	NSDictionary *parseErrorInfo = D(
-			lineNumber, kLKLineNumber,
-			character, kLKCharacterNumber,
-			line, kLKSourceLine,
-			[NSString stringWithFormat: @"Parse error on line %@.  "
-				"Unexpected token at character %@ while parsing:\n%@", 
-				lineNumber, character, line], kLKHumanReadableDescription);
+    NSDictionary *parseErrorInfo = nil;
+    parseErrorInfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                      lineNumber, kLKLineNumber,
+                      character, kLKCharacterNumber,
+                      line, kLKSourceLine,
+                      [NSString stringWithFormat: @"Parse error on line %@.  "
+                       "Unexpected token at character %@ while parsing:\n%@",
+                       lineNumber, character, line], kLKHumanReadableDescription,
+                      nil];
 	[LKCompiler reportError: LKParserError
 	                details: parseErrorInfo];
 }

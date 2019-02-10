@@ -195,13 +195,12 @@ static NSArray* TypesForMethodName(NSString *methodName)
 	{
 		if (![LKCompiler loadHeader: header])
 		{
-			NSDictionary *errorDetails = D(
-				[NSString stringWithFormat: @"Unable to load header: %@", header],
-				kLKHumanReadableDescription,
-				header,
-				kLKHeaderName,
-				self,
-				kLKASTNode);
+            NSDictionary *errorDetails = nil;
+            errorDetails = [NSDictionary dictionaryWithObjectsAndKeys:
+                            [NSString stringWithFormat: @"Unable to load header: %@", header], kLKHumanReadableDescription,
+                            header, kLKHeaderName,
+                            self, kLKASTNode,
+                            nil];
 			success &= [LKCompiler reportWarning: LKMissingHeaderWarning
 			                             details: errorDetails];
 		}

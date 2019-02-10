@@ -218,10 +218,12 @@ static void freeParser(void *memory)
 		{
 			errorLine = [errorLine substringToIndex:lineEnd.location];
 		}
-		NSDictionary *userinfo = D(
-		                          [NSNumber numberWithInt:line], @"lineNumber",
-		                          [NSNumber numberWithInt:(i-lineStart)], @"character",
-		                          errorLine, @"line");
+        NSDictionary *userinfo = nil;
+        userinfo = [NSDictionary dictionaryWithObjectsAndKeys:
+                [NSNumber numberWithInt:line], @"lineNumber",
+                [NSNumber numberWithInt:(i-lineStart)], @"character",
+                errorLine, @"line",
+                nil];
 		[[NSException exceptionWithName:@"ParseError"
 		                         reason:@"Unexpected token"
 		                       userInfo:userinfo] raise];
