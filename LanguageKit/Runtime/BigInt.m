@@ -346,7 +346,7 @@ CMP(isEqual, ==)
 	return (returnType) gmpFunction(v);\
 }
 
-CASTMETHOD(signed char, charValue, mpz_get_si)
+CASTMETHOD(char, charValue, mpz_get_si)
 CASTMETHOD(unsigned char, unsignedCharValue, mpz_get_ui)
 CASTMETHOD(short int, shortValue, mpz_get_si)
 CASTMETHOD(unsigned short int, unsignedShortValue, mpz_get_ui)
