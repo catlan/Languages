@@ -123,6 +123,9 @@
 		D10F9FA220E2BBF800ECCEC3 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
 		D10F9FA420E37C5F00ECCEC3 /* SmalltalkTests.st in Resources */ = {isa = PBXBuildFile; fileRef = D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */; };
 		D12C059A1F26321A004E0FA6 /* libffi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D12C05991F263219004E0FA6 /* libffi.dylib */; };
+		D141D6D522106E9500D41FE1 /* ETTranscript.h in Headers */ = {isa = PBXBuildFile; fileRef = D141D6D422106E9500D41FE1 /* ETTranscript.h */; };
+		D141D6D722106EB700D41FE1 /* ETTranscript.m in Sources */ = {isa = PBXBuildFile; fileRef = D141D6D622106EB700D41FE1 /* ETTranscript.m */; };
+		D141D6D9221073A000D41FE1 /* NSBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = D141D6D8221073A000D41FE1 /* NSBlocks.m */; };
 		D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D2A0D51F65329600B3814A /* LKProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2A0D61F65329600B3814A /* LKProperty.m */; };
 /* End PBXBuildFile section */
@@ -408,6 +411,9 @@
 		D10F9F9120E2B61100ECCEC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SmalltalkTests.st; sourceTree = "<group>"; };
 		D12C05991F263219004E0FA6 /* libffi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.dylib; path = ../../../../../../usr/local/Cellar/libffi/3.2.1/lib/libffi.dylib; sourceTree = "<group>"; };
+		D141D6D422106E9500D41FE1 /* ETTranscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETTranscript.h; sourceTree = "<group>"; };
+		D141D6D622106EB700D41FE1 /* ETTranscript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETTranscript.m; sourceTree = "<group>"; };
+		D141D6D8221073A000D41FE1 /* NSBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBlocks.m; sourceTree = "<group>"; };
 		D15505771F276E9900E5ACFF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D15505791F276FBD00E5ACFF /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
 		D1D2A0D51F65329600B3814A /* LKProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKProperty.h; sourceTree = "<group>"; };
@@ -419,7 +425,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66AC4526108ADD1000047C26 /* EtoileFoundation.framework in Frameworks */,
 				6697AFE81048D02A00456911 /* LanguageKit.framework in Frameworks */,
 				6697AFEA1048D02B00456911 /* LanguageKitRuntime.framework in Frameworks */,
 				6697AFEB1048D02B00456911 /* SmalltalkSupport.framework in Frameworks */,
@@ -433,7 +438,6 @@
 			files = (
 				D12C059A1F26321A004E0FA6 /* libffi.dylib in Frameworks */,
 				663A0E76108D621200B921B0 /* Foundation.framework in Frameworks */,
-				66AC4530108ADD2800047C26 /* EtoileFoundation.framework in Frameworks */,
 				668C495910915D63002A20A3 /* LanguageKitRuntime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,7 +448,6 @@
 			files = (
 				663A0E77108D621600B921B0 /* Foundation.framework in Frameworks */,
 				D100F9A91F26363A0048FDFA /* libgmp.dylib in Frameworks */,
-				66AC4533108ADD3200047C26 /* EtoileFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +457,6 @@
 			files = (
 				663A0E9E108D625800B921B0 /* Cocoa.framework in Frameworks */,
 				663A0E83108D622400B921B0 /* Foundation.framework in Frameworks */,
-				66AC4544108ADD5900047C26 /* EtoileFoundation.framework in Frameworks */,
 				D100F9AA1F26363B0048FDFA /* libgmp.dylib in Frameworks */,
 				794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */,
 			);
@@ -466,7 +468,6 @@
 			files = (
 				D10F234020DFB66A002E017C /* Smalltalk.framework in Frameworks */,
 				D10F231220DFA8C4002E017C /* LanguageKit.framework in Frameworks */,
-				D10F231320DFA8C4002E017C /* EtoileFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +476,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D10F232620DFADA4002E017C /* LanguageKit.framework in Frameworks */,
-				D10F232720DFADA4002E017C /* EtoileFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +614,9 @@
 				6697B0011048D16A00456911 /* NSString+casting.m */,
 				6697B0021048D16A00456911 /* NSString+comma.m */,
 				6697B0031048D16A00456911 /* NSValue+structs.m */,
+				D141D6D422106E9500D41FE1 /* ETTranscript.h */,
+				D141D6D622106EB700D41FE1 /* ETTranscript.m */,
+				D141D6D8221073A000D41FE1 /* NSBlocks.m */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6697B0061048D16A00456911 /* NSArray+map.h in Headers */,
+				D141D6D522106E9500D41FE1 /* ETTranscript.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1125,6 +1129,8 @@
 				6697B0071048D16A00456911 /* NSArray+map.m in Sources */,
 				6697B0081048D16A00456911 /* NSObject+log.m in Sources */,
 				6697B0091048D16A00456911 /* NSString+casting.m in Sources */,
+				D141D6D722106EB700D41FE1 /* ETTranscript.m in Sources */,
+				D141D6D9221073A000D41FE1 /* NSBlocks.m in Sources */,
 				6697B00A1048D16A00456911 /* NSString+comma.m in Sources */,
 				6697B00B1048D16A00456911 /* NSValue+structs.m in Sources */,
 				66041ACE1094FE0400513AFD /* NSObject+yourself.m in Sources */,
