@@ -159,7 +159,7 @@ static NSArray* TypesForMethodName(NSString *methodName)
 	NSString *type = [typeOverrides objectForKey: methodName];
 	if (nil != type)
 	{
-		return A(type);
+		return [NSArray arrayWithObject:type];
 	}
 	NSArray *types = TypesForMethodName(methodName);
 	

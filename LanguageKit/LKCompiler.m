@@ -469,7 +469,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 			}
 		}
 		// Check system include paths
-		dirs = A(@"/usr/local/lib", @"/usr/lib");
+		dirs = [NSArray arrayWithObjects:@"/usr/local/lib", @"/usr/lib", nil];
 		for (NSString *dir in dirs)
 		{
 			if (loadLibraryInPath(fm, aLibrary, dir))
@@ -515,7 +515,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 			}
 		}
 		// Check system include paths
-		dirs = A(@"/usr/local/include", @"/usr/include");
+		dirs = [NSArray arrayWithObjects:@"/usr/local/include", @"/usr/include", nil];
 		for (NSString *dir in dirs)
 		{
 			NSString *f = [dir stringByAppendingPathComponent: aHeader];
