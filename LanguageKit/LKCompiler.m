@@ -205,8 +205,25 @@ int DEBUG_DUMP_MODULES = 0;
 
 	compilersByExtension = [NSMutableDictionary new];
 	compilersByLanguage = [NSMutableDictionary new];
-	NSArray *classes = [self directSubclasses];
-	FOREACH(classes, nextClass, Class)
+    
+    NSMutableArray *subclasses = [NSMutableArray arrayWithCapacity: 30];
+    int numberOfClasses = objc_getClassList(NULL, 0);
+    
+    if (numberOfClasses > 0)
+    {
+        Class *allClasses = (Class*)malloc(sizeof(Class) * numberOfClasses);
+        numberOfClasses = objc_getClassList(allClasses, numberOfClasses);
+        for (int i = 0; i < numberOfClasses; i++)
+        {
+            if (class_getSuperclass(allClasses[i]) == self)
+            {
+                [subclasses addObject: allClasses[i]];
+            }
+        }
+        free(allClasses);
+    }
+    
+	for (Class nextClass in subclasses)
 	{
 		[compilersByLanguage setObject:nextClass
 		                        forKey:[nextClass languageName]];

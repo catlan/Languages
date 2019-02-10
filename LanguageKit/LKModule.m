@@ -82,7 +82,24 @@ static NSArray* TypesForMethodName(NSString *methodName)
 
 			NSString *name = NSStringFromRuntimeString(sel_getName(method_getName(m)));
 			NSString *type = NSStringFromRuntimeString(method_getTypeEncoding(m));
-			[Types addObject: type forKey: name];
+            
+            id old = [Types objectForKey: name];
+            if (nil == old)
+            {
+                [Types setObject: type forKey: name];
+            }
+            else
+            {
+                if ([old isKindOfClass: [NSMutableArray class]])
+                {
+                    [(NSMutableArray*)old addObject: type];
+                }
+                else
+                {
+                    [Types setObject: [NSMutableArray arrayWithObjects: old, type, nil]
+                              forKey: name];
+                }
+            }
 		}
 	}
 	
