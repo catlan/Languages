@@ -1,4 +1,4 @@
-#import <EtoileFoundation/EtoileFoundation.h>
+#import <Foundation/Foundation.h>
 
 @class LKAST;
 @protocol LKParser;
@@ -14,5 +14,5 @@
  * Used by the Lemon implementation to feed the generated AST back so the
  * Parser can return it.
  */
-- (void) setAST:(LKAST*)ast;
+@property (strong) LKAST *AST;
 @end

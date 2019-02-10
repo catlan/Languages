@@ -10,6 +10,7 @@
 typedef unichar(*CIMP)(id, SEL, unsigned);
 
 @implementation SmalltalkParser
+@synthesize AST = ast;
 /* From Lemon: */
 void *SmalltalkParseAlloc(void *(*mallocProc)(size_t));
 void SmalltalkParse(void *yyp, int yymajor, id yyminor, SmalltalkParser* p);
@@ -253,8 +254,4 @@ static void freeParser(void *memory)
 	return nil;
 }
 
-- (void) setAST:(LKAST*)anAST
-{
-	ASSIGN(ast, anAST);
-}
 @end
