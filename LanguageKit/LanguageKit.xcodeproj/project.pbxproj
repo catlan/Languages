@@ -1062,6 +1062,7 @@
 		6697AF811048CE7100456911 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				DSTROOT = /;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				SDKROOT = macosx;
@@ -1071,6 +1072,7 @@
 		6697AF821048CE7100456911 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				DSTROOT = /;
 				SDKROOT = macosx;
 			};
@@ -1079,7 +1081,6 @@
 		6697AFAE1048CF6200456911 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
@@ -1091,7 +1092,6 @@
 		6697AFAF1048CF6200456911 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				INSTALL_PATH = /usr/local/bin;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path";
@@ -1103,11 +1103,15 @@
 		6697AFB71048CF6C00456911 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/usr/local/Cellar/gmp/6.1.2/include,
+					"/usr/local/opt/libffi/lib/libffi-3.2.1/include/",
+				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1120,18 +1124,21 @@
 					"-Wno-unused-value",
 				);
 				PRODUCT_NAME = LanguageKit;
-				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include /usr/local/opt/libffi/lib/libffi-3.2.1/include/";
 			};
 			name = Debug;
 		};
 		6697AFB81048CF6C00456911 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/usr/local/Cellar/gmp/6.1.2/include,
+					"/usr/local/opt/libffi/lib/libffi-3.2.1/include/",
+				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1144,46 +1151,48 @@
 					"-Wno-unused-value",
 				);
 				PRODUCT_NAME = LanguageKit;
-				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include /usr/local/opt/libffi/lib/libffi-3.2.1/include/";
 			};
 			name = Release;
 		};
 		6697AFCC1048CF9200456911 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/usr/local/Cellar/gmp/6.1.2/include,
+				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/gmp/6.1.2/lib,
 				);
 				PRODUCT_NAME = LanguageKitRuntime;
-				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include";
 			};
 			name = Debug;
 		};
 		6697AFCD1048CF9200456911 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				HEADER_SEARCH_PATHS = (
+					/opt/local/include,
+					/usr/local/Cellar/gmp/6.1.2/include,
+				);
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/Cellar/gmp/6.1.2/lib,
 				);
 				PRODUCT_NAME = LanguageKitRuntime;
-				USER_HEADER_SEARCH_PATHS = "/opt/local/include /usr/local/Cellar/gmp/6.1.2/include";
 			};
 			name = Release;
 		};
 		6697AFD81048CFB200456911 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1197,7 +1206,6 @@
 		6697AFD91048CFB200456911 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1211,7 +1219,6 @@
 		D10F231020DFA895002E017C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1270,7 +1277,6 @@
 		D10F231120DFA895002E017C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1323,7 +1329,6 @@
 		D10F232420DFAD8B002E017C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1396,7 +1401,6 @@
 		D10F232520DFAD8B002E017C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1463,7 +1467,6 @@
 		D10F9F9520E2B61100ECCEC3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1526,7 +1529,6 @@
 		D10F9F9620E2B61100ECCEC3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
