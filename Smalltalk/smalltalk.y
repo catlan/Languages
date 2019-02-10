@@ -6,6 +6,7 @@ domain parser generator, to produce an Objective-C parser.
 #include <assert.h>
 #import <EtoileFoundation/EtoileFoundation.h>
 #import <LanguageKit/LanguageKit.h>
+#import <LanguageKit/LKToken.h>
 #import "SmalltalkParser.h"
 
 static NSDictionary *DeclRefClasses;
