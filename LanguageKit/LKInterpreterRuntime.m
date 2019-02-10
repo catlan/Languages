@@ -590,7 +590,7 @@ BOOL LKSetIvar(id receiver, NSString *name, id value)
 	const char *encoding = ivar_getTypeEncoding(ivar);
 	if (encoding[0] == '@')
 	{
-		*(__strong id*)ivarAddress = value;
+        *(__strong id*)ivarAddress = value; // catlan: hm, [value retain]?
 	}
 	else
 	{
