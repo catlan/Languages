@@ -508,12 +508,12 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKMethod (LKInterpreter)
 - (id)executeInContext: (LKInterpreterContext*)context
 {
-	id result = [context selfObject];
+	id result = nil;
 	@try
 	{
 		FOREACH([self statements], element, LKAST*)
 		{
-			[element interpretInContext: context];
+			result = [element interpretInContext: context];
 		}
 		if ([[[self signature] selector] isEqualToString: @"dealloc"])
 		{
@@ -602,9 +602,9 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
 	id value = [ret interpretInContext: context];
-
-	[LKBlockReturnException raiseWithValue: value];
-	return nil;
+    return value;
+	//[LKBlockReturnException raiseWithValue: value];
+	//return nil;
 }
 @end
 
