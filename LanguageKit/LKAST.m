@@ -41,7 +41,7 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 	{
 		return nil;
 	}
-	ASSIGN(symbols, aSymbolTable);
+	symbols = aSymbolTable;
 	return self;
 }
 - (void) print

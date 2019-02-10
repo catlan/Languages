@@ -21,9 +21,9 @@
 	self = [super initWithSymbolTable: table];
 	if (self != nil)
 	{
-        ASSIGN(arguments, argumentList);
-        ASSIGN(locals, localVarList);
-		ASSIGN(statements, statementList);
+        arguments = argumentList;
+        locals = localVarList;
+		statements = statementList;
 	}
 	return self;
 }

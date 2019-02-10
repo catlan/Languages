@@ -23,15 +23,16 @@ static NSSet *ARCBannedMessages;
                   locals:(NSMutableArray<LKVariableDecl *>*)localVarList
               statements:(NSMutableArray*)statementList
 {
-	LKSymbolTable *st = [LKSymbolTable new];
-	[st setDeclarationScope: self];
-	[st addSymbolsNamed: localVarList ofKind: LKSymbolScopeLocal];
-	[st addSymbolsNamed: [aSignature arguments] ofKind: LKSymbolScopeArgument];
-	self = [self initWithSymbolTable: st];
-	if (self == nil) { return nil; }
-	ASSIGN(signature, aSignature);
-    ASSIGN(locals, localVarList);
-	ASSIGN(statements, statementList);
+    LKSymbolTable *st = [LKSymbolTable new];
+    [st setDeclarationScope: self];
+    [st addSymbolsNamed: localVarList ofKind: LKSymbolScopeLocal];
+    [st addSymbolsNamed: [aSignature arguments] ofKind: LKSymbolScopeArgument];
+    self = [self initWithSymbolTable: st];
+    if (self) {
+        signature = aSignature;
+        locals = localVarList;
+        statements = statementList;
+    }
 	return self;
 }
 - (BOOL)check
