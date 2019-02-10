@@ -31,12 +31,15 @@ struct _Unwind_Exception {
 
 _Unwind_Reason_Code _Unwind_RaiseException
 	  ( struct _Unwind_Exception *exception_object );
+_Unwind_Reason_Code _Unwind_Resume_or_Rethrow
+      ( struct _Unwind_Exception *exception_object );
 
 void _Unwind_Resume (struct _Unwind_Exception *exception_object);
 
 struct _Unwind_Context;
 uintptr_t _Unwind_GetIP(struct _Unwind_Context *context);
 void _Unwind_SetIP(struct _Unwind_Context *context, uintptr_t);
+void _Unwind_SetGR();
 uintptr_t _Unwind_GetLanguageSpecificData(struct _Unwind_Context *context);
 uintptr_t _Unwind_GetRegionStart(struct _Unwind_Context *context);
 
