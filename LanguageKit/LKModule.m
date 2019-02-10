@@ -224,11 +224,11 @@ static NSArray* TypesForMethodName(NSString *methodName)
 - (NSString*) description
 {
 	NSMutableString *str = [NSMutableString string];
-	FOREACH(classes, class, LKAST*)
+	for (LKAST *class in classes)
 	{
 		[str appendString:[class description]];
 	}
-	FOREACH(categories, category, LKAST*)
+	for (LKAST *category in categories)
 	{
 		[str appendString:[category description]];
 	}
@@ -238,11 +238,11 @@ static NSArray* TypesForMethodName(NSString *methodName)
 {
 	// FIXME: Get the file name from somewhere.
 	[aGenerator startModule: @"Anonymous"];
-	FOREACH(classes, class, LKAST*)
+    for (LKAST *class in classes)
 	{
 		[class compileWithGenerator: aGenerator];
 	}
-	FOREACH(categories, category, LKAST*)
+    for (LKAST *category in categories)
 	{
 		[category compileWithGenerator: aGenerator];
 	}

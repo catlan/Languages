@@ -111,7 +111,7 @@ static NSSet *ARCBannedMessages;
 
 	ASSIGN(type, [module typesForMethod: selector]);
 
-	FOREACH(arguments, arg, LKAST*)
+	for (LKAST *arg in arguments)
 	{
 		[arg setParent:self];
 		success &= [arg check];
@@ -246,7 +246,7 @@ static NSSet *ARCBannedMessages;
 {
 	void *target = [receiver compileWithGenerator: aGenerator];
 	void *result = NULL;
-	FOREACH(messages, message, LKMessageSend*)
+	for (LKMessageSend *message in messages)
 	{
 		result = [message compileWithGenerator: aGenerator forTarget:target];
 	}
@@ -278,7 +278,7 @@ static NSSet *ARCBannedMessages;
 {
 	[receiver setParent:self];
 	BOOL success = [receiver check];
-	FOREACH(messages, message, LKMessageSend*)
+    for (LKMessageSend *message in messages)
 	{
 		[message setParent:self];
 		success &= [message check];

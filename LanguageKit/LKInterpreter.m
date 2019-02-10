@@ -219,7 +219,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	[context setBlockContextObject: block];
 
 	id result = nil;
-	FOREACH(statements, statement, LKAST*)
+	for (LKAST *statement in statements)
 	{
 		result = [statement interpretInContext: context];
 	}
@@ -285,7 +285,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		            format: @"Tried to create category %@ on non-existing class %@",
 		                    categoryName, classname];
 	}
-	FOREACH(methods, method, LKMethod*)
+	for (LKMethod *method in methods)
 	{
 		BOOL isClassMethod = [method isKindOfClass: [LKClassMethod class]];
 		NSString *methodName = [[method signature] selector];
@@ -393,7 +393,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	id result = nil;
 	NSArray *statements = [[condition interpretInContext: context] boolValue] ?
 		thenStatements : elseStatements;
-	FOREACH(statements, statement, LKAST*)
+    for (LKAST *statement in statements)
 	{
 		result = [statement interpretInContext: context];
 	}
@@ -499,7 +499,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 {
 	id result = nil;
 	id target = [receiver interpretInContext: context];
-	FOREACH(messages, message, LKMessageSend*)
+	for (LKMessageSend *message in messages)
 	{
 		result = [message interpretInContext: context forTarget: target];
 	}
@@ -513,7 +513,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	id result = nil;
 	@try
 	{
-		FOREACH([self statements], element, LKAST*)
+		for (LKAST *element in [self statements])
 		{
 			result = [element interpretInContext: context];
 		}
@@ -575,11 +575,11 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKModule (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
-	FOREACH(classes, class, LKAST*)
+	for (LKAST *class in classes)
 	{
 		[class interpretInContext: context];
 	}
-	FOREACH(categories, category, LKAST*)
+	for (LKAST *category in categories)
 	{
 		[category interpretInContext: context];
 	}
@@ -656,7 +656,7 @@ static uint8_t logBase2(uint8_t x)
 	Class supercls = NSClassFromString(superclass);
 	if (Nil == supercls)
 	{
-		FOREACH([(LKModule*)[self parent] allClasses], class, LKSubclass*)
+		for (LKSubclass *class in [(LKModule*)[self parent] allClasses])
 		{
 			if ([[class classname] isEqualToString: superclass])
 			{
@@ -683,12 +683,12 @@ static uint8_t logBase2(uint8_t x)
 		NSLog(@"LKInterpreter: class %@ is already defined", cls);
 	}
 
-	FOREACH(ivars, ivar, LKVariableDecl*)
+	for (LKVariableDecl *ivar in ivars)
 	{
 		class_addIvar(cls, [[ivar name] UTF8String], sizeof(id), logBase2(__alignof__(id)), "@");
 	}
 
-    FOREACH(properties, property, LKProperty*)
+    for (LKProperty *property in properties)
     {
         NSString *propertyName = [property name];
         NSString *propertyBackingIVar = [@"_" stringByAppendingString:propertyName];
@@ -708,7 +708,7 @@ static uint8_t logBase2(uint8_t x)
         
     }
     
-	FOREACH(methods, method, LKMethod*)
+	for (LKMethod *method in methods)
 	{
 		BOOL isClassMethod = [method isKindOfClass: [LKClassMethod class]];
 		NSString *methodName = [[method signature] selector];

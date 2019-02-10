@@ -34,7 +34,7 @@
 - (BOOL)check
 {
 	BOOL success = YES;
-	FOREACH(statements, s, LKAST*)
+	for (LKAST *s in statements)
 	{
 		[s setParent:self];
 		success &= [s check];
@@ -63,7 +63,7 @@
 		}
 		[str appendString: @"|\n"];
 	}
-	FOREACH(statements, statement, LKAST*)
+	for (LKAST *statement in statements)
 	{
 		[str appendString:[statement description]];
 		[str appendString:@".\n"];
@@ -88,7 +88,7 @@
 	                     signature: sig];
 	void * lastValue = NULL;
 	BOOL addBranch = YES;
-	FOREACH(statements, statement, LKAST*)
+	for (LKAST *statement in statements)
 	{
 		if (![statement isComment])
 		{

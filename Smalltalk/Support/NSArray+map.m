@@ -7,7 +7,7 @@
 {
 	id new[[self count]];
 	int i = 0;
-	FOREACHI(self, obj)
+    for (id obj in self)
 	{
 		new[i] = [aClosure value:obj];
 		i++;
@@ -18,7 +18,7 @@
 - (NSArray*) flatMap:(id)aClosure
 {
     NSMutableArray *array = [NSMutableArray array];
-    FOREACHI(self, obj)
+    for (id obj in self)
     {
         NSArray *returnedArray = [aClosure value:obj];
         if ([returnedArray count])
@@ -31,14 +31,14 @@
 
 - (void) foreach:(id)aClosure
 {
-	FOREACHI(self, obj)
+    for (id obj in self)
 	{
 		[aClosure value:obj];
 	}
 }
 - (void) do:(id)aClosure
 {
-	FOREACHI(self, obj)
+    for (id obj in self)
 	{
 		[aClosure value:obj];
 	}
@@ -47,7 +47,7 @@
 {
 	id new[[self count]];
 	int i = 0;
-	FOREACHI(self, obj)
+    for (id obj in self)
 	{
 		if ([[aClosure value:obj] boolValue])
 		{
@@ -60,7 +60,7 @@
 {
 	id new[[self count]];
 	int i = 0;
-	FOREACHI(self, obj)
+    for (id obj in self)
 	{
 		if ([[aClosure value:obj] boolValue])
 		{
@@ -72,7 +72,7 @@
 - (id) inject:(id)aValue into:aClosure
 {
 	id collect = aValue;
-	FOREACHI(self, obj)
+    for (id obj in self) 
 	{
 		collect = [aClosure value:obj value:collect];
 	}

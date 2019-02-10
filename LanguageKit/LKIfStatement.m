@@ -35,7 +35,7 @@ static void *emitBlock(id<LKCodeGenerator> aGenerator,
                        NSString *bbname)
 {
 	void *bb = [aGenerator startBasicBlock: bbname];
-	FOREACH(statements, statement, LKAST*)
+	for (LKAST *statement in statements)
 	{
 		[statement compileWithGenerator: aGenerator];
 		if ([statement isBranch])
@@ -88,7 +88,7 @@ static void *emitBlock(id<LKCodeGenerator> aGenerator,
 	if (thenStatements)
 	{
 		[str appendString:@" ifTrue: [\n"];
-		FOREACH(thenStatements, thenStatement, LKAST*)
+		for (LKAST *thenStatement in thenStatements)
 		{
 			[str appendString:[thenStatement description]];
 			[str appendString:@".\n"];
@@ -98,7 +98,7 @@ static void *emitBlock(id<LKCodeGenerator> aGenerator,
 	if (elseStatements)
 	{
 		[str appendString:@" ifFalse: [\n"];
-		FOREACH(elseStatements, elseStatement, LKAST*)
+		for (LKAST *elseStatement in elseStatements)
 		{
 			[str appendString:[elseStatement description]];
 			[str appendString:@".\n"];
@@ -111,12 +111,12 @@ static void *emitBlock(id<LKCodeGenerator> aGenerator,
 {
 	[condition setParent:self];
 	BOOL success = [condition check];
-	FOREACH(thenStatements, thenStatement, LKAST*)
+    for (LKAST *thenStatement in thenStatements)
 	{
 		[thenStatement setParent:self];
 		success &= [thenStatement check];
 	}
-	FOREACH(elseStatements, elseStatement, LKAST*)
+    for (LKAST *elseStatement in elseStatements)
 	{
 		[elseStatement setParent:self];
 		success &= [elseStatement check];

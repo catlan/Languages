@@ -16,7 +16,7 @@
 - (BOOL)check
 {
 	BOOL success = YES;
-	FOREACH(elements, element, LKAST*)
+	for (LKAST *element in elements)
 	{
 		[element setParent:self];
 		success &= [element check];
@@ -26,7 +26,7 @@
 - (NSString*) description
 {
 	NSMutableString *str = [NSMutableString stringWithString:@"#("];
-	FOREACH(elements, element, LKAST*)
+    for (LKAST *element in elements)
 	{
 		[str appendFormat:@"%@, ", [element description]];
 	}
@@ -37,7 +37,7 @@
 {
 	void *values[[elements count] + 1];
 	int i = 0;
-	FOREACH(elements, element, LKAST*)
+    for (LKAST *element in elements)
 	{
 		values[i++] = [element compileWithGenerator: aGenerator];
 	}

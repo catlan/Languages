@@ -83,7 +83,7 @@
 		[s setOwner: self];
 	}
 	// Check the methods
-	FOREACH(methods, method, LKAST*)
+    for (LKAST *method in methods)
 	{
 		[method setParent:self];
 		success &= [method check];
@@ -98,13 +98,13 @@
 	if ([ivars count])
 	{
 		[str appendString:@"| "];
-		FOREACH(ivars, ivar, NSString*)
+		for (NSString *ivar in ivars)
 		{
 			[str appendFormat:@"%@ ", ivar];
 		}
 		[str appendString:@"|\n"];
 	}
-	FOREACH(methods, method, LKAST*)
+	for (LKAST *method in methods)
 	{
 		[str appendString:[method description]];
 		[str appendString: @"\n"];
@@ -117,7 +117,7 @@
 	[aGenerator createSubclassWithName: classname
 	                   superclassNamed: superclass
 	                   withSymbolTable: symbols];
-	FOREACH(methods, method, LKAST*)
+    for (LKAST *method in methods)
 	{
 		[method compileWithGenerator: aGenerator];
 	}

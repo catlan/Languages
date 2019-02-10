@@ -32,7 +32,7 @@
 {
 	symbols = [LKSymbolTable symbolTableForClass: classname];
 	BOOL success = YES;
-	FOREACH(methods, method, LKAST*)
+	for (LKAST *method in methods)
 	{
 		[method setParent:self];
 		success &= [method check];
@@ -43,7 +43,7 @@
 {
 	NSMutableString *str = [NSMutableString stringWithFormat:@"%@ extend [ \n",
 		classname];
-	FOREACH(methods, method, LKAST*)
+    for (LKAST *method in methods)
 	{
 		[str appendString:[method description]];
 	}
@@ -55,7 +55,7 @@
 {
 	[aGenerator createCategoryWithName:categoryName
 	                      onClassNamed:classname];
-	FOREACH(methods, method, LKAST*)
+    for (LKAST *method in methods)
 	{
 		[method compileWithGenerator: aGenerator];
 	}

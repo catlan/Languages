@@ -103,7 +103,7 @@ static NSDate *modificationDateForFile(NSString *file)
 static NSDate *mostRecentModificationDate(NSArray *files)
 {
 	NSDate *mostRecentDate = [NSDate distantPast];
-	FOREACH(files, file, NSString*)
+	for (NSString *file in files)
 	{
 		NSDate *date = modificationDateForFile(file);
 		mostRecentDate = [mostRecentDate laterDate: date];
@@ -170,14 +170,14 @@ int DEBUG_DUMP_MODULES = 0;
 			NSLibraryDirectory,
 			NSAllDomainsMask,
 			YES);
-	FOREACH(dirs, dir, NSString*)
+	for (NSString *dir in dirs)
 	{
 		NSString *f =
 			[[dir stringByAppendingPathComponent:@"Bundles"]
 				stringByAppendingPathComponent:@"LanguageKit"];
 		// Check that the framework exists and is a directory.
 		NSArray *bundles = [fm contentsOfDirectoryAtPath:f error:NULL];
-		FOREACH(bundles, b, NSString*)
+		for (NSString *b in bundles)
 		{
 			NSString *bundle = [f stringByAppendingPathComponent: b];
 			BOOL isDir = NO;
@@ -390,7 +390,7 @@ static NSString *loadFramework(NSString *framework)
 	}
 	else
 	{
-		FOREACH(dirs, dir, NSString*)
+		for (NSString *dir in dirs)
 		{
 			f = [NSString stringWithFormat:@"%@/Frameworks/%@.framework",
 									dir, framework];
@@ -554,11 +554,11 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 
 	// Create table for each classes so that we do not have undefined reference
 	NSArray *classesDefine = [plist objectForKey: @"Classes"];
-	FOREACH(classesDefine, classeDef, NSString*)
+	for (NSString *classeDef in classesDefine)
 	{
 		[LKSymbolTable symbolTableForClass: classeDef];
 	}
-	FOREACH(sourceFiles, s, NSString*)
+	for (NSString *s in sourceFiles)
 	{
 		NSString *file = [s lastPathComponent];
 		NSString *source = [bundle pathForResource: [s lastPathComponent] 
@@ -598,7 +598,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 	[pathsToCheckDateOf addObject: plistPath];
 	BOOL success = YES;
 	inDevMode = [[plist objectForKey: @"Development Mode"] boolValue];
-	FOREACH(frameworks, framework, NSString*)
+	for (NSString *framework in frameworks)
 	{
 		NSString *path = loadFramework(framework);
 		BOOL isLoaded = (nil != path);
@@ -609,12 +609,12 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 		}
 	}
 	NSArray *classesDefine = [plist objectForKey: @"Classes"];
-	FOREACH(classesDefine, classeDef, NSString*)
+	for (NSString *classeDef in classesDefine)
 	{
 		[LKSymbolTable symbolTableForClass: classeDef];
 	}
 	NSArray *sourceFiles = [plist objectForKey:@"Sources"];
-	FOREACH(sourceFiles, source, NSString*)
+	for (NSString *source in sourceFiles)
 	{
 		NSString *path = [bundle pathForResource: [source stringByDeletingPathExtension]
 		                                  ofType: [source pathExtension]];
@@ -630,7 +630,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 	if (!(success &= loadAnyLibraryForBundle(bundle, recentModificationDate)))
 	{
 		success = YES;
-		FOREACH(sourceFiles, source, NSString*)
+		for (NSString *source in sourceFiles)
 		{
 			success &= [self loadScriptNamed: source fromBundle: bundle];
 		}
@@ -662,14 +662,14 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 	NSString *processName = [[NSProcessInfo processInfo] processName];
 	NSFileManager *fm = [NSFileManager defaultManager];
 	BOOL success = YES;
-	FOREACH(dirs, dir, NSString*)
+	for (NSString *dir in dirs)
 	{
 		NSString *pluginDir = 
 			[[dir stringByAppendingPathComponent:@"LKPlugins"]
 				stringByAppendingPathComponent:processName];
         NSArray *plugins = [fm contentsOfDirectoryAtPath:pluginDir error:NULL];
 		BOOL isDir = NO;
-		FOREACH(plugins, p, NSString*)
+		for (NSString *p in plugins)
 		{
 			NSString *plugin = [pluginDir stringByAppendingPathComponent: p];
 			if ([fm fileExistsAtPath:plugin isDirectory:&isDir] && isDir &&
@@ -753,7 +753,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 + (BOOL) loadScriptsFromBundle:(NSBundle*) aBundle
 {
 	BOOL success = YES;
-	FOREACH(compilersByLanguage, class, Class)
+	for (Class class in compilersByLanguage)
 	{
 		id compiler = [[class alloc] init];
 		success &= [compiler loadScriptsFromBundle: aBundle];
@@ -768,7 +768,7 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 		NSArray *scripts = [aBundle pathsForResourcesOfType:extension
 		                                        inDirectory:nil];
 		BOOL success = YES;
-		FOREACH(scripts, scriptFile, NSString*)
+		for (NSString *scriptFile in scripts)
 		{
 			NSString *script = [NSString stringWithContentsOfFile: scriptFile encoding:NSUTF8StringEncoding error:NULL];
 			success &= ([self compileString:script] != nil);

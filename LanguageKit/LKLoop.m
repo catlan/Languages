@@ -24,7 +24,7 @@ __thread void *unlabelledContinueBB;
 }
 - (BOOL) check
 {
-	FOREACH(loopInitStatements, initStatement, LKAST*)
+	for (LKAST *initStatement in loopInitStatements)
 	{
 		[initStatement setParent:self];
 		if (![initStatement check]) return NO;
@@ -34,7 +34,7 @@ __thread void *unlabelledContinueBB;
 		[preCondition setParent:self];
 		if (![preCondition check]) return NO;
 	}
-	FOREACH(statements, statement, LKAST*)
+	for (LKAST *statement in statements)
 	{
 		[statement setParent:self];
 		if (![statement check]) return NO;
@@ -44,7 +44,7 @@ __thread void *unlabelledContinueBB;
 		[postCondition setParent:self];
 		if (![postCondition check]) return NO;
 	}
-	FOREACH(updateStatements, updateStatement, LKAST*)
+	for (LKAST *updateStatement in updateStatements)
 	{
 		[updateStatement setParent:self];
 		if (![updateStatement check]) return NO;
@@ -54,7 +54,7 @@ __thread void *unlabelledContinueBB;
 - (NSString*) description
 {
 	NSMutableString *str = [NSMutableString string];
-	FOREACH(loopInitStatements, initStatement, LKAST*)
+	for (LKAST *initStatement in loopInitStatements)
 	{
 		[str appendString:[initStatement description]];
 		[str appendString:@".\n"];
@@ -71,7 +71,7 @@ __thread void *unlabelledContinueBB;
 	{
 		[str appendFormat:@"(%@) ifFalse: [ break ].\n", preCondition];
 	}
-	FOREACH(statements, statement, LKAST*)
+	for (LKAST *statement in statements)
 	{
 		[str appendString:[statement description]];
 		[str appendString:@".\n"];
@@ -80,7 +80,7 @@ __thread void *unlabelledContinueBB;
 	{
 		[str appendFormat:@"(%@) ifFalse: [ break ].\n", postCondition];
 	}
-	FOREACH(updateStatements, updateStatement, LKAST*)
+	for (LKAST *updateStatement in updateStatements)
 	{
 		[str appendString:[updateStatement description]];
 		[str appendString:@".\n"];
@@ -114,7 +114,7 @@ __thread void *unlabelledContinueBB;
 	}
 	// Entry point
 	[aGenerator moveInsertPointToBasicBlock: entryBB];
-	FOREACH(loopInitStatements, initStatement, LKAST*)
+	for (LKAST *initStatement in loopInitStatements)
 	{
 		[initStatement compileWithGenerator: aGenerator];
 	}
@@ -134,7 +134,7 @@ __thread void *unlabelledContinueBB;
 	// Emit loop body
 	[aGenerator moveInsertPointToBasicBlock: bodyBB];
 	BOOL addTerminator = YES;
-	FOREACH(statements, statement, LKAST*)
+	for (LKAST *statement in statements)
 	{
 		[statement compileWithGenerator: aGenerator];
 		if ([statement isBranch])
@@ -158,7 +158,7 @@ __thread void *unlabelledContinueBB;
 	}
 	// Emit continue block
 	[aGenerator moveInsertPointToBasicBlock: continueBB];
-	FOREACH(updateStatements, updateStatement, LKAST*)
+	for (LKAST *updateStatement in updateStatements)
 	{
 		[updateStatement compileWithGenerator: aGenerator];
 	}

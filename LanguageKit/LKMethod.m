@@ -53,7 +53,7 @@ static NSSet *ARCBannedMessages;
 		return NO;
 	}
 	BOOL success = YES;
-	FOREACH(statements, statement, LKAST*)
+    for (LKAST *statement in statements)
 	{
 		[statement setParent:self];
 		success &= [statement check];
