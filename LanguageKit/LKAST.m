@@ -1,6 +1,7 @@
 #import "LKAST.h"
 #import "LKDeclRef.h"
 #import "LKModule.h"
+#import <objc/runtime.h>
 
 static Class DeclRefClass;
 static Class ModuleClass;
