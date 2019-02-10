@@ -136,8 +136,4 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 	}
 	[anArray removeObjectsAtIndexes: remove];
 }
-- (void)dealloc
-{
-    [super dealloc];
-}
 @end

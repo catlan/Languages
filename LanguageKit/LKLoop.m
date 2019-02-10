@@ -221,15 +221,6 @@ __thread void *unlabelledContinueBB;
 {
 	return postCondition;
 }
-- (void) dealloc
-{
-	DESTROY(label);
-	DESTROY(loopInitStatements);
-	DESTROY(preCondition);
-	DESTROY(statements);
-	DESTROY(postCondition);
-	DESTROY(updateStatements);
-}
 @end
 
 @implementation LKLoopFlowControl
@@ -287,10 +278,6 @@ __thread void *unlabelledContinueBB;
 {
 	[self doesNotRecognizeSelector:_cmd];
 	return nil;
-}
-- (void) dealloc
-{
-	DESTROY(label);
 }
 @end
 
