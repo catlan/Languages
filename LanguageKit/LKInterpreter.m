@@ -704,7 +704,14 @@ static uint8_t logBase2(uint8_t x)
 		//FIXME: If overriding, check the superclass type explicitly
 		const char *type = [[[(LKModule*)[self parent] typesForMethod: methodName] objectAtIndex: 0] UTF8String];
 		Class destClass = isClassMethod ? object_getClass(cls) : cls;
-		class_addMethod(destClass, sel, LKInterpreterMakeIMP(destClass, type), type);
+        if (alreadyExists)
+        {
+            class_replaceMethod(destClass, sel, LKInterpreterMakeIMP(destClass, type), type);
+        }
+        else
+        {
+            class_addMethod(destClass, sel, LKInterpreterMakeIMP(destClass, type), type);
+        }
 		StoreASTForMethod(classname, isClassMethod, methodName, method);
 	}
 	
