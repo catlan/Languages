@@ -42,7 +42,14 @@ static NSArray *TypesForMethodName(NSString *methodName)
 #else
 static NSArray* TypesForMethodName(NSString *methodName)
 {
-	return [Types objectForKey: methodName];
+    id object = [Types objectForKey: methodName];
+    if (object)
+    {
+        if ([object isKindOfClass:[NSArray class]])
+             return object;
+        return [NSArray arrayWithObject:object];
+    }
+	return nil;
 }
 #endif
 
