@@ -13,13 +13,15 @@ __thread void *unlabelledContinueBB;
 }
 - (id) initWithStatements:(NSMutableArray*)statementList
 {
-	SELFINIT;
-	DESTROY(label);
-	DESTROY(loopInitStatements);
-	DESTROY(preCondition);
-	ASSIGN(statements, statementList);
-	DESTROY(postCondition);
-	DESTROY(updateStatements);
+    self = [self init];
+    if (self) {
+        label = nil;
+        loopInitStatements = nil;
+        preCondition = nil;
+        statements = statementList;
+        postCondition = nil;
+        updateStatements = nil;
+    }
 	return self;
 }
 - (BOOL) check
@@ -226,8 +228,10 @@ __thread void *unlabelledContinueBB;
 @implementation LKLoopFlowControl
 - (id) initWithLabel:(NSString*)aLabel
 {
-	SELFINIT;
-	ASSIGN(label, aLabel);
+    self = [self init];
+    if (self) {
+        label = aLabel;
+    }
 	return self;
 }
 - (BOOL) check

@@ -21,8 +21,10 @@
 }
 - (id) initWithSelector:(SEL) aSelector
 {
-	SELFINIT
-	selector = aSelector;
+    self = [self init];
+    if (self) {
+        selector = aSelector;
+    }
 	return self;
 }
 - (id) stringValue

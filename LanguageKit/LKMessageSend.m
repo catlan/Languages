@@ -231,13 +231,15 @@ static NSSet *ARCBannedMessages;
 	[self visitArray: arguments withVisitor: aVisitor];
 }
 @end
-@implementation LKMessageCascade 
+@implementation LKMessageCascade
 - (LKMessageCascade*) initWithTarget:(LKAST*) aTarget
                             messages:(NSMutableArray*) messageArray
 {
-	SELFINIT;
-	ASSIGN(receiver, aTarget);
-	ASSIGN(messages, messageArray);
+    self = [self init];
+    if (self) {
+        receiver = aTarget;
+        messages = messageArray;
+    }
 	return self;
 }
 + (LKMessageCascade*) messageCascadeWithTarget:(LKAST*) aTarget
