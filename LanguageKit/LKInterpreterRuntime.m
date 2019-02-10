@@ -254,7 +254,10 @@ static void UnboxValue(id value, void *dest, const char *objctype)
 			break;
 		case '(':
 		case '^':
-            break;
+			if (strncmp(objctype, @encode(LKObject), strlen(@encode(LKObject))) != 0)
+			{
+				break;
+			}
 		case '#':
             *(__unsafe_unretained id*)dest = value; // catlan: hmm?
 		case '@':
@@ -336,7 +339,10 @@ static void RetainValue(id value, const char *objctype)
             break;
         case '(':
         case '^':
-            break;
+            if (strncmp(objctype, @encode(LKObject), strlen(@encode(LKObject))) != 0)
+            {
+                break;
+            }
         case '#':
             break;
         case '@':
