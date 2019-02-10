@@ -55,10 +55,12 @@ typedef unichar(*CIMP)(id, SEL, unsigned);
 @implementation LKToken
 - (LKToken*) initWithRange:(NSRange)aRange inSource:(NSString*)aString
 {
-	SUPERINIT;
-	charAtIndex = (CIMP)[aString methodForSelector:@selector(characterAtIndex:)];
-	ASSIGN(source, aString);
-	range = aRange;
+    self = [super init];
+    if (self) {
+        charAtIndex = (CIMP)[aString methodForSelector:@selector(characterAtIndex:)];
+        source = aString;
+        range = aRange;
+    }
 	return self;
 }
 + (LKToken*) tokenWithRange:(NSRange)aRange inSource:(NSString*)aString

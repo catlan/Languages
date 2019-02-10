@@ -58,8 +58,10 @@ static Class lookup_class(const char *name)
 @implementation LKDefaultCompilerDelegate
 - (id)init
 {
-	SUPERINIT;
-	polymorphicSelectors = [NSMutableSet new];
+    self = [super init];
+    if (self) {
+        polymorphicSelectors = [NSMutableSet new];
+    }
 	return self;
 }
 - (BOOL)compiler: (LKCompiler*)aCompiler
@@ -262,9 +264,11 @@ int DEBUG_DUMP_MODULES = 0;
 }
 - (id)init
 {
-	SUPERINIT;
-	delegate = DefaultDelegate;
-	transforms = [NSMutableArray new];
+    self = [super init];
+    if (self) {
+        delegate = DefaultDelegate;
+        transforms = [NSMutableArray new];
+    }
 	return self;
 }
 + (LKCompiler*) compiler

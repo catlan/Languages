@@ -4,9 +4,11 @@
 - (LKCompare*) initWithLeftExpression: (LKAST*)expr1
                       rightExpression: (LKAST*)expr2;
 {
-	SUPERINIT;
-	ASSIGN(lhs, expr1);
-	ASSIGN(rhs, expr2);
+    self = [super init];
+    if (self) {
+        lhs = expr1;
+        rhs = expr2;
+    }
 	return self;
 }
 + (LKCompare*) comparisonWithLeftExpression: (LKAST*)expr1

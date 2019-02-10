@@ -7,10 +7,12 @@
                                 then:(NSArray*)thenClause
                                 else:(NSArray*)elseClause
 {
-	SUPERINIT;
-	ASSIGN(condition, aCondition);
-	thenStatements = [thenClause mutableCopy];
-	elseStatements = [elseClause mutableCopy];
+    self = [super init];
+    if (self) {
+        condition = aCondition;
+        thenStatements = [thenClause mutableCopy];
+        elseStatements = [elseClause mutableCopy];
+    }
 	return self;
 }
 + (LKIfStatement*) ifStatementWithCondition:(LKAST*) aCondition

@@ -6,8 +6,10 @@
 @implementation LKProperty
 - (instancetype) initWithName: (LKToken*) declName
 {
-    SUPERINIT;
-    ASSIGN(variableName, declName);
+    self = [super init];
+    if (self) {
+        variableName = declName;
+    }
     return self;
 }
 + (instancetype) propertyDeclWithName:(LKToken*) declName

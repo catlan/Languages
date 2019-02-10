@@ -3,8 +3,10 @@
 @implementation LKComment
 - (LKComment*) initWithString:(NSString*)aString
 {
-	SUPERINIT;
-	ASSIGN(comment, aString);
+    self = [super init];
+    if (self) {
+        comment = aString;
+    }
 	return self;
 }
 + (LKComment*) commentWithString:(NSString*)aString

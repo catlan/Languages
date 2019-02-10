@@ -95,12 +95,14 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 - (id) initWithSymbolTable: (LKSymbolTable*)aTable
                     parent: (LKInterpreterContext*)aParent
 {
-	SUPERINIT;
-	ASSIGN(parent, aParent);
-	ASSIGN(symbolTable, aTable);
-	selfObject = [aParent selfObject];
-	ASSIGN(blockContextObject, [aParent blockContextObject]);
-	objects = [NSMutableDictionary new];
+    self = [super init];
+    if (self) {
+        parent = aParent;
+        symbolTable = aTable;
+        selfObject = [aParent selfObject];
+        blockContextObject = [aParent blockContextObject];
+        objects = [NSMutableDictionary new];
+    }
 	return self;
 }
 - (LKInterpreterContext *) parent

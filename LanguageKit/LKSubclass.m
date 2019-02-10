@@ -11,15 +11,17 @@
          properties:(NSArray*)aPropertyList
             methods:(NSArray*)aMethodList
 {
-	SUPERINIT;
-	ASSIGN(classname, aName);
-	ASSIGN(superclass, aClass);
-    // catlan: register class early that the dependancy resolver in -check works
-    ASSIGN(symbols, [LKSymbolTable symbolTableForClass: classname]);
-	ivars = anIvarList != nil ? [anIvarList mutableCopy] : [NSMutableArray new];
-	cvars = aCvarList != nil ? [aCvarList mutableCopy] : [NSMutableArray new];
-    properties = aPropertyList != nil ? [aPropertyList mutableCopy] : [NSMutableArray new];
-	methods = aMethodList != nil ? [aMethodList mutableCopy] : [NSMutableArray new];
+    self = [super init];
+    if (self) {
+        classname = aName;
+        superclass = aClass;
+        // catlan: register class early that the dependancy resolver in -check works
+        symbols = [LKSymbolTable symbolTableForClass: classname];
+        ivars = anIvarList != nil ? [anIvarList mutableCopy] : [NSMutableArray new];
+        cvars = aCvarList != nil ? [aCvarList mutableCopy] : [NSMutableArray new];
+        properties = aPropertyList != nil ? [aPropertyList mutableCopy] : [NSMutableArray new];
+        methods = aMethodList != nil ? [aMethodList mutableCopy] : [NSMutableArray new];
+    }
 	return self;
 }
 + (id) subclassWithName:(NSString*)aName

@@ -7,8 +7,10 @@
 }
 - (id) initWithExpr:(LKAST*)anExpression
 {
-	SUPERINIT;
-	ASSIGN(ret, anExpression);
+    self = [super init];
+    if (self) {
+        ret = anExpression;
+    }
 	return self;
 }
 - (BOOL)check

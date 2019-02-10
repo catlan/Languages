@@ -29,9 +29,11 @@ static NSSet *ARCBannedMessages;
 - (id)initWithSelectorName: (NSString*)aSelector
                  arguments: (NSArray*)args
 {
-	SUPERINIT;
-	ASSIGN(selector, aSelector);
-	arguments = [args mutableCopy];
+    self = [super init];
+    if (self) {
+        selector = aSelector;
+        arguments = [args mutableCopy];
+    }
 	return self;
 }
 + (id)messageWithSelectorName: (NSString*)aSelector
@@ -42,8 +44,10 @@ static NSSet *ARCBannedMessages;
 }
 - (id) initWithSelectorName:(NSString*)aSelector
 {
-	SUPERINIT;
-	ASSIGN(selector, aSelector);
+    self = [super init];
+    if (self) {
+        selector = aSelector;
+    }
 	return self;
 }
 - (void) setTarget:(id)anObject

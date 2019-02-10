@@ -6,8 +6,10 @@
 @implementation LKVariableDecl
 - (LKVariableDecl*) initWithName: (LKToken*) declName
 {
-	SUPERINIT;
-	ASSIGN(variableName, declName);
+    self = [super init];
+    if (self) {
+        variableName = declName;
+    }
 	return self;
 }
 + (LKVariableDecl*) variableDeclWithName:(LKToken*) declName

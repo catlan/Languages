@@ -23,9 +23,11 @@ static LKSymbolScope lookupUnscopedSymbol(NSString *aName)
 }
 - (LKSymbolTable*)initInScope: (LKSymbolTable*)aTable
 {
-	SUPERINIT;
-	enclosingScope = aTable;
-	symbols = [NSMutableDictionary new];
+    self = [super init];
+    if (self) {
+        enclosingScope = aTable;
+        symbols = [NSMutableDictionary new];
+    }
 	return self;
 }
 - (id)init
@@ -190,8 +192,10 @@ static NSComparisonResult compareSymbolOrder(LKSymbol *a, LKSymbol *b, void *c)
 @synthesize name, typeEncoding, owner, scope, index, referencingScopes;
 - (id)init
 {
-	SUPERINIT;
-	index = -1;
+    self = [super init];
+    if (self) {
+        index = -1;
+    };
 	return self;
 }
 - (NSString*)stringValue

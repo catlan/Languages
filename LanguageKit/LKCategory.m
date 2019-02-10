@@ -8,10 +8,12 @@
               class:(NSString*)aClass
             methods:(NSArray*)aMethodList
 {
-	SUPERINIT;
-	ASSIGN(classname, aClass);
-	ASSIGN(categoryName, aName);
-	ASSIGN(methods, [aMethodList mutableCopy]);
+    self = [super init];
+    if (self) {
+        classname = aClass;
+        categoryName = aName;
+        methods = [aMethodList mutableCopy];
+    }
 	return self;
 }
 + (id) categoryWithName:(NSString*)aName

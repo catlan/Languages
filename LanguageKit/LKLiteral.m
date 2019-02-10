@@ -3,8 +3,10 @@
 @implementation LKLiteral
 - (id) initWithString:(NSString*)aString
 {
-	SUPERINIT;
-	ASSIGN(value, aString);
+    self = [super init];
+    if (self) {
+        value = aString;
+    }
 	return self;
 }
 + (id) literalFromString:(NSString*)aString

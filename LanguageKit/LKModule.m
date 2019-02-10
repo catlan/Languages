@@ -114,10 +114,12 @@ static NSArray* TypesForMethodName(NSString *methodName)
 }
 - (id) init
 {
-	SUPERINIT;
-	classes = [[NSMutableArray alloc] init];
-	categories = [[NSMutableArray alloc] init];
-	pragmas = [[NSMutableDictionary alloc] init];
+    self = [super init];
+    if (self) {
+        classes = [[NSMutableArray alloc] init];
+        categories = [[NSMutableArray alloc] init];
+        pragmas = [[NSMutableDictionary alloc] init];
+    }
 	return self;
 }
 - (void) addPragmas: (NSDictionary*)aDict

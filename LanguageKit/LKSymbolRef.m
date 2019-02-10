@@ -1,10 +1,12 @@
 #import "LKSymbolRef.h"
 
-@implementation LKSymbolRef 
+@implementation LKSymbolRef
 - (id) initWithSymbol:(NSString*)sym
 {
-	SUPERINIT;
-	ASSIGN(symbol, sym);
+    self = [super init];
+    if (self) {
+        symbol = sym;
+    }
 	return self;
 }
 + (id) referenceWithSymbol:(NSString*)sym

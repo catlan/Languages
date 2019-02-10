@@ -9,8 +9,10 @@
 }
 - (id) initWithElements:(NSArray*)anArray
 {
-	SUPERINIT;
-	elements = [anArray mutableCopy];
+    self = [super init];
+    if (self) {
+        elements = [anArray mutableCopy];
+    }
 	return self;
 }
 - (BOOL)check
