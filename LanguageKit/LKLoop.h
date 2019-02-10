@@ -40,45 +40,25 @@
  */
 - (id) initWithStatements:(NSMutableArray*)statementList;
 /**
- * Set a label used for break or continue in nested loops.
+ * The label used for break or continue in nested loops.
  */
-- (void) setLabel:(NSString*)aLabel;
+@property (strong) NSString* label;
 /**
- * Return the label used for break or continue in nested loops.
+ * The list of statements in the loop body.
  */
-- (NSString*) label;
+@property (strong) NSMutableArray* statements;
 /**
- * Set the statements for the loop body.
+ * The list of statements executed after each iteration of the loop.
  */
-- (void) setStatements:(NSMutableArray*)statements;
+@property (strong) NSMutableArray* updateStatements;
 /**
- * Return the list of statements in the loop body.
+ * Expression tested for truth before each loop iteration.
  */
-- (NSMutableArray*) statements;
+@property (strong) LKAST* preCondition;
 /**
- * Set the statements executed after each iteration of the loop.
+ * Expression tested for truth after each loop iteration.
  */
-- (void) setUpdateStatements:(NSMutableArray*)anArray;
-/**
- * Return the list of statements executed after each iteration of the loop.
- */
-- (NSMutableArray*) updateStatements;
-/**
- * Set expression tested for truth before each loop iteration.
- */
-- (void) setPreCondition:(LKAST*)condition;
-/**
- * Return expression tested for truth before each loop iteration.
- */
-- (LKAST*) preCondition;
-/**
- * Set expression tested for truth after each loop iteration.
- */
-- (void) setPostCondition:(LKAST*)condition;
-/**
- * Return expression tested for truth after each loop iteration.
- */
-- (LKAST*) postCondition;
+@property (strong) LKAST* postCondition;
 @end
 
 /**

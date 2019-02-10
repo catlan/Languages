@@ -6,7 +6,7 @@ __thread void *unlabelledBreakBB;
 __thread void *unlabelledContinueBB;
 
 @implementation LKLoop
-@synthesize loopInitStatements;
+@synthesize label, statements, loopInitStatements, updateStatements, preCondition, postCondition;
 + (id) loopWithStatements:(NSMutableArray*)statementList
 {
 	return [[self alloc] initWithStatements:statementList];
@@ -182,46 +182,6 @@ __thread void *unlabelledContinueBB;
 	[self visitArray: statements withVisitor: aVisitor];
 	[postCondition visitWithVisitor: aVisitor];
 	[self visitArray: updateStatements withVisitor: aVisitor];
-}
-- (void) setLabel:(NSString*)aLabel
-{
-	ASSIGN(label, aLabel);
-}
-- (NSString*) label
-{
-	return label;
-}
-- (void) setStatements:(NSMutableArray*)anArray
-{
-	ASSIGN(statements, anArray);
-}
-- (NSMutableArray*) statements
-{
-	return statements;
-}
-- (void) setUpdateStatements:(NSMutableArray*)anArray
-{
-	ASSIGN(updateStatements, anArray);
-}
-- (NSMutableArray*) updateStatements
-{
-	return updateStatements;
-}
-- (void) setPreCondition:(LKAST*)condition
-{
-	ASSIGN(preCondition, condition);
-}
-- (LKAST*) preCondition
-{
-	return preCondition;
-}
-- (void) setPostCondition:(LKAST*)condition
-{
-	ASSIGN(postCondition, condition);
-}
-- (LKAST*) postCondition
-{
-	return postCondition;
 }
 @end
 
