@@ -60,7 +60,7 @@ static void freeParser(void *memory)
 	SEL substrSel = @selector(tokenWithRange:inSource:);
 	CIMP charAt = (CIMP)[s methodForSelector:charSel];
 
-	IMP substr = [LKToken methodForSelector:substrSel];
+    NSString *(*substr)(id, SEL, NSRange, id) = (NSString *(*)(id, SEL, NSRange, id))[LKToken methodForSelector:substrSel];
 	Class LKTokenClass = [LKToken class];
 	/* Set up the parser */
 	void * parser = SmalltalkParseAlloc(allocParserMemory);
