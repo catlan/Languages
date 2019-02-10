@@ -550,8 +550,9 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	[context setSelfObject: receiver];
 	for (unsigned int i=0; i<count; i++)
 	{
+        LKVariableDecl *decl = [[signature arguments] objectAtIndex: i];
 		[context setValue: args[i]
-		        forSymbol: [[signature arguments] objectAtIndex: i]];
+		        forSymbol: [decl name]];
 	}
 
 	id result = nil;

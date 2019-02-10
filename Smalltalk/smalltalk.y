@@ -126,13 +126,17 @@ ivar_list ::= .
 ivars(L) ::= ivars(T) WORD(W).
 {
 	/* First element is the list of instance variables. */
-    [[T objectAtIndex:0] addObject:[LKVariableDecl variableDeclWithName:W]];
+    LKVariableDecl *decl = [LKVariableDecl variableDeclWithName:W];
+    [decl setSourceRange:[W sourceLocation]];
+    [[T objectAtIndex:0] addObject:decl];
 	L = T;
 }
 ivars(L) ::= ivars(T) PLUS WORD(W).
 {
 	/* Second element is the list of class variables. */
-	[[T objectAtIndex:1] addObject:[LKVariableDecl variableDeclWithName:W]];
+    LKVariableDecl *decl = [LKVariableDecl variableDeclWithName:W];
+    [decl setSourceRange:[W sourceLocation]];
+	[[T objectAtIndex:1] addObject:decl];
 	L = T;
 }
 ivars(L) ::= .
@@ -181,12 +185,16 @@ keyword_signature(S) ::= keyword_signature(M) KEYWORD(K) WORD(E).
 {
 	S = M;
 	[S addSelectorComponent:K];
-	[S addArgument:E];
+    LKVariableDecl *decl = [LKVariableDecl variableDeclWithName: E];
+    [decl setSourceRange:[E sourceLocation]];
+	[S addArgument:decl];
 }
 keyword_signature(S) ::= KEYWORD(K) WORD(E).
 { 
 	S = [LKMessageSend messageWithSelectorName:K];
-	[S addArgument:E];
+    LKVariableDecl *decl = [LKVariableDecl variableDeclWithName: E];
+    [decl setSourceRange:[E sourceLocation]];
+	[S addArgument:decl];
 }
 
 local_list(L) ::= BAR locals(T) BAR.
@@ -197,7 +205,9 @@ local_list ::= .
 
 locals(L) ::= locals(T) WORD(W).
 {
-    [T addObject:[LKVariableDecl variableDeclWithName:W]];
+    LKVariableDecl *decl = [LKVariableDecl variableDeclWithName:W];
+    [decl setSourceRange:[W sourceLocation]];
+    [T addObject:decl];
 	L = T;
 }
 locals(L) ::= .
@@ -486,14 +496,18 @@ argument(A) ::= COLON WORD(W).
 
 argument_list(L) ::= argument(A) arguments(T) BAR.
 {
-	[T insertObject: A atIndex: 0];
+    LKVariableDecl *decl = [LKVariableDecl variableDeclWithName:A];
+    [decl setSourceRange:[A sourceLocation]];
+	[T insertObject: decl atIndex: 0];
 	L = T;
 }
 argument_list ::= .
 
 arguments(L) ::= arguments(T) argument(A).
 {
-    [T addObject:[LKVariableDecl variableDeclWithName:A]];
+    LKVariableDecl *decl = [LKVariableDecl variableDeclWithName:A];
+    [decl setSourceRange:[A sourceLocation]];
+    [T addObject:decl];
 	L = T;
 }
 arguments(L) ::= .

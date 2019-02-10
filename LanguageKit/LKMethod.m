@@ -6,13 +6,13 @@ static NSSet *ARCBannedMessages;
 
 
 @implementation LKMethod
-@synthesize signature, statements;
+@synthesize signature, locals, statements;
 + (void)initialize
 {
 	ARCBannedMessages = [[NSSet alloc] initWithObjects: @"retain", @"release", @"autorelease", @"retainCount", nil];
 }
 + (id) methodWithSignature:(LKMessageSend*)aSignature
-                    locals:(NSMutableArray*)locals
+                    locals:(NSMutableArray<LKVariableDecl *>*)locals
                 statements:(NSMutableArray*)statementList
 {
 	return [[self alloc] initWithSignature: aSignature
@@ -20,16 +20,17 @@ static NSSet *ARCBannedMessages;
 	                             statements: statementList];
 }
 - (id) initWithSignature:(LKMessageSend*)aSignature
-                  locals:(NSMutableArray*)locals
+                  locals:(NSMutableArray<LKVariableDecl *>*)localVarList
               statements:(NSMutableArray*)statementList
 {
 	LKSymbolTable *st = [LKSymbolTable new];
 	[st setDeclarationScope: self];
-	[st addSymbolsNamed: locals ofKind: LKSymbolScopeLocal];
+	[st addSymbolsNamed: localVarList ofKind: LKSymbolScopeLocal];
 	[st addSymbolsNamed: [aSignature arguments] ofKind: LKSymbolScopeArgument];
 	self = [self initWithSymbolTable: st];
 	if (self == nil) { return nil; }
 	ASSIGN(signature, aSignature);
+    ASSIGN(locals, localVarList);
 	ASSIGN(statements, statementList);
 	return self;
 }

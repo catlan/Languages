@@ -171,23 +171,13 @@ static NSComparisonResult compareSymbolOrder(LKSymbol *a, LKSymbol *b, void *c)
 {
 	return collectSymbolsOfType(symbols, LKSymbolScopeObject);
 }
-- (void)addSymbolsNamed: (NSArray*)anArray ofKind: (LKSymbolScope)kind;
+- (void)addSymbolsNamed: (NSArray<LKVariableDecl *>*)anArray ofKind: (LKSymbolScope)kind;
 {
 	NSUInteger i = 0;
-	for (id element in anArray)
+	for (LKVariableDecl *decl in anArray)
 	{
-        NSString *name = nil;
-        // Maybe change [LKMessageSend arguments] in future to return LKVariableDecls.
-        if ([element isKindOfClass:[LKVariableDecl class]])
-        {
-            name = [(LKVariableDecl *)element name];
-        }
-        else if ([element isKindOfClass:[NSString class]]) // [LKMessageSend arguments]
-        {
-            name = element;
-        }
-		LKSymbol *sym = [LKSymbol new];
-		[sym setName: name];
+        LKSymbol *sym = [LKSymbol new];
+        [sym setName: [decl name]];
 		[sym setTypeEncoding: NSStringFromRuntimeString(@encode(LKObject))];
 		[sym setScope: kind];
 		[sym setIndex: i++];

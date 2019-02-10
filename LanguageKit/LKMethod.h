@@ -1,25 +1,29 @@
 #import <LanguageKit/LKAST.h>
 #import <LanguageKit/LKMessageSend.h>
 
+@class LKVariableDecl;
+
 /**
  * AST node representing a method.
  */
 @interface LKMethod : LKAST 
 /** Method signature - selector and names of arguments. */
 @property (strong, nonatomic) LKMessageSend *signature;
+/** List of local variables */
+@property (strong, nonatomic) NSMutableArray<LKVariableDecl *> *locals;
 /** List of statements in this method. */
 @property (strong, nonatomic) NSMutableArray *statements;
 /**
  * Return a new Method with the specified signature, locals and statements.
  */
 + (id) methodWithSignature: (LKMessageSend*)aSignature
-                    locals: (NSMutableArray*)locals
+                    locals: (NSMutableArray<LKVariableDecl *>*)locals
                 statements: (NSMutableArray*)statementList;
 /**
  * Initialise a new Method with the specified signature, locals and statements.
  */
 - (id) initWithSignature: (LKMessageSend*)aSignature
-                  locals: (NSMutableArray*)localss
+                  locals: (NSMutableArray<LKVariableDecl *>*)localss
               statements: (NSMutableArray*)statementList;
 /**
  * Set the method signature for this method.

@@ -3,23 +3,26 @@
 #import "Runtime/LKObject.h"
 
 @implementation LKBlockExpr
-+ (id) blockWithArguments:(NSMutableArray*)arguments locals:(NSMutableArray*)locals statements:(NSMutableArray*)statementList
+@synthesize arguments, locals;
++ (id) blockWithArguments:(NSMutableArray<LKVariableDecl *>*)arguments locals:(NSMutableArray<LKVariableDecl *>*)locals statements:(NSMutableArray*)statementList
 {
 	return [[self alloc] initWithArguments: arguments
 	                                 locals: locals
 	                             statements: statementList];
 }
-- (id) initWithArguments: (NSMutableArray*)arguments
-                  locals: (NSMutableArray*)locals
+- (id) initWithArguments: (NSMutableArray<LKVariableDecl *>*)argumentList
+                  locals: (NSMutableArray<LKVariableDecl *>*)localVarList
               statements: (NSMutableArray*)statementList
 {
 	LKSymbolTable *table = [LKSymbolTable new];
 	[table setDeclarationScope: self];
-	[table addSymbolsNamed: locals ofKind: LKSymbolScopeLocal];
-	[table addSymbolsNamed: arguments ofKind: LKSymbolScopeArgument];
+	[table addSymbolsNamed: localVarList ofKind: LKSymbolScopeLocal];
+	[table addSymbolsNamed: argumentList ofKind: LKSymbolScopeArgument];
 	self = [super initWithSymbolTable: table];
 	if (self != nil)
 	{
+        ASSIGN(arguments, argumentList);
+        ASSIGN(locals, localVarList);
 		ASSIGN(statements, statementList);
 	}
 	return self;

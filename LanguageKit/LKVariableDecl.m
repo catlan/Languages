@@ -24,7 +24,7 @@
 	LKSymbol *sym = [LKSymbol new];
 	[sym setName: variableName];
 	[sym setTypeEncoding: NSStringFromRuntimeString(@encode(LKObject))];
-	[sym setScope: LKSymbolScopeLocal];
+	[sym setScope: LKSymbolScopeObject];
 	[symbols addSymbol: sym];
 }
 - (NSString*)name
