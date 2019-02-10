@@ -439,7 +439,13 @@ id LKSendMessage(NSString *className, id receiver, NSString *selName,
 	}
 
 	SEL sel = sel_getUid([selName UTF8String]);
-	NSMethodSignature *sig = [receiver methodSignatureForSelector: sel];
+    NSMethodSignature *sig = nil;
+    @try {
+        sig = [receiver methodSignatureForSelector: sel];
+    }
+    @catch (NSException *e) {
+        NSLog(@"%s methodSignatureForSelector %@", __PRETTY_FUNCTION__, e);
+    }
 	if (nil == sig)
 	{
 		[NSException raise: LKInterpreterException
