@@ -757,7 +757,6 @@ static BOOL loadLibraryInPath(NSFileManager *fm, NSString *aLibrary, NSString *b
 	{
 		id compiler = [[class alloc] init];
 		success &= [compiler loadScriptsFromBundle: aBundle];
-		RELEASE(compiler);
 	}
 	return success;
 }
