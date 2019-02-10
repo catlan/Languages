@@ -227,7 +227,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 - (id)interpretInContext: (LKInterpreterContext*)parentContext
 {
 	int count = [[[self symbols] arguments] count];
-	id (^block)(__unsafe_unretained id arg0, ...) = ^(__unsafe_unretained id arg0, ...) {
+	id (^block)(__unsafe_unretained id arg0, ...) = ^id(__unsafe_unretained id arg0, ...) {
 		LKInterpreterContext *context = [[LKInterpreterContext alloc]
 		            initWithSymbolTable: [self symbols]
 		                         parent: parentContext];
