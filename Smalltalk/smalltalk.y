@@ -232,6 +232,9 @@ statements(L) ::= .
 comment(S) ::= COMMENT(C).
 {
 	S = [LKComment commentWithString:C];
+    NSRange strRange = [C sourceLocation];
+    NSRange range = NSMakeRange(strRange.location - 1, strRange.length + 2);
+    [S setSourceRange:range];
 }
 
 statement(S) ::= expression(E).
@@ -244,7 +247,9 @@ statement(S) ::= RETURN expression(E).
 }
 statement(S) ::= WORD(T) COLON EQ expression(E).
 {
-	S = [LKAssignExpr assignWithTarget: RefForSymbol(T)
+    LKDeclRef *decl = RefForSymbol(T);
+    [decl setSourceRange:[T sourceLocation]];
+	S = [LKAssignExpr assignWithTarget: decl
 	                              expr: E];
 }
 
@@ -402,26 +407,34 @@ simple_expression(E) ::= WORD(V).
 	{
 		E = RefForSymbol(V);
 	}
+    [E setSourceRange:[V sourceLocation]];
 }
 simple_expression(E) ::= SYMBOL(S).
 {
 	E = [LKSymbolRef referenceWithSymbol: S];
+    [E setSourceRange:[S sourceLocation]];
 }
 simple_expression(E) ::= STRING(S).
 {
 	E = [LKStringLiteral literalFromString:S];
+    NSRange strRange = [S sourceLocation];
+    NSRange range = NSMakeRange(strRange.location - 1, strRange.length + 2);
+    [E setSourceRange:range];
 }
 simple_expression(E) ::= NUMBER(N).
 {
 	E = [LKNumberLiteral literalFromString:N];
+    [E setSourceRange:[N sourceLocation]];
 }
 simple_expression(E) ::= FLOATNUMBER(N).
 {
 	E = [LKFloatLiteral literalFromString:N];
+    [E setSourceRange:[N sourceLocation]];
 }
 simple_expression(E) ::= AT WORD(S).
 {
 	E = [LKNumberLiteral literalFromSymbol:S];
+    [E setSourceRange:[S sourceLocation]];
 }
 simple_expression(E) ::= simple_expression(T) simple_message(M).
 {

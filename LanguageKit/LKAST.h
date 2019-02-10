@@ -82,6 +82,10 @@
  * Returns YES for AST nodes that branch unconditionally.
  */
 - (BOOL) isBranch;
+/**
+ * Source Range
+ */
+@property NSRange sourceRange;
 @end
 
 /**
