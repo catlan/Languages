@@ -13,9 +13,11 @@
 }
 - (id) initWithTarget:(LKDeclRef*)aTarget expr:(LKAST*)expression
 {
-	SUPERINIT;
-	ASSIGN(target, aTarget);
-	ASSIGN(expr, expression);
+    self = [super init];
+    if (self) {
+        target = aTarget;
+        expr = expression;
+    }
 	return self;
 }
 - (BOOL)check
