@@ -24,7 +24,6 @@ static LKDeclRef *RefForSymbol(NSString *aSymbol)
 			nil] retain];
 	}
 	Class cls = [DeclRefClasses objectForKey: aSymbol];
-	LKDeclRef *ref = nil;
 	if (nil == cls)
 	{
 		cls = [LKDeclRef class];
