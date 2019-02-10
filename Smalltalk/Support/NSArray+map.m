@@ -1,6 +1,5 @@
 #import "NSArray+map.h"
 #import "BlockClosure.h"
-#import <EtoileFoundation/EtoileFoundation.h>
 
 @implementation NSArray (map)
 - (NSArray*) map:(id)aClosure

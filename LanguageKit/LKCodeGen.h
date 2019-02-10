@@ -1,4 +1,4 @@
-#import <EtoileFoundation/EtoileFoundation.h>
+#import <Foundation/Foundation.h>
 
 // HACK: Foundation.h on OS X defines true and false, which conflicts with the
 // method branchOnCondition:true:false: in this class

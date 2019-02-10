@@ -1,5 +1,3 @@
-#import <EtoileFoundation/EtoileFoundation.h>
-#import <EtoileFoundation/runtime.h>
 #import <AppKit/AppKit.h>
 #include <time.h>
 #include <sys/resource.h>

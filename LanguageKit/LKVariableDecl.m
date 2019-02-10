@@ -1,7 +1,6 @@
 #import "LKVariableDecl.h"
 #import "LKToken.h"
 #import "Runtime/LKObject.h"
-#import <EtoileFoundation/Macros.h>
 
 @implementation LKVariableDecl
 - (LKVariableDecl*) initWithName: (LKToken*) declName

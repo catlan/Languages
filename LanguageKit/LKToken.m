@@ -1,5 +1,4 @@
 #import "LKToken.h"
-#import <EtoileFoundation/EtoileFoundation.h>
 
 typedef unichar(*CIMP)(id, SEL, unsigned);
 

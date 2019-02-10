@@ -1,4 +1,4 @@
-#import <EtoileFoundation/EtoileFoundation.h>
+#import <Foundation/Foundation.h>
 
 @class LKAST;
 @class LKVariableDecl;

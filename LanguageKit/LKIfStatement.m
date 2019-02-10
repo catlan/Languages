@@ -1,5 +1,4 @@
 #import "LKIfStatement.h"
-#import <EtoileFoundation/Macros.h>
 #import "LKCodeGen.h"
 
 @implementation LKIfStatement

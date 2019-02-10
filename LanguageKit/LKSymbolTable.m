@@ -2,7 +2,6 @@
 #import "LKCompiler.h"
 #import "LKVariableDecl.h"
 #import "Runtime/LKObject.h"
-#import <EtoileFoundation/runtime.h>
 
 static NSMutableDictionary *NewClasses;
 

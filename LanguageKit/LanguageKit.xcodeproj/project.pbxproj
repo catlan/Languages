@@ -89,10 +89,6 @@
 		66A1FB021049C9D800A19C65 /* ObjCConstants.plist in Resources */ = {isa = PBXBuildFile; fileRef = 66A1FB011049C9D800A19C65 /* ObjCConstants.plist */; };
 		66A2E59310F6A17900F5850C /* BoxedFloat.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A2E59210F6A17900F5850C /* BoxedFloat.m */; };
 		66A2E61910F6D2FD00F5850C /* BoxedFloat.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A2E61810F6D2FD00F5850C /* BoxedFloat.h */; };
-		66AC4526108ADD1000047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
-		66AC4530108ADD2800047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
-		66AC4533108ADD3200047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
-		66AC4544108ADD5900047C26 /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
 		66CC0B0B1082628100FABEBF /* Symbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CC0B0A1082628100FABEBF /* Symbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC0123D774F008A4663 /* LKLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 794B2BBF123D774F008A4663 /* LKLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
@@ -105,9 +101,7 @@
 		D100F9B81F2640050048FDFA /* LKEnumReference.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B51F263F100048FDFA /* LKEnumReference.m */; };
 		D10F230E20DFA895002E017C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D10F230D20DFA895002E017C /* main.m */; };
 		D10F231220DFA8C4002E017C /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
-		D10F231320DFA8C4002E017C /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
 		D10F232620DFADA4002E017C /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
-		D10F232720DFADA4002E017C /* EtoileFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */; };
 		D10F232A20DFADCE002E017C /* SmalltalkCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697AFF61048D14500456911 /* SmalltalkCompiler.h */; };
 		D10F232B20DFADCE002E017C /* SmalltalkCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697AFF71048D14500456911 /* SmalltalkCompiler.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D10F232C20DFADCE002E017C /* SmalltalkParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6697AFF81048D14500456911 /* SmalltalkParser.h */; };
@@ -198,55 +192,6 @@
 			remoteGlobalIDString = 6697AFC91048CF9200456911;
 			remoteInfo = LanguageKitRuntime;
 		};
-		66AC44F7108ADCCD00047C26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 60073EAD10074D26007272E6;
-			remoteInfo = EtoileXML;
-		};
-		66AC44F9108ADCCD00047C26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 603647AC0E409244003377E0;
-			remoteInfo = EtoileFoundation;
-		};
-		66AC44FB108ADCCD00047C26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 609B66D70FEE80CE0007F842;
-			remoteInfo = TestEtoileFoundation;
-		};
-		66AC4504108ADCE400047C26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 603647AB0E409244003377E0;
-			remoteInfo = EtoileFoundation;
-		};
-		66AC4527108ADD2100047C26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 603647AB0E409244003377E0;
-			remoteInfo = EtoileFoundation;
-		};
-		66AC4534108ADD3A00047C26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 603647AB0E409244003377E0;
-			remoteInfo = EtoileFoundation;
-		};
-		66AC453B108ADD5000047C26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 603647AB0E409244003377E0;
-			remoteInfo = EtoileFoundation;
-		};
 		D10F9F9D20E2B62300ECCEC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6697AF801048CE7100456911 /* Project object */;
@@ -260,27 +205,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6697AFD51048CFB100456911;
 			remoteInfo = SmalltalkSupport;
-		};
-		D12C05931F2631E5004E0FA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6072CF691360E144003256C5;
-			remoteInfo = PlugInExample;
-		};
-		D12C05951F2631E5004E0FA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 602E12AE18B3A10E004F171B;
-			remoteInfo = "EtoileFoundation (iOS)";
-		};
-		D12C05971F2631E5004E0FA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 609A557718C209FE0096927F;
-			remoteInfo = "TestEtoileFoundation (iOS)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -383,7 +307,6 @@
 		66A1FB011049C9D800A19C65 /* ObjCConstants.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = ObjCConstants.plist; sourceTree = "<group>"; };
 		66A2E59210F6A17900F5850C /* BoxedFloat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoxedFloat.m; path = Runtime/BoxedFloat.m; sourceTree = "<group>"; };
 		66A2E61810F6D2FD00F5850C /* BoxedFloat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BoxedFloat.h; path = Runtime/BoxedFloat.h; sourceTree = "<group>"; };
-		66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EtoileFoundation.xcodeproj; path = ../../Frameworks/EtoileFoundation/EtoileFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		66AC458B108ADF8B00047C26 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		66AC458C108ADF8B00047C26 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		66AC458D108ADFA000047C26 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README; path = ../Smalltalk/README; sourceTree = SOURCE_ROOT; };
@@ -495,7 +418,6 @@
 		6697AF7E1048CE7100456911 = {
 			isa = PBXGroup;
 			children = (
-				66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */,
 				D100F9A81F2636350048FDFA /* libgmp.dylib */,
 				D12C05991F263219004E0FA6 /* libffi.dylib */,
 				663A0DF3108D61F800B921B0 /* Foundation.framework */,
@@ -672,19 +594,6 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
-		66AC44EF108ADCCD00047C26 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				66AC44F8108ADCCD00047C26 /* EtoileXML.framework */,
-				66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */,
-				66AC44FC108ADCCD00047C26 /* TestEtoileFoundation.bundle */,
-				D12C05941F2631E5004E0FA6 /* PlugInExample.plugin */,
-				D12C05961F2631E5004E0FA6 /* libEtoileFoundation.a */,
-				D12C05981F2631E5004E0FA6 /* TestEtoileFoundation.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		D10F230C20DFA895002E017C /* GenerateHeaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,7 +710,6 @@
 				6697AFE51048CFF500456911 /* PBXTargetDependency */,
 				6697AFE71048CFF500456911 /* PBXTargetDependency */,
 				66298CCD104A4A10000F18C5 /* PBXTargetDependency */,
-				66AC4505108ADCE400047C26 /* PBXTargetDependency */,
 			);
 			name = edlc;
 			productName = edlc;
@@ -821,7 +729,6 @@
 				D1BB3FE51F52C94F008262EF /* PBXBuildRule */,
 			);
 			dependencies = (
-				66AC4528108ADD2100047C26 /* PBXTargetDependency */,
 				668C495810915D60002A20A3 /* PBXTargetDependency */,
 			);
 			name = LanguageKit;
@@ -841,7 +748,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				66AC4535108ADD3A00047C26 /* PBXTargetDependency */,
 			);
 			name = LanguageKitRuntime;
 			productName = LanguageKitRuntime;
@@ -860,7 +766,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				66AC453C108ADD5000047C26 /* PBXTargetDependency */,
 				66A1FC7E1049DBEA00A19C65 /* PBXTargetDependency */,
 			);
 			name = SmalltalkSupport;
@@ -957,12 +862,6 @@
 			mainGroup = 6697AF7E1048CE7100456911;
 			productRefGroup = 6697AFA31048CF3C00456911 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 66AC44EF108ADCCD00047C26 /* Products */;
-					ProjectRef = 66AC44EE108ADCCD00047C26 /* EtoileFoundation.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6697AFAB1048CF6200456911 /* edlc */,
@@ -975,51 +874,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		66AC44F8108ADCCD00047C26 /* EtoileXML.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = EtoileXML.framework;
-			remoteRef = 66AC44F7108ADCCD00047C26 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		66AC44FA108ADCCD00047C26 /* EtoileFoundation.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = EtoileFoundation.framework;
-			remoteRef = 66AC44F9108ADCCD00047C26 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		66AC44FC108ADCCD00047C26 /* TestEtoileFoundation.bundle */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = TestEtoileFoundation.bundle;
-			remoteRef = 66AC44FB108ADCCD00047C26 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D12C05941F2631E5004E0FA6 /* PlugInExample.plugin */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PlugInExample.plugin;
-			remoteRef = D12C05931F2631E5004E0FA6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D12C05961F2631E5004E0FA6 /* libEtoileFoundation.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libEtoileFoundation.a;
-			remoteRef = D12C05951F2631E5004E0FA6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D12C05981F2631E5004E0FA6 /* TestEtoileFoundation.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = TestEtoileFoundation.app;
-			remoteRef = D12C05971F2631E5004E0FA6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6697AFB11048CF6C00456911 /* Resources */ = {
@@ -1191,26 +1045,6 @@
 			isa = PBXTargetDependency;
 			target = 6697AFC91048CF9200456911 /* LanguageKitRuntime */;
 			targetProxy = 66A1FC7D1049DBEA00A19C65 /* PBXContainerItemProxy */;
-		};
-		66AC4505108ADCE400047C26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EtoileFoundation;
-			targetProxy = 66AC4504108ADCE400047C26 /* PBXContainerItemProxy */;
-		};
-		66AC4528108ADD2100047C26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EtoileFoundation;
-			targetProxy = 66AC4527108ADD2100047C26 /* PBXContainerItemProxy */;
-		};
-		66AC4535108ADD3A00047C26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EtoileFoundation;
-			targetProxy = 66AC4534108ADD3A00047C26 /* PBXContainerItemProxy */;
-		};
-		66AC453C108ADD5000047C26 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = EtoileFoundation;
-			targetProxy = 66AC453B108ADD5000047C26 /* PBXContainerItemProxy */;
 		};
 		D10F9F9E20E2B62300ECCEC3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

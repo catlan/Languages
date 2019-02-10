@@ -1,7 +1,6 @@
 #import "LKModule.h"
 #import "LKSubclass.h"
 #import "LKCompilerErrors.h"
-#import <EtoileFoundation/runtime.h>
 #import "Runtime/LKObject.h"
 #import <objc/runtime.h>
 

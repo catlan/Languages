@@ -1,4 +1,3 @@
-#import <EtoileFoundation/EtoileFoundation.h>
 #include <setjmp.h>
 
 extern NSString *LKSmalltalkBlockNonLocalReturnException;

@@ -1,11 +1,9 @@
-#import <EtoileFoundation/EtoileFoundation.h>
 #import "Runtime/BigInt.h"
 #import "Runtime/BoxedFloat.h"
 #import "Runtime/Symbol.h"
 #import "LanguageKit/LanguageKit.h"
 #import "LKInterpreter.h"
 #import "LKInterpreterRuntime.h"
-#import <EtoileFoundation/runtime.h>
 
 #include <math.h>
 #include <dlfcn.h>

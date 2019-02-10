@@ -6,7 +6,6 @@
 #import "LKInterpreterRuntime.h"
 #import "LKInterpreter.h"
 #import "LKTypeHelpers.h"
-#import <EtoileFoundation/runtime.h>
 #ifndef GNU_RUNTIME
 #include <objc/objc-runtime.h>
 #endif

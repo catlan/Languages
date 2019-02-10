@@ -1,9 +1,7 @@
 #include <dlfcn.h>
-#include <EtoileFoundation/glibc_hack_unistd.h>
 #include <sys/resource.h>
 #include <objc/runtime.h>
 
-#import <EtoileFoundation/EtoileFoundation.h>
 #import "LKAST.h"
 #import "LKCategory.h"
 #import "LKCompiler.h"

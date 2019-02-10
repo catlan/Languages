@@ -1,7 +1,6 @@
 #import "LKProperty.h"
 #import "LKToken.h"
 #import "Runtime/LKObject.h"
-#import <EtoileFoundation/Macros.h>
 
 @implementation LKProperty
 - (instancetype) initWithName: (LKToken*) declName

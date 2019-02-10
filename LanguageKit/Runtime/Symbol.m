@@ -1,5 +1,3 @@
-#import <EtoileFoundation/EtoileFoundation.h>
-#import <EtoileFoundation/runtime.h>
 #import "Symbol.h"
 
 @implementation Symbol
