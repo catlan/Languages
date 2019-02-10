@@ -269,7 +269,7 @@ int DEBUG_DUMP_MODULES = 0;
 }
 + (LKCompiler*) compiler
 {
-	return AUTORELEASE([[self alloc] init]);
+	return [[self alloc] init];
 }
 + (void) setDebugMode:(LKDebuggingMode)aFlag
 {
@@ -295,7 +295,7 @@ static void emitParseError(NSException *localException)
 }
 - (LKAST*) compileString:(NSString*)source withGenerator:(id<LKCodeGenerator>)cg
 {
-	id parser = AUTORELEASE([[[[self class] parserClass] alloc] init]);
+	id parser = [[[[self class] parserClass] alloc] init];
 	LKAST *ast;
 	NS_DURING
 		ast = [parser parseString: source];
@@ -337,7 +337,7 @@ static void emitParseError(NSException *localException)
           onClassNamed: (NSString*)name
          withGenerator: (id<LKCodeGenerator>)cg
 {
-	id parser = AUTORELEASE([[[[self class] parserClass] alloc] init]);
+	id parser = [[[[self class] parserClass] alloc] init];
 	LKAST *ast;
 	LKModule *module;
 	NS_DURING

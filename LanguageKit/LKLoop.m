@@ -9,7 +9,7 @@ __thread void *unlabelledContinueBB;
 @synthesize loopInitStatements;
 + (id) loopWithStatements:(NSMutableArray*)statementList
 {
-	return AUTORELEASE([[self alloc] initWithStatements:statementList]);
+	return [[self alloc] initWithStatements:statementList];
 }
 - (id) initWithStatements:(NSMutableArray*)statementList
 {
@@ -284,7 +284,7 @@ __thread void *unlabelledContinueBB;
 @implementation LKBreak
 + (id) breakWithLabel:(NSString*)aLabel
 {
-	return AUTORELEASE([[self alloc] initWithLabel: aLabel]);
+	return [[self alloc] initWithLabel: aLabel];
 }
 - (void*) compileWithGenerator:(id<LKCodeGenerator>)aGenerator
 {
@@ -304,7 +304,7 @@ __thread void *unlabelledContinueBB;
 @implementation LKContinue
 + (id) continueWithLabel:(NSString*)aLabel
 {
-	return AUTORELEASE([[self alloc] initWithLabel: aLabel]);
+	return [[self alloc] initWithLabel: aLabel];
 }
 - (void*) compileWithGenerator:(id<LKCodeGenerator>)aGenerator
 {

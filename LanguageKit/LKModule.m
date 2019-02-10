@@ -110,7 +110,7 @@ static NSArray* TypesForMethodName(NSString *methodName)
 }
 + (id) module
 {
-	return AUTORELEASE([[self alloc] init]);
+	return [[self alloc] init];
 }
 - (id) init
 {

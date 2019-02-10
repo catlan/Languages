@@ -20,11 +20,11 @@ static NSSet *ARCBannedMessages;
 }
 + (id) message
 {
-	return AUTORELEASE([[self alloc] init]);
+	return [[self alloc] init];
 }
 + (id) messageWithSelectorName:(NSString*)aSelector
 {
-	return AUTORELEASE([[self alloc] initWithSelectorName:aSelector]);
+	return [[self alloc] initWithSelectorName:aSelector];
 }
 - (id)initWithSelectorName: (NSString*)aSelector
                  arguments: (NSArray*)args
