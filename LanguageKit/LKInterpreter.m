@@ -265,6 +265,15 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @interface LKCategoryDef (LKInterpreter)
 @end
 @implementation LKCategoryDef (LKInterpreter)
+
++ (void)initialize
+{
+    if (self == [LKCategoryDef class])
+    {
+        LKMethodASTs = [[NSMutableDictionary alloc] init];
+    }
+}
+
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
 	Class cls = NSClassFromString(classname);
