@@ -16,7 +16,7 @@
 		663A0FC7108FF90300B921B0 /* LKTypeHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 663A0FC5108FF90300B921B0 /* LKTypeHelpers.m */; };
 		663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 663A0FC6108FF90300B921B0 /* LKTypeHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		668C48BF1090D0B4002A20A3 /* LanguageKitExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697B0941048D1D300456911 /* LanguageKitExceptions.m */; };
-		668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C490E10915C17002A20A3 /* LKInterpreterRuntime.m */; };
+		668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C490E10915C17002A20A3 /* LKInterpreterRuntime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		668C491610915C17002A20A3 /* LKInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C491010915C17002A20A3 /* LKInterpreter.m */; };
 		668C491710915C17002A20A3 /* LKInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C491110915C17002A20A3 /* LKInterpreter.h */; settings = {ATTRIBUTES = (Public, ); }; };
