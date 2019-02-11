@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LKCodeGenerator Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Protocol/LKCodeGenerator" class="dashAnchor"></a>
+    <a title="LKCodeGenerator Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
+        <p class="header-right"><a href="https://github.com/catlan/Languages"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LKCodeGenerator Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LKAST.html">LKAST</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKASTVisitor">LKASTVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKArrayExpr.html">LKArrayExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKAssignExpr.html">LKAssignExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBlockExpr.html">LKBlockExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKBlockReturn">LKBlockReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKBlockSelfRef">LKBlockSelfRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBreak.html">LKBreak</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBuiltinSymbol.html">LKBuiltinSymbol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCategoryDef.html">LKCategoryDef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKClassMethod">LKClassMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCodeGenLoader.html">LKCodeGenLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKComment.html">LKComment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCompare.html">LKCompare</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCompiler.html">LKCompiler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKContinue.html">LKContinue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeclRef.html">LKDeclRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKEnumReference.html">LKEnumReference</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKFloatLiteral">LKFloatLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKFreestandingMethod">LKFreestandingMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKFunctionCall.html">LKFunctionCall</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKIfStatement.html">LKIfStatement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKInstanceMethod">LKInstanceMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLiteral.html">LKLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLoop.html">LKLoop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLoopFlowControl.html">LKLoopFlowControl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMessageCascade.html">LKMessageCascade</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMessageSend.html">LKMessageSend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMethod.html">LKMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKModule.html">LKModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKNilRef">LKNilRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKNumberLiteral.html">LKNumberLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKProperty.html">LKProperty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKReturn.html">LKReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKSelfRef">LKSelfRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKStringLiteral">LKStringLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSubclass.html">LKSubclass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKSuperRef">LKSuperRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbol.html">LKSymbol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbolRef.html">LKSymbolRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbolTable.html">LKSymbolTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKVariableDecl.html">LKVariableDecl</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKCompilerDidCompileNewClassesNotification">LKCompilerDidCompileNewClassesNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKEnumError">LKEnumError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKInvalidSelectorError">LKInvalidSelectorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKMissingHeaderWarning">LKMissingHeaderWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKParserError">LKParserError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKPolymorphicSelectorWarning">LKPolymorphicSelectorWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKRedefinedClassWarning">LKRedefinedClassWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUndefinedSuperclassError">LKUndefinedSuperclassError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUndefinedSymbolError">LKUndefinedSymbolError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUnknownTypeError">LKUnknownTypeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKASTNode">kLKASTNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKCharacterNumber">kLKCharacterNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKHeaderName">kLKHeaderName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKHumanReadableDescription">kLKHumanReadableDescription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKLineNumber">kLKLineNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKMissingSuperclassName">kLKMissingSuperclassName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKSourceLine">kLKSourceLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKTypeEncoding">kLKTypeEncoding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LKASTVisitor.html">LKASTVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKCodeGenerator.html">LKCodeGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKParser.html">LKParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKStaticCodeGenerator.html">LKStaticCodeGenerator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:LKCompiler.h@T@LKClassLoader">LKClassLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKDebuggingMode.html">LKDebuggingMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKSymbolQualifier.html">LKSymbolQualifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKSymbolScope.html">LKSymbolScope</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:LKSymbolTable.h@F@NSStringFromRuntimeString">NSStringFromRuntimeString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@defaultJIT">defaultJIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@defaultStaticCompilterWithFile">defaultStaticCompilterWithFile</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LKCodeGenerator</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">LKCodeGenerator</span> <span class="o">&lt;</span><span class="n">NSObject</span><span class="o">&gt;</span></code></pre>
+
+                </div>
+              </div>
+            <p>Code generator protocol.  Each AST node calls methods in a class conforming
+to this protocol.  Methods which return a value return a pointer to a
+generator-specific type, which can then be passed in to the generator later
+when it expects a value.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)startModule:"></a>
+                    <a name="//apple_ref/objc/Method/-startModule:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)startModule:">-startModule:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begin generating a module.  A module is a set of classes and categories
+which are compiled and optimised at once.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">startModule</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileName</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">startModule</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)endModule"></a>
+                    <a name="//apple_ref/objc/Method/-endModule" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)endModule">-endModule</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finish generating a module.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">endModule</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endModule</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)createSubclassWithName:superclassNamed:withSymbolTable:"></a>
+                    <a name="//apple_ref/objc/Method/-createSubclassWithName:superclassNamed:withSymbolTable:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)createSubclassWithName:superclassNamed:withSymbolTable:">-createSubclassWithName:superclassNamed:withSymbolTable:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new class, with the specified superclass.  The symbol table should
+define all of the new instance and class variables.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">createSubclassWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aClass</span>
+               <span class="nf">superclassNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aSuperclass</span>
+               <span class="nf">withSymbolTable</span><span class="p">:(</span><span class="n"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">symbolTable</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createSubclass</span><span class="p">(</span><span class="n">withName</span> <span class="nv">aClass</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">superclassNamed</span> <span class="nv">aSuperclass</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">with</span> <span class="nv">symbolTable</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)endClass"></a>
+                    <a name="//apple_ref/objc/Method/-endClass" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)endClass">-endClass</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finish the current class.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">endClass</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endClass</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)createCategoryWithName:onClassNamed:"></a>
+                    <a name="//apple_ref/objc/Method/-createCategoryWithName:onClassNamed:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)createCategoryWithName:onClassNamed:">-createCategoryWithName:onClassNamed:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create a new category with the specified name on the named class.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">createCategoryWithName</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aCategory</span>
+                  <span class="nf">onClassNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aClass</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createCategory</span><span class="p">(</span><span class="n">withName</span> <span class="nv">aCategory</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">onClassNamed</span> <span class="nv">aClass</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)endCategory"></a>
+                    <a name="//apple_ref/objc/Method/-endCategory" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)endCategory">-endCategory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finish the current category.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">endCategory</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endCategory</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)beginClassMethod:withTypeEncoding:arguments:locals:"></a>
+                    <a name="//apple_ref/objc/Method/-beginClassMethod:withTypeEncoding:arguments:locals:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)beginClassMethod:withTypeEncoding:arguments:locals:">-beginClassMethod:withTypeEncoding:arguments:locals:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begin a class method with the specified type encoding and number of local
+variables.  Local variables and arguments are indexed by number, the symbol
+table information is just for debugging.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">beginClassMethod</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aName</span>
+        <span class="nf">withTypeEncoding</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">typeEncoding</span>
+               <span class="nf">arguments</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">arguments</span>
+                  <span class="nf">locals</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">locals</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">beginClassMethod</span><span class="p">(</span><span class="n">_</span> <span class="nv">aName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">withTypeEncoding</span> <span class="nv">typeEncoding</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">arguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">locals</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)beginInstanceMethod:withTypeEncoding:arguments:locals:"></a>
+                    <a name="//apple_ref/objc/Method/-beginInstanceMethod:withTypeEncoding:arguments:locals:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)beginInstanceMethod:withTypeEncoding:arguments:locals:">-beginInstanceMethod:withTypeEncoding:arguments:locals:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begin an instance method with the specified type encoding and number of local
+variables.  Local variables and arguments are indexed by number, the symbol
+table information is just for debugging.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">beginInstanceMethod</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aName</span>
+           <span class="nf">withTypeEncoding</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">typeEncoding</span>
+                  <span class="nf">arguments</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">arguments</span>
+                     <span class="nf">locals</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">locals</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">beginInstanceMethod</span><span class="p">(</span><span class="n">_</span> <span class="nv">aName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">withTypeEncoding</span> <span class="nv">typeEncoding</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">arguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">locals</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)beginFunction:withTypeEncoding:arguments:locals:"></a>
+                    <a name="//apple_ref/objc/Method/-beginFunction:withTypeEncoding:arguments:locals:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)beginFunction:withTypeEncoding:arguments:locals:">-beginFunction:withTypeEncoding:arguments:locals:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begins compiling a free-standing function.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">beginFunction</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aName</span>
+     <span class="nf">withTypeEncoding</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">typeEncoding</span>
+            <span class="nf">arguments</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">arguments</span>
+               <span class="nf">locals</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">locals</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">beginFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">aName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">withTypeEncoding</span> <span class="nv">typeEncoding</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">arguments</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">locals</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)sendMessage:types:to:withArgs:count:"></a>
+                    <a name="//apple_ref/objc/Method/-sendMessage:types:to:withArgs:count:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)sendMessage:types:to:withArgs:count:">-sendMessage:types:to:withArgs:count:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a message to a receiver which may be a SmallInt (a boxed Smalltalk
+integer contained within an object pointer).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">sendMessage</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aMessage</span>
+                <span class="nf">types</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">types</span>
+                   <span class="nf">to</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">receiver</span>
+             <span class="nf">withArgs</span><span class="p">:(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="nv">argv</span>
+                <span class="nf">count</span><span class="p">:(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="nv">argc</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">aMessage</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">types</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="n">to</span> <span class="nv">receiver</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="n">withArgs</span> <span class="nv">argv</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutableRawPointer</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">count</span> <span class="nv">argc</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)sendSuperMessage:types:withArgs:count:"></a>
+                    <a name="//apple_ref/objc/Method/-sendSuperMessage:types:withArgs:count:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)sendSuperMessage:types:withArgs:count:">-sendSuperMessage:types:withArgs:count:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a message to the superclass.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">sendSuperMessage</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">sel</span>
+                     <span class="nf">types</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">seltypes</span>
+                  <span class="nf">withArgs</span><span class="p">:(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="nv">argv</span>
+                     <span class="nf">count</span><span class="p">:(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="nv">argc</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendSuperMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">sel</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">types</span> <span class="nv">seltypes</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">withArgs</span> <span class="nv">argv</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutableRawPointer</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">count</span> <span class="nv">argc</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)sendMessage:types:toObject:withArgs:count:"></a>
+                    <a name="//apple_ref/objc/Method/-sendMessage:types:toObject:withArgs:count:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)sendMessage:types:toObject:withArgs:count:">-sendMessage:types:toObject:withArgs:count:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sends a message to an object.  Similar to
+sendMessage:type:to:withargs:count: but requires that receiver be an
+Objective-C object, not a small integer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">sendMessage</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aMessage</span>
+                <span class="nf">types</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">types</span>
+             <span class="nf">toObject</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">receiver</span>
+             <span class="nf">withArgs</span><span class="p">:(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="nv">argv</span>
+                <span class="nf">count</span><span class="p">:(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span><span class="nv">argc</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendMessage</span><span class="p">(</span><span class="n">_</span> <span class="nv">aMessage</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">types</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="n">toObject</span> <span class="nv">receiver</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="n">withArgs</span> <span class="nv">argv</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutableRawPointer</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="n">count</span> <span class="nv">argc</span><span class="p">:</span> <span class="kt">UInt32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)callFunction:typeEncoding:arguments:count:"></a>
+                    <a name="//apple_ref/objc/Method/-callFunction:typeEncoding:arguments:count:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)callFunction:typeEncoding:arguments:count:">-callFunction:typeEncoding:arguments:count:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calls a C function, with the specified type encoding.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">callFunction</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">functionName</span>
+          <span class="nf">typeEncoding</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">typeEncoding</span>
+             <span class="nf">arguments</span><span class="p">:(</span><span class="kt">void</span> <span class="o">**</span><span class="p">)</span><span class="nv">arguments</span>
+                 <span class="nf">count</span><span class="p">:(</span><span class="kt">int</span><span class="p">)</span><span class="nv">count</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">callFunction</span><span class="p">(</span><span class="n">_</span> <span class="nv">functionName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">typeEncoding</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="nv">arguments</span><span class="p">:</span> <span class="kt">UnsafeMutablePointer</span><span class="o">&lt;</span><span class="kt">UnsafeMutableRawPointer</span><span class="p">?</span><span class="o">&gt;!</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)beginBlockWithArgs:locals:externals:signature:"></a>
+                    <a name="//apple_ref/objc/Method/-beginBlockWithArgs:locals:externals:signature:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)beginBlockWithArgs:locals:externals:signature:">-beginBlockWithArgs:locals:externals:signature:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Begin generating a block expression with the specified number of arguments
+and locals.  The bound variables are pointers to variables declared outside
+the block&rsquo;s scope.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">beginBlockWithArgs</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">args</span>
+                    <span class="nf">locals</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">locals</span>
+                 <span class="nf">externals</span><span class="p">:(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">externals</span>
+                 <span class="nf">signature</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">signature</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">beginBlock</span><span class="p">(</span><span class="n">withArgs</span> <span class="nv">args</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">locals</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">externals</span><span class="p">:</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">,</span> <span class="nv">signature</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)loadSelf"></a>
+                    <a name="//apple_ref/objc/Method/-loadSelf" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)loadSelf">-loadSelf</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns &lsquo;self&rsquo; in the current method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">loadSelf</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadSelf</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)loadBlockContext"></a>
+                    <a name="//apple_ref/objc/Method/-loadBlockContext" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)loadBlockContext">-loadBlockContext</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the block object for the current closure.  Calling this when not in
+a block has undefined behaviour.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">loadBlockContext</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadBlockContext</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)loadClassNamed:"></a>
+                    <a name="//apple_ref/objc/Method/-loadClassNamed:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)loadClassNamed:">-loadClassNamed:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Load a pointer to the named class.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">loadClassNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aClass</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadClassNamed</span><span class="p">(</span><span class="n">_</span> <span class="nv">aClass</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)storeValue:inVariable:"></a>
+                    <a name="//apple_ref/objc/Method/-storeValue:inVariable:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)storeValue:inVariable:">-storeValue:inVariable:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stores a value in the specified variable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">storeValue</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">aVal</span> <span class="nf">inVariable</span><span class="p">:(</span><span class="n"><a href="../Classes/LKSymbol.html">LKSymbol</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">aVariable</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">storeValue</span><span class="p">(</span><span class="n">_</span> <span class="nv">aVal</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="n">inVariable</span> <span class="nv">aVariable</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKSymbol.html">LKSymbol</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)loadVariable:"></a>
+                    <a name="//apple_ref/objc/Method/-loadVariable:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)loadVariable:">-loadVariable:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Load the value of the specified local variable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">loadVariable</span><span class="p">:(</span><span class="n"><a href="../Classes/LKSymbol.html">LKSymbol</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">aVariable</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadVariable</span><span class="p">(</span><span class="n">_</span> <span class="nv">aVariable</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKSymbol.html">LKSymbol</a></span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)endMethod"></a>
+                    <a name="//apple_ref/objc/Method/-endMethod" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)endMethod">-endMethod</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>End the current method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">endMethod</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endMethod</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)endBlock"></a>
+                    <a name="//apple_ref/objc/Method/-endBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)endBlock">-endBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>End the current block.  Subsequent calls will insert instructions into the
+containing scope (the method, or another block).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">endBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">endBlock</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)blockReturn:"></a>
+                    <a name="//apple_ref/objc/Method/-blockReturn:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)blockReturn:">-blockReturn:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specify the return value for a block.  For Smalltalk, this is the result of
+the last statement in a block.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">blockReturn</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">aValue</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">blockReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">aValue</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)setReturn:"></a>
+                    <a name="//apple_ref/objc/Method/-setReturn:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)setReturn:">-setReturn:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the return value for a method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setReturn</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">aValue</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setReturn</span><span class="p">(</span><span class="n">_</span> <span class="nv">aValue</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)intConstant:"></a>
+                    <a name="//apple_ref/objc/Method/-intConstant:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)intConstant:">-intConstant:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a constant representing the string as an integer (either a SmallInt or a BigInt).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">intConstant</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aString</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">intConstant</span><span class="p">(</span><span class="n">_</span> <span class="nv">aString</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)floatConstant:"></a>
+                    <a name="//apple_ref/objc/Method/-floatConstant:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)floatConstant:">-floatConstant:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Return a constant representing the passed string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">floatConstant</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aString</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">floatConstant</span><span class="p">(</span><span class="n">_</span> <span class="nv">aString</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)stringConstant:"></a>
+                    <a name="//apple_ref/objc/Method/-stringConstant:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)stringConstant:">-stringConstant:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Return a constant representing the passed string.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">stringConstant</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aString</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">stringConstant</span><span class="p">(</span><span class="n">_</span> <span class="nv">aString</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)nilConstant"></a>
+                    <a name="//apple_ref/objc/Method/-nilConstant" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)nilConstant">-nilConstant</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns nil as a constant.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">nilConstant</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">nilConstant</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)comparePointer:to:"></a>
+                    <a name="//apple_ref/objc/Method/-comparePointer:to:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)comparePointer:to:">-comparePointer:to:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compares two pointers.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">comparePointer</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">lhs</span> <span class="nf">to</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">rhs</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">comparePointer</span><span class="p">(</span><span class="n">_</span> <span class="nv">lhs</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="n">to</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)generateConstantSymbol:"></a>
+                    <a name="//apple_ref/objc/Method/-generateConstantSymbol:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)generateConstantSymbol:">-generateConstantSymbol:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates a constant symbol (a boxed selector).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">generateConstantSymbol</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aSymbol</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">generateConstantSymbol</span><span class="p">(</span><span class="n">_</span> <span class="nv">aSymbol</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)startBasicBlock:"></a>
+                    <a name="//apple_ref/objc/Method/-startBasicBlock:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)startBasicBlock:">-startBasicBlock:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts a new basic block and returns a pointer to the basic block.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">startBasicBlock</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aName</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">startBasicBlock</span><span class="p">(</span><span class="n">_</span> <span class="nv">aName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)currentBasicBlock"></a>
+                    <a name="//apple_ref/objc/Method/-currentBasicBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)currentBasicBlock">-currentBasicBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a pointer to the current basic block.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">currentBasicBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">currentBasicBlock</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)moveInsertPointToBasicBlock:"></a>
+                    <a name="//apple_ref/objc/Method/-moveInsertPointToBasicBlock:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)moveInsertPointToBasicBlock:">-moveInsertPointToBasicBlock:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the current insert point to the specified basic block.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">moveInsertPointToBasicBlock</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">aBasicBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">moveInsertPoint</span><span class="p">(</span><span class="n">toBasicBlock</span> <span class="nv">aBasicBlock</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)branchOnCondition:true:false:"></a>
+                    <a name="//apple_ref/objc/Method/-branchOnCondition:true:false:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)branchOnCondition:true:false:">-branchOnCondition:true:false:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compares aCondition to the SmallInt value for NO (1) and executes the first
+block if it matches, the second if it doesn&rsquo;t.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">branchOnCondition</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">aCondition</span>
+                     <span class="nf">true</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">trueBlock</span>
+                    <span class="nf">false</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">falseBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">branch</span><span class="p">(</span><span class="n">onCondition</span> <span class="nv">aCondition</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="kc">true</span> <span class="nv">trueBlock</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="kc">false</span> <span class="nv">falseBlock</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)goToBasicBlock:"></a>
+                    <a name="//apple_ref/objc/Method/-goToBasicBlock:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)goToBasicBlock:">-goToBasicBlock:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Ends the current basic block with an unconditional jump to the specified
+basic block</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">goToBasicBlock</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">aBasicBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">go</span><span class="p">(</span><span class="n">toBasicBlock</span> <span class="nv">aBasicBlock</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)setBasicBlock:forLabel:"></a>
+                    <a name="//apple_ref/objc/Method/-setBasicBlock:forLabel:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)setBasicBlock:forLabel:">-setBasicBlock:forLabel:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Associate a basic block with the specified label for later retrieval.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setBasicBlock</span><span class="p">:(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nv">aBasicBlock</span> <span class="nf">forLabel</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aLabel</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setBasicBlock</span><span class="p">(</span><span class="n">_</span> <span class="nv">aBasicBlock</span><span class="p">:</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span><span class="p">,</span> <span class="n">forLabel</span> <span class="nv">aLabel</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)basicBlockForLabel:"></a>
+                    <a name="//apple_ref/objc/Method/-basicBlockForLabel:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)basicBlockForLabel:">-basicBlockForLabel:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the basic block associated with the specified label.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">basicBlockForLabel</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aLabel</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">basicBlock</span><span class="p">(</span><span class="n">forLabel</span> <span class="nv">aLabel</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)LKCodeGenerator(im)goToLabelledBasicBlock:"></a>
+                    <a name="//apple_ref/objc/Method/-goToLabelledBasicBlock:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)LKCodeGenerator(im)goToLabelledBasicBlock:">-goToLabelledBasicBlock:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Ends the current basic block with an unconditional jump to the basic block
+that has been associated with the specified label.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">goToLabelledBasicBlock</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aLabel</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">go</span><span class="p">(</span><span class="n">toLabelledBasicBlock</span> <span class="nv">aLabel</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-02-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

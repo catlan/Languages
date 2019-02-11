@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LKAST Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/LKAST" class="dashAnchor"></a>
+    <a title="LKAST Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
+        <p class="header-right"><a href="https://github.com/catlan/Languages"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LKAST Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LKAST.html">LKAST</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKASTVisitor">LKASTVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKArrayExpr.html">LKArrayExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKAssignExpr.html">LKAssignExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBlockExpr.html">LKBlockExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKBlockReturn">LKBlockReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKBlockSelfRef">LKBlockSelfRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBreak.html">LKBreak</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBuiltinSymbol.html">LKBuiltinSymbol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCategoryDef.html">LKCategoryDef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKClassMethod">LKClassMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCodeGenLoader.html">LKCodeGenLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKComment.html">LKComment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCompare.html">LKCompare</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCompiler.html">LKCompiler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKContinue.html">LKContinue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeclRef.html">LKDeclRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKEnumReference.html">LKEnumReference</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKFloatLiteral">LKFloatLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKFreestandingMethod">LKFreestandingMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKFunctionCall.html">LKFunctionCall</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKIfStatement.html">LKIfStatement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKInstanceMethod">LKInstanceMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLiteral.html">LKLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLoop.html">LKLoop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLoopFlowControl.html">LKLoopFlowControl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMessageCascade.html">LKMessageCascade</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMessageSend.html">LKMessageSend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMethod.html">LKMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKModule.html">LKModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKNilRef">LKNilRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKNumberLiteral.html">LKNumberLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKProperty.html">LKProperty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKReturn.html">LKReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKSelfRef">LKSelfRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKStringLiteral">LKStringLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSubclass.html">LKSubclass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKSuperRef">LKSuperRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbol.html">LKSymbol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbolRef.html">LKSymbolRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbolTable.html">LKSymbolTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKVariableDecl.html">LKVariableDecl</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKCompilerDidCompileNewClassesNotification">LKCompilerDidCompileNewClassesNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKEnumError">LKEnumError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKInvalidSelectorError">LKInvalidSelectorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKMissingHeaderWarning">LKMissingHeaderWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKParserError">LKParserError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKPolymorphicSelectorWarning">LKPolymorphicSelectorWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKRedefinedClassWarning">LKRedefinedClassWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUndefinedSuperclassError">LKUndefinedSuperclassError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUndefinedSymbolError">LKUndefinedSymbolError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUnknownTypeError">LKUnknownTypeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKASTNode">kLKASTNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKCharacterNumber">kLKCharacterNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKHeaderName">kLKHeaderName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKHumanReadableDescription">kLKHumanReadableDescription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKLineNumber">kLKLineNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKMissingSuperclassName">kLKMissingSuperclassName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKSourceLine">kLKSourceLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKTypeEncoding">kLKTypeEncoding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LKASTVisitor.html">LKASTVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKCodeGenerator.html">LKCodeGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKParser.html">LKParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKStaticCodeGenerator.html">LKStaticCodeGenerator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:LKCompiler.h@T@LKClassLoader">LKClassLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKDebuggingMode.html">LKDebuggingMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKSymbolQualifier.html">LKSymbolQualifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKSymbolScope.html">LKSymbolScope</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:LKSymbolTable.h@F@NSStringFromRuntimeString">NSStringFromRuntimeString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@defaultJIT">defaultJIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@defaultStaticCompilterWithFile">defaultStaticCompilterWithFile</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LKAST</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">LKAST</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
+  <span class="n">LKAST</span> <span class="o">*</span><span class="n">parent</span><span class="p">;</span>
+  <span class="n">BOOL</span> <span class="n">isBracket</span><span class="p">;</span>
+  <span class="n"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span> <span class="o">*</span><span class="n">symbols</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+
+                </div>
+              </div>
+            <p>Root class for AST nodes.  Every node in the abstract syntax tree inherits
+from this.  It stores the parent, allowing navigation up the tree, and a
+pointer to the symbol table for this scope.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST@parent"></a>
+                    <a name="//apple_ref/objc/Ivar/parent" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST@parent">parent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Node above this one in the tree.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">LKAST</span> <span class="o">*</span><span class="n">parent</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST@isBracket"></a>
+                    <a name="//apple_ref/objc/Ivar/isBracket" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST@isBracket">isBracket</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Is this a parenthetical expression?  Avoids creating explicit nodes for
+    * parenthetical expressions.  Might not be sensible.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">BOOL</span> <span class="n">isBracket</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST@symbols"></a>
+                    <a name="//apple_ref/objc/Ivar/symbols" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST@symbols">symbols</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Symbol table for this context.  If no new symbols are defined, this is a
+    * pointer to the parent&rsquo;s symbol table.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span> <span class="o">*</span><span class="n">symbols</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(cm)code"></a>
+                    <a name="//apple_ref/objc/Method/+code" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(cm)code">+code</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the AST nodes available at runtime for subclasses and categories.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="p">)</span><span class="n">code</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">code</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">NSMutableDictionary</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)module"></a>
+                    <a name="//apple_ref/objc/Method/-module" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)module">-module</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the module containing the current AST.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/LKModule.html">LKModule</a></span> <span class="o">*</span><span class="p">)</span><span class="n">module</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">module</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/LKModule.html">LKModule</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)initWithSymbolTable:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithSymbolTable:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)initWithSymbolTable:">-initWithSymbolTable:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Initialise a new AST node with the specified symbol table.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="nf">initWithSymbolTable</span><span class="p">:(</span><span class="n"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">aSymbolTable</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="o">!</span><span class="p">(</span><span class="n">symbolTable</span> <span class="nv">aSymbolTable</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)setBracketed:"></a>
+                    <a name="//apple_ref/objc/Method/-setBracketed:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)setBracketed:">-setBracketed:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set whether the AST node represents a bracketed expression.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setBracketed</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">aFlag</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setBracketed</span><span class="p">(</span><span class="n">_</span> <span class="nv">aFlag</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)isBracketed"></a>
+                    <a name="//apple_ref/objc/Method/-isBracketed" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)isBracketed">-isBracketed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns whether the AST node represents a bracketed expression.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isBracketed</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isBracketed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)inheritSymbolTable:"></a>
+                    <a name="//apple_ref/objc/Method/-inheritSymbolTable:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)inheritSymbolTable:">-inheritSymbolTable:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inherits the given symbol table from the parent.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">inheritSymbolTable</span><span class="p">:(</span><span class="n"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">aSymbolTable</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">inheritSymbolTable</span><span class="p">(</span><span class="n">_</span> <span class="nv">aSymbolTable</span><span class="p">:</span> <span class="kt"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)setParent:"></a>
+                    <a name="//apple_ref/objc/Method/-setParent:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)setParent:">-setParent:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the parent of this node.  Also sets connections between the nodes&rsquo;
+symbol tables.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setParent</span><span class="p">:(</span><span class="n">LKAST</span> <span class="o">*</span><span class="p">)</span><span class="nv">aNode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setParent</span><span class="p">(</span><span class="n">_</span> <span class="nv">aNode</span><span class="p">:</span> <span class="kt">LKAST</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)parent"></a>
+                    <a name="//apple_ref/objc/Method/-parent" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)parent">-parent</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the parent of this AST node.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">LKAST</span> <span class="o">*</span><span class="p">)</span><span class="n"><a href="../Classes/LKAST.html#/c:objc(cs)LKAST@parent">parent</a></span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">parent</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">LKAST</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)symbols"></a>
+                    <a name="//apple_ref/objc/Method/-symbols" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)symbols">-symbols</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the symbol table for this node.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span> <span class="o">*</span><span class="p">)</span><span class="n"><a href="../Classes/LKAST.html#/c:objc(cs)LKAST@symbols">symbols</a></span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">symbols</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/LKSymbolTable.html">LKSymbolTable</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)print"></a>
+                    <a name="//apple_ref/objc/Method/-print" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)print">-print</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Prints the syntax tree from this node.  Use only for debugging.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">print</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@warn_unqualified_access</span> <span class="kd">func</span> <span class="nf">print</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)check"></a>
+                    <a name="//apple_ref/objc/Method/-check" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)check">-check</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs semantic analysis on this node and all of its children.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">check</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">check</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)checkWithErrorReporter:"></a>
+                    <a name="//apple_ref/objc/Method/-checkWithErrorReporter:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)checkWithErrorReporter:">-checkWithErrorReporter:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs semantic analysis on this node and all of its children, reporting
+errors and warnings to the object specified by the argument.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">checkWithErrorReporter</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">errorReporter</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">checkWithErrorReporter</span><span class="p">(</span><span class="n">_</span> <span class="nv">errorReporter</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)compileWithGenerator:"></a>
+                    <a name="//apple_ref/objc/Method/-compileWithGenerator:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)compileWithGenerator:">-compileWithGenerator:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compile this AST node with the specified code generator.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="nf">compileWithGenerator</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCodeGenerator.html">LKCodeGenerator</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">aGenerator</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">compile</span><span class="p">(</span><span class="n">with</span> <span class="nv">aGenerator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKCodeGenerator.html">LKCodeGenerator</a></span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UnsafeMutableRawPointer</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)isComment"></a>
+                    <a name="//apple_ref/objc/Method/-isComment" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)isComment">-isComment</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns YES for AST nodes with no code generation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isComment</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isComment</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)isBranch"></a>
+                    <a name="//apple_ref/objc/Method/-isBranch" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)isBranch">-isBranch</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns YES for AST nodes that branch unconditionally.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isBranch</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isBranch</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(py)sourceRange"></a>
+                    <a name="//apple_ref/objc/Property/sourceRange" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(py)sourceRange">sourceRange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Source Range</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">assign</span><span class="p">,</span> <span class="n">readwrite</span><span class="p">,</span> <span class="n">atomic</span><span class="p">)</span> <span class="n">NSRange</span> <span class="n">sourceRange</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sourceRange</span><span class="p">:</span> <span class="kt">NSRange</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Visitor"></a>
+                <a name="//apple_ref/objc/Section/Visitor" class="dashAnchor"></a>
+                <a href="#/Visitor">
+                  <h3 class="section-name">Visitor</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)visitWithVisitor:"></a>
+                    <a name="//apple_ref/objc/Method/-visitWithVisitor:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)visitWithVisitor:">-visitWithVisitor:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Visit the abstract syntax tree with the specified visitor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">visitWithVisitor</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKASTVisitor.html">LKASTVisitor</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">aVisitor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">visit</span><span class="p">(</span><span class="n">with</span> <span class="nv">aVisitor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKASTVisitor.html">LKASTVisitor</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)visitArray:withVisitor:"></a>
+                    <a name="//apple_ref/objc/Method/-visitArray:withVisitor:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)visitArray:withVisitor:">-visitArray:withVisitor:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience method.  Visits every element in a specified mutable array,
+replacing elements with the versions returned by the visitor if they have
+changed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">visitArray</span><span class="p">:(</span><span class="n">NSMutableArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">anArray</span>
+       <span class="nf">withVisitor</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKASTVisitor.html">LKASTVisitor</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">aVisitor</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">visit</span><span class="p">(</span><span class="n">_</span> <span class="nv">anArray</span><span class="p">:</span> <span class="kt">NSMutableArray</span><span class="o">!</span><span class="p">,</span> <span class="n">with</span> <span class="nv">aVisitor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKASTVisitor.html">LKASTVisitor</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Interpreter"></a>
+                <a name="//apple_ref/objc/Section/Interpreter" class="dashAnchor"></a>
+                <a href="#/Interpreter">
+                  <h3 class="section-name">Interpreter</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKAST(im)interpretInContext:"></a>
+                    <a name="//apple_ref/objc/Method/-interpretInContext:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKAST(im)interpretInContext:">-interpretInContext:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Interprets the AST node with the specified context object.  Returns the
+result.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="nf">interpretInContext</span><span class="p">:(</span><span class="n">LKInterpreterContext</span> <span class="o">*</span><span class="p">)</span><span class="nv">context</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">interpret</span><span class="p">(</span><span class="k">in</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">LKInterpreterContext</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Any</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-02-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

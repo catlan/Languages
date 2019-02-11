@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LKCompiler Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/objc/Class/LKCompiler" class="dashAnchor"></a>
+    <a title="LKCompiler Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (76% documented)</p>
+        <p class="header-right"><a href="https://github.com/catlan/Languages"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        LKCompiler Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/LKAST.html">LKAST</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKASTVisitor">LKASTVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKArrayExpr.html">LKArrayExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKAssignExpr.html">LKAssignExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBlockExpr.html">LKBlockExpr</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKBlockReturn">LKBlockReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKBlockSelfRef">LKBlockSelfRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBreak.html">LKBreak</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKBuiltinSymbol.html">LKBuiltinSymbol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCategoryDef.html">LKCategoryDef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKClassMethod">LKClassMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCodeGenLoader.html">LKCodeGenLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKComment.html">LKComment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCompare.html">LKCompare</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKCompiler.html">LKCompiler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKContinue.html">LKContinue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKDeclRef.html">LKDeclRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKEnumReference.html">LKEnumReference</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKFloatLiteral">LKFloatLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKFreestandingMethod">LKFreestandingMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKFunctionCall.html">LKFunctionCall</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKIfStatement.html">LKIfStatement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKInstanceMethod">LKInstanceMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLiteral.html">LKLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLoop.html">LKLoop</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKLoopFlowControl.html">LKLoopFlowControl</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMessageCascade.html">LKMessageCascade</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMessageSend.html">LKMessageSend</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKMethod.html">LKMethod</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKModule.html">LKModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKNilRef">LKNilRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKNumberLiteral.html">LKNumberLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKProperty.html">LKProperty</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKReturn.html">LKReturn</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKSelfRef">LKSelfRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKStringLiteral">LKStringLiteral</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSubclass.html">LKSubclass</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/c:objc(cs)LKSuperRef">LKSuperRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbol.html">LKSymbol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbolRef.html">LKSymbolRef</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKSymbolTable.html">LKSymbolTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LKVariableDecl.html">LKVariableDecl</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKCompilerDidCompileNewClassesNotification">LKCompilerDidCompileNewClassesNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKEnumError">LKEnumError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKInvalidSelectorError">LKInvalidSelectorError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKMissingHeaderWarning">LKMissingHeaderWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKParserError">LKParserError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKPolymorphicSelectorWarning">LKPolymorphicSelectorWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKRedefinedClassWarning">LKRedefinedClassWarning</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUndefinedSuperclassError">LKUndefinedSuperclassError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUndefinedSymbolError">LKUndefinedSymbolError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@LKUnknownTypeError">LKUnknownTypeError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKASTNode">kLKASTNode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKCharacterNumber">kLKCharacterNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKHeaderName">kLKHeaderName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKHumanReadableDescription">kLKHumanReadableDescription</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKLineNumber">kLKLineNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKMissingSuperclassName">kLKMissingSuperclassName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKSourceLine">kLKSourceLine</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Constants.html#/c:@kLKTypeEncoding">kLKTypeEncoding</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/LKASTVisitor.html">LKASTVisitor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKCodeGenerator.html">LKCodeGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKParser.html">LKParser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/LKStaticCodeGenerator.html">LKStaticCodeGenerator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Type Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Type Definitions.html#/c:LKCompiler.h@T@LKClassLoader">LKClassLoader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKDebuggingMode.html">LKDebuggingMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKSymbolQualifier.html">LKSymbolQualifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Type Definitions/LKSymbolScope.html">LKSymbolScope</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:LKSymbolTable.h@F@NSStringFromRuntimeString">NSStringFromRuntimeString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@defaultJIT">defaultJIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/c:@F@defaultStaticCompilterWithFile">defaultStaticCompilterWithFile</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>LKCompiler</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">LKCompiler</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="p">{</span>
+  <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">&gt;</span> <span class="n">delegate</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+
+                </div>
+              </div>
+            <p>Abstract class implementing a dynamic language compiler.  Concrete
+subclasses provide implementations for specific languages.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler@delegate"></a>
+                    <a name="//apple_ref/objc/Ivar/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler@delegate">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">&gt;</span> <span class="n">delegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(py)transforms"></a>
+                    <a name="//apple_ref/objc/Property/transforms" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(py)transforms">transforms</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span><span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">retain</span><span class="p">)</span> <span class="n">NSMutableArray</span> <span class="o">*</span><span class="n">transforms</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">transforms</span><span class="p">:</span> <span class="kt">NSMutableArray</span><span class="o">!</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)setDefaultDelegate:"></a>
+                    <a name="//apple_ref/objc/Method/+setDefaultDelegate:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)setDefaultDelegate:">+setDefaultDelegate:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the default delegate that will be used by new compiler instances.  If
+this is not called then a default delegate will be installed that just logs
+errors and warnings to the console.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setDefaultDelegate</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">aDelegate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">setDefaultDelegate</span><span class="p">(</span><span class="n">_</span> <span class="nv">aDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)setDelegate:"></a>
+                    <a name="//apple_ref/objc/Method/-setDelegate:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)setDelegate:">-setDelegate:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sets the delegate for this compiler.  The delegate is responsible for
+handling errors and warnings that occur during the semantic analysis of the
+program.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setDelegate</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">aDelegate</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">setDelegate</span><span class="p">(</span><span class="n">_</span> <span class="nv">aDelegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/LKCompilerDelegate.html">LKCompilerDelegate</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)addClassLoader:"></a>
+                    <a name="//apple_ref/objc/Method/+addClassLoader:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)addClassLoader:">+addClassLoader:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Adds a new class loader.  These will be called in the order that they
+appear.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addClassLoader</span><span class="p">:(</span><span class="n"><a href="../Type Definitions.html#/c:LKCompiler.h@T@LKClassLoader">LKClassLoader</a></span><span class="p">)</span><span class="nv">aBlock</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">addClassLoader</span><span class="p">(</span><span class="n">_</span> <span class="nv">aBlock</span><span class="p">:</span> <span class="kt"><a href="../Type Definitions.html#/c:LKCompiler.h@T@LKClassLoader">LKClassLoader</a></span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)compiler"></a>
+                    <a name="//apple_ref/objc/Method/+compiler" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)compiler">+compiler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a new autoreleased compiler for this language.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">LKCompiler</span> <span class="o">*</span><span class="p">)</span><span class="n">compiler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)inDevMode"></a>
+                    <a name="//apple_ref/objc/Method/+inDevMode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)inDevMode">+inDevMode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns whether we are in developer mode.  In this mode, all unrecognised
+symbols are assumed to be classes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">inDevMode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">inDevMode</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)setDebugMode:"></a>
+                    <a name="//apple_ref/objc/Method/+setDebugMode:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)setDebugMode:">+setDebugMode:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Specifies whether the compiler should run in debug mode.  Enabling this will
+spam stderr with a huge amount of debugging information.  Note that this is
+a global setting and will apply to all compilers.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setDebugMode</span><span class="p">:(</span><span class="n"><a href="../Type Definitions/LKDebuggingMode.html">LKDebuggingMode</a></span><span class="p">)</span><span class="nv">aFlag</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">setDebugMode</span><span class="p">(</span><span class="n">_</span> <span class="nv">aFlag</span><span class="p">:</span> <span class="kt"><a href="../Type Definitions/LKDebuggingMode.html">LKDebuggingMode</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)compileString:"></a>
+                    <a name="//apple_ref/objc/Method/-compileString:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)compileString:">-compileString:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles and loads the specified source code.  Returns the AST on success,
+nil on failure.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/LKAST.html">LKAST</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">compileString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">source</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">compileString</span><span class="p">(</span><span class="n">_</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/LKAST.html">LKAST</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)compileString:withGenerator:"></a>
+                    <a name="//apple_ref/objc/Method/-compileString:withGenerator:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)compileString:withGenerator:">-compileString:withGenerator:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles the specified source code using the given code generator. Returns
+the AST on success, nil on failure.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n"><a href="../Classes/LKAST.html">LKAST</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">compileString</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">source</span>
+           <span class="nf">withGenerator</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCodeGenerator.html">LKCodeGenerator</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">cg</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)compileMethod:onClassNamed:"></a>
+                    <a name="//apple_ref/objc/Method/-compileMethod:onClassNamed:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)compileMethod:onClassNamed:">-compileMethod:onClassNamed:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles and loads a method on the class with the specified name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">compileMethod</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">source</span> <span class="nf">onClassNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">compileMethod</span><span class="p">(</span><span class="n">_</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">onClassNamed</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)compileMethod:onClassNamed:output:"></a>
+                    <a name="//apple_ref/objc/Method/-compileMethod:onClassNamed:output:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)compileMethod:onClassNamed:output:">-compileMethod:onClassNamed:output:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles a method to LLVM bitcode for the class with the specified name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">compileMethod</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">source</span>
+         <span class="nf">onClassNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+               <span class="nf">output</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">bitcode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">compileMethod</span><span class="p">(</span><span class="n">_</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">onClassNamed</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">output</span> <span class="nv">bitcode</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)compileMethod:onClassNamed:withGenerator:"></a>
+                    <a name="//apple_ref/objc/Method/-compileMethod:onClassNamed:withGenerator:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)compileMethod:onClassNamed:withGenerator:">-compileMethod:onClassNamed:withGenerator:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles a method on the class with the specified name using the given code
+generator.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">compileMethod</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">source</span>
+         <span class="nf">onClassNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span>
+        <span class="nf">withGenerator</span><span class="p">:(</span><span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/LKCodeGenerator.html">LKCodeGenerator</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">cg</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadFrameworkNamed:"></a>
+                    <a name="//apple_ref/objc/Method/+loadFrameworkNamed:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadFrameworkNamed:">+loadFrameworkNamed:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Load a framework with the specified name.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadFrameworkNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">framework</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadFrameworkNamed</span><span class="p">(</span><span class="n">_</span> <span class="nv">framework</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadScriptNamed:fromBundle:"></a>
+                    <a name="//apple_ref/objc/Method/+loadScriptNamed:fromBundle:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadScriptNamed:fromBundle:">+loadScriptNamed:fromBundle:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles and loads a file from the specified bundle.
+The file name extension will be used to select a suitable compiler.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadScriptNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileName</span> <span class="nf">fromBundle</span><span class="p">:(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="nv">bundle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadScriptNamed</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">from</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)loadScriptNamed:fromBundle:"></a>
+                    <a name="//apple_ref/objc/Method/-loadScriptNamed:fromBundle:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)loadScriptNamed:fromBundle:">-loadScriptNamed:fromBundle:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles and loads a file from the specified bundle.
+Omit the extension in the name paramater.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadScriptNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileName</span> <span class="nf">fromBundle</span><span class="p">:(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="nv">bundle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadScriptNamed</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">from</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadApplicationScriptNamed:"></a>
+                    <a name="//apple_ref/objc/Method/+loadApplicationScriptNamed:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadApplicationScriptNamed:">+loadApplicationScriptNamed:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles and loads a file from the application bundle.
+The file name extension will be used to select a suitable compiler.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadApplicationScriptNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileName</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadApplicationScriptNamed</span><span class="p">(</span><span class="n">_</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)loadApplicationScriptNamed:"></a>
+                    <a name="//apple_ref/objc/Method/-loadApplicationScriptNamed:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)loadApplicationScriptNamed:">-loadApplicationScriptNamed:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compiles and loads a file from the application bundle.
+Omit the extension in the name paramater.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadApplicationScriptNamed</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">name</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadApplicationScriptNamed</span><span class="p">(</span><span class="n">_</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadScriptsFromBundle:"></a>
+                    <a name="//apple_ref/objc/Method/+loadScriptsFromBundle:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadScriptsFromBundle:">+loadScriptsFromBundle:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads all scripts for all known languages from the specified bundle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadScriptsFromBundle</span><span class="p">:(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="nv">aBundle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadScripts</span><span class="p">(</span><span class="n">from</span> <span class="nv">aBundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)loadScriptsFromBundle:"></a>
+                    <a name="//apple_ref/objc/Method/-loadScriptsFromBundle:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)loadScriptsFromBundle:">-loadScriptsFromBundle:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads all scripts written in this language from the specified bundle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadScriptsFromBundle</span><span class="p">:(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="nv">aBundle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadScripts</span><span class="p">(</span><span class="n">from</span> <span class="nv">aBundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadAllScriptsForApplication"></a>
+                    <a name="//apple_ref/objc/Method/+loadAllScriptsForApplication" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadAllScriptsForApplication">+loadAllScriptsForApplication</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads all scripts for all known languages from the application bundle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">loadAllScriptsForApplication</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadAllScriptsForApplication</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(im)loadAllScriptsForApplication"></a>
+                    <a name="//apple_ref/objc/Method/-loadAllScriptsForApplication" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(im)loadAllScriptsForApplication">-loadAllScriptsForApplication</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads all scripts written in this language from the application bundle.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">loadAllScriptsForApplication</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadAllScriptsForApplication</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)compileLanguageKitBundle:output:"></a>
+                    <a name="//apple_ref/objc/Method/+compileLanguageKitBundle:output:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)compileLanguageKitBundle:output:">+compileLanguageKitBundle:output:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads a bundle containing an LKInfo.plist file.  This should contain a
+Source key giving an array of source files in the order in which they should
+be compiled, a Frameworks key giving an array of frameworks and a
+Classes key for declaring classes being compile in other to resolve symbols
+correctly</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">compileLanguageKitBundle</span><span class="p">:(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="nv">bundle</span> <span class="nf">output</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">bitcode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">compileLanguageKitBundle</span><span class="p">(</span><span class="n">_</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">!</span><span class="p">,</span> <span class="n">output</span> <span class="nv">bitcode</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadLanguageKitBundle:"></a>
+                    <a name="//apple_ref/objc/Method/+loadLanguageKitBundle:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadLanguageKitBundle:">+loadLanguageKitBundle:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads a bundle containing an LKInfo.plist file.  This should contain a
+ Source key giving an array of source files in the order in which they should
+ be compiled, a Frameworks key giving an array of frameworks, a Classes key for
+ declaring classes being load in other to resolve symbols correctly and a
+ PrincipalClass key for the class that should be instantiated when it is
+ loaded.</p>
+
+<p>Returns (Class)-1 in case of error, or the principal class if loading
+ succeeds (Nil if no principal class is specified).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">Class</span><span class="p">)</span><span class="nf">loadLanguageKitBundle</span><span class="p">:(</span><span class="n">NSBundle</span> <span class="o">*</span><span class="p">)</span><span class="nv">bundle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadLanguageKitBundle</span><span class="p">(</span><span class="n">_</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyClass</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadAllPlugInsForApplication"></a>
+                    <a name="//apple_ref/objc/Method/+loadAllPlugInsForApplication" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadAllPlugInsForApplication">+loadAllPlugInsForApplication</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Loads all of the LanguageKit plugins for the current application.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">loadAllPlugInsForApplication</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadAllPlugInsForApplication</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadHeader:"></a>
+                    <a name="//apple_ref/objc/Method/+loadHeader:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadHeader:">+loadHeader:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Attempts to parse a C header.  Returns YES on success, NO on failure.
+Failure can be caused by an inability to locate the header or by
+SourceCodeKit not being available.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadHeader</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aHeader</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadHeader</span><span class="p">(</span><span class="n">_</span> <span class="nv">aHeader</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)loadLibrary:"></a>
+                    <a name="//apple_ref/objc/Method/+loadLibrary:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)loadLibrary:">+loadLibrary:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Attempts to load a library from an absolute path or one of the standard
+library locations.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">loadLibrary</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aLibrary</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">loadLibrary</span><span class="p">(</span><span class="n">_</span> <span class="nv">aLibrary</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)fileExtension"></a>
+                    <a name="//apple_ref/objc/Method/+fileExtension" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)fileExtension">+fileExtension</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><override-subclass /> 
+ Returns the extension used for scripts in this language.</p>
+
+<p>Implemented by subclasses.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">fileExtension</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">fileExtension</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)languageName"></a>
+                    <a name="//apple_ref/objc/Method/+languageName" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)languageName">+languageName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><override-subclass /> 
+ Returns the name of the language supported by this compiler.</p>
+
+<p>Implemented by subclasses.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">languageName</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">languageName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)supportedLanguageNames"></a>
+                    <a name="//apple_ref/objc/Method/+supportedLanguageNames" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)supportedLanguageNames">+supportedLanguageNames</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the languages for which compilers are currently supported.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSArray</span> <span class="o">*</span><span class="p">)</span><span class="n">supportedLanguageNames</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">supportedLanguageNames</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)compilerForLanguage:"></a>
+                    <a name="//apple_ref/objc/Method/+compilerForLanguage:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)compilerForLanguage:">+compilerForLanguage:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the compiler for a named language.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">Class</span><span class="p">)</span><span class="nf">compilerForLanguage</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aLanguage</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">compiler</span><span class="p">(</span><span class="n">forLanguage</span> <span class="nv">aLanguage</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyClass</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)compilerClassForFileExtension:"></a>
+                    <a name="//apple_ref/objc/Method/+compilerClassForFileExtension:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)compilerClassForFileExtension:">+compilerClassForFileExtension:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the compiler for files with a given extension.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">Class</span><span class="p">)</span><span class="nf">compilerClassForFileExtension</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">anExtension</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">compilerClass</span><span class="p">(</span><span class="n">forFileExtension</span> <span class="nv">anExtension</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyClass</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)parserClass"></a>
+                    <a name="//apple_ref/objc/Method/+parserClass" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)parserClass">+parserClass</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><override-subclass /> 
+Returns the parser used by this language.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">Class</span><span class="p">)</span><span class="n">parserClass</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">parserClass</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">AnyClass</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)reportWarning:details:"></a>
+                    <a name="//apple_ref/objc/Method/+reportWarning:details:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)reportWarning:details:">+reportWarning:details:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reports the given warning and returns YES if recovery should proceed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">reportWarning</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aWarning</span> <span class="nf">details</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">info</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">reportWarning</span><span class="p">(</span><span class="n">_</span> <span class="nv">aWarning</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">details</span> <span class="nv">info</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)reportError:details:"></a>
+                    <a name="//apple_ref/objc/Method/+reportError:details:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)reportError:details:">+reportError:details:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reports the given error and returns YES if recovery should proceed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">reportError</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">aWarning</span> <span class="nf">details</span><span class="p">:(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">info</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">reportError</span><span class="p">(</span><span class="n">_</span> <span class="nv">aWarning</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">details</span> <span class="nv">info</span><span class="p">:</span> <span class="p">[</span><span class="kt">AnyHashable</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)parseScript:forFileExtension:"></a>
+                    <a name="//apple_ref/objc/Method/+parseScript:forFileExtension:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)parseScript:forFileExtension:">+parseScript:forFileExtension:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n"><a href="../Classes/LKAST.html">LKAST</a></span><span class="o">*</span><span class="p">)</span> <span class="nf">parseScript</span><span class="p">:</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">script</span> <span class="nf">forFileExtension</span><span class="p">:</span> <span class="p">(</span><span class="n">NSString</span><span class="o">*</span><span class="p">)</span><span class="nv">extension</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">parseScript</span><span class="p">(</span><span class="n">_</span> <span class="nv">script</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">forFileExtension</span> <span class="nv">extension</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/LKAST.html">LKAST</a></span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/JTL"></a>
+                <a name="//apple_ref/objc/Section/JTL" class="dashAnchor"></a>
+                <a href="#/JTL">
+                  <h3 class="section-name">JTL</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)justTooLateCompileBundle:"></a>
+                    <a name="//apple_ref/objc/Method/+justTooLateCompileBundle:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)justTooLateCompileBundle:">+justTooLateCompileBundle:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="nf">justTooLateCompileBundle</span><span class="p">:</span> <span class="p">(</span><span class="n">NSBundle</span><span class="o">*</span><span class="p">)</span><span class="nv">aBundle</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">justTooLateCompileBundle</span><span class="p">(</span><span class="n">_</span> <span class="nv">aBundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="o">!</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)LKCompiler(cm)linkBitcodeFiles:outputDir:outputFile:"></a>
+                    <a name="//apple_ref/objc/Method/+linkBitcodeFiles:outputDir:outputFile:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)LKCompiler(cm)linkBitcodeFiles:outputDir:outputFile:">+linkBitcodeFiles:outputDir:outputFile:</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Link LKModule into a library.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nf">linkBitcodeFiles</span><span class="p">:(</span><span class="n">NSMutableArray</span> <span class="o">*</span><span class="p">)</span><span class="nv">files</span>
+                     <span class="nf">outputDir</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">dir</span>
+                    <span class="nf">outputFile</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fileName</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">linkBitcodeFiles</span><span class="p">(</span><span class="n">_</span> <span class="nv">files</span><span class="p">:</span> <span class="kt">NSMutableArray</span><span class="o">!</span><span class="p">,</span> <span class="n">outputDir</span> <span class="nv">dir</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">,</span> <span class="n">outputFile</span> <span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2019-02-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

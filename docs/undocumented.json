@@ -1,0 +1,600 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKAST.h",
+      "line": 101,
+      "symbol": "LKAST(Visitor)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKAST.h",
+      "line": 115,
+      "symbol": "LKAST(Interpreter)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKArrayExpr.h",
+      "line": 3,
+      "symbol": "LKArrayExpr",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKArrayExpr.h",
+      "line": 4,
+      "symbol": "LKArrayExpr.elements",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKArrayExpr.h",
+      "line": 6,
+      "symbol": "LKArrayExpr.elements",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKArrayExpr.h",
+      "line": 7,
+      "symbol": "LKArrayExpr.+arrayWithElements:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKArrayExpr.h",
+      "line": 8,
+      "symbol": "LKArrayExpr.-initWithElements:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCategory.h",
+      "line": 15,
+      "symbol": "LKCategoryDef.classname",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCategory.h",
+      "line": 16,
+      "symbol": "LKCategoryDef.categoryName",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCategory.h",
+      "line": 17,
+      "symbol": "LKCategoryDef.methods",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKComment.h",
+      "line": 3,
+      "symbol": "LKComment",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKComment.h",
+      "line": 4,
+      "symbol": "LKComment.comment",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKComparison.h",
+      "line": 3,
+      "symbol": "LKCompare",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKComparison.h",
+      "line": 4,
+      "symbol": "LKCompare.lhs",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKComparison.h",
+      "line": 5,
+      "symbol": "LKCompare.rhs",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKComparison.h",
+      "line": 7,
+      "symbol": "LKCompare.+comparisonWithLeftExpression:rightExpression:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 12,
+      "symbol": "",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 12,
+      "symbol": "LKDebuggingMode",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 12,
+      "symbol": "LKDebuggingMode.",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 14,
+      "symbol": ".LKDebuggingDisabled",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 14,
+      "symbol": "LKDebuggingMode..LKDebuggingDisabled",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 15,
+      "symbol": ".LKDebuggingEnabled",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 15,
+      "symbol": "LKDebuggingMode..LKDebuggingEnabled",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 42,
+      "symbol": "LKCompilerDelegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 77,
+      "symbol": "LKCompiler.delegate",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 79,
+      "symbol": "LKCompiler.transforms",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 263,
+      "symbol": "LKCompiler.+parseScript:forFileExtension:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 266,
+      "symbol": "LKCompiler(JTL)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompiler.h",
+      "line": 267,
+      "symbol": "LKCompiler.+justTooLateCompileBundle:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 13,
+      "symbol": "kLKHumanReadableDescription",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 17,
+      "symbol": "kLKASTNode",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 21,
+      "symbol": "kLKMissingSuperclassName",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 25,
+      "symbol": "kLKLineNumber",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 29,
+      "symbol": "kLKSourceLine",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 33,
+      "symbol": "kLKCharacterNumber",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 37,
+      "symbol": "kLKTypeEncoding",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 41,
+      "symbol": "kLKHeaderName",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 46,
+      "symbol": "LKUndefinedSymbolError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 50,
+      "symbol": "LKInvalidSelectorError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 54,
+      "symbol": "LKUnknownTypeError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 61,
+      "symbol": "LKUndefinedSuperclassError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 67,
+      "symbol": "LKRedefinedClassWarning",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 72,
+      "symbol": "LKPolymorphicSelectorWarning",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 77,
+      "symbol": "LKMissingHeaderWarning",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 82,
+      "symbol": "LKParserError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKCompilerErrors.h",
+      "line": 86,
+      "symbol": "LKEnumError",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKEnumReference.h",
+      "line": 3,
+      "symbol": "LKEnumReference",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKEnumReference.h",
+      "line": 5,
+      "symbol": "LKEnumReference.enumName",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKEnumReference.h",
+      "line": 6,
+      "symbol": "LKEnumReference.enumValue",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKEnumReference.h",
+      "line": 7,
+      "symbol": "LKEnumReference.value",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKEnumReference.h",
+      "line": 9,
+      "symbol": "LKEnumReference.-initWithValue:inEnumeration:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 3,
+      "symbol": "LKIfStatement",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 4,
+      "symbol": "LKIfStatement.condition",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 5,
+      "symbol": "LKIfStatement.thenStatements",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 6,
+      "symbol": "LKIfStatement.elseStatements",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 8,
+      "symbol": "LKIfStatement.+ifStatementWithCondition:then:else:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 11,
+      "symbol": "LKIfStatement.+ifStatementWithCondition:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 12,
+      "symbol": "LKIfStatement.-setElseStatements:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKIfStatement.h",
+      "line": 13,
+      "symbol": "LKIfStatement.-setThenStatements:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKLiteral.h",
+      "line": 3,
+      "symbol": "LKLiteral",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKLiteral.h",
+      "line": 8,
+      "symbol": "LKLiteral.+literalFromString:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKLiteral.h",
+      "line": 11,
+      "symbol": "LKNumberLiteral",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKLiteral.h",
+      "line": 23,
+      "symbol": "LKStringLiteral",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKLoop.h",
+      "line": 68,
+      "symbol": "LKLoopFlowControl.label",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKMessageSend.h",
+      "line": 63,
+      "symbol": "LKMessageCascade.receiver",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKMessageSend.h",
+      "line": 64,
+      "symbol": "LKMessageCascade.messages",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKMessageSend.h",
+      "line": 66,
+      "symbol": "LKMessageCascade.+messageCascadeWithTarget:messages:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKMessageSend.h",
+      "line": 68,
+      "symbol": "LKMessageCascade.-addMessage:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKMessageSend.h",
+      "line": 75,
+      "symbol": "LKMessageCascade.-messages",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKMethod.h",
+      "line": 41,
+      "symbol": "LKInstanceMethod",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKMethod.h",
+      "line": 43,
+      "symbol": "LKClassMethod",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKProperty.h",
+      "line": 5,
+      "symbol": "LKProperty",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKProperty.h",
+      "line": 6,
+      "symbol": "LKProperty.variableName",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKProperty.h",
+      "line": 8,
+      "symbol": "LKProperty.+propertyDeclWithName:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKProperty.h",
+      "line": 9,
+      "symbol": "LKProperty.-name",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKSymbolTable.h",
+      "line": 9,
+      "symbol": "LKSymbolScope",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKSymbolTable.h",
+      "line": 11,
+      "symbol": ".LKSymbolScopeInvalid",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKSymbolTable.h",
+      "line": 11,
+      "symbol": "LKSymbolScope..LKSymbolScopeInvalid",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKSymbolTable.h",
+      "line": 12,
+      "symbol": ".LKSymbolScopeExternal",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKSymbolTable.h",
+      "line": 12,
+      "symbol": "LKSymbolScope..LKSymbolScopeExternal",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKSymbolTable.h",
+      "line": 23,
+      "symbol": "LKSymbolQualifier",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKVariableDecl.h",
+      "line": 5,
+      "symbol": "LKVariableDecl",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKVariableDecl.h",
+      "line": 6,
+      "symbol": "LKVariableDecl.variableName",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.ivar",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKVariableDecl.h",
+      "line": 8,
+      "symbol": "LKVariableDecl.+variableDeclWithName:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/catlan/Projects/Etoile/Languages/LanguageKit/LKVariableDecl.h",
+      "line": 9,
+      "symbol": "LKVariableDecl.-name",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/catlan/Projects/Etoile/Languages"
+}
