@@ -457,6 +457,34 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKMessageSend (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context forTarget: (id)receiver
 {
+    if ([selector isEqual: @"ifNil:"])
+    {
+        if (!receiver)
+        {
+            id block = [[arguments firstObject] interpretInContext: context];
+            return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
+        }
+    }
+    else if ([selector isEqual: @"ifNotNil:"])
+    {
+        if (receiver)
+        {
+            id block = [[arguments firstObject] interpretInContext: context];
+            return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
+        }
+    }
+    else if ([selector isEqual: @"ifNil:ifNotNil:"])
+    {
+        id argument = (!receiver) ? [arguments firstObject] : [arguments lastObject];
+        id block = [argument interpretInContext: context];
+        return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
+    }
+    else if ([selector isEqual: @"ifNotNil:ifNil:"])
+    {
+        id argument = (receiver) ? [arguments firstObject] : [arguments lastObject];
+        id block = [argument interpretInContext: context];
+        return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
+    }
 	NSString *receiverClassName = nil;
 	if ([target isKindOfClass: [LKSuperRef class]])
 	{
