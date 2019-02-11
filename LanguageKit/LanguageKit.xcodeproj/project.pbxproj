@@ -6,6 +6,31 @@
 	objectVersion = 47;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D159D5C72210E6AC00F081BB /* libgmp */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D159D5C82210E6AD00F081BB /* Build configuration list for PBXAggregateTarget "libgmp" */;
+			buildPhases = (
+				D159D5CB2210E6BA00F081BB /* Build Vendor Libraries  */,
+			);
+			dependencies = (
+			);
+			name = libgmp;
+			productName = Vendor;
+		};
+		D159D5E7221155A300F081BB /* libffi */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D159D5E8221155A300F081BB /* Build configuration list for PBXAggregateTarget "libffi" */;
+			buildPhases = (
+				D159D5EC221155DE00F081BB /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = libffi;
+			productName = libffi;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		66041ACE1094FE0400513AFD /* NSObject+yourself.m in Sources */ = {isa = PBXBuildFile; fileRef = 66041ACD1094FE0400513AFD /* NSObject+yourself.m */; };
 		663A0DF4108D61F800B921B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 663A0DF3108D61F800B921B0 /* Foundation.framework */; };
@@ -92,8 +117,6 @@
 		66CC0B0B1082628100FABEBF /* Symbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CC0B0A1082628100FABEBF /* Symbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC0123D774F008A4663 /* LKLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 794B2BBF123D774F008A4663 /* LKLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
-		D100F9A91F26363A0048FDFA /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D100F9A81F2636350048FDFA /* libgmp.dylib */; };
-		D100F9AA1F26363B0048FDFA /* libgmp.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D100F9A81F2636350048FDFA /* libgmp.dylib */; };
 		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
@@ -116,10 +139,15 @@
 		D10F9FA120E2BBF800ECCEC3 /* Smalltalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10F231E20DFAD8B002E017C /* Smalltalk.framework */; };
 		D10F9FA220E2BBF800ECCEC3 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
 		D10F9FA420E37C5F00ECCEC3 /* SmalltalkTests.st in Resources */ = {isa = PBXBuildFile; fileRef = D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */; };
-		D12C059A1F26321A004E0FA6 /* libffi.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D12C05991F263219004E0FA6 /* libffi.dylib */; };
 		D141D6D522106E9500D41FE1 /* ETTranscript.h in Headers */ = {isa = PBXBuildFile; fileRef = D141D6D422106E9500D41FE1 /* ETTranscript.h */; };
 		D141D6D722106EB700D41FE1 /* ETTranscript.m in Sources */ = {isa = PBXBuildFile; fileRef = D141D6D622106EB700D41FE1 /* ETTranscript.m */; };
 		D141D6D9221073A000D41FE1 /* NSBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = D141D6D8221073A000D41FE1 /* NSBlocks.m */; };
+		D159D5DB2210F12200F081BB /* libgmp_Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5D92210F07900F081BB /* libgmp_Mac.dylib */; };
+		D159D5DC2210F12900F081BB /* libgmp_Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5D92210F07900F081BB /* libgmp_Mac.dylib */; };
+		D159D5E12210F78300F081BB /* libgmp_Mac.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5D92210F07900F081BB /* libgmp_Mac.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D159D5E32210F79900F081BB /* libgmp_Mac.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5D92210F07900F081BB /* libgmp_Mac.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D159D5E62211528C00F081BB /* libffi_Mac.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D159D5EF221167A100F081BB /* libffi_Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */; };
 		D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D2A0D51F65329600B3814A /* LKProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2A0D61F65329600B3814A /* LKProperty.m */; };
 /* End PBXBuildFile section */
@@ -206,6 +234,27 @@
 			remoteGlobalIDString = 6697AFD51048CFB100456911;
 			remoteInfo = SmalltalkSupport;
 		};
+		D159D5D12210E7DE00F081BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697AF801048CE7100456911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D159D5C72210E6AC00F081BB;
+			remoteInfo = Vendor;
+		};
+		D159D5D32210E7F400F081BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697AF801048CE7100456911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D159D5C72210E6AC00F081BB;
+			remoteInfo = Vendor;
+		};
+		D159D5ED2211562100F081BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697AF801048CE7100456911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D159D5E7221155A300F081BB;
+			remoteInfo = libffi;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -217,6 +266,39 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		D159D5DE2210F73D00F081BB /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D159D5E62211528C00F081BB /* libffi_Mac.dylib in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D159D5E02210F77200F081BB /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D159D5E12210F78300F081BB /* libgmp_Mac.dylib in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D159D5E22210F78B00F081BB /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D159D5E32210F79900F081BB /* libgmp_Mac.dylib in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -317,7 +399,6 @@
 		66CC0B0A1082628100FABEBF /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Symbol.h; path = Runtime/Symbol.h; sourceTree = "<group>"; };
 		794B2BBC123D7735008A4663 /* LKLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKLoop.m; sourceTree = "<group>"; };
 		794B2BBF123D774F008A4663 /* LKLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKLoop.h; sourceTree = "<group>"; };
-		D100F9A81F2636350048FDFA /* libgmp.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp.dylib; path = ../../../../../../usr/local/Cellar/gmp/6.1.2/lib/libgmp.dylib; sourceTree = "<group>"; };
 		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
@@ -333,12 +414,15 @@
 		D10F9F8F20E2B61100ECCEC3 /* SmalltalkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmalltalkTests.m; sourceTree = "<group>"; };
 		D10F9F9120E2B61100ECCEC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SmalltalkTests.st; sourceTree = "<group>"; };
-		D12C05991F263219004E0FA6 /* libffi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi.dylib; path = ../../../../../../usr/local/Cellar/libffi/3.2.1/lib/libffi.dylib; sourceTree = "<group>"; };
 		D141D6D422106E9500D41FE1 /* ETTranscript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETTranscript.h; sourceTree = "<group>"; };
 		D141D6D622106EB700D41FE1 /* ETTranscript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETTranscript.m; sourceTree = "<group>"; };
 		D141D6D8221073A000D41FE1 /* NSBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSBlocks.m; sourceTree = "<group>"; };
 		D15505771F276E9900E5ACFF /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D15505791F276FBD00E5ACFF /* libcurses.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcurses.tbd; path = usr/lib/libcurses.tbd; sourceTree = SDKROOT; };
+		D159D5CC2210E70000F081BB /* libffi-build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "libffi-build.sh"; path = "../Vendor/libffi-build.sh"; sourceTree = "<group>"; };
+		D159D5CD2210E70000F081BB /* gmp-build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "gmp-build.sh"; path = "../Vendor/gmp-build.sh"; sourceTree = "<group>"; };
+		D159D5D92210F07900F081BB /* libgmp_Mac.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp_Mac.dylib; path = ../Vendor/usr/lib/libgmp_Mac.dylib; sourceTree = "<group>"; };
+		D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi_Mac.dylib; path = ../Vendor/usr/lib/libffi_Mac.dylib; sourceTree = "<group>"; };
 		D1D2A0D51F65329600B3814A /* LKProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKProperty.h; sourceTree = "<group>"; };
 		D1D2A0D61F65329600B3814A /* LKProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -359,9 +443,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D12C059A1F26321A004E0FA6 /* libffi.dylib in Frameworks */,
 				663A0E76108D621200B921B0 /* Foundation.framework in Frameworks */,
 				668C495910915D63002A20A3 /* LanguageKitRuntime.framework in Frameworks */,
+				D159D5EF221167A100F081BB /* libffi_Mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				663A0E77108D621600B921B0 /* Foundation.framework in Frameworks */,
-				D100F9A91F26363A0048FDFA /* libgmp.dylib in Frameworks */,
+				D159D5DB2210F12200F081BB /* libgmp_Mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,8 +464,8 @@
 			files = (
 				663A0E9E108D625800B921B0 /* Cocoa.framework in Frameworks */,
 				663A0E83108D622400B921B0 /* Foundation.framework in Frameworks */,
-				D100F9AA1F26363B0048FDFA /* libgmp.dylib in Frameworks */,
 				794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */,
+				D159D5DC2210F12900F081BB /* libgmp_Mac.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,8 +502,6 @@
 		6697AF7E1048CE7100456911 = {
 			isa = PBXGroup;
 			children = (
-				D100F9A81F2636350048FDFA /* libgmp.dylib */,
-				D12C05991F263219004E0FA6 /* libffi.dylib */,
 				663A0DF3108D61F800B921B0 /* Foundation.framework */,
 				663A0E8E108D623C00B921B0 /* Cocoa.framework */,
 				6697AF951048CEC100456911 /* LanguageKit */,
@@ -427,6 +509,7 @@
 				D10F9F8E20E2B61100ECCEC3 /* SmalltalkTests */,
 				6697AF991048CED700456911 /* Compiler */,
 				D10F230C20DFA895002E017C /* GenerateHeaders */,
+				D11F3FE62210E59700051F63 /* Vendor */,
 				6697AFA31048CF3C00456911 /* Products */,
 				D15505761F276E9900E5ACFF /* Frameworks */,
 			);
@@ -613,6 +696,17 @@
 			path = ../SmalltalkTests;
 			sourceTree = SOURCE_ROOT;
 		};
+		D11F3FE62210E59700051F63 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				D159D5CD2210E70000F081BB /* gmp-build.sh */,
+				D159D5CC2210E70000F081BB /* libffi-build.sh */,
+				D159D5D92210F07900F081BB /* libgmp_Mac.dylib */,
+				D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
 		D15505761F276E9900E5ACFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -724,11 +818,13 @@
 				6697AFB11048CF6C00456911 /* Resources */,
 				6697AFB21048CF6C00456911 /* Sources */,
 				6697AFB31048CF6C00456911 /* Frameworks */,
+				D159D5DE2210F73D00F081BB /* Copy Frameworks */,
 			);
 			buildRules = (
 				D1BB3FE51F52C94F008262EF /* PBXBuildRule */,
 			);
 			dependencies = (
+				D159D5EE2211562100F081BB /* PBXTargetDependency */,
 				668C495810915D60002A20A3 /* PBXTargetDependency */,
 			);
 			name = LanguageKit;
@@ -744,10 +840,12 @@
 				6697AFC61048CF9200456911 /* Resources */,
 				6697AFC71048CF9200456911 /* Sources */,
 				6697AFC81048CF9200456911 /* Frameworks */,
+				D159D5E02210F77200F081BB /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D159D5D22210E7DE00F081BB /* PBXTargetDependency */,
 			);
 			name = LanguageKitRuntime;
 			productName = LanguageKitRuntime;
@@ -762,10 +860,12 @@
 				6697AFD21048CFB100456911 /* Resources */,
 				6697AFD31048CFB100456911 /* Sources */,
 				6697AFD41048CFB100456911 /* Frameworks */,
+				D159D5E22210F78B00F081BB /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D159D5D42210E7F400F081BB /* PBXTargetDependency */,
 				66A1FC7E1049DBEA00A19C65 /* PBXTargetDependency */,
 			);
 			name = SmalltalkSupport;
@@ -850,6 +950,14 @@
 						DevelopmentTeam = 2WB96AW889;
 						ProvisioningStyle = Automatic;
 					};
+					D159D5C72210E6AC00F081BB = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+					};
+					D159D5E7221155A300F081BB = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 6697AF831048CE7100456911 /* Build configuration list for PBXProject "LanguageKit" */;
@@ -871,6 +979,8 @@
 				D10F9F8C20E2B61100ECCEC3 /* SmalltalkTests */,
 				6697AFD51048CFB100456911 /* SmalltalkSupport */,
 				D10F230A20DFA895002E017C /* GenerateHeaders */,
+				D159D5C72210E6AC00F081BB /* libgmp */,
+				D159D5E7221155A300F081BB /* libffi */,
 			);
 		};
 /* End PBXProject section */
@@ -914,6 +1024,44 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D159D5CB2210E6BA00F081BB /* Build Vendor Libraries  */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build Vendor Libraries ";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "VENDORROOT=\"${SRCROOT}/../Vendor\"\n\nif [ ! -f \"${VENDORROOT}/usr/lib/libgmp_Mac.dylib\" ]; then\n    cd \"${VENDORROOT}\"\n    sh \"${VENDORROOT}/gmp-build.sh\"\nfi\n\nif [ ! -f \"${VENDORROOT}/usr/lib/libffi_Mac.dylib\" ]; then\n    cd \"${VENDORROOT}\"\n    sh \"${VENDORROOT}/libffi-build.sh\"\nfi\n";
+		};
+		D159D5EC221155DE00F081BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "VENDORROOT=\"${SRCROOT}/../Vendor\"\n\nif [ ! -f \"${VENDORROOT}/usr/lib/libffi_Mac.dylib\" ]; then\n    cd \"${VENDORROOT}\"\n    sh \"${VENDORROOT}/libffi-build.sh\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6697AFA91048CF6200456911 /* Sources */ = {
@@ -1056,6 +1204,21 @@
 			target = 6697AFD51048CFB100456911 /* SmalltalkSupport */;
 			targetProxy = D10F9F9F20E2B63200ECCEC3 /* PBXContainerItemProxy */;
 		};
+		D159D5D22210E7DE00F081BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D159D5C72210E6AC00F081BB /* libgmp */;
+			targetProxy = D159D5D12210E7DE00F081BB /* PBXContainerItemProxy */;
+		};
+		D159D5D42210E7F400F081BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D159D5C72210E6AC00F081BB /* libgmp */;
+			targetProxy = D159D5D32210E7F400F081BB /* PBXContainerItemProxy */;
+		};
+		D159D5EE2211562100F081BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D159D5E7221155A300F081BB /* libffi */;
+			targetProxy = D159D5ED2211562100F081BB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1107,15 +1270,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
-				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					/usr/local/Cellar/gmp/6.1.2/include,
-					"/usr/local/opt/libffi/lib/libffi-3.2.1/include/",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Vendor/usr/include";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/libffi/3.2.1/lib,
+					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				OTHER_CFLAGS = (
 					"-D_GNU_SOURCE",
@@ -1134,15 +1293,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_INPUT_FILETYPE = sourcecode.c.objc;
-				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					/usr/local/Cellar/gmp/6.1.2/include,
-					"/usr/local/opt/libffi/lib/libffi-3.2.1/include/",
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Vendor/usr/include";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/libffi/3.2.1/lib,
+					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				OTHER_CFLAGS = (
 					"-D_GNU_SOURCE",
@@ -1159,14 +1314,11 @@
 			buildSettings = {
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					/usr/local/Cellar/gmp/6.1.2/include,
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Vendor/usr/include";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/gmp/6.1.2/lib,
+					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				PRODUCT_NAME = LanguageKitRuntime;
 			};
@@ -1177,14 +1329,11 @@
 			buildSettings = {
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				HEADER_SEARCH_PATHS = (
-					/opt/local/include,
-					/usr/local/Cellar/gmp/6.1.2/include,
-				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../Vendor/usr/include";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/gmp/6.1.2/lib,
+					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				PRODUCT_NAME = LanguageKitRuntime;
 			};
@@ -1197,7 +1346,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/gmp/6.1.2/lib,
+					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				PRODUCT_NAME = SmalltalkSupport;
 			};
@@ -1210,7 +1359,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/Cellar/gmp/6.1.2/lib,
+					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				PRODUCT_NAME = SmalltalkSupport;
 			};
@@ -1582,6 +1731,38 @@
 			};
 			name = Release;
 		};
+		D159D5C92210E6AD00F081BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D159D5CA2210E6AD00F081BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D159D5E9221155A300F081BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D159D5EA221155A300F081BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1653,6 +1834,24 @@
 			buildConfigurations = (
 				D10F9F9520E2B61100ECCEC3 /* Debug */,
 				D10F9F9620E2B61100ECCEC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D159D5C82210E6AD00F081BB /* Build configuration list for PBXAggregateTarget "libgmp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D159D5C92210E6AD00F081BB /* Debug */,
+				D159D5CA2210E6AD00F081BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D159D5E8221155A300F081BB /* Build configuration list for PBXAggregateTarget "libffi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D159D5E9221155A300F081BB /* Debug */,
+				D159D5EA221155A300F081BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
