@@ -148,6 +148,7 @@
 		D159D5E32210F79900F081BB /* libgmp_Mac.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5D92210F07900F081BB /* libgmp_Mac.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D159D5E62211528C00F081BB /* libffi_Mac.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D159D5EF221167A100F081BB /* libffi_Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */; };
+		D159D6012216E58500F081BB /* lemon.c in Sources */ = {isa = PBXBuildFile; fileRef = D159D6002216E58500F081BB /* lemon.c */; };
 		D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D2A0D51F65329600B3814A /* LKProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2A0D61F65329600B3814A /* LKProperty.m */; };
 /* End PBXBuildFile section */
@@ -168,7 +169,7 @@
 				"",
 				"-fno-objc-arc",
 			);
-			script = "cd $DERIVED_FILES_DIR\ncp $INPUT_FILE_PATH $INPUT_FILE_BASE.y\n/usr/local/Cellar/lemon/1.69/bin/lemon $INPUT_FILE_BASE.y\nmv $INPUT_FILE_BASE.c $INPUT_FILE_BASE.m\n";
+			script = "cd $DERIVED_FILES_DIR\ncp $INPUT_FILE_PATH $INPUT_FILE_BASE.y\ncp $SRCROOT/../Vendor/lemon/lempar.c $DERIVED_FILES_DIR/lempar.c\n$BUILT_PRODUCTS_DIR/lemon $INPUT_FILE_BASE.y\n\nmv $INPUT_FILE_BASE.c $INPUT_FILE_BASE.m\n";
 		};
 		D1BB3FE51F52C94F008262EF /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
@@ -254,6 +255,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D159D5E7221155A300F081BB;
 			remoteInfo = libffi;
+		};
+		D159D6022216E64300F081BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697AF801048CE7100456911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D159D5F82216E4E600F081BB;
+			remoteInfo = lemon;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -423,6 +431,9 @@
 		D159D5CD2210E70000F081BB /* gmp-build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = "gmp-build.sh"; path = "../Vendor/gmp-build.sh"; sourceTree = "<group>"; };
 		D159D5D92210F07900F081BB /* libgmp_Mac.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgmp_Mac.dylib; path = ../Vendor/usr/lib/libgmp_Mac.dylib; sourceTree = "<group>"; };
 		D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libffi_Mac.dylib; path = ../Vendor/usr/lib/libffi_Mac.dylib; sourceTree = "<group>"; };
+		D159D5F92216E4E600F081BB /* lemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lemon; sourceTree = BUILT_PRODUCTS_DIR; };
+		D159D6002216E58500F081BB /* lemon.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lemon.c; sourceTree = "<group>"; };
+		D159D6042216E85100F081BB /* lempar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lempar.c; sourceTree = "<group>"; };
 		D1D2A0D51F65329600B3814A /* LKProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKProperty.h; sourceTree = "<group>"; };
 		D1D2A0D61F65329600B3814A /* LKProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -493,6 +504,13 @@
 				D10F9FA120E2BBF800ECCEC3 /* Smalltalk.framework in Frameworks */,
 				D10F9FA220E2BBF800ECCEC3 /* SmalltalkSupport.framework in Frameworks */,
 				D10F9F9220E2B61100ECCEC3 /* LanguageKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D159D5F62216E4E600F081BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,6 +654,7 @@
 				D10F230B20DFA895002E017C /* GenerateHeaders */,
 				D10F231E20DFAD8B002E017C /* Smalltalk.framework */,
 				D10F9F8D20E2B61100ECCEC3 /* SmalltalkTests.xctest */,
+				D159D5F92216E4E600F081BB /* lemon */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -703,6 +722,7 @@
 				D159D5CC2210E70000F081BB /* libffi-build.sh */,
 				D159D5D92210F07900F081BB /* libgmp_Mac.dylib */,
 				D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */,
+				D159D5FA2216E4E600F081BB /* lemon */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -714,6 +734,16 @@
 				D15505771F276E9900E5ACFF /* libz.tbd */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D159D5FA2216E4E600F081BB /* lemon */ = {
+			isa = PBXGroup;
+			children = (
+				D159D6002216E58500F081BB /* lemon.c */,
+				D159D6042216E85100F081BB /* lempar.c */,
+			);
+			name = lemon;
+			path = ../Vendor/lemon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -905,6 +935,7 @@
 				D10F233420DFAED0002E017C /* PBXBuildRule */,
 			);
 			dependencies = (
+				D159D6032216E64300F081BB /* PBXTargetDependency */,
 			);
 			name = Smalltalk;
 			productName = Smalltalk;
@@ -927,6 +958,22 @@
 			productName = SmalltalkTests;
 			productReference = D10F9F8D20E2B61100ECCEC3 /* SmalltalkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D159D5F82216E4E600F081BB /* lemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D159D5FF2216E4E600F081BB /* Build configuration list for PBXNativeTarget "lemon" */;
+			buildPhases = (
+				D159D5F52216E4E600F081BB /* Sources */,
+				D159D5F62216E4E600F081BB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lemon;
+			productName = lemon;
+			productReference = D159D5F92216E4E600F081BB /* lemon */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -958,6 +1005,9 @@
 						CreatedOnToolsVersion = 10.2;
 						ProvisioningStyle = Automatic;
 					};
+					D159D5F82216E4E600F081BB = {
+						CreatedOnToolsVersion = 10.2;
+					};
 				};
 			};
 			buildConfigurationList = 6697AF831048CE7100456911 /* Build configuration list for PBXProject "LanguageKit" */;
@@ -973,12 +1023,13 @@
 			projectRoot = "";
 			targets = (
 				6697AFAB1048CF6200456911 /* edlc */,
+				D159D5F82216E4E600F081BB /* lemon */,
+				D10F230A20DFA895002E017C /* GenerateHeaders */,
 				6697AFB41048CF6C00456911 /* LanguageKit */,
 				6697AFC91048CF9200456911 /* LanguageKitRuntime */,
 				D10F231D20DFAD8B002E017C /* Smalltalk */,
 				D10F9F8C20E2B61100ECCEC3 /* SmalltalkTests */,
 				6697AFD51048CFB100456911 /* SmalltalkSupport */,
-				D10F230A20DFA895002E017C /* GenerateHeaders */,
 				D159D5C72210E6AC00F081BB /* libgmp */,
 				D159D5E7221155A300F081BB /* libffi */,
 			);
@@ -1166,6 +1217,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D159D5F52216E4E600F081BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D159D6012216E58500F081BB /* lemon.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1218,6 +1277,11 @@
 			isa = PBXTargetDependency;
 			target = D159D5E7221155A300F081BB /* libffi */;
 			targetProxy = D159D5ED2211562100F081BB /* PBXContainerItemProxy */;
+		};
+		D159D6032216E64300F081BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D159D5F82216E4E600F081BB /* lemon */;
+			targetProxy = D159D6022216E64300F081BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1731,6 +1795,76 @@
 			};
 			name = Release;
 		};
+		D159D5FD2216E4E600F081BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D159D5FE2216E4E600F081BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1820,6 +1954,15 @@
 			buildConfigurations = (
 				D159D5E9221155A300F081BB /* Debug */,
 				D159D5EA221155A300F081BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D159D5FF2216E4E600F081BB /* Build configuration list for PBXNativeTarget "lemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D159D5FD2216E4E600F081BB /* Debug */,
+				D159D5FE2216E4E600F081BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
