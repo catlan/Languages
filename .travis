@@ -1,0 +1,4 @@
+language: objective-c
+osx_image: xcode10.1
+
+script: xcodebuild clean build test -project LanguageKit/LanguageKit.xcodeproj -scheme LanguageKit CODE_SIGN_STYLE=Manual CODE_SIGNING_REQUIRED=NO
