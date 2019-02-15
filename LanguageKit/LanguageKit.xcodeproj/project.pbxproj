@@ -1226,7 +1226,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				DSTROOT = /;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				SDKROOT = macosx;
 			};
@@ -1236,7 +1235,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				DSTROOT = /;
 				SDKROOT = macosx;
 			};
 			name = Release;
