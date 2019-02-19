@@ -86,6 +86,10 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     EvaluateAndCheckForTracepoint(expr, @"Loop generated a tracepoint");
 }
 
+- (void)testReturnGeneratesTracepoint {
+    LKReturn *expr = [LKReturn returnWithExpr:nil];
+    EvaluateAndCheckForTracepoint(expr, @"Return generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext

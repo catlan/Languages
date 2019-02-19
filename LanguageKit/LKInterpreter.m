@@ -644,6 +644,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
 	id value = [ret interpretInContext: context];
+    [context onTracepoint:self];
     return value;
 	//[LKBlockReturnException raiseWithValue: value];
 	//return nil;
