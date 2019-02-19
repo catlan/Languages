@@ -133,6 +133,10 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	}
 	return context;
 }
+- (void)onTracepoint:(LKAST *)aNode
+{
+    
+}
 @end
 
 
@@ -159,6 +163,8 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 			[(LKAST*)[elements objectAtIndex: i] interpretInContext: context];
 		[elements objectAtIndex: i];
 	}
+    [context onTracepoint:self];
+    
 	return [NSMutableArray arrayWithObjects: interpretedElements count: count];
 }
 @end

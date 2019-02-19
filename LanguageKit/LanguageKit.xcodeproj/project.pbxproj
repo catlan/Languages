@@ -117,6 +117,7 @@
 		66CC0B0B1082628100FABEBF /* Symbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CC0B0A1082628100FABEBF /* Symbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC0123D774F008A4663 /* LKLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 794B2BBF123D774F008A4663 /* LKLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
+		98B2CC74221C066200BF0172 /* TracingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC73221C066200BF0172 /* TracingTests.m */; };
 		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
@@ -423,6 +424,7 @@
 		66CC0B0A1082628100FABEBF /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Symbol.h; path = Runtime/Symbol.h; sourceTree = "<group>"; };
 		794B2BBC123D7735008A4663 /* LKLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKLoop.m; sourceTree = "<group>"; };
 		794B2BBF123D774F008A4663 /* LKLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKLoop.h; sourceTree = "<group>"; };
+		98B2CC73221C066200BF0172 /* TracingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TracingTests.m; sourceTree = "<group>"; };
 		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
@@ -748,6 +750,7 @@
 				D10F9F8F20E2B61100ECCEC3 /* SmalltalkTests.m */,
 				D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */,
 				D10F9F9120E2B61100ECCEC3 /* Info.plist */,
+				98B2CC73221C066200BF0172 /* TracingTests.m */,
 			);
 			name = SmalltalkTests;
 			path = ../SmalltalkTests;
@@ -1310,6 +1313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98B2CC74221C066200BF0172 /* TracingTests.m in Sources */,
 				D10F9F9020E2B61100ECCEC3 /* SmalltalkTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

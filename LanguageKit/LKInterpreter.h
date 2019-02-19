@@ -43,6 +43,7 @@ typedef struct
 - (void) setValue: (id)value forSymbol: (NSString*)symbol;
 - (id) valueForSymbol: (NSString*)symbol;
 - (LKInterpreterVariableContext)contextForSymbol: (LKSymbol*)symbol;
+- (void)onTracepoint: (LKAST *)aNode;
 @end
 
 
