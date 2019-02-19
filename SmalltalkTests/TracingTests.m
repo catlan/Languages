@@ -26,14 +26,26 @@
 @implementation TracingTests
 {
     FakeInterpreterContext *context;
+    LKSymbolTable *table;
+    LKSymbol *symbol;
 }
 
 - (void)setUp {
-    context = [FakeInterpreterContext new];
+    table = [LKSymbolTable new];
+    NSString *name = @"symbol";
+    symbol = [LKSymbol new];
+    symbol.name = name;
+    symbol.scope = LKSymbolScopeLocal;
+    symbol.typeEncoding = @"@";
+    [table setTableScope:LKSymbolScopeLocal];
+    [table addSymbol:symbol];
+    context = [[FakeInterpreterContext alloc] initWithSymbolTable:table parent:nil];
 }
 
 - (void)tearDown {
     context = nil;
+    table = nil;
+    symbol = nil;
 }
 
 #define EvaluateAndCheckForTracepoint(expr, msg) do { \
@@ -138,6 +150,16 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     LKCategoryDef *expr = [LKCategoryDef categoryOnClassNamed:@"NSObject" methods:nil];
     EvaluateAndCheckForTracepoint(expr, @"Category Def generated a tracepoint");
 }
+
+- (void)testLocalDeclRefGeneratesTracepoint {
+    /* internally a LKDeclRef converts its string argument into a symbol,
+     * at some point in its lifecycle. It needs to happen before interpretation,
+     * so here I just set it up with a symbol.
+     */
+    LKDeclRef *expr = [LKDeclRef referenceWithSymbol:(id)symbol];
+    EvaluateAndCheckForTracepoint(expr, @"local Decl Ref generated a tracepoint");
+}
+
 @end
 
 @implementation FakeInterpreterContext

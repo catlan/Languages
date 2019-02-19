@@ -340,6 +340,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	LKSymbol *symbol = [self symbol];
 	LKInterpreterVariableContext context = [currentContext contextForSymbol: symbol];
 	NSString *symbolName = [symbol name];
+    [currentContext onTracepoint: self];
 	switch (context.scope)
 	{
 		case LKSymbolScopeObject:
