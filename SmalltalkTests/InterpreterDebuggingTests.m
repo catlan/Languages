@@ -8,31 +8,79 @@
 #import <XCTest/XCTest.h>
 #import "LKAST.h"
 #import "LKComment.h"
+#import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
 #import "LKInterpreter.h"
+
+@interface InspectableMode : NSObject <LKDebuggerMode>
+
+- (LKAST *)receivedNode;
+
+@end
+
+@implementation InspectableMode
+{
+    LKAST *lastNode;
+}
+
+@synthesize service;
+
+- (void)onTracepoint: (LKAST *)aNode
+{
+    lastNode = aNode;
+}
+
+- (LKAST *)receivedNode
+{
+    return lastNode;
+}
+
+@end
 
 @interface InterpreterDebuggingTests : XCTestCase
 
 @end
 
 @implementation InterpreterDebuggingTests
-
+{
+    LKSymbolTable *table;
+    LKInterpreterContext *context;
+    LKDebuggerService *debugger;
+    LKComment *node1;
+    InspectableMode *mode;
+    
+}
 - (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    table = [LKSymbolTable new];
+    [table setTableScope:LKSymbolScopeGlobal];
+    context = [[LKInterpreterContext alloc] initWithSymbolTable:table parent:nil];
+    mode = [InspectableMode new];
+    debugger = [LKDebuggerService new];
+    [debugger setMode:mode];
+    [context debugWithService:debugger];
+    node1 = [LKComment commentWithString:@"# A comment"];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    table = nil;
+    context = nil;
+    debugger = nil;
+    node1 = nil;
+    mode = nil;
 }
 
 - (void)testInterpreterContextForwardsTracepointsToDebuggingService {
-    LKSymbolTable *table = [LKSymbolTable new];
-    [table setTableScope:LKSymbolScopeGlobal];
-    LKInterpreterContext *context = [[LKInterpreterContext alloc] initWithSymbolTable:table parent:nil];
-    LKDebuggerService *debugger = [LKDebuggerService new];
-    [context debugWithService:debugger];
-    LKComment *node1 = [LKComment commentWithString:@"# A comment"];
     [node1 interpretInContext:context];
     XCTAssertEqualObjects([debugger currentNode], node1, @"The current node in the debugger is the most recent to have been traced");
+}
+
+- (void)testDebuggingServiceGivesModeAReferenceToItself {
+    XCTAssertEqualObjects([mode service], debugger, @"Debugger service gave its mode a reference to itself");
+}
+
+- (void)testDebuggingServiceForwardsTracepointEventsToMode {
+    [debugger setMode:mode];
+    [debugger onTracepoint:node1];
+    XCTAssertEqualObjects([mode receivedNode], node1, @"onTracepoint: event forwarded to debugger mode");
 }
 @end

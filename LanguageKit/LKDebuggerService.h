@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol LKDebuggerMode;
+
 /**
  * A debugger service controls the debugging operation, and shows the
  * state of the script being debugged to the user. It delegates commands
@@ -22,5 +24,9 @@
  * The interpreter's current location.
  */
 - (LKAST *)currentNode;
+/**
+ * Set the debugger's current mode.
+ */
+- (void)setMode: (id<LKDebuggerMode>)aMode;
 
 @end
