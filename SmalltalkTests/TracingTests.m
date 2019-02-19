@@ -121,6 +121,11 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     LKMessageCascade *expr = [LKMessageCascade messageCascadeWithTarget:nil messages:nil];
     EvaluateAndCheckForTracepoint(expr, @"Message Cascade generated a tracepoint");
 }
+
+- (void)testModuleGeneratesTracepoint {
+    LKModule *expr = [LKModule module];
+    EvaluateAndCheckForTracepoint(expr, @"Method generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext
