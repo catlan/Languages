@@ -118,6 +118,8 @@
 		794B2BC0123D774F008A4663 /* LKLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 794B2BBF123D774F008A4663 /* LKLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
 		98B2CC74221C066200BF0172 /* TracingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC73221C066200BF0172 /* TracingTests.m */; };
+		98B2CC76221C370B00BF0172 /* InterpreterDebuggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */; };
+		98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */; };
 		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
@@ -425,6 +427,9 @@
 		794B2BBC123D7735008A4663 /* LKLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKLoop.m; sourceTree = "<group>"; };
 		794B2BBF123D774F008A4663 /* LKLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKLoop.h; sourceTree = "<group>"; };
 		98B2CC73221C066200BF0172 /* TracingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TracingTests.m; sourceTree = "<group>"; };
+		98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterpreterDebuggingTests.m; sourceTree = "<group>"; };
+		98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerService.h; sourceTree = "<group>"; };
+		98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKDebuggerService.m; sourceTree = "<group>"; };
 		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
@@ -611,6 +616,7 @@
 				D1D2A0D51F65329600B3814A /* LKProperty.h */,
 				D1D2A0D61F65329600B3814A /* LKProperty.m */,
 				D159D621221868CB00F081BB /* Debugger */,
+				98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */,
 			);
 			name = LanguageKit;
 			sourceTree = "<group>";
@@ -732,6 +738,7 @@
 				668C491110915C17002A20A3 /* LKInterpreter.h */,
 				D100F9AC1F263B400048FDFA /* LKEnumReference.h */,
 				D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */,
+				98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -747,6 +754,7 @@
 		D10F9F8E20E2B61100ECCEC3 /* SmalltalkTests */ = {
 			isa = PBXGroup;
 			children = (
+				98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */,
 				D10F9F8F20E2B61100ECCEC3 /* SmalltalkTests.m */,
 				D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */,
 				D10F9F9120E2B61100ECCEC3 /* Info.plist */,
@@ -1225,6 +1233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6697B03F1048D19A00456911 /* LKASTVisitor.m in Sources */,
+				98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */,
 				6697B0431048D19A00456911 /* LKCodeGen.m in Sources */,
 				6697B0521048D19A00456911 /* LKBlockExpr.m in Sources */,
 				6697B0551048D19A00456911 /* LKCompilerErrors.m in Sources */,
@@ -1314,6 +1323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98B2CC74221C066200BF0172 /* TracingTests.m in Sources */,
+				98B2CC76221C370B00BF0172 /* InterpreterDebuggingTests.m in Sources */,
 				D10F9F9020E2B61100ECCEC3 /* SmalltalkTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

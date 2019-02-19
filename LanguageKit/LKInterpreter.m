@@ -2,6 +2,7 @@
 #import "Runtime/BoxedFloat.h"
 #import "Runtime/Symbol.h"
 #import "LanguageKit/LanguageKit.h"
+#import "LKDebuggerService.h"
 #import "LKInterpreter.h"
 #import "LKInterpreterRuntime.h"
 
@@ -133,9 +134,13 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	}
 	return context;
 }
-- (void)onTracepoint:(LKAST *)aNode
+- (void)onTracepoint: (LKAST *)aNode
 {
-    
+    [debugger onTracepoint: aNode];
+}
+- (void)debugWithService:(LKDebuggerService *)service
+{
+    debugger = service;
 }
 @end
 
