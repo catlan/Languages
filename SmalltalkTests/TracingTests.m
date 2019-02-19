@@ -59,6 +59,10 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     EvaluateAndCheckForTracepoint(expr, @"If Statement generated a tracepoint");
 }
 
+- (void)testCompareGeneratesTracepoint {
+    LKCompare *expr = [LKCompare comparisonWithLeftExpression:nil rightExpression:nil];
+    EvaluateAndCheckForTracepoint(expr, @"Compare generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext

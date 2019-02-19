@@ -325,6 +325,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	
 	id rhsInterpreted = [rhs interpretInContext: context];
 
+    [context onTracepoint: self];
 	return [BigInt bigIntWithLong: lhsInterpreted == rhsInterpreted];
 }
 @end
