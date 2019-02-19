@@ -54,22 +54,6 @@ static LKAST *parseScript(NSString *script, NSString *extension)
 
 @end
 
-@interface Transcript : NSObject
-
-+ (id)show: (id)object;
-
-@end
-
-@implementation Transcript
-
-+ (id)show: (id)object
-{
-    NSLog(@"%@", object);
-    return self;
-}
-
-@end
-
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSError *error = nil;
@@ -85,6 +69,11 @@ int main(int argc, const char * argv[]) {
         }
         NSString *extension = [scriptName pathExtension];
         LKAST *module = parseScript(scriptSource, extension);
+        if (![module check]) {
+            fprintf(stderr, "Couldn't execute the script %s\n",
+                    [scriptName UTF8String]);
+            exit(EX_SOFTWARE);
+        }
         LKDebuggerService *debugger = [[LKDebuggerService alloc] init];
         [debugger setMode:[TracingMode new]];
         [debugger debugScript:module];
