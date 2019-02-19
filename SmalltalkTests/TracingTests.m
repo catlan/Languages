@@ -39,10 +39,14 @@
     context = nil;
 }
 
+#define EvaluateAndCheckForTracepoint(expr, msg) do { \
+[expr interpretInContext:context]; \
+XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
+} while(NO)
+
 - (void)testArrayExprGeneratesTracepoint {
     LKArrayExpr *expr = [LKArrayExpr arrayWithElements:@[]];
-    [expr interpretInContext:context];
-    XCTAssertEqualObjects([context lastNodeTraced], expr, @"Array Expression generated a tracepoint");
+    EvaluateAndCheckForTracepoint(expr, @"Array Expr generated a tracepoint");
 }
 
 - (void)testVariableDeclGeneratesTracepoint {
@@ -50,14 +54,12 @@
     LKToken *token = [LKToken tokenWithRange:NSMakeRange(0, [symbolName length])
                                     inSource:symbolName];
     LKVariableDecl *expr = [LKVariableDecl variableDeclWithName:token];
-    [expr interpretInContext:context];
-    XCTAssertEqualObjects([context lastNodeTraced], expr, @"Variable Decl generated a tracepoint");
+    EvaluateAndCheckForTracepoint(expr, @"Variable Decl generated a tracepoint");
 }
 
 - (void)testIfStatementGeneratesTracepoint {
     LKIfStatement *expr = [LKIfStatement ifStatementWithCondition:nil];
-    [expr interpretInContext:context];
-    XCTAssertEqualObjects([context lastNodeTraced], expr, @"If Statement generated a tracepoint");
+    EvaluateAndCheckForTracepoint(expr, @"If Statement generated a tracepoint");
 }
 @end
 
