@@ -206,6 +206,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 			NSAssert1(NO, @"Don't know how to assign to %@", symbolName);
 			break;
 	}
+    [currentContext onTracepoint: self];
 	return rvalue;
 }
 @end

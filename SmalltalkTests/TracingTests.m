@@ -160,6 +160,12 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     EvaluateAndCheckForTracepoint(expr, @"local Decl Ref generated a tracepoint");
 }
 
+- (void)testAssignExprGeneratesTracepoint {
+    LKDeclRef *decl = [LKDeclRef referenceWithSymbol:(id)symbol];
+    LKAssignExpr *expr = [LKAssignExpr assignWithTarget:decl expr:nil];
+    EvaluateAndCheckForTracepoint(expr, @"Assign Expr generated a tracepoint");
+}
+
 @end
 
 @implementation FakeInterpreterContext
