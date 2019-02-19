@@ -63,6 +63,21 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     LKCompare *expr = [LKCompare comparisonWithLeftExpression:nil rightExpression:nil];
     EvaluateAndCheckForTracepoint(expr, @"Compare generated a tracepoint");
 }
+
+- (void)testStringLiteralGeneratesTracepoint {
+    LKStringLiteral *expr = [LKStringLiteral literalFromString:@"literal"];
+    EvaluateAndCheckForTracepoint(expr, @"String Literal generated a tracepoint");
+}
+
+- (void)testNumberLiteralGeneratesTracepoint {
+    LKNumberLiteral *expr = [LKNumberLiteral literalFromString:@"3"];
+    EvaluateAndCheckForTracepoint(expr, @"Number Literal generated a tracepoint");
+}
+
+- (void)testFloatLiteralGeneratesTracepoint {
+    LKFloatLiteral *expr = [LKFloatLiteral literalFromString:@"3.14"];
+    EvaluateAndCheckForTracepoint(expr, @"Float Literal generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext

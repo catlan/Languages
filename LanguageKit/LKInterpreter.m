@@ -414,6 +414,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKStringLiteral (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return value;
 }
 @end
@@ -423,6 +424,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKNumberLiteral (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return [BigInt bigIntWithCString: [value UTF8String]];
 }
 @end
@@ -432,6 +434,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKFloatLiteral (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return [BoxedFloat boxedFloatWithCString: [value UTF8String]];
 }
 @end
