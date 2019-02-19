@@ -771,7 +771,9 @@ static uint8_t logBase2(uint8_t x)
 	{
 		objc_registerClassPair(cls);
 		[cls load];
-	}	
+	}
+    
+    [context onTracepoint: self];
 	return cls;
 }
 @end

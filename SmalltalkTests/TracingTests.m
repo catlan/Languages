@@ -90,6 +90,16 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     LKReturn *expr = [LKReturn returnWithExpr:nil];
     EvaluateAndCheckForTracepoint(expr, @"Return generated a tracepoint");
 }
+
+- (void)testSubclassGeneratesTracepoint {
+    LKSubclass *expr = [LKSubclass subclassWithName:@"MyArray"
+                                    superclassNamed:@"NSArray"
+                                              cvars:nil
+                                              ivars:nil
+                                         properties:nil
+                                            methods:nil];
+    EvaluateAndCheckForTracepoint(expr, @"Subclass generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext
