@@ -9,6 +9,7 @@
 
 #import "LKArrayExpr.h"
 #import "LKAST.h"
+#import "LKIfStatement.h"
 #import "LKInterpreter.h"
 #import "LKToken.h"
 #import "LKVariableDecl.h"
@@ -51,6 +52,12 @@
     LKVariableDecl *expr = [LKVariableDecl variableDeclWithName:token];
     [expr interpretInContext:context];
     XCTAssertEqualObjects([context lastNodeTraced], expr, @"Variable Decl generated a tracepoint");
+}
+
+- (void)testIfStatementGeneratesTracepoint {
+    LKIfStatement *expr = [LKIfStatement ifStatementWithCondition:nil];
+    [expr interpretInContext:context];
+    XCTAssertEqualObjects([context lastNodeTraced], expr, @"If Statement generated a tracepoint");
 }
 @end
 

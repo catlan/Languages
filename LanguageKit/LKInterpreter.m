@@ -403,6 +403,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	{
 		result = [statement interpretInContext: context];
 	}
+    [context onTracepoint: self];
 	return result;
 }
 @end
