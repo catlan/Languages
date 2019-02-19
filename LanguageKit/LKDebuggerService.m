@@ -9,6 +9,8 @@
 #import "LKAST.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
+#import "LKInterpreter.h"
+#import "LKSymbolTable.h"
 
 @implementation LKDebuggerService
 {
@@ -33,4 +35,11 @@
     _currentMode.service = self;
 }
 
+- (void)debugScript:(LKAST *)rootNode
+{
+    LKSymbolTable *table = [LKSymbolTable new];
+    [table setTableScope:LKSymbolScopeGlobal];
+    LKInterpreterContext *context = [[LKInterpreterContext alloc] initWithSymbolTable:table parent:nil];
+    [rootNode interpretInContext:context];
+}
 @end

@@ -122,6 +122,11 @@
 		98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */; };
 		98B2CC7B221C548600BF0172 /* LKDebuggerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98B2CC7C221C548D00BF0172 /* LKDebuggerService.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98B2CC85221C5CD800BF0172 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC84221C5CD800BF0172 /* main.m */; };
+		98B2CC89221C5CEA00BF0172 /* Smalltalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10F231E20DFAD8B002E017C /* Smalltalk.framework */; };
+		98B2CC8A221C5CF700BF0172 /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
+		98B2CC8B221C5CFC00BF0172 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
+		98B2CC8C221C5D0200BF0172 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
 		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
@@ -287,6 +292,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		98B2CC80221C5CD800BF0172 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		D10F230920DFA895002E017C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,6 +447,9 @@
 		98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerService.h; sourceTree = "<group>"; };
 		98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKDebuggerService.m; sourceTree = "<group>"; };
 		98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerMode.h; sourceTree = "<group>"; };
+		98B2CC82221C5CD800BF0172 /* TracingDebugger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TracingDebugger; sourceTree = BUILT_PRODUCTS_DIR; };
+		98B2CC84221C5CD800BF0172 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98B2CC8D221C60C500BF0172 /* testscript.st */ = {isa = PBXFileReference; lastKnownFileType = text; path = testscript.st; sourceTree = "<group>"; };
 		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
@@ -517,6 +534,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98B2CC7F221C5CD800BF0172 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B2CC8C221C5D0200BF0172 /* SmalltalkSupport.framework in Frameworks */,
+				98B2CC89221C5CEA00BF0172 /* Smalltalk.framework in Frameworks */,
+				98B2CC8A221C5CF700BF0172 /* LanguageKit.framework in Frameworks */,
+				98B2CC8B221C5CFC00BF0172 /* LanguageKitRuntime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D10F230820DFA895002E017C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -574,6 +602,7 @@
 				6697AF991048CED700456911 /* Compiler */,
 				D10F230C20DFA895002E017C /* GenerateHeaders */,
 				D11F3FE62210E59700051F63 /* Vendor */,
+				98B2CC83221C5CD800BF0172 /* TracingDebugger */,
 				6697AFA31048CF3C00456911 /* Products */,
 				D15505761F276E9900E5ACFF /* Frameworks */,
 			);
@@ -704,6 +733,7 @@
 				D10F9F8D20E2B61100ECCEC3 /* SmalltalkTests.xctest */,
 				D159D5F92216E4E600F081BB /* lemon */,
 				D159D61622182E0600F081BB /* LanguageKitTests.xctest */,
+				98B2CC82221C5CD800BF0172 /* TracingDebugger */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -745,6 +775,15 @@
 				98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */,
 			);
 			name = Headers;
+			sourceTree = "<group>";
+		};
+		98B2CC83221C5CD800BF0172 /* TracingDebugger */ = {
+			isa = PBXGroup;
+			children = (
+				98B2CC84221C5CD800BF0172 /* main.m */,
+				98B2CC8D221C60C500BF0172 /* testscript.st */,
+			);
+			path = TracingDebugger;
 			sourceTree = "<group>";
 		};
 		D10F230C20DFA895002E017C /* GenerateHeaders */ = {
@@ -984,6 +1023,23 @@
 			productReference = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		98B2CC81221C5CD800BF0172 /* TracingDebugger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98B2CC86221C5CD800BF0172 /* Build configuration list for PBXNativeTarget "TracingDebugger" */;
+			buildPhases = (
+				98B2CC7E221C5CD800BF0172 /* Sources */,
+				98B2CC7F221C5CD800BF0172 /* Frameworks */,
+				98B2CC80221C5CD800BF0172 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TracingDebugger;
+			productName = TracingDebugger;
+			productReference = 98B2CC82221C5CD800BF0172 /* TracingDebugger */;
+			productType = "com.apple.product-type.tool";
+		};
 		D10F230A20DFA895002E017C /* GenerateHeaders */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D10F230F20DFA895002E017C /* Build configuration list for PBXNativeTarget "GenerateHeaders" */;
@@ -1081,6 +1137,10 @@
 			isa = PBXProject;
 			attributes = {
 				TargetAttributes = {
+					98B2CC81221C5CD800BF0172 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 					D10F230A20DFA895002E017C = {
 						CreatedOnToolsVersion = 10.0;
 						DevelopmentTeam = 2WB96AW889;
@@ -1135,7 +1195,11 @@
 				6697AFD51048CFB100456911 /* SmalltalkSupport */,
 				D159D5C72210E6AC00F081BB /* libgmp */,
 				D159D5E7221155A300F081BB /* libffi */,
+<<<<<<< HEAD
 				D159D61522182E0600F081BB /* LanguageKitTests */,
+=======
+				98B2CC81221C5CD800BF0172 /* TracingDebugger */,
+>>>>>>> An execution tracer using the debugging machinery.
 			);
 		};
 /* End PBXProject section */
@@ -1302,6 +1366,14 @@
 				6697B00A1048D16A00456911 /* NSString+comma.m in Sources */,
 				6697B00B1048D16A00456911 /* NSValue+structs.m in Sources */,
 				66041ACE1094FE0400513AFD /* NSObject+yourself.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98B2CC7E221C5CD800BF0172 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B2CC85221C5CD800BF0172 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1552,6 +1624,116 @@
 					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				PRODUCT_NAME = SmalltalkSupport;
+			};
+			name = Release;
+		};
+		98B2CC87221C5CD800BF0172 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		98B2CC88221C5CD800BF0172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -2157,6 +2339,15 @@
 			buildConfigurations = (
 				6697AFD81048CFB200456911 /* Debug */,
 				6697AFD91048CFB200456911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98B2CC86221C5CD800BF0172 /* Build configuration list for PBXNativeTarget "TracingDebugger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98B2CC87221C5CD800BF0172 /* Debug */,
+				98B2CC88221C5CD800BF0172 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

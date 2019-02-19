@@ -28,5 +28,9 @@
  * Set the debugger's current mode.
  */
 - (void)setMode: (id<LKDebuggerMode>)aMode;
+/**
+ * Run a script using the current debugger mode to control execution.
+ */
+- (void)debugScript: (LKAST *)rootNode;
 
 @end
