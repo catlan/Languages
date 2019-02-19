@@ -547,6 +547,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	{
 		result = [message interpretInContext: context forTarget: target];
 	}
+    [context onTracepoint: self];
 	return result;
 }
 @end
