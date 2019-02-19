@@ -812,6 +812,7 @@ static uint8_t logBase2(uint8_t x)
 			cond = [[postCondition interpretInContext: context] boolValue];
 		}
 	}
+    [context onTracepoint: self];
 	return nil;
 }
 @end

@@ -78,6 +78,14 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     LKFloatLiteral *expr = [LKFloatLiteral literalFromString:@"3.14"];
     EvaluateAndCheckForTracepoint(expr, @"Float Literal generated a tracepoint");
 }
+
+- (void)testLoopGeneratesTracepoint {
+    NSMutableArray *statements = [@[] mutableCopy];
+    LKLoop *expr = [LKLoop loopWithStatements:statements];
+    [expr setPreCondition:[LKNumberLiteral literalFromString:@"0"]];
+    EvaluateAndCheckForTracepoint(expr, @"Loop generated a tracepoint");
+}
+
 @end
 
 @implementation FakeInterpreterContext
