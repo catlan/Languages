@@ -10,6 +10,8 @@
 #import "LKArrayExpr.h"
 #import "LKAST.h"
 #import "LKInterpreter.h"
+#import "LKToken.h"
+#import "LKVariableDecl.h"
 
 // subclass the interpreter context to inspect the messages it receives
 @interface FakeInterpreterContext : LKInterpreterContext
@@ -42,6 +44,14 @@
     XCTAssertEqualObjects([context lastNodeTraced], expr, @"Array Expression generated a tracepoint");
 }
 
+- (void)testVariableDeclGeneratesTracepoint {
+    NSString *symbolName = @"symbol";
+    LKToken *token = [LKToken tokenWithRange:NSMakeRange(0, [symbolName length])
+                                    inSource:symbolName];
+    LKVariableDecl *expr = [LKVariableDecl variableDeclWithName:token];
+    [expr interpretInContext:context];
+    XCTAssertEqualObjects([context lastNodeTraced], expr, @"Variable Decl generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext

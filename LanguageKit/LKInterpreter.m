@@ -773,6 +773,7 @@ static uint8_t logBase2(uint8_t x)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
 	[context setValue: nil forSymbol: (NSString*)variableName];
+    [context onTracepoint:self];
 	return nil;
 }
 @end
