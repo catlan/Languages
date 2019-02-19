@@ -100,6 +100,23 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
                                             methods:nil];
     EvaluateAndCheckForTracepoint(expr, @"Subclass generated a tracepoint");
 }
+
+- (void)testMessageSendGeneratesTracepoint {
+    LKMessageSend *expr = [LKMessageSend messageWithSelectorName:@"count"];
+    EvaluateAndCheckForTracepoint(expr, @"Message Send generated a tracepoint");
+}
+
+- (void)testNilCheckMessageSendsGenerateTracepoint {
+    LKMessageSend *expr = [LKMessageSend messageWithSelectorName:@"ifNil:"];
+    EvaluateAndCheckForTracepoint(expr, @"sending -ifNil: can be traced");
+    expr = [LKMessageSend messageWithSelectorName:@"ifNotNil:"];
+    EvaluateAndCheckForTracepoint(expr, @"sending -ifNotNil: can be traced");
+    expr = [LKMessageSend messageWithSelectorName:@"ifNil:ifNotNil:"];
+    EvaluateAndCheckForTracepoint(expr, @"sending -ifNil:ifNotNil: can be traced");
+    expr = [LKMessageSend messageWithSelectorName: @"ifNotNil:ifNil:"];
+    EvaluateAndCheckForTracepoint(expr, @"sending -ifNotNil:ifNil: can be traced");
+}
+
 @end
 
 @implementation FakeInterpreterContext

@@ -473,6 +473,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
         if (!receiver)
         {
             id block = [[arguments firstObject] interpretInContext: context];
+            [context onTracepoint: self];
             return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
         }
     }
@@ -481,6 +482,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
         if (receiver)
         {
             id block = [[arguments firstObject] interpretInContext: context];
+            [context onTracepoint: self];
             return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
         }
     }
@@ -488,12 +490,14 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
     {
         id argument = (!receiver) ? [arguments firstObject] : [arguments lastObject];
         id block = [argument interpretInContext: context];
+        [context onTracepoint: self];
         return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
     }
     else if ([selector isEqual: @"ifNotNil:ifNil:"])
     {
         id argument = (receiver) ? [arguments firstObject] : [arguments lastObject];
         id block = [argument interpretInContext: context];
+        [context onTracepoint: self];
         return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
     }
 	NSString *receiverClassName = nil;
@@ -520,6 +524,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 			arg = nil;
 		}
 	}
+    [context onTracepoint: self];
 	return LKSendMessage(receiverClassName, receiver, selector, argc, argv);
 }
 - (id)interpretInContext: (LKInterpreterContext*)context
