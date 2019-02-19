@@ -7,12 +7,9 @@
 
 #import <XCTest/XCTest.h>
 
-#import "LKArrayExpr.h"
-#import "LKAST.h"
-#import "LKIfStatement.h"
+#import "LanguageKit.h"
 #import "LKInterpreter.h"
 #import "LKToken.h"
-#import "LKVariableDecl.h"
 
 // subclass the interpreter context to inspect the messages it receives
 @interface FakeInterpreterContext : LKInterpreterContext
@@ -61,6 +58,7 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     LKIfStatement *expr = [LKIfStatement ifStatementWithCondition:nil];
     EvaluateAndCheckForTracepoint(expr, @"If Statement generated a tracepoint");
 }
+
 @end
 
 @implementation FakeInterpreterContext
