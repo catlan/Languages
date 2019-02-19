@@ -303,6 +303,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		class_replaceMethod(destClass, sel, LKInterpreterMakeIMP(destClass, type), type);
 		StoreASTForMethod(classname, isClassMethod, methodName, method);
 	}
+    [context onTracepoint: self];
 	return nil;
 }
 @end

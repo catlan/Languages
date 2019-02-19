@@ -133,6 +133,11 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
                                              statements:nil];
     EvaluateAndCheckForTracepoint(expr, @"Block Expr generated a tracepoint");
 }
+
+- (void)testCategoryDefGeneratesTracepoint {
+    LKCategoryDef *expr = [LKCategoryDef categoryOnClassNamed:@"NSObject" methods:nil];
+    EvaluateAndCheckForTracepoint(expr, @"Category Def generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext
