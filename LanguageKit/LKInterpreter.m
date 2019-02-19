@@ -315,6 +315,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKComment (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return nil;
 }
 @end

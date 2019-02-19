@@ -166,6 +166,10 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     EvaluateAndCheckForTracepoint(expr, @"Assign Expr generated a tracepoint");
 }
 
+- (void)testCommentGeneratesTracepoint {
+    LKComment *expr = [LKComment commentWithString:@"/* you are not expected to understand this. */"];
+    EvaluateAndCheckForTracepoint(expr, @"Comment generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext
