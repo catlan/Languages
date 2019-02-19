@@ -266,6 +266,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		}
 		return nil;
 	};
+    [parentContext onTracepoint:self];
 	return [block copy];
 }
 @end

@@ -126,6 +126,13 @@ XCTAssertEqualObjects([context lastNodeTraced], expr, msg); \
     LKModule *expr = [LKModule module];
     EvaluateAndCheckForTracepoint(expr, @"Method generated a tracepoint");
 }
+
+- (void)testBlockExpressionGeneratesTracepoint {
+    LKBlockExpr *expr = [LKBlockExpr blockWithArguments:nil
+                                                 locals:nil
+                                             statements:nil];
+    EvaluateAndCheckForTracepoint(expr, @"Block Expr generated a tracepoint");
+}
 @end
 
 @implementation FakeInterpreterContext
