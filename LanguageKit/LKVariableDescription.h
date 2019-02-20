@@ -23,8 +23,8 @@
 @property (readonly) LKSymbol *symbol;
 /**
  * The value of the variable. If the variable represents an object
- * (in other words, if its type is "@"), then the value is just that
- * object. Otherwise, the value is wrapped in an NSValue.
+ * (in other words, if its type is "@" or "#"), then the value is just that
+ * object. Otherwise, the value is boxed.
  */
 @property (readonly) id value;
 

@@ -10,6 +10,7 @@
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
 #import "LKInterpreter.h"
+#import "LKInterpreterRuntime.h"
 #import "LKSymbolTable.h"
 #import "LKVariableDescription.h"
 
@@ -51,6 +52,33 @@
 {
     LKInterpreterContext *context = _currentContext;
     NSMutableSet *variables = [NSMutableSet set];
+    // TODO: do I need to do anything extra for block context objects?
+    // don't recurse for self or block context, because they're inherited
+    id selfObject = [context selfObject];
+    if (selfObject) {
+        // I don't use -[obj class] here in case that's implemented by the interpreter
+        NSString *className = [NSString stringWithUTF8String:object_getClassName(selfObject)];
+        LKSymbolTable *ivars = [LKSymbolTable
+                                symbolTableForClass:className];
+        // FIXME observation: the symbol table can't represent indexed ivars
+        for (NSString *name in [ivars symbols]) {
+            LKSymbol *symbol = [ivars symbolForName:name];
+            /*
+             * Workaround: isa for tagged pointers can't be looked up via LKGetIvar()
+             * So in that specific case, just hand over the class.
+             */
+            id value = nil;
+            if ([name isEqualToString:@"isa"]) {
+                value = NSClassFromString(className);
+            }
+            else {
+                value = LKGetIvar(selfObject, name);
+            }
+            LKVariableDescription *desc = [[LKVariableDescription alloc]
+                                           initWithSymbol:symbol value:value];
+            [variables addObject:desc];
+        }
+    }
     while(context != nil) {
         for (NSString *name in [context allVariables]) {
             id value = [context valueForSymbol:name];
@@ -67,7 +95,6 @@
         }
         context = context->parent;
     }
-    // TODO: if there is a class in scope, add its ivars
     return [variables copy];
 }
 @end

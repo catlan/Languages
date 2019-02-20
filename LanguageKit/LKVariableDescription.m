@@ -42,7 +42,7 @@ static NSString *LKScopeDescription(LKSymbol *symbol) {
     self = [super init];
     if (self) {
         _symbol = aSymbol;
-        _value = [aValue copy];
+        _value = aValue;
     }
     return self;
 }
