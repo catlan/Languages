@@ -49,7 +49,8 @@ static LKAST *parseScript(NSString *script, NSString *extension)
 @synthesize service;
 
 - (void)onTracepoint: (LKAST *)aNode {
-    NSLog(@"Encountered AST node: %@", aNode);
+    NSLog(@"Encountered AST node: %@", NSStringFromClass([aNode class]));
+    NSLog(@"Variables here: %@", [self.service allVariables]);
 }
 
 @end

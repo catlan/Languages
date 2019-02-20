@@ -16,12 +16,14 @@
 {
     LKAST *_currentNode;
     id <LKDebuggerMode> _currentMode;
+    LKInterpreterContext *_currentContext;
 }
 
-- (void)onTracepoint: (LKAST *)aNode
+- (void)onTracepoint: (LKAST *)aNode inContext: (LKInterpreterContext *)context
 {
     _currentNode = aNode;
     [_currentMode onTracepoint:aNode];
+    _currentContext = context;
 }
 
 - (LKAST *)currentNode
@@ -42,5 +44,16 @@
     LKInterpreterContext *context = [[LKInterpreterContext alloc] initWithSymbolTable:table parent:nil];
     context.debugger = self;
     [rootNode interpretInContext:context];
+}
+
+- (NSArray <NSDictionary *>*)allVariables
+{
+    LKInterpreterContext *context = _currentContext;
+    NSMutableArray *symbolTables = [NSMutableArray array];
+    while(context != nil) {
+        [symbolTables addObject:[context allVariables]];
+        context = context->parent;
+    }
+    return [symbolTables copy];
 }
 @end

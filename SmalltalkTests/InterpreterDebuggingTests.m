@@ -83,7 +83,7 @@
 
 - (void)testDebuggingServiceForwardsTracepointEventsToMode {
     [debugger setMode:mode];
-    [debugger onTracepoint:node1];
+    [debugger onTracepoint:node1 inContext: nil];
     XCTAssertEqualObjects([mode receivedNode], node1, @"onTracepoint: event forwarded to debugger mode");
 }
 

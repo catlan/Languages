@@ -18,8 +18,10 @@
 
 /**
  * Called by the interpreter when it evaluates an AST node.
+ * @param aNode the AST node that was encountered.
+ * @param context the interpreter context in which the node was evaluated.
  */
-- (void)onTracepoint: (LKAST *)aNode;
+- (void)onTracepoint: (LKAST *)aNode inContext: (LKInterpreterContext *)context;
 /**
  * The interpreter's current location.
  */
@@ -32,5 +34,9 @@
  * Run a script using the current debugger mode to control execution.
  */
 - (void)debugScript: (LKAST *)rootNode;
-
+/**
+ * Get the values of variables defined at the current tracepoint.
+ * @return An array of dictionaries. This needs improving.
+ */
+- (NSArray<NSDictionary *> *)allVariables;
 @end

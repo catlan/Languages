@@ -142,7 +142,11 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 }
 - (void)onTracepoint: (LKAST *)aNode
 {
-    [self.debugger onTracepoint: aNode];
+    [self.debugger onTracepoint: aNode inContext: self];
+}
+- (NSDictionary *)allVariables
+{
+    return [objects copy];
 }
 + (LKDebuggerService *)activeDebugger
 {
