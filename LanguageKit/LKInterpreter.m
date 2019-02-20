@@ -13,6 +13,7 @@ NSString *LKInterpreterException = @"LKInterpreterException";
 
 static NSMutableDictionary *LKClassVariables;
 static NSMutableDictionary *LKMethodASTs;
+static LKDebuggerService *LKActiveDebugger;
 
 LKMethod *LKASTForMethod(Class cls, NSString *selectorName)
 {
@@ -138,7 +139,14 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 {
     [self.debugger onTracepoint: aNode];
 }
-
++ (LKDebuggerService *)activeDebugger
+{
+    return LKActiveDebugger;
+}
++ (void)setActiveDebugger:(LKDebuggerService *)aDebugger
+{
+    LKActiveDebugger = aDebugger;
+}
 @end
 
 
@@ -627,6 +635,12 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKModule (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    /*
+     * store the debugger that was active when this module was
+     * interpreted, so we can use it when the things defined in
+     * the module are executed.
+     */
+    [LKInterpreterContext setActiveDebugger: context.debugger];
 	for (LKAST *class in classes)
 	{
 		[class interpretInContext: context];

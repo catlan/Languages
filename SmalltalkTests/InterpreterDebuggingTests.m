@@ -11,6 +11,7 @@
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
 #import "LKInterpreter.h"
+#import "LKModule.h"
 
 @interface InspectableMode : NSObject <LKDebuggerMode>
 
@@ -59,9 +60,11 @@
     [debugger setMode:mode];
     [context setDebugger:debugger];
     node1 = [LKComment commentWithString:@"# A comment"];
+    [LKInterpreterContext setActiveDebugger:nil];
 }
 
 - (void)tearDown {
+    [LKInterpreterContext setActiveDebugger:nil];
     table = nil;
     context = nil;
     debugger = nil;
@@ -82,5 +85,11 @@
     [debugger setMode:mode];
     [debugger onTracepoint:node1];
     XCTAssertEqualObjects([mode receivedNode], node1, @"onTracepoint: event forwarded to debugger mode");
+}
+
+- (void)testInterpretingAModuleStoresTheDebugger {
+    LKModule *module = [LKModule module];
+    [module interpretInContext:context];
+    XCTAssertEqualObjects([LKInterpreterContext activeDebugger], debugger, @"Debugger was saved for later");
 }
 @end
