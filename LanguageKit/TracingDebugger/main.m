@@ -54,6 +54,12 @@ static LKAST *parseScript(NSString *script, NSString *extension)
 
 @end
 
+@interface NSObject (AddedInScript)
+
+- (id)doAThing;
+
+@end
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSError *error = nil;
@@ -77,6 +83,7 @@ int main(int argc, const char * argv[]) {
         LKDebuggerService *debugger = [[LKDebuggerService alloc] init];
         [debugger setMode:[TracingMode new]];
         [debugger debugScript:module];
+        NSLog(@"%@", [[NSObject new] doAThing]);
     }
     return 0;
 }
