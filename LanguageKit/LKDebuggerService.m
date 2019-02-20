@@ -11,6 +11,7 @@
 #import "LKDebuggerService.h"
 #import "LKInterpreter.h"
 #import "LKSymbolTable.h"
+#import "LKVariableDescription.h"
 
 @implementation LKDebuggerService
 {
@@ -46,14 +47,23 @@
     [rootNode interpretInContext:context];
 }
 
-- (NSArray <NSDictionary *>*)allVariables
+- (NSSet <LKVariableDescription *>*)allVariables
 {
     LKInterpreterContext *context = _currentContext;
-    NSMutableArray *symbolTables = [NSMutableArray array];
+    NSMutableSet *variables = [NSMutableSet set];
     while(context != nil) {
-        [symbolTables addObject:[context allVariables]];
+        for (NSString *name in [context allVariables]) {
+            id value = [context valueForSymbol:name];
+            LKSymbol *symbol = [context->symbolTable symbolForName:name];
+            // TODO: find the defining context
+            LKVariableDescription *desc = [[LKVariableDescription alloc]
+                                           initWithSymbol:symbol
+                                           value:value];
+            [variables addObject:desc];
+        }
         context = context->parent;
     }
-    return [symbolTables copy];
+    // TODO: if there is a class in scope, add its ivars
+    return [variables copy];
 }
 @end

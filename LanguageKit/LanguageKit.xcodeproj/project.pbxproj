@@ -127,6 +127,8 @@
 		98B2CC8A221C5CF700BF0172 /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
 		98B2CC8B221C5CFC00BF0172 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
 		98B2CC8C221C5D0200BF0172 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
+		98B2CC90221D82BF00BF0172 /* LKVariableDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */; };
+		98B2CC91221D82BF00BF0172 /* LKVariableDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */; };
 		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
@@ -450,6 +452,8 @@
 		98B2CC82221C5CD800BF0172 /* TracingDebugger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TracingDebugger; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B2CC84221C5CD800BF0172 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98B2CC8D221C60C500BF0172 /* testscript.st */ = {isa = PBXFileReference; lastKnownFileType = text; path = testscript.st; sourceTree = "<group>"; };
+		98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKVariableDescription.h; sourceTree = "<group>"; };
+		98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKVariableDescription.m; sourceTree = "<group>"; };
 		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
@@ -649,6 +653,7 @@
 				D1D2A0D61F65329600B3814A /* LKProperty.m */,
 				D159D621221868CB00F081BB /* Debugger */,
 				98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */,
+				98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */,
 			);
 			name = LanguageKit;
 			sourceTree = "<group>";
@@ -773,6 +778,7 @@
 				D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */,
 				98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */,
 				98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */,
+				98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -893,6 +899,7 @@
 				6697B04F1048D19A00456911 /* LKToken.h in Headers */,
 				6697B0501048D19A00456911 /* LKVariableDecl.h in Headers */,
 				6697B0511048D19A00456911 /* LKAST.h in Headers */,
+				98B2CC90221D82BF00BF0172 /* LKVariableDescription.h in Headers */,
 				6697B0531048D19A00456911 /* LKCompiler.h in Headers */,
 				6697B0541048D19A00456911 /* LKCompilerErrors.h in Headers */,
 				6697B0571048D19A00456911 /* LKModule.h in Headers */,
@@ -1195,11 +1202,8 @@
 				6697AFD51048CFB100456911 /* SmalltalkSupport */,
 				D159D5C72210E6AC00F081BB /* libgmp */,
 				D159D5E7221155A300F081BB /* libffi */,
-<<<<<<< HEAD
 				D159D61522182E0600F081BB /* LanguageKitTests */,
-=======
 				98B2CC81221C5CD800BF0172 /* TracingDebugger */,
->>>>>>> An execution tracer using the debugging machinery.
 			);
 		};
 /* End PBXProject section */
@@ -1323,6 +1327,7 @@
 				6697B0611048D19A00456911 /* LKDeclRef.m in Sources */,
 				D100F9B71F263F350048FDFA /* LKLoop.m in Sources */,
 				D159D625221868F700F081BB /* LKDBConnection.m in Sources */,
+				98B2CC91221D82BF00BF0172 /* LKVariableDescription.m in Sources */,
 				6697B0621048D19A00456911 /* LKIfStatement.m in Sources */,
 				6697B0631048D19A00456911 /* LKLiteral.m in Sources */,
 				6697B0641048D19A00456911 /* LKMessageSend.m in Sources */,

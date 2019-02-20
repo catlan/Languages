@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol LKDebuggerMode;
+@class LKVariableDescription;
 
 /**
  * A debugger service controls the debugging operation, and shows the
@@ -36,7 +37,7 @@
 - (void)debugScript: (LKAST *)rootNode;
 /**
  * Get the values of variables defined at the current tracepoint.
- * @return An array of dictionaries. This needs improving.
+ * @return An unordered collection of variable descriptions.
  */
-- (NSArray<NSDictionary *> *)allVariables;
+- (NSSet<LKVariableDescription *> *)allVariables;
 @end
