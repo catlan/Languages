@@ -57,7 +57,7 @@
     mode = [InspectableMode new];
     debugger = [LKDebuggerService new];
     [debugger setMode:mode];
-    [context debugWithService:debugger];
+    [context setDebugger:debugger];
     node1 = [LKComment commentWithString:@"# A comment"];
 }
 
