@@ -92,4 +92,10 @@
     [module interpretInContext:context];
     XCTAssertEqualObjects([LKInterpreterContext activeDebugger], debugger, @"Debugger was saved for later");
 }
+
+- (void)testContextWithoutDebuggerFallsBackToActiveDebugger {
+    [LKInterpreterContext setActiveDebugger:debugger];
+    LKInterpreterContext *otherContext = [[LKInterpreterContext alloc] initWithSymbolTable:nil parent:nil];
+    XCTAssertEqualObjects(otherContext.debugger, debugger, @"Context found a debugger via its class");
+}
 @end

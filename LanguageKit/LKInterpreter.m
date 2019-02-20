@@ -135,6 +135,11 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	}
 	return context;
 }
+- (LKDebuggerService *)debugger
+{
+    if (_debugger) return _debugger;
+    return [[self class] activeDebugger];
+}
 - (void)onTracepoint: (LKAST *)aNode
 {
     [self.debugger onTracepoint: aNode];
