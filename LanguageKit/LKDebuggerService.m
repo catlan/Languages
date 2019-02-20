@@ -52,8 +52,7 @@
 {
     LKInterpreterContext *context = _currentContext;
     NSMutableSet *variables = [NSMutableSet set];
-    // TODO: do I need to do anything extra for block context objects?
-    // don't recurse for self or block context, because they're inherited
+    // don't recurse for self references, because they're inherited
     id selfObject = [context selfObject];
     if (selfObject) {
         // I don't use -[obj class] here in case that's implemented by the interpreter
