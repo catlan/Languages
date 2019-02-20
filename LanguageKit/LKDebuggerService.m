@@ -55,7 +55,11 @@
         for (NSString *name in [context allVariables]) {
             id value = [context valueForSymbol:name];
             LKSymbol *symbol = [context->symbolTable symbolForName:name];
-            // TODO: find the defining context
+            if (symbol.scope == LKSymbolScopeExternal) {
+                LKInterpreterVariableContext definingContext = [context contextForSymbol:symbol];
+                symbol = [definingContext.context->symbolTable
+                          symbolForName:name];
+            }
             LKVariableDescription *desc = [[LKVariableDescription alloc]
                                            initWithSymbol:symbol
                                            value:value];
