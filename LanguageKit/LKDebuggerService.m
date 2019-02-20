@@ -40,6 +40,7 @@
     LKSymbolTable *table = [LKSymbolTable new];
     [table setTableScope:LKSymbolScopeGlobal];
     LKInterpreterContext *context = [[LKInterpreterContext alloc] initWithSymbolTable:table parent:nil];
+    context.debugger = self;
     [rootNode interpretInContext:context];
 }
 @end
