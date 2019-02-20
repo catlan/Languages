@@ -149,6 +149,15 @@
 		D159D5E62211528C00F081BB /* libffi_Mac.dylib in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D159D5EF221167A100F081BB /* libffi_Mac.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D159D5DA2210F0FF00F081BB /* libffi_Mac.dylib */; };
 		D159D6012216E58500F081BB /* lemon.c in Sources */ = {isa = PBXBuildFile; fileRef = D159D6002216E58500F081BB /* lemon.c */; };
+		D159D60A22170E2200F081BB /* LKDBClient.h in Headers */ = {isa = PBXBuildFile; fileRef = D159D60822170E2200F081BB /* LKDBClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D159D60B22170E2200F081BB /* LKDBClient.m in Sources */ = {isa = PBXBuildFile; fileRef = D159D60922170E2200F081BB /* LKDBClient.m */; };
+		D159D60E22170E3900F081BB /* LKDBServer.h in Headers */ = {isa = PBXBuildFile; fileRef = D159D60C22170E3900F081BB /* LKDBServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D159D60F22170E3900F081BB /* LKDBServer.m in Sources */ = {isa = PBXBuildFile; fileRef = D159D60D22170E3900F081BB /* LKDBServer.m */; };
+		D159D6112217218B00F081BB /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D159D6102217218A00F081BB /* CoreServices.framework */; };
+		D159D61922182E0600F081BB /* LanguageKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D159D61822182E0600F081BB /* LanguageKitTests.m */; };
+		D159D61B22182E0600F081BB /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
+		D159D624221868F700F081BB /* LKDBConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = D159D622221868F700F081BB /* LKDBConnection.h */; };
+		D159D625221868F700F081BB /* LKDBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D159D623221868F700F081BB /* LKDBConnection.m */; };
 		D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D2A0D51F65329600B3814A /* LKProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = D1D2A0D61F65329600B3814A /* LKProperty.m */; };
 /* End PBXBuildFile section */
@@ -262,6 +271,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D159D5F82216E4E600F081BB;
 			remoteInfo = lemon;
+		};
+		D159D61C22182E0600F081BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6697AF801048CE7100456911 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6697AFB41048CF6C00456911;
+			remoteInfo = LanguageKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -434,6 +450,16 @@
 		D159D5F92216E4E600F081BB /* lemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lemon; sourceTree = BUILT_PRODUCTS_DIR; };
 		D159D6002216E58500F081BB /* lemon.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lemon.c; sourceTree = "<group>"; };
 		D159D6042216E85100F081BB /* lempar.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lempar.c; sourceTree = "<group>"; };
+		D159D60822170E2200F081BB /* LKDBClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDBClient.h; sourceTree = "<group>"; };
+		D159D60922170E2200F081BB /* LKDBClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKDBClient.m; sourceTree = "<group>"; };
+		D159D60C22170E3900F081BB /* LKDBServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDBServer.h; sourceTree = "<group>"; };
+		D159D60D22170E3900F081BB /* LKDBServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKDBServer.m; sourceTree = "<group>"; };
+		D159D6102217218A00F081BB /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		D159D61622182E0600F081BB /* LanguageKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LanguageKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D159D61822182E0600F081BB /* LanguageKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageKitTests.m; sourceTree = "<group>"; };
+		D159D61A22182E0600F081BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D159D622221868F700F081BB /* LKDBConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDBConnection.h; sourceTree = "<group>"; };
+		D159D623221868F700F081BB /* LKDBConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKDBConnection.m; sourceTree = "<group>"; };
 		D1D2A0D51F65329600B3814A /* LKProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKProperty.h; sourceTree = "<group>"; };
 		D1D2A0D61F65329600B3814A /* LKProperty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKProperty.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -454,6 +480,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D159D6112217218B00F081BB /* CoreServices.framework in Frameworks */,
 				663A0E76108D621200B921B0 /* Foundation.framework in Frameworks */,
 				668C495910915D63002A20A3 /* LanguageKitRuntime.framework in Frameworks */,
 				D159D5EF221167A100F081BB /* libffi_Mac.dylib in Frameworks */,
@@ -514,6 +541,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D159D61322182E0600F081BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D159D61B22182E0600F081BB /* LanguageKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -523,6 +558,7 @@
 				663A0DF3108D61F800B921B0 /* Foundation.framework */,
 				663A0E8E108D623C00B921B0 /* Cocoa.framework */,
 				6697AF951048CEC100456911 /* LanguageKit */,
+				D159D61722182E0600F081BB /* LanguageKitTests */,
 				6697AF961048CEC700456911 /* Smalltalk */,
 				D10F9F8E20E2B61100ECCEC3 /* SmalltalkTests */,
 				6697AF991048CED700456911 /* Compiler */,
@@ -572,6 +608,7 @@
 				D100F9B01F263E070048FDFA /* LKFunctionCall.m */,
 				D1D2A0D51F65329600B3814A /* LKProperty.h */,
 				D1D2A0D61F65329600B3814A /* LKProperty.m */,
+				D159D621221868CB00F081BB /* Debugger */,
 			);
 			name = LanguageKit;
 			sourceTree = "<group>";
@@ -655,6 +692,7 @@
 				D10F231E20DFAD8B002E017C /* Smalltalk.framework */,
 				D10F9F8D20E2B61100ECCEC3 /* SmalltalkTests.xctest */,
 				D159D5F92216E4E600F081BB /* lemon */,
+				D159D61622182E0600F081BB /* LanguageKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -730,6 +768,7 @@
 		D15505761F276E9900E5ACFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D159D6102217218A00F081BB /* CoreServices.framework */,
 				D15505791F276FBD00E5ACFF /* libcurses.tbd */,
 				D15505771F276E9900E5ACFF /* libz.tbd */,
 			);
@@ -746,6 +785,28 @@
 			path = ../Vendor/lemon;
 			sourceTree = "<group>";
 		};
+		D159D61722182E0600F081BB /* LanguageKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D159D61A22182E0600F081BB /* Info.plist */,
+				D159D61822182E0600F081BB /* LanguageKitTests.m */,
+			);
+			path = LanguageKitTests;
+			sourceTree = "<group>";
+		};
+		D159D621221868CB00F081BB /* Debugger */ = {
+			isa = PBXGroup;
+			children = (
+				D159D622221868F700F081BB /* LKDBConnection.h */,
+				D159D623221868F700F081BB /* LKDBConnection.m */,
+				D159D60822170E2200F081BB /* LKDBClient.h */,
+				D159D60922170E2200F081BB /* LKDBClient.m */,
+				D159D60C22170E3900F081BB /* LKDBServer.h */,
+				D159D60D22170E3900F081BB /* LKDBServer.m */,
+			);
+			name = Debugger;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -754,6 +815,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6697B03B1048D19A00456911 /* LanguageKit.h in Headers */,
+				D159D624221868F700F081BB /* LKDBConnection.h in Headers */,
 				6697B03C1048D19A00456911 /* LKArrayExpr.h in Headers */,
 				6697B03D1048D19A00456911 /* LKAssignExpr.h in Headers */,
 				6697B03E1048D19A00456911 /* LKASTVisitor.h in Headers */,
@@ -779,10 +841,12 @@
 				6697B0541048D19A00456911 /* LKCompilerErrors.h in Headers */,
 				6697B0571048D19A00456911 /* LKModule.h in Headers */,
 				D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */,
+				D159D60E22170E3900F081BB /* LKDBServer.h in Headers */,
 				663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */,
 				668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */,
 				668C491710915C17002A20A3 /* LKInterpreter.h in Headers */,
 				D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */,
+				D159D60A22170E2200F081BB /* LKDBClient.h in Headers */,
 				794B2BC0123D774F008A4663 /* LKLoop.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -975,6 +1039,24 @@
 			productReference = D159D5F92216E4E600F081BB /* lemon */;
 			productType = "com.apple.product-type.tool";
 		};
+		D159D61522182E0600F081BB /* LanguageKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D159D61E22182E0600F081BB /* Build configuration list for PBXNativeTarget "LanguageKitTests" */;
+			buildPhases = (
+				D159D61222182E0600F081BB /* Sources */,
+				D159D61322182E0600F081BB /* Frameworks */,
+				D159D61422182E0600F081BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D159D61D22182E0600F081BB /* PBXTargetDependency */,
+			);
+			name = LanguageKitTests;
+			productName = LanguageKitTests;
+			productReference = D159D61622182E0600F081BB /* LanguageKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1008,6 +1090,10 @@
 					D159D5F82216E4E600F081BB = {
 						CreatedOnToolsVersion = 10.2;
 					};
+					D159D61522182E0600F081BB = {
+						CreatedOnToolsVersion = 10.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 6697AF831048CE7100456911 /* Build configuration list for PBXProject "LanguageKit" */;
@@ -1032,6 +1118,7 @@
 				6697AFD51048CFB100456911 /* SmalltalkSupport */,
 				D159D5C72210E6AC00F081BB /* libgmp */,
 				D159D5E7221155A300F081BB /* libffi */,
+				D159D61522182E0600F081BB /* LanguageKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1071,6 +1158,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D10F9FA420E37C5F00ECCEC3 /* SmalltalkTests.st in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D159D61422182E0600F081BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1140,11 +1234,13 @@
 				6697B05C1048D19A00456911 /* LKAssignExpr.m in Sources */,
 				6697B05D1048D19A00456911 /* LKCategory.m in Sources */,
 				D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */,
+				D159D60B22170E2200F081BB /* LKDBClient.m in Sources */,
 				6697B05E1048D19A00456911 /* LKComment.m in Sources */,
 				6697B05F1048D19A00456911 /* LKComparison.m in Sources */,
 				6697B0601048D19A00456911 /* LKCompiler.m in Sources */,
 				6697B0611048D19A00456911 /* LKDeclRef.m in Sources */,
 				D100F9B71F263F350048FDFA /* LKLoop.m in Sources */,
+				D159D625221868F700F081BB /* LKDBConnection.m in Sources */,
 				6697B0621048D19A00456911 /* LKIfStatement.m in Sources */,
 				6697B0631048D19A00456911 /* LKLiteral.m in Sources */,
 				6697B0641048D19A00456911 /* LKMessageSend.m in Sources */,
@@ -1153,6 +1249,7 @@
 				D1D2A0D81F65329600B3814A /* LKProperty.m in Sources */,
 				6697B0671048D19A00456911 /* LKSymbolTable.m in Sources */,
 				6697B0681048D19A00456911 /* LKToken.m in Sources */,
+				D159D60F22170E3900F081BB /* LKDBServer.m in Sources */,
 				6697B0691048D19A00456911 /* LKVariableDecl.m in Sources */,
 				663A0FC7108FF90300B921B0 /* LKTypeHelpers.m in Sources */,
 				668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */,
@@ -1225,6 +1322,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D159D61222182E0600F081BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D159D61922182E0600F081BB /* LanguageKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1282,6 +1387,11 @@
 			isa = PBXTargetDependency;
 			target = D159D5F82216E4E600F081BB /* lemon */;
 			targetProxy = D159D6022216E64300F081BB /* PBXContainerItemProxy */;
+		};
+		D159D61D22182E0600F081BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6697AFB41048CF6C00456911 /* LanguageKit */;
+			targetProxy = D159D61C22182E0600F081BB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1865,6 +1975,124 @@
 			};
 			name = Release;
 		};
+		D159D61F22182E0600F081BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = LanguageKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.etoile.LanguageKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D159D62022182E0600F081BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = LanguageKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.etoile.LanguageKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1963,6 +2191,15 @@
 			buildConfigurations = (
 				D159D5FD2216E4E600F081BB /* Debug */,
 				D159D5FE2216E4E600F081BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D159D61E22182E0600F081BB /* Build configuration list for PBXNativeTarget "LanguageKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D159D61F22182E0600F081BB /* Debug */,
+				D159D62022182E0600F081BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -24,4 +24,6 @@
 #import <LanguageKit/LKSymbolTable.h>
 #import <LanguageKit/LKVariableDecl.h>
 #import <LanguageKit/LKProperty.h>
+#import <LanguageKit/LKDBClient.h>
+#import <LanguageKit/LKDBServer.h>
 
