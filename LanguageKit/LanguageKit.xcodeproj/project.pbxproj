@@ -128,6 +128,8 @@
 		9837B2F7221EE3E600FA0E6C /* LKStepIntoMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */; };
 		9837B2F8221EE3E600FA0E6C /* LKStepIntoMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */; };
 		9837B2FA221EE5B900FA0E6C /* SteppingModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */; };
+		9837B2FD221EE98200FA0E6C /* LKRunningDebuggerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2FB221EE98200FA0E6C /* LKRunningDebuggerMode.h */; };
+		9837B2FE221EE98200FA0E6C /* LKRunningDebuggerMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2FC221EE98200FA0E6C /* LKRunningDebuggerMode.m */; };
 		98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */; };
 		98B2CC7B221C548600BF0172 /* LKDebuggerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98B2CC7C221C548D00BF0172 /* LKDebuggerService.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -462,6 +464,8 @@
 		9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKStepIntoMode.h; sourceTree = "<group>"; };
 		9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKStepIntoMode.m; sourceTree = "<group>"; };
 		9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteppingModeTests.m; sourceTree = "<group>"; };
+		9837B2FB221EE98200FA0E6C /* LKRunningDebuggerMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKRunningDebuggerMode.h; sourceTree = "<group>"; };
+		9837B2FC221EE98200FA0E6C /* LKRunningDebuggerMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKRunningDebuggerMode.m; sourceTree = "<group>"; };
 		98B2CC73221C066200BF0172 /* TracingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TracingTests.m; sourceTree = "<group>"; };
 		98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterpreterDebuggingTests.m; sourceTree = "<group>"; };
 		98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerService.h; sourceTree = "<group>"; };
@@ -890,6 +894,8 @@
 				9837B2F0221EB59700FA0E6C /* LKPauseMode.m */,
 				9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */,
 				9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */,
+				9837B2FB221EE98200FA0E6C /* LKRunningDebuggerMode.h */,
+				9837B2FC221EE98200FA0E6C /* LKRunningDebuggerMode.m */,
 			);
 			name = Debugger;
 			sourceTree = "<group>";
@@ -913,6 +919,7 @@
 				9837B2F1221EB59700FA0E6C /* LKPauseMode.h in Headers */,
 				98B2CC7B221C548600BF0172 /* LKDebuggerMode.h in Headers */,
 				6697B0441048D19A00456911 /* LKComment.h in Headers */,
+				9837B2FD221EE98200FA0E6C /* LKRunningDebuggerMode.h in Headers */,
 				6697B0451048D19A00456911 /* LKComparison.h in Headers */,
 				6697B0461048D19A00456911 /* LKDeclRef.h in Headers */,
 				6697B0471048D19A00456911 /* LKIfStatement.h in Headers */,
@@ -1372,6 +1379,7 @@
 				6697B0691048D19A00456911 /* LKVariableDecl.m in Sources */,
 				663A0FC7108FF90300B921B0 /* LKTypeHelpers.m in Sources */,
 				9837B2F8221EE3E600FA0E6C /* LKStepIntoMode.m in Sources */,
+				9837B2FE221EE98200FA0E6C /* LKRunningDebuggerMode.m in Sources */,
 				668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */,
 				668C491610915C17002A20A3 /* LKInterpreter.m in Sources */,
 			);

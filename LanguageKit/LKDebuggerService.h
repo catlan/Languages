@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol LKDebuggerMode;
+@class LKAST;
 @class LKInterpreterContext;
 @class LKVariableDescription;
 

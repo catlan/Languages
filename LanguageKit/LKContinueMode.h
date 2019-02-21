@@ -8,12 +8,13 @@
 #import <Foundation/Foundation.h>
 
 #import "LKDebuggerMode.h"
+#import "LKRunningDebuggerMode.h"
 
 /**
  * Continue Mode is the default mode of operation for the debugger.
  * It allows execution to continue unless a breakpoint is reached,
  * when it pauses the debugger.
  */
-@interface LKContinueMode : NSObject <LKDebuggerMode>
+@interface LKContinueMode : LKRunningDebuggerMode <LKDebuggerMode>
 
 @end

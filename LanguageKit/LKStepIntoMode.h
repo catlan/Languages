@@ -7,7 +7,8 @@
 
 #import <Foundation/Foundation.h>
 #import "LKDebuggerMode.h"
+#import "LKRunningDebuggerMode.h"
 
-@interface LKStepIntoMode : NSObject <LKDebuggerMode>
+@interface LKStepIntoMode : LKRunningDebuggerMode <LKDebuggerMode>
 
 @end
