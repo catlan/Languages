@@ -8,6 +8,7 @@
 #import "LKPauseMode.h"
 #import "LKContinueMode.h"
 #import "LKDebuggerService.h"
+#import "LKStepIntoMode.h"
 
 @interface LKPauseMode ()
 
@@ -62,6 +63,12 @@
     if (self.service.shouldStop) {
         dispatch_semaphore_signal(semaphore);
     }
+}
+
+- (void)stepInto
+{
+    self.service.mode = [LKStepIntoMode new];
+    [self startAgain];
 }
 
 @end

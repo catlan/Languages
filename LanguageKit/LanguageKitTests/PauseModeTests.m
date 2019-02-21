@@ -9,6 +9,7 @@
 #import "LKContinueMode.h"
 #import "LKDebuggerService.h"
 #import "LKPauseMode.h"
+#import "LKStepIntoMode.h"
 
 @interface PauseModeTests : XCTestCase
 
@@ -34,4 +35,8 @@
     XCTAssertEqualObjects([_debugger.mode class], [LKContinueMode class], @"Resuming debugger puts it back in continue mode");
 }
 
+- (void)testSteppingIntoAPausedDebuggerPutsItIntoSingleStepMode {
+    [_debugger stepInto];
+    XCTAssertEqualObjects([_debugger.mode class], [LKStepIntoMode class], @"Stepping debugger puts it into single step mode");
+}
 @end

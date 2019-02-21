@@ -73,4 +73,9 @@
  * Resume execution.
  */
 - (void)resume;
+/**
+ * Single-step the debugger.
+ */
+- (void)stepInto;
+
 @end

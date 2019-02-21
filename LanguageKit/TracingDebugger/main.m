@@ -92,6 +92,7 @@ int main(int argc, const char * argv[]) {
         LKDebuggerService *debugger = [[LKDebuggerService alloc] init];
         [debugger debugScript:module];
         
+        NSObject *receiver = [NSObject new];
         /*
          * You can add a breakpoint by telling the debugger what AST node it ought to stop at.
          * A UI for this debugger would either want to help users select nodes, or translate line
@@ -111,6 +112,12 @@ int main(int argc, const char * argv[]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)),
                        dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0),
                        ^{
+                           NSLog(@"Current location: %@", [debugger currentNode]);
+                           NSLog(@"Stepping over one instruction");
+                           [debugger stepInto];
+                           NSLog(@"Waiting for the debugger to do the step");
+                           sleep(1);
+                           NSLog(@"Now at: %@", [debugger currentNode]);
                            NSLog(@"Resuming debugger");
                            [debugger resume];
                        });
@@ -119,7 +126,7 @@ int main(int argc, const char * argv[]) {
          * paused in the debugger.
          */
         NSLog(@"Running in the debugger");
-        NSLog(@"%@", [[NSObject new] doAThing]);
+        NSLog(@"%@", [receiver doAThing]);
         /*
          * OK, we're done with that part of the demo, remove the breakpoint.
          */
@@ -130,7 +137,7 @@ int main(int argc, const char * argv[]) {
          * This custom mode is used to show the information that's available to users of the debugger.
          */
         [debugger setMode:[TracingMode new]];
-        NSLog(@"%@", [[NSObject new] doAThing]);
+        NSLog(@"%@", [receiver doAThing]);
         
     }
     return 0;

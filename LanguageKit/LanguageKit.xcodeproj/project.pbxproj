@@ -125,6 +125,9 @@
 		9837B2F1221EB59700FA0E6C /* LKPauseMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2EF221EB59700FA0E6C /* LKPauseMode.h */; };
 		9837B2F2221EB59700FA0E6C /* LKPauseMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F0221EB59700FA0E6C /* LKPauseMode.m */; };
 		9837B2F4221EBE6E00FA0E6C /* PauseModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F3221EBE6E00FA0E6C /* PauseModeTests.m */; };
+		9837B2F7221EE3E600FA0E6C /* LKStepIntoMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */; };
+		9837B2F8221EE3E600FA0E6C /* LKStepIntoMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */; };
+		9837B2FA221EE5B900FA0E6C /* SteppingModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */; };
 		98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */; };
 		98B2CC7B221C548600BF0172 /* LKDebuggerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98B2CC7C221C548D00BF0172 /* LKDebuggerService.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -456,6 +459,9 @@
 		9837B2EF221EB59700FA0E6C /* LKPauseMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKPauseMode.h; sourceTree = "<group>"; };
 		9837B2F0221EB59700FA0E6C /* LKPauseMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKPauseMode.m; sourceTree = "<group>"; };
 		9837B2F3221EBE6E00FA0E6C /* PauseModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseModeTests.m; sourceTree = "<group>"; };
+		9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKStepIntoMode.h; sourceTree = "<group>"; };
+		9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKStepIntoMode.m; sourceTree = "<group>"; };
+		9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteppingModeTests.m; sourceTree = "<group>"; };
 		98B2CC73221C066200BF0172 /* TracingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TracingTests.m; sourceTree = "<group>"; };
 		98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterpreterDebuggingTests.m; sourceTree = "<group>"; };
 		98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerService.h; sourceTree = "<group>"; };
@@ -859,6 +865,7 @@
 				98B2CC73221C066200BF0172 /* TracingTests.m */,
 				9837B2ED221EAF3D00FA0E6C /* ContinueModeTests.m */,
 				9837B2F3221EBE6E00FA0E6C /* PauseModeTests.m */,
+				9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */,
 			);
 			path = LanguageKitTests;
 			sourceTree = "<group>";
@@ -881,6 +888,8 @@
 				9837B2EA221EA91600FA0E6C /* LKContinueMode.m */,
 				9837B2EF221EB59700FA0E6C /* LKPauseMode.h */,
 				9837B2F0221EB59700FA0E6C /* LKPauseMode.m */,
+				9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */,
+				9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */,
 			);
 			name = Debugger;
 			sourceTree = "<group>";
@@ -924,6 +933,7 @@
 				6697B0541048D19A00456911 /* LKCompilerErrors.h in Headers */,
 				6697B0571048D19A00456911 /* LKModule.h in Headers */,
 				D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */,
+				9837B2F7221EE3E600FA0E6C /* LKStepIntoMode.h in Headers */,
 				D159D60E22170E3900F081BB /* LKDBServer.h in Headers */,
 				663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */,
 				668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */,
@@ -1361,6 +1371,7 @@
 				D159D60F22170E3900F081BB /* LKDBServer.m in Sources */,
 				6697B0691048D19A00456911 /* LKVariableDecl.m in Sources */,
 				663A0FC7108FF90300B921B0 /* LKTypeHelpers.m in Sources */,
+				9837B2F8221EE3E600FA0E6C /* LKStepIntoMode.m in Sources */,
 				668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */,
 				668C491610915C17002A20A3 /* LKInterpreter.m in Sources */,
 			);
@@ -1447,6 +1458,7 @@
 				D159D61922182E0600F081BB /* LanguageKitTests.m in Sources */,
 				9837B2E8221EA82A00FA0E6C /* TracingTests.m in Sources */,
 				9837B2E7221EA82000FA0E6C /* InterpreterDebuggingTests.m in Sources */,
+				9837B2FA221EE5B900FA0E6C /* SteppingModeTests.m in Sources */,
 				9837B2EE221EAF3D00FA0E6C /* ContinueModeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

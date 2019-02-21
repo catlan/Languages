@@ -38,5 +38,10 @@
  * @throws If the debugger cannot resume (e.g. it is already running).
  */
 - (void)resume;
-
+/**
+ * Step into the next AST node.
+ * @throws If the debugger cannot step (e.g. it is already running).
+ */
+- (void)stepInto;
+ 
 @end

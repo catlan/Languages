@@ -137,4 +137,9 @@
 {
     [_mode resume];
 }
+
+- (void)stepInto
+{
+    [_mode stepInto];
+}
 @end
