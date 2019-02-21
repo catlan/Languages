@@ -28,5 +28,9 @@
  * tracepoint is reached.
  */
 - (void)onTracepoint: (LKAST *)aNode;
+/**
+ * Pause the debugger.
+ */
+- (void)pause;
 
 @end

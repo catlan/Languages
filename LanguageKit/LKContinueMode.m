@@ -6,6 +6,8 @@
 //
 
 #import "LKContinueMode.h"
+#import "LKDebuggerService.h"
+#import "LKPauseMode.h"
 
 @implementation LKContinueMode
 
@@ -13,7 +15,16 @@
 
 - (void)onTracepoint:(LKAST *)aNode
 {
-    
+    if ([self.service hasBreakpointAt:aNode]) {
+        [self.service pause];
+    }
+}
+
+- (void)pause
+{
+    LKPauseMode *nextMode = [LKPauseMode new];
+    self.service.mode = nextMode;
+    [nextMode waitHere];
 }
 
 @end

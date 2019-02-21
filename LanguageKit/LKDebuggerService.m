@@ -19,6 +19,7 @@
 {
     LKAST *_currentNode;
     LKInterpreterContext *_currentContext;
+    NSMutableSet<LKAST *> *_breakpoints;
 }
 
 @synthesize mode = _mode;
@@ -29,6 +30,8 @@
     if (self) {
         _mode = [LKContinueMode new];
         _mode.service = self;
+        _breakpoints = [NSMutableSet set];
+        _shouldStop = YES;
     }
     return self;
 }
@@ -107,5 +110,20 @@
         context = context->parent;
     }
     return [variables copy];
+}
+
+- (void)addBreakpoint:(LKAST *)breakAtNode
+{
+    [_breakpoints addObject:breakAtNode];
+}
+
+- (BOOL)hasBreakpointAt:(LKAST *)aNode
+{
+    return [_breakpoints containsObject:aNode];
+}
+
+- (void)pause
+{
+    [_mode pause];
 }
 @end

@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @protocol LKDebuggerMode;
+@class LKInterpreterContext;
 @class LKVariableDescription;
 
 /**
@@ -17,7 +18,19 @@
  */
 @interface LKDebuggerService : NSObject
 
+/**
+ * The mode is like a State or Strategy for the debugger, and chooses
+ * what to do when important events occur.
+ */
 @property (nonatomic, strong) id <LKDebuggerMode> mode;
+
+/**
+ * Whether the debugger should really pause when requested. You can turn
+ * this off to basically globally disable breakpoints, whether to effect the
+ * equivalent of "detaching" the debugger or to write a unit test without a
+ * load of multi-threaded boilerplate (just, y'know, for instance).
+ */
+@property (nonatomic, assign) BOOL shouldStop;
 
 /**
  * Called by the interpreter when it evaluates an AST node.
@@ -38,4 +51,17 @@
  * @return An unordered collection of variable descriptions.
  */
 - (NSSet<LKVariableDescription *> *)allVariables;
+/**
+ * Add a breakpoint to the debugger. The debugger will pause script execution
+ * when it encounters a node that matches a breakpoint.
+ */
+- (void)addBreakpoint: (LKAST *)breakAtNode;
+/**
+ * Discover whether the debugger should break when it encounters this node.
+ */
+- (BOOL)hasBreakpointAt: (LKAST *)aNode;
+/**
+ * Stop the debugger.
+ */
+- (void)pause;
 @end
