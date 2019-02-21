@@ -8,6 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "LKAST.h"
 #import "LKComment.h"
+#import "LKContinueMode.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
 #import "LKInterpreter.h"
@@ -97,5 +98,10 @@
     [LKInterpreterContext setActiveDebugger:debugger];
     LKInterpreterContext *otherContext = [[LKInterpreterContext alloc] initWithSymbolTable:nil parent:nil];
     XCTAssertEqualObjects(otherContext.debugger, debugger, @"Context found a debugger via its class");
+}
+
+- (void)testDebuggerModeDefaultsToContinue {
+    LKDebuggerService *otherService = [[LKDebuggerService alloc] init];
+    XCTAssertEqualObjects([[otherService mode] class], [LKContinueMode class], @"Default mode is continue");
 }
 @end

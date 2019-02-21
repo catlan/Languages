@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LKAST.h"
+#import "LKContinueMode.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
 #import "LKInterpreter.h"
@@ -17,14 +18,25 @@
 @implementation LKDebuggerService
 {
     LKAST *_currentNode;
-    id <LKDebuggerMode> _currentMode;
     LKInterpreterContext *_currentContext;
+}
+
+@synthesize mode = _mode;
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _mode = [LKContinueMode new];
+        _mode.service = self;
+    }
+    return self;
 }
 
 - (void)onTracepoint: (LKAST *)aNode inContext: (LKInterpreterContext *)context
 {
     _currentNode = aNode;
-    [_currentMode onTracepoint:aNode];
+    [_mode onTracepoint:aNode];
     _currentContext = context;
 }
 
@@ -35,8 +47,8 @@
 
 - (void)setMode:(id<LKDebuggerMode>)aMode
 {
-    _currentMode = aMode;
-    _currentMode.service = self;
+    aMode.service = self;
+    _mode = aMode;
 }
 
 - (void)debugScript:(LKAST *)rootNode

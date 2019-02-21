@@ -17,6 +17,8 @@
  */
 @interface LKDebuggerService : NSObject
 
+@property (nonatomic, strong) id <LKDebuggerMode> mode;
+
 /**
  * Called by the interpreter when it evaluates an AST node.
  * @param aNode the AST node that was encountered.
@@ -27,10 +29,6 @@
  * The interpreter's current location.
  */
 - (LKAST *)currentNode;
-/**
- * Set the debugger's current mode.
- */
-- (void)setMode: (id<LKDebuggerMode>)aMode;
 /**
  * Run a script using the current debugger mode to control execution.
  */
