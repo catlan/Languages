@@ -57,6 +57,11 @@
  */
 - (void)addBreakpoint: (LKAST *)breakAtNode;
 /**
+ * Remove a breakpoint from the debugger. The debugger will no longer pause
+ * script execution when it encounters this node.
+ */
+- (void)removeBreakpoint: (LKAST *)breakpoint;
+/**
  * Discover whether the debugger should break when it encounters this node.
  */
 - (BOOL)hasBreakpointAt: (LKAST *)aNode;

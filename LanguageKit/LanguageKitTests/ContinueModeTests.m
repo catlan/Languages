@@ -44,4 +44,12 @@
     [_mode onTracepoint:_node];
     XCTAssertEqualObjects([_debugger.mode class], [LKPauseMode class], @"Debugger switched to pause mode on breakpoint");
 }
+
+- (void)testDebuggerContinuesWhenTracingPastADeletedBreakpoint {
+    [_debugger addBreakpoint:_node];
+    [_debugger removeBreakpoint:_node];
+    [_mode onTracepoint:_node];
+    XCTAssertEqualObjects(_debugger.mode, _mode,
+                          @"Debugger did not change modes on encountering a tracepoint where the breakpoint had been removed");
+}
 @end

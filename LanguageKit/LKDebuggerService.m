@@ -117,6 +117,12 @@
     [_breakpoints addObject:breakAtNode];
 }
 
+- (void)removeBreakpoint:(LKAST *)breakpoint
+{
+    NSParameterAssert([self hasBreakpointAt:breakpoint]);
+    [_breakpoints removeObject:breakpoint];
+}
+
 - (BOOL)hasBreakpointAt:(LKAST *)aNode
 {
     return [_breakpoints containsObject:aNode];
