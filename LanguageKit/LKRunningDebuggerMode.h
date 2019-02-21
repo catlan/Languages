@@ -20,5 +20,5 @@
 - (void)pause;
 - (void)resume;
 - (void)stepInto;
-
+- (void)stepOut;
 @end

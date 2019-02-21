@@ -32,4 +32,11 @@
                            userInfo:nil] raise];
 }
 
+- (void)stepOut
+{
+    [[NSException exceptionWithName:@"LKDebuggerRecursiveContinueException"
+                             reason:@"A running debugger cannot be resumed"
+                           userInfo:nil] raise];
+}
+
 @end

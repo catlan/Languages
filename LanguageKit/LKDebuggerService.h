@@ -78,5 +78,8 @@
  * Single-step the debugger.
  */
 - (void)stepInto;
-
+/**
+ * Step out of the current function, method or block.
+ */
+- (void)stepOut;
 @end

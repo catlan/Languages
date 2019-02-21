@@ -50,6 +50,7 @@
 
 - (void)setMode:(id<LKDebuggerMode>)aMode
 {
+    _mode.service = nil;
     aMode.service = self;
     _mode = aMode;
 }
@@ -142,4 +143,10 @@
 {
     [_mode stepInto];
 }
+
+- (void)stepOut
+{
+    [_mode stepOut];
+}
+
 @end

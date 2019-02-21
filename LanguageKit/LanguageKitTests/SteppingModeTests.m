@@ -9,7 +9,9 @@
 #import "LKComment.h"
 #import "LKDebuggerService.h"
 #import "LKPauseMode.h"
+#import "LKReturn.h"
 #import "LKStepIntoMode.h"
+#import "LKStepOutMode.h"
 
 @interface SteppingModeTests : XCTestCase
 
@@ -18,24 +20,46 @@
 @implementation SteppingModeTests
 {
     LKDebuggerService *_debugger;
-    LKStepIntoMode *_mode;
+    LKStepOutMode *_mode;
+    LKComment *_comment;
 }
 
 - (void)setUp {
     _debugger = [LKDebuggerService new];
     _debugger.shouldStop = NO;
-    _mode = [LKStepIntoMode new];
+    _mode = [LKStepOutMode new];
     _debugger.mode = _mode;
+    _comment = [LKComment commentWithString:@"a comment"];
 }
 
 - (void)tearDown {
     _debugger = nil;
     _mode = nil;
+    _comment = nil;
 }
 
 - (void)testTracingANodeInStepIntoModePausesTheDebugger {
-    LKComment *aNode = [LKComment commentWithString:@"a comment"];
-    [_mode onTracepoint:aNode];
+    LKStepIntoMode *stepIntoMode = [LKStepIntoMode new];
+    _debugger.mode = stepIntoMode;
+    [stepIntoMode onTracepoint:_comment];
+    XCTAssertEqualObjects([_debugger.mode class], [LKPauseMode class], @"Debugger has paused");
+}
+
+- (void)testTracingACommentInStepOutModeDoesNotPauseTheDebugger {
+    [_mode onTracepoint:_comment];
+    XCTAssertEqualObjects(_debugger.mode, _mode, @"Debugger did not switch modes");
+}
+
+- (void)testTracingABreakpointInStepOutModePausesTheDebugger {
+    [_debugger addBreakpoint:_comment];
+    [_mode onTracepoint:_comment];
+    XCTAssertEqualObjects([_debugger.mode class], [LKPauseMode class], @"Debugger has paused");
+    [_debugger removeBreakpoint:_comment];
+}
+
+- (void)testTracingAReturnNodeInStepOutModePausesTheDebugger {
+    LKReturn *returnValue = [LKReturn returnWithExpr:nil];
+    [_mode onTracepoint:returnValue];
     XCTAssertEqualObjects([_debugger.mode class], [LKPauseMode class], @"Debugger has paused");
 }
 

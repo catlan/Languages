@@ -43,5 +43,9 @@
  * @throws If the debugger cannot step (e.g. it is already running).
  */
 - (void)stepInto;
- 
+/**
+ * Step out of the current block, function or method.
+ * @throws If the debugger cannot step (e.g. it is already running).
+ */
+- (void)stepOut;
 @end

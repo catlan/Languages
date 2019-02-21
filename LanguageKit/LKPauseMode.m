@@ -9,6 +9,7 @@
 #import "LKContinueMode.h"
 #import "LKDebuggerService.h"
 #import "LKStepIntoMode.h"
+#import "LKStepOutMode.h"
 
 @interface LKPauseMode ()
 
@@ -71,4 +72,9 @@
     [self startAgain];
 }
 
+- (void)stepOut
+{
+    self.service.mode = [LKStepOutMode new];
+    [self startAgain];
+}
 @end
