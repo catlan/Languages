@@ -652,8 +652,6 @@
 				D1D2A0D51F65329600B3814A /* LKProperty.h */,
 				D1D2A0D61F65329600B3814A /* LKProperty.m */,
 				D159D621221868CB00F081BB /* Debugger */,
-				98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */,
-				98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */,
 			);
 			name = LanguageKit;
 			sourceTree = "<group>";
@@ -776,9 +774,6 @@
 				668C491110915C17002A20A3 /* LKInterpreter.h */,
 				D100F9AC1F263B400048FDFA /* LKEnumReference.h */,
 				D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */,
-				98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */,
-				98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */,
-				98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -857,12 +852,17 @@
 		D159D621221868CB00F081BB /* Debugger */ = {
 			isa = PBXGroup;
 			children = (
+				98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */,
 				D159D622221868F700F081BB /* LKDBConnection.h */,
 				D159D623221868F700F081BB /* LKDBConnection.m */,
 				D159D60822170E2200F081BB /* LKDBClient.h */,
 				D159D60922170E2200F081BB /* LKDBClient.m */,
 				D159D60C22170E3900F081BB /* LKDBServer.h */,
 				D159D60D22170E3900F081BB /* LKDBServer.m */,
+				98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */,
+				98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */,
+				98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */,
+				98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */,
 			);
 			name = Debugger;
 			sourceTree = "<group>";
