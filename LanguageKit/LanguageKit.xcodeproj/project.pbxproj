@@ -178,7 +178,7 @@
 				"",
 				"-fno-objc-arc",
 			);
-			script = "cd $DERIVED_FILES_DIR\ncp $INPUT_FILE_PATH $INPUT_FILE_BASE.y\ncp $SRCROOT/../Vendor/lemon/lempar.c $DERIVED_FILES_DIR/lempar.c\n$BUILT_PRODUCTS_DIR/lemon $INPUT_FILE_BASE.y\n\nmv $INPUT_FILE_BASE.c $INPUT_FILE_BASE.m\n";
+			script = "LEMON=$(printf %q \"$BUILT_PRODUCTS_DIR/lemon\")\nLEMPAR=$(printf %q \"$SRCROOT/../Vendor/lemon/lempar.c\")\nBASE=$(dirname \"$INPUT_FILE_PATH.y\")\n\ncd $DERIVED_FILES_DIR\ncp $INPUT_FILE_PATH $INPUT_FILE_BASE.y\ncp $LEMPAR $DERIVED_FILES_DIR/lempar.c\n$LEMON $INPUT_FILE_BASE.y | awk -F ': ' -v base=\"${BASE}\" '{ print base \"/\" $1 \": warning: \" $2}'\n\nmv $INPUT_FILE_BASE.c $INPUT_FILE_BASE.m\n";
 		};
 		D1BB3FE51F52C94F008262EF /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
