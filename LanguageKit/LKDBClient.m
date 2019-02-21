@@ -29,7 +29,7 @@
         
         NSInputStream *            inputStream = nil;
         NSOutputStream *           outputStream = nil;
-        NSNetService *netService = [[NSNetService alloc] initWithDomain:@"local." type:@"_x-lkdbserver._tcp" name:@"💁 Fancy Typewriter 💁"];
+        NSNetService *netService = [[NSNetService alloc] initWithDomain:@"local." type:@"_x-lkdbserver._tcp" name: [[NSHost currentHost] localizedName]];
         [netService resolveWithTimeout:15.0];
         if ([netService getInputStream:&inputStream outputStream:&outputStream])
         {
