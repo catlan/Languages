@@ -6,7 +6,14 @@
 //
 
 #import "LKPauseMode.h"
+#import "LKContinueMode.h"
 #import "LKDebuggerService.h"
+
+@interface LKPauseMode ()
+
+- (void)startAgain;
+
+@end
 
 @implementation LKPauseMode
 {
@@ -37,10 +44,23 @@
                            userInfo:nil] raise];
 }
 
+- (void)resume
+{
+    self.service.mode = [LKContinueMode new];
+    [self startAgain];
+}
+
 - (void)waitHere
 {
     if (self.service.shouldStop) {
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    }
+}
+
+- (void)startAgain
+{
+    if (self.service.shouldStop) {
+        dispatch_semaphore_signal(semaphore);
     }
 }
 

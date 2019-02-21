@@ -30,7 +30,13 @@
 - (void)onTracepoint: (LKAST *)aNode;
 /**
  * Pause the debugger.
+ * @throws If the debugger is not in a state where it can pause (e.g. it is already paused).
  */
 - (void)pause;
+/**
+ * Resume execution.
+ * @throws If the debugger cannot resume (e.g. it is already running).
+ */
+- (void)resume;
 
 @end

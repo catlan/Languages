@@ -126,4 +126,9 @@
 {
     [_mode pause];
 }
+
+- (void)resume
+{
+    [_mode resume];
+}
 @end

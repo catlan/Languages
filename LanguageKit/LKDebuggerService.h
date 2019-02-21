@@ -64,4 +64,8 @@
  * Stop the debugger.
  */
 - (void)pause;
+/**
+ * Resume execution.
+ */
+- (void)resume;
 @end

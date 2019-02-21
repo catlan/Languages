@@ -27,4 +27,11 @@
     [nextMode waitHere];
 }
 
+- (void)resume
+{
+    [[NSException exceptionWithName:@"LKDebuggerRecursiveContinueException"
+                             reason:@"A running debugger cannot be resumed"
+                           userInfo:nil] raise];
+}
+
 @end
