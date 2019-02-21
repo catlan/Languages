@@ -117,8 +117,8 @@
 		66CC0B0B1082628100FABEBF /* Symbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CC0B0A1082628100FABEBF /* Symbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC0123D774F008A4663 /* LKLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 794B2BBF123D774F008A4663 /* LKLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
-		98B2CC74221C066200BF0172 /* TracingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC73221C066200BF0172 /* TracingTests.m */; };
-		98B2CC76221C370B00BF0172 /* InterpreterDebuggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */; };
+		9837B2E7221EA82000FA0E6C /* InterpreterDebuggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */; };
+		9837B2E8221EA82A00FA0E6C /* TracingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC73221C066200BF0172 /* TracingTests.m */; };
 		98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */; };
 		98B2CC7B221C548600BF0172 /* LKDebuggerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		98B2CC7C221C548D00BF0172 /* LKDebuggerService.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -798,11 +798,9 @@
 		D10F9F8E20E2B61100ECCEC3 /* SmalltalkTests */ = {
 			isa = PBXGroup;
 			children = (
-				98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */,
 				D10F9F8F20E2B61100ECCEC3 /* SmalltalkTests.m */,
 				D10F9FA320E37C5F00ECCEC3 /* SmalltalkTests.st */,
 				D10F9F9120E2B61100ECCEC3 /* Info.plist */,
-				98B2CC73221C066200BF0172 /* TracingTests.m */,
 			);
 			name = SmalltalkTests;
 			path = ../SmalltalkTests;
@@ -845,6 +843,8 @@
 			children = (
 				D159D61A22182E0600F081BB /* Info.plist */,
 				D159D61822182E0600F081BB /* LanguageKitTests.m */,
+				98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */,
+				98B2CC73221C066200BF0172 /* TracingTests.m */,
 			);
 			path = LanguageKitTests;
 			sourceTree = "<group>";
@@ -1405,8 +1405,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98B2CC74221C066200BF0172 /* TracingTests.m in Sources */,
-				98B2CC76221C370B00BF0172 /* InterpreterDebuggingTests.m in Sources */,
 				D10F9F9020E2B61100ECCEC3 /* SmalltalkTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1424,6 +1422,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D159D61922182E0600F081BB /* LanguageKitTests.m in Sources */,
+				9837B2E8221EA82A00FA0E6C /* TracingTests.m in Sources */,
+				9837B2E7221EA82000FA0E6C /* InterpreterDebuggingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
