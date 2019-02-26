@@ -47,4 +47,15 @@
     XCTAssertNotNil(stacktrace, @"definitely got an object");
     XCTAssertNotEqualObjects(stacktrace, @[], @"stacktrace was not empty");
 }
+
+- (void)testStackTraceContainsNoLanguageKitSymbols {
+    [debugger onTracepoint:nil inContext:nil];
+    [debugger pause];
+    NSArray <NSString *>* stacktrace = [debugger stacktrace];
+    NSPredicate *containsLKMethod = [NSPredicate predicateWithBlock:^BOOL(NSString * _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        return [evaluatedObject containsString:@"[LK"];
+    }];
+    NSArray <NSString *>* languageKitMethods = [stacktrace filteredArrayUsingPredicate:containsLKMethod];
+    XCTAssertEqual([languageKitMethods count], 0, @"The interpreter doesn't show up in its own stack trace");
+}
 @end

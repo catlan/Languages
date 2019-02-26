@@ -115,7 +115,14 @@
 
 - (NSArray<NSString *> *)stacktrace
 {
-    return [self.mode stacktrace];
+    NSArray <NSString *>* callSymbols = [self.mode stacktrace];
+    
+    // filter out our own methods, so you only see yours
+    NSPredicate *noLanguageKitMethods = [NSPredicate predicateWithBlock:^BOOL(NSString * _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        return ![evaluatedObject containsString:@"[LK"];
+    }];
+    callSymbols = [callSymbols filteredArrayUsingPredicate:noLanguageKitMethods];
+    return callSymbols;
 }
 
 - (void)addBreakpoint:(LKAST *)breakAtNode
