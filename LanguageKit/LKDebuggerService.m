@@ -129,7 +129,8 @@
     
     // filter out our own methods, so you only see yours
     NSPredicate *noLanguageKitMethods = [NSPredicate predicateWithBlock:^BOOL(NSString * _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
-        return ![evaluatedObject containsString:@"[LK"];
+        return !([evaluatedObject containsString:@"LanguageKit"] ||
+                 [evaluatedObject containsString:@"libffi_Mac.dylib"]);
     }];
     callSymbols = [callSymbols filteredArrayUsingPredicate:noLanguageKitMethods];
     
