@@ -34,6 +34,15 @@
 @property (nonatomic, assign) BOOL shouldStop;
 
 /**
+ * The thread on which the script being debugged is running.
+ * @note This makes the debugger non-threadsafe, because this property could
+ *       be updated by multiple scripts running on different threads. The solution
+ *       to that is to introduce an Interpreter object that mediates between the
+ *       debugger and the script being run; that's being planned.
+ */
+@property (atomic, readonly) NSThread *executingThread;
+
+/**
  * Called by the interpreter when it evaluates an AST node.
  * @param aNode the AST node that was encountered.
  * @param context the interpreter context in which the node was evaluated.

@@ -15,6 +15,12 @@
 #import "LKSymbolTable.h"
 #import "LKVariableDescription.h"
 
+@interface LKDebuggerService ()
+
+@property (atomic, strong, readwrite) NSThread *executingThread;
+
+@end
+
 @implementation LKDebuggerService
 {
     LKAST *_currentNode;
@@ -38,6 +44,7 @@
 
 - (void)onTracepoint: (LKAST *)aNode inContext: (LKInterpreterContext *)context
 {
+    self.executingThread = [NSThread currentThread];
     _currentNode = aNode;
     [_mode onTracepoint:aNode];
     _currentContext = context;
