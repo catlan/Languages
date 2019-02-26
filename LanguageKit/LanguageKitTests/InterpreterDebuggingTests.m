@@ -11,7 +11,7 @@
 #import "LKContinueMode.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
-#import "LKInterpreter.h"
+#import "LKInterpreterContext.h"
 #import "LKModule.h"
 
 @interface InspectableMode : NSObject <LKDebuggerMode>

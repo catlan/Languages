@@ -43,8 +43,8 @@
 		668C48BF1090D0B4002A20A3 /* LanguageKitExceptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6697B0941048D1D300456911 /* LanguageKitExceptions.m */; };
 		668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C490E10915C17002A20A3 /* LKInterpreterRuntime.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		668C491610915C17002A20A3 /* LKInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C491010915C17002A20A3 /* LKInterpreter.m */; };
-		668C491710915C17002A20A3 /* LKInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C491110915C17002A20A3 /* LKInterpreter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		668C491610915C17002A20A3 /* LKInterpreterContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 668C491010915C17002A20A3 /* LKInterpreterContext.m */; };
+		668C491710915C17002A20A3 /* LKInterpreterContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 668C491110915C17002A20A3 /* LKInterpreterContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		668C495910915D63002A20A3 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
 		6697AFE81048D02A00456911 /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
 		6697AFEA1048D02B00456911 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
@@ -369,8 +369,8 @@
 		663A0FC6108FF90300B921B0 /* LKTypeHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKTypeHelpers.h; sourceTree = "<group>"; };
 		668C490E10915C17002A20A3 /* LKInterpreterRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKInterpreterRuntime.m; sourceTree = "<group>"; };
 		668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKInterpreterRuntime.h; sourceTree = "<group>"; };
-		668C491010915C17002A20A3 /* LKInterpreter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKInterpreter.m; sourceTree = "<group>"; };
-		668C491110915C17002A20A3 /* LKInterpreter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKInterpreter.h; sourceTree = "<group>"; };
+		668C491010915C17002A20A3 /* LKInterpreterContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKInterpreterContext.m; sourceTree = "<group>"; };
+		668C491110915C17002A20A3 /* LKInterpreterContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKInterpreterContext.h; sourceTree = "<group>"; };
 		6697AFAC1048CF6200456911 /* edlc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = edlc; sourceTree = BUILT_PRODUCTS_DIR; };
 		6697AFB51048CF6C00456911 /* LanguageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LanguageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LanguageKitRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -675,7 +675,7 @@
 				663A0FC5108FF90300B921B0 /* LKTypeHelpers.m */,
 				6697B03A1048D19A00456911 /* LKVariableDecl.m */,
 				668C490E10915C17002A20A3 /* LKInterpreterRuntime.m */,
-				668C491010915C17002A20A3 /* LKInterpreter.m */,
+				668C491010915C17002A20A3 /* LKInterpreterContext.m */,
 				D100F9B01F263E070048FDFA /* LKFunctionCall.m */,
 				D1D2A0D51F65329600B3814A /* LKProperty.h */,
 				D1D2A0D61F65329600B3814A /* LKProperty.m */,
@@ -799,7 +799,7 @@
 				6697B0281048D19A00456911 /* LKModule.h */,
 				663A0FC6108FF90300B921B0 /* LKTypeHelpers.h */,
 				668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */,
-				668C491110915C17002A20A3 /* LKInterpreter.h */,
+				668C491110915C17002A20A3 /* LKInterpreterContext.h */,
 				D100F9AC1F263B400048FDFA /* LKEnumReference.h */,
 				D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */,
 			);
@@ -954,7 +954,7 @@
 				D159D60E22170E3900F081BB /* LKDBServer.h in Headers */,
 				663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */,
 				668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */,
-				668C491710915C17002A20A3 /* LKInterpreter.h in Headers */,
+				668C491710915C17002A20A3 /* LKInterpreterContext.h in Headers */,
 				D1D2A0D71F65329600B3814A /* LKProperty.h in Headers */,
 				D159D60A22170E2200F081BB /* LKDBClient.h in Headers */,
 				794B2BC0123D774F008A4663 /* LKLoop.h in Headers */,
@@ -1392,7 +1392,7 @@
 				9837B2F8221EE3E600FA0E6C /* LKStepIntoMode.m in Sources */,
 				9837B2FE221EE98200FA0E6C /* LKRunningDebuggerMode.m in Sources */,
 				668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */,
-				668C491610915C17002A20A3 /* LKInterpreter.m in Sources */,
+				668C491610915C17002A20A3 /* LKInterpreterContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

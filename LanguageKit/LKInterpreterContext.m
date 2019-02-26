@@ -3,7 +3,7 @@
 #import "Runtime/Symbol.h"
 #import "LanguageKit/LanguageKit.h"
 #import "LKDebuggerService.h"
-#import "LKInterpreter.h"
+#import "LKInterpreterContext.h"
 #import "LKInterpreterRuntime.h"
 
 #include <math.h>

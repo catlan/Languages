@@ -4,7 +4,7 @@
 #import "Runtime/Symbol.h"
 #import "Runtime/LKObject.h"
 #import "LKInterpreterRuntime.h"
-#import "LKInterpreter.h"
+#import "LKInterpreterContext.h"
 #import "LKTypeHelpers.h"
 #ifndef GNU_RUNTIME
 #include <objc/objc-runtime.h>

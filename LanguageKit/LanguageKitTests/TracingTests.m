@@ -8,7 +8,7 @@
 #import <XCTest/XCTest.h>
 
 #import "LanguageKit.h"
-#import "LKInterpreter.h"
+#import "LKInterpreterContext.h"
 #import "LKToken.h"
 
 // subclass the interpreter context to inspect the messages it receives

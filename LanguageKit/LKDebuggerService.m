@@ -11,7 +11,7 @@
 #import "LKContinueMode.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
-#import "LKInterpreter.h"
+#import "LKInterpreterContext.h"
 #import "LKInterpreterRuntime.h"
 #import "LKMessageSend.h"
 #import "LKMethod.h"
