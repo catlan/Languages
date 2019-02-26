@@ -117,6 +117,31 @@
 		66CC0B0B1082628100FABEBF /* Symbol.h in Headers */ = {isa = PBXBuildFile; fileRef = 66CC0B0A1082628100FABEBF /* Symbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC0123D774F008A4663 /* LKLoop.h in Headers */ = {isa = PBXBuildFile; fileRef = 794B2BBF123D774F008A4663 /* LKLoop.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
+		9837B2E7221EA82000FA0E6C /* InterpreterDebuggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */; };
+		9837B2E8221EA82A00FA0E6C /* TracingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC73221C066200BF0172 /* TracingTests.m */; };
+		9837B2EB221EA91600FA0E6C /* LKContinueMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2E9221EA91600FA0E6C /* LKContinueMode.h */; };
+		9837B2EC221EA91600FA0E6C /* LKContinueMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2EA221EA91600FA0E6C /* LKContinueMode.m */; };
+		9837B2EE221EAF3D00FA0E6C /* ContinueModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2ED221EAF3D00FA0E6C /* ContinueModeTests.m */; };
+		9837B2F1221EB59700FA0E6C /* LKPauseMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2EF221EB59700FA0E6C /* LKPauseMode.h */; };
+		9837B2F2221EB59700FA0E6C /* LKPauseMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F0221EB59700FA0E6C /* LKPauseMode.m */; };
+		9837B2F4221EBE6E00FA0E6C /* PauseModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F3221EBE6E00FA0E6C /* PauseModeTests.m */; };
+		9837B2F7221EE3E600FA0E6C /* LKStepIntoMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */; };
+		9837B2F8221EE3E600FA0E6C /* LKStepIntoMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */; };
+		9837B2FA221EE5B900FA0E6C /* SteppingModeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */; };
+		9837B2FD221EE98200FA0E6C /* LKRunningDebuggerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2FB221EE98200FA0E6C /* LKRunningDebuggerMode.h */; };
+		9837B2FE221EE98200FA0E6C /* LKRunningDebuggerMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B2FC221EE98200FA0E6C /* LKRunningDebuggerMode.m */; };
+		9837B301221EEBA900FA0E6C /* LKStepOutMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2FF221EEBA900FA0E6C /* LKStepOutMode.h */; };
+		9837B302221EEBA900FA0E6C /* LKStepOutMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9837B300221EEBA900FA0E6C /* LKStepOutMode.m */; };
+		98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */; };
+		98B2CC7B221C548600BF0172 /* LKDebuggerMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98B2CC7C221C548D00BF0172 /* LKDebuggerService.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98B2CC85221C5CD800BF0172 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC84221C5CD800BF0172 /* main.m */; };
+		98B2CC89221C5CEA00BF0172 /* Smalltalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10F231E20DFAD8B002E017C /* Smalltalk.framework */; };
+		98B2CC8A221C5CF700BF0172 /* LanguageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFB51048CF6C00456911 /* LanguageKit.framework */; };
+		98B2CC8B221C5CFC00BF0172 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
+		98B2CC8C221C5D0200BF0172 /* SmalltalkSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */; };
+		98B2CC90221D82BF00BF0172 /* LKVariableDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */; };
+		98B2CC91221D82BF00BF0172 /* LKVariableDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */; };
 		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
@@ -282,6 +307,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		98B2CC80221C5CD800BF0172 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		D10F230920DFA895002E017C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -423,6 +457,29 @@
 		66CC0B0A1082628100FABEBF /* Symbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Symbol.h; path = Runtime/Symbol.h; sourceTree = "<group>"; };
 		794B2BBC123D7735008A4663 /* LKLoop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKLoop.m; sourceTree = "<group>"; };
 		794B2BBF123D774F008A4663 /* LKLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKLoop.h; sourceTree = "<group>"; };
+		9837B2E9221EA91600FA0E6C /* LKContinueMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKContinueMode.h; sourceTree = "<group>"; };
+		9837B2EA221EA91600FA0E6C /* LKContinueMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKContinueMode.m; sourceTree = "<group>"; };
+		9837B2ED221EAF3D00FA0E6C /* ContinueModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContinueModeTests.m; sourceTree = "<group>"; };
+		9837B2EF221EB59700FA0E6C /* LKPauseMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKPauseMode.h; sourceTree = "<group>"; };
+		9837B2F0221EB59700FA0E6C /* LKPauseMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKPauseMode.m; sourceTree = "<group>"; };
+		9837B2F3221EBE6E00FA0E6C /* PauseModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PauseModeTests.m; sourceTree = "<group>"; };
+		9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKStepIntoMode.h; sourceTree = "<group>"; };
+		9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKStepIntoMode.m; sourceTree = "<group>"; };
+		9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SteppingModeTests.m; sourceTree = "<group>"; };
+		9837B2FB221EE98200FA0E6C /* LKRunningDebuggerMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKRunningDebuggerMode.h; sourceTree = "<group>"; };
+		9837B2FC221EE98200FA0E6C /* LKRunningDebuggerMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKRunningDebuggerMode.m; sourceTree = "<group>"; };
+		9837B2FF221EEBA900FA0E6C /* LKStepOutMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKStepOutMode.h; sourceTree = "<group>"; };
+		9837B300221EEBA900FA0E6C /* LKStepOutMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKStepOutMode.m; sourceTree = "<group>"; };
+		98B2CC73221C066200BF0172 /* TracingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TracingTests.m; sourceTree = "<group>"; };
+		98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterpreterDebuggingTests.m; sourceTree = "<group>"; };
+		98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerService.h; sourceTree = "<group>"; };
+		98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKDebuggerService.m; sourceTree = "<group>"; };
+		98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerMode.h; sourceTree = "<group>"; };
+		98B2CC82221C5CD800BF0172 /* TracingDebugger */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TracingDebugger; sourceTree = BUILT_PRODUCTS_DIR; };
+		98B2CC84221C5CD800BF0172 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98B2CC8D221C60C500BF0172 /* testscript.st */ = {isa = PBXFileReference; lastKnownFileType = text; path = testscript.st; sourceTree = "<group>"; };
+		98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKVariableDescription.h; sourceTree = "<group>"; };
+		98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKVariableDescription.m; sourceTree = "<group>"; };
 		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
@@ -507,6 +564,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98B2CC7F221C5CD800BF0172 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B2CC8C221C5D0200BF0172 /* SmalltalkSupport.framework in Frameworks */,
+				98B2CC89221C5CEA00BF0172 /* Smalltalk.framework in Frameworks */,
+				98B2CC8A221C5CF700BF0172 /* LanguageKit.framework in Frameworks */,
+				98B2CC8B221C5CFC00BF0172 /* LanguageKitRuntime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D10F230820DFA895002E017C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -564,6 +632,7 @@
 				6697AF991048CED700456911 /* Compiler */,
 				D10F230C20DFA895002E017C /* GenerateHeaders */,
 				D11F3FE62210E59700051F63 /* Vendor */,
+				98B2CC83221C5CD800BF0172 /* TracingDebugger */,
 				6697AFA31048CF3C00456911 /* Products */,
 				D15505761F276E9900E5ACFF /* Frameworks */,
 			);
@@ -693,6 +762,7 @@
 				D10F9F8D20E2B61100ECCEC3 /* SmalltalkTests.xctest */,
 				D159D5F92216E4E600F081BB /* lemon */,
 				D159D61622182E0600F081BB /* LanguageKitTests.xctest */,
+				98B2CC82221C5CD800BF0172 /* TracingDebugger */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -732,6 +802,15 @@
 				D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */,
 			);
 			name = Headers;
+			sourceTree = "<group>";
+		};
+		98B2CC83221C5CD800BF0172 /* TracingDebugger */ = {
+			isa = PBXGroup;
+			children = (
+				98B2CC84221C5CD800BF0172 /* main.m */,
+				98B2CC8D221C60C500BF0172 /* testscript.st */,
+			);
+			path = TracingDebugger;
 			sourceTree = "<group>";
 		};
 		D10F230C20DFA895002E017C /* GenerateHeaders */ = {
@@ -790,6 +869,11 @@
 			children = (
 				D159D61A22182E0600F081BB /* Info.plist */,
 				D159D61822182E0600F081BB /* LanguageKitTests.m */,
+				98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */,
+				98B2CC73221C066200BF0172 /* TracingTests.m */,
+				9837B2ED221EAF3D00FA0E6C /* ContinueModeTests.m */,
+				9837B2F3221EBE6E00FA0E6C /* PauseModeTests.m */,
+				9837B2F9221EE5B900FA0E6C /* SteppingModeTests.m */,
 			);
 			path = LanguageKitTests;
 			sourceTree = "<group>";
@@ -797,12 +881,27 @@
 		D159D621221868CB00F081BB /* Debugger */ = {
 			isa = PBXGroup;
 			children = (
+				98B2CC7A221C4EA500BF0172 /* LKDebuggerMode.h */,
 				D159D622221868F700F081BB /* LKDBConnection.h */,
 				D159D623221868F700F081BB /* LKDBConnection.m */,
 				D159D60822170E2200F081BB /* LKDBClient.h */,
 				D159D60922170E2200F081BB /* LKDBClient.m */,
 				D159D60C22170E3900F081BB /* LKDBServer.h */,
 				D159D60D22170E3900F081BB /* LKDBServer.m */,
+				98B2CC77221C4C2700BF0172 /* LKDebuggerService.h */,
+				98B2CC78221C4D4600BF0172 /* LKDebuggerService.m */,
+				98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */,
+				98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */,
+				9837B2E9221EA91600FA0E6C /* LKContinueMode.h */,
+				9837B2EA221EA91600FA0E6C /* LKContinueMode.m */,
+				9837B2EF221EB59700FA0E6C /* LKPauseMode.h */,
+				9837B2F0221EB59700FA0E6C /* LKPauseMode.m */,
+				9837B2F5221EE3E600FA0E6C /* LKStepIntoMode.h */,
+				9837B2F6221EE3E600FA0E6C /* LKStepIntoMode.m */,
+				9837B2FB221EE98200FA0E6C /* LKRunningDebuggerMode.h */,
+				9837B2FC221EE98200FA0E6C /* LKRunningDebuggerMode.m */,
+				9837B2FF221EEBA900FA0E6C /* LKStepOutMode.h */,
+				9837B300221EEBA900FA0E6C /* LKStepOutMode.m */,
 			);
 			name = Debugger;
 			sourceTree = "<group>";
@@ -816,19 +915,25 @@
 			files = (
 				6697B03B1048D19A00456911 /* LanguageKit.h in Headers */,
 				D159D624221868F700F081BB /* LKDBConnection.h in Headers */,
+				98B2CC7C221C548D00BF0172 /* LKDebuggerService.h in Headers */,
 				6697B03C1048D19A00456911 /* LKArrayExpr.h in Headers */,
 				6697B03D1048D19A00456911 /* LKAssignExpr.h in Headers */,
 				6697B03E1048D19A00456911 /* LKASTVisitor.h in Headers */,
 				6697B0401048D19A00456911 /* LKBlockExpr.h in Headers */,
+				9837B301221EEBA900FA0E6C /* LKStepOutMode.h in Headers */,
 				6697B0411048D19A00456911 /* LKCategory.h in Headers */,
 				6697B0421048D19A00456911 /* LKCodeGen.h in Headers */,
+				9837B2F1221EB59700FA0E6C /* LKPauseMode.h in Headers */,
+				98B2CC7B221C548600BF0172 /* LKDebuggerMode.h in Headers */,
 				6697B0441048D19A00456911 /* LKComment.h in Headers */,
+				9837B2FD221EE98200FA0E6C /* LKRunningDebuggerMode.h in Headers */,
 				6697B0451048D19A00456911 /* LKComparison.h in Headers */,
 				6697B0461048D19A00456911 /* LKDeclRef.h in Headers */,
 				6697B0471048D19A00456911 /* LKIfStatement.h in Headers */,
 				6697B0481048D19A00456911 /* LKLiteral.h in Headers */,
 				D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */,
 				6697B0491048D19A00456911 /* LKMessageSend.h in Headers */,
+				9837B2EB221EA91600FA0E6C /* LKContinueMode.h in Headers */,
 				6697B04A1048D19A00456911 /* LKMethod.h in Headers */,
 				6697B04B1048D19A00456911 /* LKReturn.h in Headers */,
 				6697B04C1048D19A00456911 /* LKSubclass.h in Headers */,
@@ -837,10 +942,12 @@
 				6697B04F1048D19A00456911 /* LKToken.h in Headers */,
 				6697B0501048D19A00456911 /* LKVariableDecl.h in Headers */,
 				6697B0511048D19A00456911 /* LKAST.h in Headers */,
+				98B2CC90221D82BF00BF0172 /* LKVariableDescription.h in Headers */,
 				6697B0531048D19A00456911 /* LKCompiler.h in Headers */,
 				6697B0541048D19A00456911 /* LKCompilerErrors.h in Headers */,
 				6697B0571048D19A00456911 /* LKModule.h in Headers */,
 				D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */,
+				9837B2F7221EE3E600FA0E6C /* LKStepIntoMode.h in Headers */,
 				D159D60E22170E3900F081BB /* LKDBServer.h in Headers */,
 				663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */,
 				668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */,
@@ -967,6 +1074,23 @@
 			productReference = 6697AFD61048CFB100456911 /* SmalltalkSupport.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		98B2CC81221C5CD800BF0172 /* TracingDebugger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98B2CC86221C5CD800BF0172 /* Build configuration list for PBXNativeTarget "TracingDebugger" */;
+			buildPhases = (
+				98B2CC7E221C5CD800BF0172 /* Sources */,
+				98B2CC7F221C5CD800BF0172 /* Frameworks */,
+				98B2CC80221C5CD800BF0172 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TracingDebugger;
+			productName = TracingDebugger;
+			productReference = 98B2CC82221C5CD800BF0172 /* TracingDebugger */;
+			productType = "com.apple.product-type.tool";
+		};
 		D10F230A20DFA895002E017C /* GenerateHeaders */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D10F230F20DFA895002E017C /* Build configuration list for PBXNativeTarget "GenerateHeaders" */;
@@ -1064,6 +1188,10 @@
 			isa = PBXProject;
 			attributes = {
 				TargetAttributes = {
+					98B2CC81221C5CD800BF0172 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
 					D10F230A20DFA895002E017C = {
 						CreatedOnToolsVersion = 10.0;
 						DevelopmentTeam = 2WB96AW889;
@@ -1119,6 +1247,7 @@
 				D159D5C72210E6AC00F081BB /* libgmp */,
 				D159D5E7221155A300F081BB /* libffi */,
 				D159D61522182E0600F081BB /* LanguageKitTests */,
+				98B2CC81221C5CD800BF0172 /* TracingDebugger */,
 			);
 		};
 /* End PBXProject section */
@@ -1222,13 +1351,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6697B03F1048D19A00456911 /* LKASTVisitor.m in Sources */,
+				98B2CC79221C4D4600BF0172 /* LKDebuggerService.m in Sources */,
 				6697B0431048D19A00456911 /* LKCodeGen.m in Sources */,
 				6697B0521048D19A00456911 /* LKBlockExpr.m in Sources */,
+				9837B2EC221EA91600FA0E6C /* LKContinueMode.m in Sources */,
 				6697B0551048D19A00456911 /* LKCompilerErrors.m in Sources */,
 				6697B0561048D19A00456911 /* LKMethod.m in Sources */,
 				6697B0581048D19A00456911 /* LKModule.m in Sources */,
 				D100F9B81F2640050048FDFA /* LKEnumReference.m in Sources */,
 				6697B0591048D19A00456911 /* LKSymbolRef.m in Sources */,
+				9837B302221EEBA900FA0E6C /* LKStepOutMode.m in Sources */,
 				6697B05A1048D19A00456911 /* LKAST.m in Sources */,
 				6697B05B1048D19A00456911 /* LKArrayExpr.m in Sources */,
 				6697B05C1048D19A00456911 /* LKAssignExpr.m in Sources */,
@@ -1241,6 +1373,8 @@
 				6697B0611048D19A00456911 /* LKDeclRef.m in Sources */,
 				D100F9B71F263F350048FDFA /* LKLoop.m in Sources */,
 				D159D625221868F700F081BB /* LKDBConnection.m in Sources */,
+				98B2CC91221D82BF00BF0172 /* LKVariableDescription.m in Sources */,
+				9837B2F2221EB59700FA0E6C /* LKPauseMode.m in Sources */,
 				6697B0621048D19A00456911 /* LKIfStatement.m in Sources */,
 				6697B0631048D19A00456911 /* LKLiteral.m in Sources */,
 				6697B0641048D19A00456911 /* LKMessageSend.m in Sources */,
@@ -1252,6 +1386,8 @@
 				D159D60F22170E3900F081BB /* LKDBServer.m in Sources */,
 				6697B0691048D19A00456911 /* LKVariableDecl.m in Sources */,
 				663A0FC7108FF90300B921B0 /* LKTypeHelpers.m in Sources */,
+				9837B2F8221EE3E600FA0E6C /* LKStepIntoMode.m in Sources */,
+				9837B2FE221EE98200FA0E6C /* LKRunningDebuggerMode.m in Sources */,
 				668C491410915C17002A20A3 /* LKInterpreterRuntime.m in Sources */,
 				668C491610915C17002A20A3 /* LKInterpreter.m in Sources */,
 			);
@@ -1284,6 +1420,14 @@
 				6697B00A1048D16A00456911 /* NSString+comma.m in Sources */,
 				6697B00B1048D16A00456911 /* NSValue+structs.m in Sources */,
 				66041ACE1094FE0400513AFD /* NSObject+yourself.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		98B2CC7E221C5CD800BF0172 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98B2CC85221C5CD800BF0172 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1326,7 +1470,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9837B2F4221EBE6E00FA0E6C /* PauseModeTests.m in Sources */,
 				D159D61922182E0600F081BB /* LanguageKitTests.m in Sources */,
+				9837B2E8221EA82A00FA0E6C /* TracingTests.m in Sources */,
+				9837B2E7221EA82000FA0E6C /* InterpreterDebuggingTests.m in Sources */,
+				9837B2FA221EE5B900FA0E6C /* SteppingModeTests.m in Sources */,
+				9837B2EE221EAF3D00FA0E6C /* ContinueModeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1532,6 +1681,116 @@
 					"$(SRCROOT)/../Vendor/usr/lib",
 				);
 				PRODUCT_NAME = SmalltalkSupport;
+			};
+			name = Release;
+		};
+		98B2CC87221C5CD800BF0172 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		98B2CC88221C5CD800BF0172 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -2137,6 +2396,15 @@
 			buildConfigurations = (
 				6697AFD81048CFB200456911 /* Debug */,
 				6697AFD91048CFB200456911 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98B2CC86221C5CD800BF0172 /* Build configuration list for PBXNativeTarget "TracingDebugger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98B2CC87221C5CD800BF0172 /* Debug */,
+				98B2CC88221C5CD800BF0172 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
