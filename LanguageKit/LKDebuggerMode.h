@@ -48,4 +48,10 @@
  * @throws If the debugger cannot step (e.g. it is already running).
  */
 - (void)stepOut;
+/**
+ * Get the stack trace of the script being debugged.
+ * @throws If the stack trace cannot be retried (e.g. the debugger is running).
+ */
+- (NSArray <NSString *>*)stacktrace;
+
 @end

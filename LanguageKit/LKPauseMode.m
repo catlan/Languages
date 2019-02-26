@@ -13,6 +13,8 @@
 
 @interface LKPauseMode ()
 
+@property (atomic, readwrite, copy) NSArray<NSString *> *callStack;
+
 - (void)startAgain;
 
 @end
@@ -54,6 +56,8 @@
 
 - (void)waitHere
 {
+    // save the callstack here, it won't change before someone asks for it
+    self.callStack = [NSThread callStackSymbols];
     if (self.service.shouldStop) {
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     }
@@ -77,4 +81,16 @@
     self.service.mode = [LKStepOutMode new];
     [self startAgain];
 }
+
+- (NSArray<NSString *> *)stacktrace
+{
+    /*
+     * rely on the callstack having been captured when we paused.
+     * there is a very small potential for a race, if you manage to ask
+     * for the stacktrace while the mode is still pausing. You'll get nil,
+     * and should ask again.
+     */
+    return self.callStack;
+}
+
 @end

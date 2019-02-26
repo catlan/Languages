@@ -21,4 +21,6 @@
 - (void)resume;
 - (void)stepInto;
 - (void)stepOut;
+- (NSArray <NSString *> *)stacktrace;
+
 @end

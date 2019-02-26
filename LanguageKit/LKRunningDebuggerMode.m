@@ -39,4 +39,12 @@
                            userInfo:nil] raise];
 }
 
+- (NSArray<NSString *> *)stacktrace
+{
+    [[NSException exceptionWithName:@"LKDebuggerScriptRunningException"
+                             reason:@"A running debugger cannot give a stack trace"
+                           userInfo:nil] raise];
+    return nil; //unreached
+}
+
 @end

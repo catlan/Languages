@@ -15,21 +15,36 @@
 @end
 
 @implementation StackTraceTests
+{
+    LKComment *comment;
+    LKDebuggerService *debugger;
+}
 
 - (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    comment = [LKComment commentWithString:@""];
+    debugger = [LKDebuggerService new];
+    debugger.shouldStop = NO;
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    comment = nil;
+    debugger = nil;
 }
 
-- (void)testEncounteringASTNodeInTheDebuggerCapturesThreadObject {
-    NSThread *currentThread = [NSThread currentThread];
-    LKComment *comment = [LKComment commentWithString:@""];
-    LKDebuggerService *debugger = [[LKDebuggerService alloc] init];
-    [debugger onTracepoint:comment inContext:nil];
-    XCTAssertEqualObjects([debugger executingThread], currentThread, @"Thread was stored");
+- (void)testEvenWithNoScriptRunningTheStacktraceIsNotEmpty {
+    /*
+     * This test captures an important design choice: that the stack trace
+     * from the debugger includes whatever native code led up to the point where
+     * the interpreter was invoked. Otherwise, with no script running, the stack
+     * trace would be empty.
+     *
+     * It needs to be an asynchronous test, because we need to pause the debugger
+     * on one thread and ask for its stack trace on another.
+     */
+    [debugger onTracepoint:nil inContext:nil];
+    [debugger pause];
+    NSArray <NSString *>* stacktrace = [debugger stacktrace];
+    XCTAssertNotNil(stacktrace, @"definitely got an object");
+    XCTAssertNotEqualObjects(stacktrace, @[], @"stacktrace was not empty");
 }
-
 @end
