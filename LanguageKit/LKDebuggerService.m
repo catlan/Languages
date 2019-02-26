@@ -7,13 +7,23 @@
 
 #import <Foundation/Foundation.h>
 #import "LKAST.h"
+#import "LKCategory.h"
 #import "LKContinueMode.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
 #import "LKInterpreter.h"
 #import "LKInterpreterRuntime.h"
+#import "LKMessageSend.h"
+#import "LKMethod.h"
+#import "LKSubclass.h"
 #import "LKSymbolTable.h"
 #import "LKVariableDescription.h"
+
+@interface LKDebuggerService ()
+
+- (NSString *)interpretedCallstackSymbol;
+
+@end
 
 @implementation LKDebuggerService
 {
@@ -122,7 +132,8 @@
         return ![evaluatedObject containsString:@"[LK"];
     }];
     callSymbols = [callSymbols filteredArrayUsingPredicate:noLanguageKitMethods];
-    return callSymbols;
+    
+    return [@[[self interpretedCallstackSymbol]] arrayByAddingObjectsFromArray:callSymbols];
 }
 
 - (void)addBreakpoint:(LKAST *)breakAtNode
@@ -161,4 +172,40 @@
     [_mode stepOut];
 }
 
+- (NSString *)interpretedCallstackSymbol
+{
+    NSString *className = nil, *methodName = nil, *categoryName = nil, *prefix = nil;
+    LKAST *node = _currentNode;
+    do {
+        if ([node isKindOfClass:[LKMethod class]]) {
+            LKMethod *method = (LKMethod *)node;
+            methodName = method.signature.selector;
+            prefix = [method isClassMethod] ? @"+" : @"-";
+        }
+        if ([node isKindOfClass:[LKCategoryDef class]]) {
+            LKCategoryDef *category = (LKCategoryDef *)node;
+            categoryName = [category categoryName];
+            className = [category classname];
+        }
+        if ([node isKindOfClass:[LKSubclass class]]) {
+            LKSubclass *subclass = (LKSubclass *)node;
+            className = [subclass classname];
+        }
+        node = [node parent];
+    } while (node != nil);
+    
+    // the duplicate logic here is because compilers don't like non-literal format strings
+    if (categoryName) {
+        return [NSString stringWithFormat:@"<Interpreted>        %@[%@(%@) %@]",
+                prefix,
+                className,
+                categoryName,
+                methodName];
+    } else {
+        return [NSString stringWithFormat:@"<Interpreted>        %@[%@ %@]",
+                prefix,
+                className,
+                methodName];
+    }
+}
 @end

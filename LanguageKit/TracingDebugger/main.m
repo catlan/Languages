@@ -112,7 +112,8 @@ int main(int argc, const char * argv[]) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)),
                        dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0),
                        ^{
-                           NSLog(@"Current location: %@", [debugger currentNode]);
+                           NSLog(@"Getting stack trace");
+                           NSLog(@"%@", [debugger stacktrace]);
                            NSLog(@"Stepping over one instruction");
                            [debugger stepInto];
                            NSLog(@"Waiting for the debugger to do the step");

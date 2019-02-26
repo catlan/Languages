@@ -8,7 +8,13 @@
 #import <XCTest/XCTest.h>
 
 #import "LKDebuggerService.h"
+#import "LKCategory.h"
 #import "LKComment.h"
+#import "LKDeclRef.h"
+#import "LKMessageSend.h"
+#import "LKMethod.h"
+#import "LKModule.h"
+#import "LKReturn.h"
 
 @interface StackTraceTests : XCTestCase
 
@@ -57,5 +63,28 @@
     }];
     NSArray <NSString *>* languageKitMethods = [stacktrace filteredArrayUsingPredicate:containsLKMethod];
     XCTAssertEqual([languageKitMethods count], 0, @"The interpreter doesn't show up in its own stack trace");
+}
+
+- (void)testTopOfTheCallStackContainsTheInterpreterStack {
+    /* build a non-trivial syntax "tree"
+     * this module adds a method -[NSObject(Methods) doAThing] that returns nil
+     */
+    LKReturn *retStatement = [LKReturn returnWithExpr:[LKNilRef builtin]];
+    LKMessageSend *signature = [LKMessageSend messageWithSelectorName:@"doAThing"];
+    LKMethod *method = [LKInstanceMethod methodWithSignature:signature
+                                                      locals:nil
+                                                  statements:[@[retStatement] mutableCopy]];
+    LKCategoryDef *category = [LKCategoryDef categoryWithName:@"Methods"
+                                                 onClassNamed:@"NSObject"
+                                                      methods:@[method]];
+    LKModule *module = [LKModule module];
+    [module addCategory:(LKCategory *)category]; // this is a bug in LKModule.h
+    [retStatement setParent:method];
+    [method setParent:category];
+    [category setParent:module];
+    [debugger onTracepoint:retStatement inContext:nil];
+    [debugger pause];
+    NSString *topOfStack = [debugger stacktrace][0];
+    XCTAssertEqualObjects(topOfStack, @"<Interpreted>        -[NSObject(Methods) doAThing]", @"Our method appears on top");
 }
 @end
