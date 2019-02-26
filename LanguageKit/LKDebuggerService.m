@@ -65,13 +65,14 @@
     _mode = aMode;
 }
 
-- (void)debugScript:(LKAST *)rootNode
+- (void)activate
 {
-    LKSymbolTable *table = [LKSymbolTable new];
-    [table setTableScope:LKSymbolScopeGlobal];
-    LKInterpreterContext *context = [[LKInterpreterContext alloc] initWithSymbolTable:table parent:nil];
-    context.debugger = self;
-    [rootNode interpretInContext:context];
+    [LKInterpreterContext setActiveDebugger:self];
+}
+
+- (void)deactivate
+{
+    [LKInterpreterContext setActiveDebugger:nil];
 }
 
 - (NSSet <LKVariableDescription *>*)allVariables

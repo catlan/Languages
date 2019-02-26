@@ -44,9 +44,13 @@
  */
 - (LKAST *)currentNode;
 /**
- * Run a script using the current debugger mode to control execution.
+ * Scripts run after this debugger is activated can be debugged by it.
  */
-- (void)debugScript: (LKAST *)rootNode;
+- (void)activate;
+/**
+ * This debugger should no longer be active, and scripts should not be debugged.
+ */
+- (void)deactivate;
 /**
  * Get the values of variables defined at the current tracepoint.
  * @return An unordered collection of variable descriptions.

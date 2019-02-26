@@ -59,9 +59,8 @@
     mode = [InspectableMode new];
     debugger = [LKDebuggerService new];
     [debugger setMode:mode];
-    [context setDebugger:debugger];
+    [debugger activate];
     node1 = [LKComment commentWithString:@"# A comment"];
-    [LKInterpreterContext setActiveDebugger:nil];
 }
 
 - (void)tearDown {
@@ -92,12 +91,6 @@
     LKModule *module = [LKModule module];
     [module interpretInContext:context];
     XCTAssertEqualObjects([LKInterpreterContext activeDebugger], debugger, @"Debugger was saved for later");
-}
-
-- (void)testContextWithoutDebuggerFallsBackToActiveDebugger {
-    [LKInterpreterContext setActiveDebugger:debugger];
-    LKInterpreterContext *otherContext = [[LKInterpreterContext alloc] initWithSymbolTable:nil parent:nil];
-    XCTAssertEqualObjects(otherContext.debugger, debugger, @"Context found a debugger via its class");
 }
 
 - (void)testDebuggerModeDefaultsToContinue {

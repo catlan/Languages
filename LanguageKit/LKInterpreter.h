@@ -40,7 +40,7 @@ typedef struct
 }
 @property (unsafe_unretained, nonatomic) id selfObject;
 @property (strong, nonatomic) id blockContextObject;
-@property (strong, nonatomic) LKDebuggerService *debugger;
+
 - (id) initWithSymbolTable: (LKSymbolTable*)aTable
                     parent: (LKInterpreterContext*)aParent;
 - (void) setValue: (id)value forSymbol: (NSString*)symbol;

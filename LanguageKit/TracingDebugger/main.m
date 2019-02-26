@@ -61,6 +61,21 @@ static LKAST *parseScript(NSString *script, NSString *extension)
 
 }
 
+- (NSArray<NSString *> *)stacktrace {
+    return nil;
+}
+
+
+- (void)stepInto {
+
+}
+
+
+- (void)stepOut {
+
+}
+
+
 @end
 
 @interface NSObject (AddedInScript)
@@ -89,8 +104,9 @@ int main(int argc, const char * argv[]) {
                     [scriptName UTF8String]);
             exit(EX_SOFTWARE);
         }
+        [module interpretInContext:nil];
         LKDebuggerService *debugger = [[LKDebuggerService alloc] init];
-        [debugger debugScript:module];
+        [debugger activate];
         
         NSObject *receiver = [NSObject new];
         /*
