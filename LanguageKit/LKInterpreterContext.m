@@ -607,38 +607,9 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	}
 	return result;
 }
-- (id)executeWithReciever: (id)receiver arguments: (const id*)args count: (int)count
+- (id)executeWithReceiver: (id)receiver arguments: (const id*)args count: (int)count inContext: (LKInterpreterContext *)context
 {
-	NSMutableArray *symbolnames = [NSMutableArray array];
-	LKMessageSend *signature = [self signature];
-	if ([signature arguments])
-	{
-		[symbolnames addObjectsFromArray: [signature arguments]];
-	}
-	[symbolnames addObjectsFromArray: [symbols locals]];
-	
-	LKInterpreterContext *context = [[LKInterpreterContext alloc]
-							initWithSymbolTable: symbols
-							             parent: nil];
-	[context setSelfObject: receiver];
-	for (unsigned int i=0; i<count; i++)
-	{
-        LKVariableDecl *decl = [[signature arguments] objectAtIndex: i];
-		[context setValue: args[i]
-		        forSymbol: [decl name]];
-	}
-
-	id result = nil;
-	@try
-	{
-		result = [self executeInContext: context];
-	}
-	@finally
-	{
-		context = nil;
-	}
-
-	return result;
+		return [self executeInContext: context];
 }
 @end
 

@@ -67,7 +67,10 @@ typedef struct
 
 @interface LKMethod (LKInterpreter)
 - (id)executeInContext: (LKInterpreterContext*)context;
-- (id)executeWithReciever: (id)receiver arguments: (const id*)args count: (int)count;
+- (id)executeWithReceiver: (id)receiver
+                arguments: (const id*)args
+                    count: (int)count
+                inContext:(LKInterpreterContext *)context;
 @end
 
 @interface LKSubclass (LKInterpreter)

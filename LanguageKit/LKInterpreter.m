@@ -10,6 +10,7 @@
 #import "LKBlockExpr.h"
 #import "LKInterpreterContext.h"
 #import "LKMethod.h"
+#import "LKVariableDecl.h"
 
 @interface LKInterpreter ()
 
@@ -57,9 +58,30 @@
                                                         count:count
                                                     inContext:context];
     } else if ([_rootNode isKindOfClass:[LKMethod class]]) {
-        _returnValue = [(LKMethod *)_rootNode executeWithReciever:receiver
-                                                        arguments:arguments
-                                                            count:count];
+        LKMethod *method = (LKMethod *)_rootNode;
+        NSMutableArray *symbolnames = [NSMutableArray array];
+        LKMessageSend *signature = [method signature];
+        if ([signature arguments])
+        {
+            [symbolnames addObjectsFromArray: [signature arguments]];
+        }
+        LKSymbolTable *symbols = [method symbols];
+        [symbolnames addObjectsFromArray: [symbols locals]];
+        
+        LKInterpreterContext *context = [[LKInterpreterContext alloc]
+                                         initWithSymbolTable: symbols
+                                         parent: nil];
+        [context setSelfObject: receiver];
+        for (unsigned int i=0; i<count; i++)
+        {
+            LKVariableDecl *decl = [[signature arguments] objectAtIndex: i];
+            [context setValue: arguments[i]
+                    forSymbol: [decl name]];
+        }
+        _returnValue = [method executeWithReceiver:receiver
+                                         arguments:arguments
+                                             count:count
+                                         inContext:context];
     } else {
         NSAssert(NO, @"I can't execute something that isn't a method or a block");
     }
