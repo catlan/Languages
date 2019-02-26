@@ -9,6 +9,8 @@
 #import <LanguageKit/LKComparison.h>
 #import <LanguageKit/LKCompiler.h>
 #import <LanguageKit/LKCompilerErrors.h>
+#import <LanguageKit/LKDebuggerMode.h>
+#import <LanguageKit/LKDebuggerService.h>
 #import <LanguageKit/LKDeclRef.h>
 #import <LanguageKit/LKEnumReference.h>
 #import <LanguageKit/LKFunctionCall.h>

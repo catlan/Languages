@@ -2,6 +2,7 @@
 #import "Runtime/BoxedFloat.h"
 #import "Runtime/Symbol.h"
 #import "LanguageKit/LanguageKit.h"
+#import "LKDebuggerService.h"
 #import "LKInterpreter.h"
 #import "LKInterpreterRuntime.h"
 
@@ -12,6 +13,7 @@ NSString *LKInterpreterException = @"LKInterpreterException";
 
 static NSMutableDictionary *LKClassVariables;
 static NSMutableDictionary *LKMethodASTs;
+static LKDebuggerService *LKActiveDebugger;
 
 LKMethod *LKASTForMethod(Class cls, NSString *selectorName)
 {
@@ -133,6 +135,27 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	}
 	return context;
 }
+- (LKDebuggerService *)debugger
+{
+    if (_debugger) return _debugger;
+    return [[self class] activeDebugger];
+}
+- (void)onTracepoint: (LKAST *)aNode
+{
+    [self.debugger onTracepoint: aNode inContext: self];
+}
+- (NSDictionary *)allVariables
+{
+    return [objects copy];
+}
++ (LKDebuggerService *)activeDebugger
+{
+    return LKActiveDebugger;
+}
++ (void)setActiveDebugger:(LKDebuggerService *)aDebugger
+{
+    LKActiveDebugger = aDebugger;
+}
 @end
 
 
@@ -159,6 +182,8 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 			[(LKAST*)[elements objectAtIndex: i] interpretInContext: context];
 		[elements objectAtIndex: i];
 	}
+    [context onTracepoint:self];
+    
 	return [NSMutableArray arrayWithObjects: interpretedElements count: count];
 }
 @end
@@ -200,6 +225,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 			NSAssert1(NO, @"Don't know how to assign to %@", symbolName);
 			break;
 	}
+    [currentContext onTracepoint: self];
 	return rvalue;
 }
 @end
@@ -260,6 +286,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		}
 		return nil;
 	};
+    [parentContext onTracepoint:self];
 	return [block copy];
 }
 @end
@@ -296,6 +323,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		class_replaceMethod(destClass, sel, LKInterpreterMakeIMP(destClass, type), type);
 		StoreASTForMethod(classname, isClassMethod, methodName, method);
 	}
+    [context onTracepoint: self];
 	return nil;
 }
 @end
@@ -306,6 +334,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKComment (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return nil;
 }
 @end
@@ -319,6 +348,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	
 	id rhsInterpreted = [rhs interpretInContext: context];
 
+    [context onTracepoint: self];
 	return [BigInt bigIntWithLong: lhsInterpreted == rhsInterpreted];
 }
 @end
@@ -331,6 +361,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	LKSymbol *symbol = [self symbol];
 	LKInterpreterVariableContext context = [currentContext contextForSymbol: symbol];
 	NSString *symbolName = [symbol name];
+    [currentContext onTracepoint: self];
 	switch (context.scope)
 	{
 		case LKSymbolScopeObject:
@@ -397,6 +428,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	{
 		result = [statement interpretInContext: context];
 	}
+    [context onTracepoint: self];
 	return result;
 }
 @end
@@ -406,6 +438,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKStringLiteral (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return value;
 }
 @end
@@ -415,6 +448,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKNumberLiteral (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return [BigInt bigIntWithCString: [value UTF8String]];
 }
 @end
@@ -424,6 +458,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKFloatLiteral (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    [context onTracepoint: self];
 	return [BoxedFloat boxedFloatWithCString: [value UTF8String]];
 }
 @end
@@ -462,6 +497,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
         if (!receiver)
         {
             id block = [[arguments firstObject] interpretInContext: context];
+            [context onTracepoint: self];
             return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
         }
     }
@@ -470,6 +506,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
         if (receiver)
         {
             id block = [[arguments firstObject] interpretInContext: context];
+            [context onTracepoint: self];
             return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
         }
     }
@@ -477,12 +514,14 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
     {
         id argument = (!receiver) ? [arguments firstObject] : [arguments lastObject];
         id block = [argument interpretInContext: context];
+        [context onTracepoint: self];
         return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
     }
     else if ([selector isEqual: @"ifNotNil:ifNil:"])
     {
         id argument = (receiver) ? [arguments firstObject] : [arguments lastObject];
         id block = [argument interpretInContext: context];
+        [context onTracepoint: self];
         return LKSendMessage(@"NSBlock", block, @"value", 0, NULL);
     }
 	NSString *receiverClassName = nil;
@@ -509,6 +548,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 			arg = nil;
 		}
 	}
+    [context onTracepoint: self];
 	return LKSendMessage(receiverClassName, receiver, selector, argc, argv);
 }
 - (id)interpretInContext: (LKInterpreterContext*)context
@@ -531,6 +571,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	{
 		result = [message interpretInContext: context forTarget: target];
 	}
+    [context onTracepoint: self];
 	return result;
 }
 @end
@@ -603,6 +644,12 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @implementation LKModule (LKInterpreter)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
+    /*
+     * store the debugger that was active when this module was
+     * interpreted, so we can use it when the things defined in
+     * the module are executed.
+     */
+    [LKInterpreterContext setActiveDebugger: context.debugger];
 	for (LKAST *class in classes)
 	{
 		[class interpretInContext: context];
@@ -611,6 +658,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	{
 		[category interpretInContext: context];
 	}
+    [context onTracepoint: self];
 	return nil;
 }
 @end
@@ -633,6 +681,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
 	id value = [ret interpretInContext: context];
+    [context onTracepoint:self];
     return value;
 	//[LKBlockReturnException raiseWithValue: value];
 	//return nil;
@@ -759,7 +808,9 @@ static uint8_t logBase2(uint8_t x)
 	{
 		objc_registerClassPair(cls);
 		[cls load];
-	}	
+	}
+    
+    [context onTracepoint: self];
 	return cls;
 }
 @end
@@ -767,6 +818,7 @@ static uint8_t logBase2(uint8_t x)
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
 	[context setValue: nil forSymbol: (NSString*)variableName];
+    [context onTracepoint:self];
 	return nil;
 }
 @end
@@ -800,6 +852,7 @@ static uint8_t logBase2(uint8_t x)
 			cond = [[postCondition interpretInContext: context] boolValue];
 		}
 	}
+    [context onTracepoint: self];
 	return nil;
 }
 @end

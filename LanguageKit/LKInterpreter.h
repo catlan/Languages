@@ -24,6 +24,8 @@ typedef struct
 	__unsafe_unretained LKInterpreterContext *context;
 } LKInterpreterVariableContext;
 
+@class LKDebuggerService;
+
 /**
  * Wrapper around a map table which contains the objects in a
  * Smalltalk stack frame.
@@ -38,11 +40,16 @@ typedef struct
 }
 @property (unsafe_unretained, nonatomic) id selfObject;
 @property (strong, nonatomic) id blockContextObject;
+@property (strong, nonatomic) LKDebuggerService *debugger;
 - (id) initWithSymbolTable: (LKSymbolTable*)aTable
                     parent: (LKInterpreterContext*)aParent;
 - (void) setValue: (id)value forSymbol: (NSString*)symbol;
 - (id) valueForSymbol: (NSString*)symbol;
 - (LKInterpreterVariableContext)contextForSymbol: (LKSymbol*)symbol;
+- (void)onTracepoint: (LKAST *)aNode;
+- (NSDictionary *)allVariables;
++ (LKDebuggerService *)activeDebugger;
++ (void)setActiveDebugger: (LKDebuggerService *)aDebugger;
 @end
 
 
