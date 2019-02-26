@@ -3,6 +3,7 @@
 #import "Runtime/Symbol.h"
 #import "LanguageKit/LanguageKit.h"
 #import "LKDebuggerService.h"
+#import "LKInterpreter.h"
 #import "LKInterpreterContext.h"
 #import "LKInterpreterRuntime.h"
 
@@ -255,6 +256,8 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 {
 	int count = [[[self symbols] arguments] count];
 	id (^block)(__unsafe_unretained id arg0, ...) = ^id(__unsafe_unretained id arg0, ...) {
+        // TODO push the context onto the current interpreter's stack of contexts, instead of making a new one
+        LKInterpreter *subInterpreter = [LKInterpreter interpreterForCode:self];
 		LKInterpreterContext *context = [[LKInterpreterContext alloc]
 		            initWithSymbolTable: [self symbols]
 		                         parent: parentContext];
@@ -274,13 +277,15 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		
 		@try
 		{
-			return [self executeBlock: self
-			            WithArguments: params
-			                    count: count
-			                inContext: context];
+            [subInterpreter executeWithReceiver:self
+                                      arguments:params
+                                          count:count
+                                      inContext:context];
+			return [subInterpreter returnValue];
 		}
 		@finally
 		{
+            // TODO pop the interpreter's context
 			context = nil;
 		}
 		return nil;
