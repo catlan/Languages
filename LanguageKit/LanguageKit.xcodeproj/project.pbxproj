@@ -143,6 +143,8 @@
 		98B2CC90221D82BF00BF0172 /* LKVariableDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */; };
 		98B2CC91221D82BF00BF0172 /* LKVariableDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */; };
 		98EFBFBE22253F0100B9B9DF /* StackTraceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBFBD22253F0100B9B9DF /* StackTraceTests.m */; };
+		98EFBFC122257A5F00B9B9DF /* LKInterpreter.h in Headers */ = {isa = PBXBuildFile; fileRef = 98EFBFBF22257A5F00B9B9DF /* LKInterpreter.h */; };
+		98EFBFC222257A5F00B9B9DF /* LKInterpreter.m in Sources */ = {isa = PBXBuildFile; fileRef = 98EFBFC022257A5F00B9B9DF /* LKInterpreter.m */; };
 		D100F9AD1F263B490048FDFA /* LKEnumReference.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AC1F263B400048FDFA /* LKEnumReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */ = {isa = PBXBuildFile; fileRef = D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D100F9B11F263E0E0048FDFA /* LKFunctionCall.m in Sources */ = {isa = PBXBuildFile; fileRef = D100F9B01F263E070048FDFA /* LKFunctionCall.m */; };
@@ -482,6 +484,8 @@
 		98B2CC8E221D82BF00BF0172 /* LKVariableDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKVariableDescription.h; sourceTree = "<group>"; };
 		98B2CC8F221D82BF00BF0172 /* LKVariableDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKVariableDescription.m; sourceTree = "<group>"; };
 		98EFBFBD22253F0100B9B9DF /* StackTraceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StackTraceTests.m; sourceTree = "<group>"; };
+		98EFBFBF22257A5F00B9B9DF /* LKInterpreter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKInterpreter.h; sourceTree = "<group>"; };
+		98EFBFC022257A5F00B9B9DF /* LKInterpreter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKInterpreter.m; sourceTree = "<group>"; };
 		D100F9AC1F263B400048FDFA /* LKEnumReference.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKEnumReference.h; sourceTree = "<group>"; };
 		D100F9AE1F263BA80048FDFA /* LKFunctionCall.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKFunctionCall.h; sourceTree = "<group>"; };
 		D100F9B01F263E070048FDFA /* LKFunctionCall.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFunctionCall.m; sourceTree = "<group>"; };
@@ -679,6 +683,7 @@
 				D100F9B01F263E070048FDFA /* LKFunctionCall.m */,
 				D1D2A0D51F65329600B3814A /* LKProperty.h */,
 				D1D2A0D61F65329600B3814A /* LKProperty.m */,
+				98EFBFC022257A5F00B9B9DF /* LKInterpreter.m */,
 				D159D621221868CB00F081BB /* Debugger */,
 			);
 			name = LanguageKit;
@@ -798,6 +803,7 @@
 				6697B0251048D19A00456911 /* LKCompilerErrors.h */,
 				6697B0281048D19A00456911 /* LKModule.h */,
 				663A0FC6108FF90300B921B0 /* LKTypeHelpers.h */,
+				98EFBFBF22257A5F00B9B9DF /* LKInterpreter.h */,
 				668C490F10915C17002A20A3 /* LKInterpreterRuntime.h */,
 				668C491110915C17002A20A3 /* LKInterpreterContext.h */,
 				D100F9AC1F263B400048FDFA /* LKEnumReference.h */,
@@ -952,6 +958,7 @@
 				D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */,
 				9837B2F7221EE3E600FA0E6C /* LKStepIntoMode.h in Headers */,
 				D159D60E22170E3900F081BB /* LKDBServer.h in Headers */,
+				98EFBFC122257A5F00B9B9DF /* LKInterpreter.h in Headers */,
 				663A0FC8108FF90300B921B0 /* LKTypeHelpers.h in Headers */,
 				668C491510915C17002A20A3 /* LKInterpreterRuntime.h in Headers */,
 				668C491710915C17002A20A3 /* LKInterpreterContext.h in Headers */,
@@ -1361,6 +1368,7 @@
 				6697B0551048D19A00456911 /* LKCompilerErrors.m in Sources */,
 				6697B0561048D19A00456911 /* LKMethod.m in Sources */,
 				6697B0581048D19A00456911 /* LKModule.m in Sources */,
+				98EFBFC222257A5F00B9B9DF /* LKInterpreter.m in Sources */,
 				D100F9B81F2640050048FDFA /* LKEnumReference.m in Sources */,
 				6697B0591048D19A00456911 /* LKSymbolRef.m in Sources */,
 				9837B302221EEBA900FA0E6C /* LKStepOutMode.m in Sources */,

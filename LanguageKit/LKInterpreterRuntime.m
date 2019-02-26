@@ -3,6 +3,7 @@
 #import "Runtime/BoxedFloat.h"
 #import "Runtime/Symbol.h"
 #import "Runtime/LKObject.h"
+#import "LKInterpreter.h"
 #import "LKInterpreterRuntime.h"
 #import "LKInterpreterContext.h"
 #import "LKTypeHelpers.h"
@@ -616,13 +617,15 @@ static void LKInterpreterFFITrampoline(ffi_cif *cif, void *ret,
 
 	LKMethod *methodASTNode = LKASTForMethod(cls, 
 		[NSString stringWithUTF8String: sel_getName(cmd)]);
+    LKInterpreter *interpreter = [LKInterpreter interpreterForCode:methodASTNode];
 	
 	id returnObject;
 	if (cif->nargs - 2 == 0)
 	{
-		returnObject = [methodASTNode executeWithReciever: receiver
-		                                        arguments: NULL
-		                                            count: 0];
+		[interpreter executeWithReceiver:receiver
+                               arguments:NULL
+                                   count:0
+                               inContext:nil];
 	}
 	else 
 	{
@@ -638,11 +641,12 @@ static void LKInterpreterFFITrampoline(ffi_cif *cif, void *ret,
 			argumentObjects[i] = BoxValue(args[i+2], argtypes);
 			LKNextType(&argtypes);
 		}
-		returnObject = [methodASTNode executeWithReciever: receiver
-		                                        arguments: argumentObjects
-		                                            count: cif->nargs - 2];
+		[interpreter executeWithReceiver: receiver
+                               arguments: argumentObjects
+                                   count: cif->nargs - 2
+                               inContext:nil];
 	}
-	
+    returnObject = [interpreter returnValue];
 	UnboxValue(returnObject, ret, objctype);
 }
 
