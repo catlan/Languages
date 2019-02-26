@@ -118,6 +118,10 @@
  * result.
  */
 - (id)interpretInContext: (LKInterpreterContext*)context;
+- (id)executeWithReceiver:(id)receiver
+                     args:(const id *)args
+                    count:(int)count
+                inContext:(LKInterpreterContext*)context;
 @end
 
 #define SAFECAST(type, obj) ([obj isKindOfClass:[type class]] ? (type*)obj : ([NSException raise:@"InvalidCast" format:@"Can not cast %@ to %s", obj, #type], (type*)nil))

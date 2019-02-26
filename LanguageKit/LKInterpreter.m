@@ -52,12 +52,7 @@
      *
      * And move the -execute… categories out of the interpreter context to here.
      */
-    if ([_rootNode isKindOfClass:[LKBlockExpr class]]) {
-        _returnValue = [(LKBlockExpr *)_rootNode executeBlock:receiver
-                                                WithArguments:arguments
-                                                        count:count
-                                                    inContext:context];
-    } else if ([_rootNode isKindOfClass:[LKMethod class]]) {
+    if ([_rootNode isKindOfClass:[LKMethod class]]) {
         LKMethod *method = (LKMethod *)_rootNode;
         NSMutableArray *symbolnames = [NSMutableArray array];
         LKMessageSend *signature = [method signature];
@@ -68,23 +63,23 @@
         LKSymbolTable *symbols = [method symbols];
         [symbolnames addObjectsFromArray: [symbols locals]];
         
-        LKInterpreterContext *context = [[LKInterpreterContext alloc]
+        LKInterpreterContext *subContext = [[LKInterpreterContext alloc]
                                          initWithSymbolTable: symbols
                                          parent: nil];
-        [context setSelfObject: receiver];
+        [subContext setSelfObject: receiver];
         for (unsigned int i=0; i<count; i++)
         {
             LKVariableDecl *decl = [[signature arguments] objectAtIndex: i];
-            [context setValue: arguments[i]
+            [subContext setValue: arguments[i]
                     forSymbol: [decl name]];
         }
-        _returnValue = [method executeWithReceiver:receiver
-                                         arguments:arguments
-                                             count:count
-                                         inContext:context];
-    } else {
-        NSAssert(NO, @"I can't execute something that isn't a method or a block");
+        // TODO push context onto a stack
+        context = subContext;
     }
+    _returnValue = [_rootNode executeWithReceiver:receiver
+                                             args:arguments
+                                            count:count
+                                        inContext:context];
 }
 
 - (id)returnValue

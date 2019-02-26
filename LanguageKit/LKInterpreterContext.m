@@ -160,6 +160,16 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 
 
 @implementation LKAST (LKInterpreter)
+- (id)executeWithReceiver:(id)receiver
+                     args:(const __autoreleasing id *)args
+                    count:(int)count
+                inContext:(LKInterpreterContext *)context
+{
+    [NSException raise: NSInvalidArgumentException
+                format: @"-[%@ %@] should be overridden by subclass", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
+    return nil;
+}
+
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
     [NSException raise: NSInvalidArgumentException
@@ -231,10 +241,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @end
 
 @implementation LKBlockExpr (LKInterpreter)
-- (id)executeBlock: (id)block
-     WithArguments: (const id*)args
-             count: (int)count
-         inContext: (LKInterpreterContext*)context
+- (id)executeWithReceiver:(id)block args:(const __autoreleasing id *)args count:(int)count inContext:(LKInterpreterContext *)context
 {
 	NSArray *arguments = [[self symbols] arguments];
 	for (int i=0; i<count; i++)
@@ -607,7 +614,10 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	}
 	return result;
 }
-- (id)executeWithReceiver: (id)receiver arguments: (const id*)args count: (int)count inContext: (LKInterpreterContext *)context
+- (id)executeWithReceiver: (id)receiver
+                     args: (const id*)args
+                    count: (int)count
+                inContext: (LKInterpreterContext *)context
 {
 		return [self executeInContext: context];
 }
