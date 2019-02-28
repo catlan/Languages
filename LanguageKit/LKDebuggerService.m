@@ -11,6 +11,7 @@
 #import "LKContinueMode.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
+#import "LKInterpreter.h"
 #import "LKInterpreterContext.h"
 #import "LKInterpreterRuntime.h"
 #import "LKMessageSend.h"
@@ -67,12 +68,12 @@
 
 - (void)activate
 {
-    [LKInterpreterContext setActiveDebugger:self];
+    [LKInterpreter setActiveDebugger:self];
 }
 
 - (void)deactivate
 {
-    [LKInterpreterContext setActiveDebugger:nil];
+    [LKInterpreter setActiveDebugger:nil];
 }
 
 - (NSSet <LKVariableDescription *>*)allVariables

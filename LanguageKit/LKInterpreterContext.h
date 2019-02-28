@@ -24,7 +24,6 @@ typedef struct
 	__unsafe_unretained LKInterpreterContext *context;
 } LKInterpreterVariableContext;
 
-@class LKDebuggerService;
 @class LKInterpreter;
 
 /**
@@ -50,8 +49,7 @@ typedef struct
 - (LKInterpreterVariableContext)contextForSymbol: (LKSymbol*)symbol;
 - (void)onTracepoint: (LKAST *)aNode;
 - (NSDictionary *)allVariables;
-+ (LKDebuggerService *)activeDebugger;
-+ (void)setActiveDebugger: (LKDebuggerService *)aDebugger;
+
 @end
 
 

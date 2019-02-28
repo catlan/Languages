@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 
 @class LKAST;
+@class LKDebuggerService;
 @class LKInterpreterContext;
 
 /**
@@ -23,6 +24,15 @@
  * @note Never create your own interpreter; always use this method.
  */
 + (instancetype)interpreter;
+
+/**
+ * Get the debugger that is active for script interpretation.
+ */
++ (LKDebuggerService *)activeDebugger;
+/**
+ * Activate a debugger for script interpretation.
+ */
++ (void)setActiveDebugger: (LKDebuggerService *)aDebugger;
 
 /**
  * Do it! Run the code in the interpreter.
@@ -49,5 +59,9 @@
  * The interpreter context at the top of this interpreter's context stack.
  */
 - (LKInterpreterContext *)topContext;
+/**
+ * Event that is triggered by executing a node in the interpreter.
+ */
+- (void)onTracepoint: (LKAST *)aNode;
 
 @end

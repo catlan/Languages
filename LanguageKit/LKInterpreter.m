@@ -8,6 +8,7 @@
 #import "LKInterpreter.h"
 #import "LKAST.h"
 #import "LKBlockExpr.h"
+#import "LKDebuggerService.h"
 #import "LKInterpreterContext.h"
 #import "LKInterpreterRuntime.h"
 #import "LKMethod.h"
@@ -19,6 +20,17 @@ static const NSString *LKInterpreterThreadKey = @"LKInterpreterThreadKey";
 {
     NSMutableArray <LKInterpreterContext *> *_contexts;
     id _returnValue;
+}
+
+static LKDebuggerService *LKActiveDebugger;
+
++ (LKDebuggerService *)activeDebugger
+{
+    return LKActiveDebugger;
+}
++ (void)setActiveDebugger:(LKDebuggerService *)aDebugger
+{
+    LKActiveDebugger = aDebugger;
 }
 
 + (instancetype)interpreter
@@ -81,6 +93,11 @@ static const NSString *LKInterpreterThreadKey = @"LKInterpreterThreadKey";
 - (LKInterpreterContext *)topContext
 {
     return _contexts[0];
+}
+
+- (void)onTracepoint:(LKAST *)aNode
+{
+    [[[self class] activeDebugger] onTracepoint:aNode inContext:[self topContext]];
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "LKContinueMode.h"
 #import "LKDebuggerMode.h"
 #import "LKDebuggerService.h"
+#import "LKInterpreter.h"
 #import "LKInterpreterContext.h"
 #import "LKModule.h"
 
@@ -47,6 +48,7 @@
 {
     LKSymbolTable *table;
     LKInterpreterContext *context;
+    LKInterpreter *interpreter;
     LKDebuggerService *debugger;
     LKComment *node1;
     InspectableMode *mode;
@@ -56,6 +58,7 @@
     table = [LKSymbolTable new];
     [table setTableScope:LKSymbolScopeGlobal];
     context = [[LKInterpreterContext alloc] initWithSymbolTable:table parent:nil];
+    [[LKInterpreter interpreter] pushContext:context];
     mode = [InspectableMode new];
     debugger = [LKDebuggerService new];
     [debugger setMode:mode];
@@ -64,7 +67,7 @@
 }
 
 - (void)tearDown {
-    [LKInterpreterContext setActiveDebugger:nil];
+    [debugger deactivate];
     table = nil;
     context = nil;
     debugger = nil;
@@ -90,7 +93,7 @@
 - (void)testInterpretingAModuleStoresTheDebugger {
     LKModule *module = [LKModule module];
     [module interpretInContext:context];
-    XCTAssertEqualObjects([LKInterpreterContext activeDebugger], debugger, @"Debugger was saved for later");
+    XCTAssertEqualObjects([LKInterpreter activeDebugger], debugger, @"Debugger was saved for later");
 }
 
 - (void)testDebuggerModeDefaultsToContinue {
