@@ -22,6 +22,7 @@
 @implementation LKPauseMode
 {
     dispatch_semaphore_t semaphore;
+    LKDebuggerService *_pausedDebugger;
 }
 
 @synthesize service;
@@ -59,13 +60,22 @@
     // save the callstack here, it won't change before someone asks for it
     self.callStack = [NSThread callStackSymbols];
     if (self.service.shouldStop) {
+        /*
+         * Temporarily keep a strong reference to my debugger until we resume.
+         * This avoids a circular problem where if you set a new mode before
+         * resuming, you have set this mode's service to nil so it can't resume
+         * the debugger, but if you resume before updating the mode, the debugger
+         * would continue executing its script before getting any more instructions.
+         */
+        _pausedDebugger = self.service;
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     }
 }
 
 - (void)startAgain
 {
-    if (self.service.shouldStop) {
+    if (_pausedDebugger.shouldStop) {
+        _pausedDebugger = nil;
         dispatch_semaphore_signal(semaphore);
     }
 }
