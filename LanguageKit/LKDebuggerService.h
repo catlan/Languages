@@ -36,9 +36,8 @@
 /**
  * Called by the interpreter when it evaluates an AST node.
  * @param aNode the AST node that was encountered.
- * @param context the interpreter context in which the node was evaluated.
  */
-- (void)onTracepoint: (LKAST *)aNode inContext: (LKInterpreterContext *)context;
+- (void)onTracepoint: (LKAST *)aNode;
 /**
  * The interpreter's current location.
  */

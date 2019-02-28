@@ -97,7 +97,7 @@ static LKDebuggerService *LKActiveDebugger;
 
 - (void)onTracepoint:(LKAST *)aNode
 {
-    [[[self class] activeDebugger] onTracepoint:aNode inContext:[self topContext]];
+    [[[self class] activeDebugger] onTracepoint:aNode];
 }
 
 @end

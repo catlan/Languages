@@ -47,7 +47,7 @@
      * It needs to be an asynchronous test, because we need to pause the debugger
      * on one thread and ask for its stack trace on another.
      */
-    [debugger onTracepoint:nil inContext:nil];
+    [debugger onTracepoint:nil];
     [debugger pause];
     NSArray <NSString *>* stacktrace = [debugger stacktrace];
     XCTAssertNotNil(stacktrace, @"definitely got an object");
@@ -55,7 +55,7 @@
 }
 
 - (void)testStackTraceContainsNoLanguageKitSymbols {
-    [debugger onTracepoint:nil inContext:nil];
+    [debugger onTracepoint:nil];
     [debugger pause];
     NSArray <NSString *>* stacktrace = [debugger stacktrace];
     NSPredicate *containsLKMethod = [NSPredicate predicateWithBlock:^BOOL(NSString * _Nullable evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
@@ -82,7 +82,7 @@
     [retStatement setParent:method];
     [method setParent:category];
     [category setParent:module];
-    [debugger onTracepoint:retStatement inContext:nil];
+    [debugger onTracepoint:retStatement];
     [debugger pause];
     NSString *topOfStack = [debugger stacktrace][0];
     XCTAssertEqualObjects(topOfStack, @"<Interpreted>        -[NSObject(Methods) doAThing]", @"Our method appears on top");

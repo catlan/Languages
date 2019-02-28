@@ -29,7 +29,7 @@
 @implementation LKDebuggerService
 {
     LKAST *_currentNode;
-    LKInterpreterContext *_currentContext;
+    LKInterpreter *_interpreter;
     NSMutableSet<LKAST *> *_breakpoints;
 }
 
@@ -47,11 +47,12 @@
     return self;
 }
 
-- (void)onTracepoint: (LKAST *)aNode inContext: (LKInterpreterContext *)context
+- (void)onTracepoint: (LKAST *)aNode
 {
     _currentNode = aNode;
+    // assertion: this sets interpreter correctly, because we're interpreting on this thread.
+    _interpreter = [LKInterpreter interpreter];
     [_mode onTracepoint:aNode];
-    _currentContext = context;
 }
 
 - (LKAST *)currentNode
@@ -78,7 +79,7 @@
 
 - (NSSet <LKVariableDescription *>*)allVariables
 {
-    LKInterpreterContext *context = _currentContext;
+    LKInterpreterContext *context = [_interpreter topContext];
     NSMutableSet *variables = [NSMutableSet set];
     // don't recurse for self references, because they're inherited
     id selfObject = [context selfObject];
