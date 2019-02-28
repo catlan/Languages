@@ -250,7 +250,11 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 {
     if (self == [LKCategoryDef class])
     {
-        LKMethodASTs = [[NSMutableDictionary alloc] init];
+        @synchronized ([LKInterpreterContext class]) {
+            if (!LKMethodASTs) {
+                LKMethodASTs = [[NSMutableDictionary alloc] init];
+            }
+        }
     }
 }
 
@@ -578,7 +582,11 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 {
 	if (self == [LKSubclass class])
 	{
-		LKMethodASTs = [[NSMutableDictionary alloc] init];
+        @synchronized ([LKInterpreterContext class]) {
+            if (!LKMethodASTs) {
+                LKMethodASTs = [[NSMutableDictionary alloc] init];
+            }
+        }
 		LKClassVariables = [[NSMutableDictionary alloc] init];
 	}
 }
