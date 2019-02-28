@@ -141,15 +141,6 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 
 
 @implementation LKAST (LKInterpreter)
-- (id)executeWithReceiver:(id)receiver
-                     args:(const __autoreleasing id *)args
-                    count:(int)count
-                inContext:(LKInterpreterContext *)context
-{
-    [NSException raise: NSInvalidArgumentException
-                format: @"-[%@ %@] should be overridden by subclass", NSStringFromClass([self class]), NSStringFromSelector(_cmd)];
-    return nil;
-}
 
 - (id)interpretInContext: (LKInterpreterContext*)context
 {
@@ -226,8 +217,7 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 {
 	int count = [[[self symbols] arguments] count];
 	id (^block)(__unsafe_unretained id arg0, ...) = ^id(__unsafe_unretained id arg0, ...) {
-        // TODO push the context onto the current interpreter's stack of contexts, instead of making a new one
-        LKInterpreter *subInterpreter = [LKInterpreter interpreterForCode:self];
+        LKInterpreter *interpreter = [parentContext interpreter];
 		LKInterpreterContext *context = [[LKInterpreterContext alloc]
 		            initWithSymbolTable: [self symbols]
 		                         parent: parentContext];
@@ -245,19 +235,19 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 		}
 		va_end(arglist);
 		
+        [interpreter pushContext:context];
 		@try
 		{
-            [subInterpreter executeWithReceiver:self
-                                      arguments:params
-                                          count:count
-                                      inContext:context];
-			return [subInterpreter returnValue];
+            [interpreter executeCode: self
+                        withReceiver:self
+                           arguments:params
+                               count:count];
+			return [interpreter returnValue];
 		}
 		@finally
 		{
-            // TODO pop the interpreter's context
-			context = nil;
-		}
+            [interpreter popContext];
+        }
 		return nil;
 	};
     [parentContext onTracepoint:self];

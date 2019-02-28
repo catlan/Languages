@@ -13,78 +13,67 @@
 #import "LKMethod.h"
 #import "LKVariableDecl.h"
 
-@interface LKInterpreter ()
-
-- (instancetype)initWithRootNode:(LKAST *)root;
-
-@end
-
 @implementation LKInterpreter
 {
-    LKAST *_rootNode;
+    NSMutableArray <LKInterpreterContext *> *_contexts;
     id _returnValue;
 }
 
-+ (instancetype)interpreterForCode:(LKAST *)root
++ (instancetype)interpreter
 {
-    return [[self alloc] initWithRootNode:root];
+    return [self new];
 }
 
-- (instancetype)initWithRootNode:(LKAST *)root
+- (instancetype)init
 {
     self = [super init];
     if (self) {
-        _rootNode = root;
+        _contexts = [NSMutableArray array];
     }
     return self;
 }
 
-- (void)executeWithReceiver:(id)receiver
-                  arguments:(const __autoreleasing id *)arguments
-                      count:(int)count
-                  inContext:(LKInterpreterContext *)context
+- (void)executeCode:(LKAST *)rootNode
+       withReceiver:(id)receiver
+          arguments:(const __autoreleasing id *)arguments
+              count:(int)count
 {
-    /*
-     * this is not (yet) great. Find out whether I have a context already. If so,
-     * and the root node is of a type that should inherit an existing context, just
-     * execute it. If not, create a new context, keep a reference to it here, and
-     * execute in that context. The context parameter up there should disappear, and
-     * this object should know what context to use.
-     */
-    if ([_rootNode isKindOfClass:[LKMethod class]]) {
-        LKMethod *method = (LKMethod *)_rootNode;
-        NSMutableArray *symbolnames = [NSMutableArray array];
-        LKMessageSend *signature = [method signature];
-        if ([signature arguments])
-        {
-            [symbolnames addObjectsFromArray: [signature arguments]];
-        }
-        LKSymbolTable *symbols = [method symbols];
-        [symbolnames addObjectsFromArray: [symbols locals]];
-        
-        LKInterpreterContext *nextContext = [[LKInterpreterContext alloc]
-                                         initWithSymbolTable: symbols
-                                         parent: nil];
-        [nextContext setSelfObject: receiver];
-        for (unsigned int i=0; i<count; i++)
-        {
-            LKVariableDecl *decl = [[signature arguments] objectAtIndex: i];
-            [nextContext setValue: arguments[i]
-                    forSymbol: [decl name]];
-        }
-        // TODO push context onto a stack
-        context = nextContext;
+    BOOL needsNewContext = ![rootNode inheritsContext];
+    if (needsNewContext) {
+        LKInterpreterContext *nextContext = [rootNode freshContextWithReceiver:receiver
+                                                                     arguments:arguments
+                                                                         count:count];
+        [self pushContext:nextContext];
     }
-    _returnValue = [_rootNode executeWithReceiver:receiver
-                                             args:arguments
-                                            count:count
-                                        inContext:context];
-    // TODO now pop the context again, if I made a new one
+    _returnValue = [rootNode executeWithReceiver:receiver
+                                            args:arguments
+                                           count:count
+                                       inContext:[self topContext]];
+    if (needsNewContext) {
+        [self popContext];
+    }
 }
 
 - (id)returnValue
 {
     return _returnValue;
+}
+
+- (void)pushContext:(LKInterpreterContext *)aContext
+{
+    [aContext setInterpreter:self];
+    [_contexts insertObject:aContext atIndex:0];
+}
+
+- (void)popContext
+{
+    [[self topContext] setInterpreter:nil];
+    [_contexts removeObjectAtIndex:0];
+}
+
+- (LKInterpreterContext *)topContext
+{
+    return _contexts[0];
 }
 
 @end
@@ -143,11 +132,45 @@
     return [self executeInContext: context];
 }
 
+- (BOOL)inheritsContext
+{
+    return NO;
+}
+
+- (LKInterpreterContext *)freshContextWithReceiver: (id)receiver
+                                         arguments: (const __autoreleasing id *)arguments
+                                             count: (int)count
+{
+    NSMutableArray *symbolnames = [NSMutableArray array];
+    LKMessageSend *signature = [self signature];
+    if ([signature arguments])
+    {
+        [symbolnames addObjectsFromArray: [signature arguments]];
+    }
+    LKSymbolTable *symbols = [self symbols];
+    [symbolnames addObjectsFromArray: [symbols locals]];
+    
+    LKInterpreterContext *nextContext = [[LKInterpreterContext alloc]
+                                         initWithSymbolTable: symbols
+                                         parent: nil];
+    [nextContext setSelfObject: receiver];
+    for (unsigned int i=0; i<count; i++)
+    {
+        LKVariableDecl *decl = [[signature arguments] objectAtIndex: i];
+        [nextContext setValue: arguments[i]
+                    forSymbol: [decl name]];
+    }
+    return nextContext;
+}
+
 @end
 
 @implementation LKBlockExpr (Executing)
 
-- (id)executeWithReceiver:(id)block args:(const __autoreleasing id *)args count:(int)count inContext:(LKInterpreterContext *)context
+- (id)executeWithReceiver:(id)block
+                     args:(const __autoreleasing id *)args
+                    count:(int)count
+                inContext:(LKInterpreterContext *)context
 {
     NSArray *arguments = [[self symbols] arguments];
     for (int i=0; i<count; i++)

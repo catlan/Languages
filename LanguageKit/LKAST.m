@@ -138,3 +138,30 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 	[anArray removeObjectsAtIndexes: remove];
 }
 @end
+
+@implementation LKAST (Executing)
+
+- (BOOL)inheritsContext
+{
+    return YES;
+}
+
+- (LKInterpreterContext *)freshContextWithReceiver: (id)receiver
+                                         arguments: (const __autoreleasing id *)arguments
+                                             count: (int)count
+{
+    // subclass responsibility
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
+- (id)executeWithReceiver:(id)receiver
+                     args:(const __autoreleasing id *)args
+                    count:(int)count
+                inContext:(LKInterpreterContext *)context
+{
+    // subclass responsibility
+    [self doesNotRecognizeSelector:_cmd];
+}
+
+@end

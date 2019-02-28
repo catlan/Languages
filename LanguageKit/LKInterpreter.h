@@ -19,24 +19,34 @@
 @interface LKInterpreter : NSObject
 
 /**
- * Create an interpreter to execute the code represented by this AST.
- * The interpreter maintains a strong reference to the code, so that
- * if it is updated (e.g. by reloading a module) during execution, the
- * interpreter carries on executing the code it was given to completion.
+ * Create an interpreter.
  */
-+ (instancetype)interpreterForCode:(LKAST *)root;
++ (instancetype)interpreter;
 
 /**
  * Do it! Run the code in the interpreter.
  */
-- (void)executeWithReceiver:(id)receiver
-                  arguments:(const id*)arguments
-                      count:(int)count
-                  inContext:(LKInterpreterContext *)context;
+- (void)executeCode:(LKAST *)rootNode
+       withReceiver:(id)receiver
+          arguments:(const id*)arguments
+              count:(int)count;
 
 /**
  * Find the return value of the last execution.
  */
 - (id)returnValue;
+
+/**
+ * Push a new context to the top of this interpreter's context stack.
+ */
+- (void)pushContext: (LKInterpreterContext *)aContext;
+/**
+ * Pop the topmost interpreter context from this interpreter's context stack.
+ */
+- (void)popContext;
+/**
+ * The interpreter context at the top of this interpreter's context stack.
+ */
+- (LKInterpreterContext *)topContext;
 
 @end

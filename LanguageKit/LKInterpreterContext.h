@@ -25,6 +25,7 @@ typedef struct
 } LKInterpreterVariableContext;
 
 @class LKDebuggerService;
+@class LKInterpreter;
 
 /**
  * Wrapper around a map table which contains the objects in a
@@ -40,6 +41,7 @@ typedef struct
 }
 @property (unsafe_unretained, nonatomic) id selfObject;
 @property (strong, nonatomic) id blockContextObject;
+@property (nonatomic, weak) LKInterpreter *interpreter;
 
 - (id) initWithSymbolTable: (LKSymbolTable*)aTable
                     parent: (LKInterpreterContext*)aParent;

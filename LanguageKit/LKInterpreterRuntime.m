@@ -617,15 +617,15 @@ static void LKInterpreterFFITrampoline(ffi_cif *cif, void *ret,
 
 	LKMethod *methodASTNode = LKASTForMethod(cls, 
 		[NSString stringWithUTF8String: sel_getName(cmd)]);
-    LKInterpreter *interpreter = [LKInterpreter interpreterForCode:methodASTNode];
+    LKInterpreter *interpreter = [LKInterpreter interpreter];
 	
 	id returnObject;
 	if (cif->nargs - 2 == 0)
 	{
-		[interpreter executeWithReceiver:receiver
-                               arguments:NULL
-                                   count:0
-                               inContext:nil];
+        [interpreter executeCode:methodASTNode
+                    withReceiver:receiver
+                       arguments:NULL
+                           count:0];
 	}
 	else 
 	{
@@ -641,10 +641,10 @@ static void LKInterpreterFFITrampoline(ffi_cif *cif, void *ret,
 			argumentObjects[i] = BoxValue(args[i+2], argtypes);
 			LKNextType(&argtypes);
 		}
-		[interpreter executeWithReceiver: receiver
-                               arguments: argumentObjects
-                                   count: cif->nargs - 2
-                               inContext:nil];
+        [interpreter executeCode: methodASTNode
+                    withReceiver: receiver
+                       arguments: argumentObjects
+                           count: cif->nargs - 2];
 	}
     returnObject = [interpreter returnValue];
 	UnboxValue(returnObject, ret, objctype);
