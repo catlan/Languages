@@ -13,6 +13,8 @@
 #import "LKMethod.h"
 #import "LKVariableDecl.h"
 
+static const NSString *LKInterpreterThreadKey = @"LKInterpreterThreadKey";
+
 @implementation LKInterpreter
 {
     NSMutableArray <LKInterpreterContext *> *_contexts;
@@ -21,7 +23,12 @@
 
 + (instancetype)interpreter
 {
-    return [self new];
+    LKInterpreter *threadInterpreter = [[NSThread currentThread] threadDictionary][LKInterpreterThreadKey];
+    if (!threadInterpreter) {
+        threadInterpreter = [self new];
+        [[NSThread currentThread] threadDictionary][LKInterpreterThreadKey] = threadInterpreter;
+    }
+    return threadInterpreter;
 }
 
 - (instancetype)init

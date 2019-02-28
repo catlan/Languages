@@ -12,14 +12,15 @@
 
 /**
  * An interpreter is an object that executes LanguageKit syntax.
- * It maintains a reference to the AST being executed, and gives
- * a point for external observers such as debuggers to hook in to
+ * It maintains a reference to the AST being executed while it is executed,
+ * and gives a point for external observers such as debuggers to hook in to
  * the script's execution lifecycle.
  */
 @interface LKInterpreter : NSObject
 
 /**
- * Create an interpreter.
+ * Get an interpreter for running some code.
+ * @note Never create your own interpreter; always use this method.
  */
 + (instancetype)interpreter;
 
