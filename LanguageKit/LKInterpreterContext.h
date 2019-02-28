@@ -61,14 +61,6 @@ typedef struct
 - (id)interpretInContext: (LKInterpreterContext*)context;
 @end
 
-@interface LKMethod (LKInterpreter)
-- (id)executeInContext: (LKInterpreterContext*)context;
-- (id)executeWithReceiver: (id)receiver
-                arguments: (const id*)args
-                    count: (int)count
-                inContext:(LKInterpreterContext *)context;
-@end
-
 @interface LKSubclass (LKInterpreter)
 - (void)setValue: (id)value forClassVariable: (NSString*)cvar;
 - (id)valueForClassVariable: (NSString*)cvar;

@@ -72,25 +72,6 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
     }
 }
 
-@interface LKBlockReturnException : NSException
-{
-}
-+ (void)raiseWithValue: (id)returnValue;
-- (id)returnValue;
-@end
-@implementation LKBlockReturnException
-+ (void)raiseWithValue: (id)returnValue
-{
-	@throw [LKBlockReturnException exceptionWithName: LKSmalltalkBlockNonLocalReturnException
-	                                    reason: @""
-	                                  userInfo: [NSDictionary dictionaryWithObjectsAndKeys:returnValue, @"returnValue", nil]];
-}
-- (id)returnValue
-{
-	return [[self userInfo] valueForKey: @"returnValue"];
-}
-@end
-
 @implementation LKInterpreterContext
 @synthesize selfObject, blockContextObject;
 - (id) initWithSymbolTable: (LKSymbolTable*)aTable
@@ -241,24 +222,6 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 @end
 
 @implementation LKBlockExpr (LKInterpreter)
-- (id)executeWithReceiver:(id)block args:(const __autoreleasing id *)args count:(int)count inContext:(LKInterpreterContext *)context
-{
-	NSArray *arguments = [[self symbols] arguments];
-	for (int i=0; i<count; i++)
-	{
-		[context setValue: args[i]
-		        forSymbol: [[arguments objectAtIndex: i] name]];
-	} 
-	[context setBlockContextObject: block];
-
-	id result = nil;
-	for (LKAST *statement in statements)
-	{
-		result = [statement interpretInContext: context];
-	}
-	[context setBlockContextObject: nil];
-	return result;
-}
 - (id)interpretInContext: (LKInterpreterContext*)parentContext
 {
 	int count = [[[self symbols] arguments] count];
@@ -584,42 +547,6 @@ void LKPropertySetter(id self, SEL _cmd, id newObject)
 	}
     [context onTracepoint: self];
 	return result;
-}
-@end
-
-@implementation LKMethod (LKInterpreter)
-- (id)executeInContext: (LKInterpreterContext*)context
-{
-	id result = nil;
-	@try
-	{
-		for (LKAST *element in [self statements])
-		{
-			result = [element interpretInContext: context];
-		}
-		if ([[[self signature] selector] isEqualToString: @"dealloc"])
-		{
-			LKAST *ast = [self parent];
-			while (nil != ast && ![ast isKindOfClass: [LKSubclass class]])
-			{
-				ast = [ast parent];
-			}
-			NSString *receiverClassName = [(LKSubclass*)ast superclassname];
-			return LKSendMessage(receiverClassName, [context selfObject], @"dealloc", 0, 0);
-		}
-	}
-	@catch (LKBlockReturnException *ret)
-	{
-		result = [ret returnValue];
-	}
-	return result;
-}
-- (id)executeWithReceiver: (id)receiver
-                     args: (const id*)args
-                    count: (int)count
-                inContext: (LKInterpreterContext *)context
-{
-		return [self executeInContext: context];
 }
 @end
 

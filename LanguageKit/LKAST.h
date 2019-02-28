@@ -118,6 +118,12 @@
  * result.
  */
 - (id)interpretInContext: (LKInterpreterContext*)context;
+@end
+
+@interface LKAST (Executing)
+/**
+ * Execute the AST node withing the specified context object. Returns the result.
+ */
 - (id)executeWithReceiver:(id)receiver
                      args:(const id *)args
                     count:(int)count
