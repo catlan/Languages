@@ -981,6 +981,16 @@ static void ListeningSocketCallback(CFSocketRef sock, CFSocketCallBackType type,
 
 @implementation LKDBServer
 
+LKDBServer *_serverLaunchedOnStart;
+
++ (void)load
+{
+    BOOL shouldLaunchDebugger = [[NSUserDefaults standardUserDefaults] boolForKey:@"LKDebugServer"];
+    if (shouldLaunchDebugger) {
+        _serverLaunchedOnStart = [[LKDBServer alloc] init];
+    }
+}
+
 - (instancetype)init
 {
     self = [super init];
