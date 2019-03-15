@@ -112,6 +112,10 @@ static ffi_type *FFITypeForObjCType(const char *typestr)
 			{
 				return &ffi_type_nspoint;
 			}
+            else if (0 == strncmp(typestr, "{CGPoint", 8))
+            {
+                return &ffi_type_nspoint;
+            }
 			[NSException raise: LKInterpreterException  
 			            format: @"ObjC to FFI type conversion not supported for"
 			                    "arbitrary structs"];
@@ -293,6 +297,11 @@ static void UnboxValue(id value, void *dest, const char *objctype)
 				*(NSSize*)dest = [value sizeValue];
 				break;
 			}
+            else if (0 == strncmp(objctype, "{CGPoint", 8))
+            {
+                *(CGPoint*)dest = [value pointValue];
+                break;
+            }
 		}
 		default:
 			[NSException raise: LKInterpreterException  
