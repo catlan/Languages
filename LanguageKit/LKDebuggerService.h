@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <LanguageKit/LKDebuggerStatus.h>
 
 @protocol LKDebuggerMode;
 @class LKAST;
@@ -33,6 +34,12 @@
  * load of multi-threaded boilerplate (just, y'know, for instance).
  */
 @property (nonatomic, assign) BOOL shouldStop;
+
+/**
+ * The debugger's current status.
+ * @see LKDebuggerStatus for possible values.
+ */
+@property (nonatomic, readonly, assign) LKDebuggerStatus status;
 
 /**
  * Called by the interpreter when it evaluates an AST node.

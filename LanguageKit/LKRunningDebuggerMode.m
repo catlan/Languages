@@ -47,4 +47,9 @@
     return nil; //unreached
 }
 
+- (LKDebuggerStatus)status
+{
+    return DebuggerStatusRunning;
+}
+
 @end

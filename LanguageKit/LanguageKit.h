@@ -11,6 +11,7 @@
 #import <LanguageKit/LKCompilerErrors.h>
 #import <LanguageKit/LKDebuggerMode.h>
 #import <LanguageKit/LKDebuggerService.h>
+#import <LanguageKit/LKDebuggerStatus.h>
 #import <LanguageKit/LKDeclRef.h>
 #import <LanguageKit/LKEnumReference.h>
 #import <LanguageKit/LKFunctionCall.h>

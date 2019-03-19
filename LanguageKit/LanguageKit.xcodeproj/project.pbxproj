@@ -119,6 +119,7 @@
 		794B2BC5123D7828008A4663 /* LanguageKitRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6697AFCA1048CF9200456911 /* LanguageKitRuntime.framework */; };
 		982C9883223FFD1F004F9AE7 /* LKLineBreakpointDescription.h in Headers */ = {isa = PBXBuildFile; fileRef = 982C9881223FFD1F004F9AE7 /* LKLineBreakpointDescription.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		982C9884223FFD1F004F9AE7 /* LKLineBreakpointDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C9882223FFD1F004F9AE7 /* LKLineBreakpointDescription.m */; };
+		982C98AA2241495F004F9AE7 /* LKDebuggerStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 982C98A92241495F004F9AE7 /* LKDebuggerStatus.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9837B2E7221EA82000FA0E6C /* InterpreterDebuggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC75221C370B00BF0172 /* InterpreterDebuggingTests.m */; };
 		9837B2E8221EA82A00FA0E6C /* TracingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B2CC73221C066200BF0172 /* TracingTests.m */; };
 		9837B2EB221EA91600FA0E6C /* LKContinueMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 9837B2E9221EA91600FA0E6C /* LKContinueMode.h */; };
@@ -464,6 +465,7 @@
 		794B2BBF123D774F008A4663 /* LKLoop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKLoop.h; sourceTree = "<group>"; };
 		982C9881223FFD1F004F9AE7 /* LKLineBreakpointDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKLineBreakpointDescription.h; sourceTree = "<group>"; };
 		982C9882223FFD1F004F9AE7 /* LKLineBreakpointDescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKLineBreakpointDescription.m; sourceTree = "<group>"; };
+		982C98A92241495F004F9AE7 /* LKDebuggerStatus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKDebuggerStatus.h; sourceTree = "<group>"; };
 		9837B2E9221EA91600FA0E6C /* LKContinueMode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LKContinueMode.h; sourceTree = "<group>"; };
 		9837B2EA221EA91600FA0E6C /* LKContinueMode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKContinueMode.m; sourceTree = "<group>"; };
 		9837B2ED221EAF3D00FA0E6C /* ContinueModeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContinueModeTests.m; sourceTree = "<group>"; };
@@ -917,6 +919,7 @@
 				9837B300221EEBA900FA0E6C /* LKStepOutMode.m */,
 				982C9881223FFD1F004F9AE7 /* LKLineBreakpointDescription.h */,
 				982C9882223FFD1F004F9AE7 /* LKLineBreakpointDescription.m */,
+				982C98A92241495F004F9AE7 /* LKDebuggerStatus.h */,
 			);
 			name = Debugger;
 			sourceTree = "<group>";
@@ -963,6 +966,7 @@
 				6697B0571048D19A00456911 /* LKModule.h in Headers */,
 				982C9883223FFD1F004F9AE7 /* LKLineBreakpointDescription.h in Headers */,
 				D100F9AF1F263BAB0048FDFA /* LKFunctionCall.h in Headers */,
+				982C98AA2241495F004F9AE7 /* LKDebuggerStatus.h in Headers */,
 				9837B2F7221EE3E600FA0E6C /* LKStepIntoMode.h in Headers */,
 				D159D60E22170E3900F081BB /* LKDBServer.h in Headers */,
 				98EFBFC122257A5F00B9B9DF /* LKInterpreter.h in Headers */,

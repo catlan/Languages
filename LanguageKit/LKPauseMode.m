@@ -103,4 +103,9 @@
     return self.callStack;
 }
 
+- (LKDebuggerStatus)status
+{
+    return DebuggerStatusWaitingAtBreakpoint;
+}
+
 @end

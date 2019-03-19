@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <LanguageKit/LKDebuggerStatus.h>
 
 @class LKAST;
 @class LKDebuggerService;
@@ -53,5 +54,9 @@
  * @throws If the stack trace cannot be retried (e.g. the debugger is running).
  */
 - (NSArray <NSString *>*)stacktrace;
+/**
+ * Return the current status of the debugger.
+ */
+- (LKDebuggerStatus)status;
 
 @end

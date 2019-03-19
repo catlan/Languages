@@ -53,6 +53,12 @@
     [self sendMessage:@"removeBreakpoint" parameters:breakpoint withReply:block];
 }
 
+- (void)getStatusWithReply:(void (^)(NSString *, NSError *))block
+{
+    NSAssert([NSThread isMainThread], @"This method must be invoked on main thread");
+    [self sendMessage:@"getStatus" parameters:nil withReply:block];
+}
+
 #pragma mark Messages
 
 - (void)sendMessage:(NSString *)method parameters:(id)parameters withReply:(void (^)(id obj, NSError *error))block

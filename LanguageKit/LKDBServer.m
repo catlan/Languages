@@ -9,6 +9,7 @@
 
 #import "LKDBConnection.h"
 #import "LKDebuggerService.h"
+#import "LKDebuggerStatus.h"
 #import "LKLineBreakpointDescription.h"
 
 #include <sys/socket.h>
@@ -1092,6 +1093,17 @@ LKDBServer *_serverLaunchedOnStart;
     else {
         return nil;
     }
+}
+
+- (id<NSSecureCoding>)network_getStatus:(NSData *)unused error:(NSError *__autoreleasing*)error
+{
+    LKDebuggerStatus status = [_debugger status];
+    NSDictionary *responseMap = @{
+                                  @(DebuggerStatusWaitingAtBreakpoint): @"Waiting",
+                                  @(DebuggerStatusRunning): @"Running",
+                                  @(DebuggerStatusNotRunning): @"NotRunning",
+                                  };
+    return responseMap[@(status)] ?: @"Unknown";
 }
 
 - (void)connection:(LKDBConnection *)connection handleMessage:(CFHTTPMessageRef)message

@@ -51,6 +51,14 @@
     return self;
 }
 
+- (LKDebuggerStatus)status
+{
+    if (_interpreter == nil) {
+        return DebuggerStatusNotRunning;
+    }
+    return [_mode status];
+}
+
 - (void)onTracepoint: (LKAST *)aNode
 {
     _currentNode = aNode;
