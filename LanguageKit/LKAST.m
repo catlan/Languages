@@ -110,10 +110,12 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 - (NSUInteger) sourceLine
 {
     // get the lines that define this node in its source
-    NSRange lineRange = [[[self module] sourceText] lineRangeForRange:_sourceRange];
+    NSString *sourceText = [[self module] sourceText];
+    if ([sourceText length] == 0) return NSNotFound;
+    NSRange lineRange = [sourceText lineRangeForRange:_sourceRange];
     // get the first line in that range
     __block NSString *firstLine = nil;
-    [[[[self module] sourceText] substringWithRange:lineRange] enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
+    [[sourceText substringWithRange:lineRange] enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
         firstLine = line;
         *stop = YES;
     }];
@@ -121,7 +123,7 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
      * (Adding one, because IDEs use one-indexed line numbers)
      */
     __block NSUInteger correctLine = 1;
-    [[[self module] sourceText] enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
+    [sourceText enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
         if ([line isEqualToString:firstLine]) {
             *stop = YES;
         } else {
@@ -129,7 +131,7 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
         }
     }];
     // if we went past the end then we didn't find it
-    if (correctLine > [[[[self module] sourceText] componentsSeparatedByCharactersInSet:
+    if (correctLine > [[sourceText componentsSeparatedByCharactersInSet:
                         [NSCharacterSet newlineCharacterSet]] count]) {
         return NSNotFound;
     }
