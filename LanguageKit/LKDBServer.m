@@ -1070,7 +1070,8 @@ LKDBServer *_serverLaunchedOnStart;
     LKLineBreakpointDescription *breakpoint = [NSKeyedUnarchiver unarchivedObjectOfClass:[LKLineBreakpointDescription class]
                                                                                 fromData:serialisedBreakpoint
                                                                                    error:error];
-    if (breakpoint) {
+    // You still have to test that the unarchived object is of the correct class, which I didn't expect.
+    if ([breakpoint isKindOfClass:[LKLineBreakpointDescription class]]) {
         [_debugger addLineBreakpoint:breakpoint];
         return @"Added";
     }
@@ -1084,7 +1085,7 @@ LKDBServer *_serverLaunchedOnStart;
     LKLineBreakpointDescription *breakpoint = [NSKeyedUnarchiver unarchivedObjectOfClass:[LKLineBreakpointDescription class]
                                                                                 fromData:serialisedBreakpoint
                                                                                    error:error];
-    if (breakpoint) {
+    if ([breakpoint isKindOfClass:[LKLineBreakpointDescription class]]) {
         [_debugger removeLineBreakpoint:breakpoint];
         return @"Removed";
     }

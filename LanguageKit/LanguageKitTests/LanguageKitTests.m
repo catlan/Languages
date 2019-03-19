@@ -25,7 +25,7 @@
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testDBClient {
+- (void)testDBClientAddAndRemoveBreakpoints {
     XCTestExpectation *expectation1 = [[XCTestExpectation alloc] initWithDescription:@"addBreakpoint"];
     XCTestExpectation *expectation2 = [[XCTestExpectation alloc] initWithDescription:@"removeBreakpoint"];
     LKDBClient *client = [[LKDBClient alloc] init];
@@ -47,5 +47,20 @@
     [self waitForExpectations:[NSArray arrayWithObjects:expectation1, expectation2, nil] timeout:10.0];
 }
 
+- (void)testRuntimeTypeCheckingOfDBClientBreakpointParameters {
+    XCTestExpectation *addBreakpointExpectation = [[XCTestExpectation alloc] initWithDescription:@"addBreakpoint"];
+    XCTestExpectation *removeBreakpointExpectation = [[XCTestExpectation alloc] initWithDescription:@"removeBreakpoint"];
+    LKDBClient *client = [[LKDBClient alloc] init];
+    [client addBreakpoint:@"Not a breakpoint" withReply:^(id obj, NSError *error) {
+        XCTAssertNil(obj, @"Got nil back from the network command");
+        // we don't get an error, because the errors are only used by the network stack
+        [addBreakpointExpectation fulfill];
+    }];
+    [client removeBreakpoint:@"Not a breakpoint" withReply:^(id obj, NSError *error) {
+        XCTAssertNil(obj, @"Got nil back from the network command");
+        [removeBreakpointExpectation fulfill];
+    }];
+    [self waitForExpectations:@[addBreakpointExpectation, removeBreakpointExpectation] timeout:10.0];
+}
 
 @end
