@@ -161,7 +161,6 @@
 
 - (void)removeLineBreakpoint:(LKLineBreakpointDescription *)breakpoint
 {
-    NSParameterAssert([_breakpointLines containsObject:breakpoint]);
     [_breakpointLines removeObject:breakpoint];
 }
 

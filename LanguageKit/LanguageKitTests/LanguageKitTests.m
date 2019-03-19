@@ -29,16 +29,17 @@
     XCTestExpectation *expectation1 = [[XCTestExpectation alloc] initWithDescription:@"addBreakpoint"];
     XCTestExpectation *expectation2 = [[XCTestExpectation alloc] initWithDescription:@"removeBreakpoint"];
     LKDBClient *client = [[LKDBClient alloc] init];
-    [client addBreakpoint:@"Hello World" withReply:^(id obj, NSError *error) {
+    LKLineBreakpointDescription *breakpoint = [[LKLineBreakpointDescription alloc] initWithFile:@"Hello" line:1];
+    [client addBreakpoint:breakpoint withReply:^(id obj, NSError *error) {
         
-        XCTAssertEqualObjects(@"World", obj, @"");
+        XCTAssertEqualObjects(@"Added", obj, @"");
         XCTAssertNil(error, @"");
         [expectation1 fulfill];
         
     }];
-    [client removeBreakpoint:@"Hello World" withReply:^(id obj, NSError *error) {
+    [client removeBreakpoint:breakpoint withReply:^(id obj, NSError *error) {
         
-        XCTAssertEqualObjects(@"World", obj, @"");
+        XCTAssertEqualObjects(@"Removed", obj, @"");
         XCTAssertNil(error, @"");
         [expectation2 fulfill];
         
