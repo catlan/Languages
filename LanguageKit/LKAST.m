@@ -107,6 +107,35 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 {
 	return NO;
 }
+- (NSUInteger) sourceLine
+{
+    // get the lines that define this node in its source
+    NSRange lineRange = [[[self module] sourceText] lineRangeForRange:_sourceRange];
+    // get the first line in that range
+    __block NSString *firstLine = nil;
+    [[[[self module] sourceText] substringWithRange:lineRange] enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
+        firstLine = line;
+        *stop = YES;
+    }];
+    /* find out which line that is
+     * (Adding one, because IDEs use one-indexed line numbers)
+     */
+    __block NSUInteger correctLine = 1;
+    [[[self module] sourceText] enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
+        if ([line isEqualToString:firstLine]) {
+            *stop = YES;
+        } else {
+            correctLine++;
+        }
+    }];
+    // if we went past the end then we didn't find it
+    if (correctLine > [[[[self module] sourceText] componentsSeparatedByCharactersInSet:
+                        [NSCharacterSet newlineCharacterSet]] count]) {
+        return NSNotFound;
+    }
+    return correctLine;
+}
+
 @end
 @implementation LKAST (Visitor)
 - (void) visitWithVisitor:(id<LKASTVisitor>)aVisitor

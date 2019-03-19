@@ -86,6 +86,10 @@
  * Source Range
  */
 @property NSRange sourceRange;
+/**
+ * The line number on which this node is defined.
+ */
+- (NSUInteger)sourceLine;
 @end
 
 /**

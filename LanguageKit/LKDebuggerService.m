@@ -17,6 +17,7 @@
 #import "LKLineBreakpointDescription.h"
 #import "LKMessageSend.h"
 #import "LKMethod.h"
+#import "LKModule.h"
 #import "LKSubclass.h"
 #import "LKSymbolTable.h"
 #import "LKVariableDescription.h"
@@ -166,7 +167,19 @@
 
 - (BOOL)hasBreakpointAt:(LKAST *)aNode
 {
-    return [_breakpointNodes containsObject:aNode];
+    if ([_breakpointNodes containsObject:aNode]) return YES;
+    __block BOOL hasBreakpoint = NO;
+    NSString *thisFile = aNode.module.filename;
+    NSUInteger thisLine = aNode.sourceLine;
+    [_breakpointLines enumerateObjectsUsingBlock:^(LKLineBreakpointDescription * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSString *breakFile = obj.file;
+        NSUInteger breakLine = obj.line;
+        if ([breakFile isEqualToString:thisFile] && breakLine == thisLine) {
+            hasBreakpoint = YES;
+            *stop = YES;
+        }
+    }];
+    return hasBreakpoint;
 }
 
 - (void)pause
