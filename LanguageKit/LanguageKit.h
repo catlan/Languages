@@ -15,6 +15,7 @@
 #import <LanguageKit/LKEnumReference.h>
 #import <LanguageKit/LKFunctionCall.h>
 #import <LanguageKit/LKIfStatement.h>
+#import <LanguageKit/LKLineBreakpointDescription.h>
 #import <LanguageKit/LKLiteral.h>
 #import <LanguageKit/LKLoop.h>
 #import <LanguageKit/LKMessageSend.h>
@@ -28,4 +29,3 @@
 #import <LanguageKit/LKProperty.h>
 #import <LanguageKit/LKDBClient.h>
 #import <LanguageKit/LKDBServer.h>
-

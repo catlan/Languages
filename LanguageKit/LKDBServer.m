@@ -9,6 +9,7 @@
 
 #import "LKDBConnection.h"
 #import "LKDebuggerService.h"
+#import "LKLineBreakpointDescription.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -1066,12 +1067,30 @@ LKDBServer *_serverLaunchedOnStart;
 
 - (id<NSSecureCoding>)network_addBreakpoint:(NSData *)serialisedBreakpoint error:(NSError *__autoreleasing*)error
 {
-    return @"Added";
+    LKLineBreakpointDescription *breakpoint = [NSKeyedUnarchiver unarchivedObjectOfClass:[LKLineBreakpointDescription class]
+                                                                                fromData:serialisedBreakpoint
+                                                                                   error:error];
+    if (breakpoint) {
+        [_debugger addLineBreakpoint:breakpoint];
+        return @"Added";
+    }
+    else {
+        return nil;
+    }
 }
 
 - (id<NSSecureCoding>)network_removeBreakpoint:(NSData *)serialisedBreakpoint error:(NSError *__autoreleasing*)error
 {
-    return @"Removed";
+    LKLineBreakpointDescription *breakpoint = [NSKeyedUnarchiver unarchivedObjectOfClass:[LKLineBreakpointDescription class]
+                                                                                fromData:serialisedBreakpoint
+                                                                                   error:error];
+    if (breakpoint) {
+        [_debugger removeLineBreakpoint:breakpoint];
+        return @"Removed";
+    }
+    else {
+        return nil;
+    }
 }
 
 - (void)connection:(LKDBConnection *)connection handleMessage:(CFHTTPMessageRef)message

@@ -14,6 +14,7 @@
 #import "LKInterpreter.h"
 #import "LKInterpreterContext.h"
 #import "LKInterpreterRuntime.h"
+#import "LKLineBreakpointDescription.h"
 #import "LKMessageSend.h"
 #import "LKMethod.h"
 #import "LKSubclass.h"
@@ -30,7 +31,8 @@
 {
     LKAST *_currentNode;
     LKInterpreter *_interpreter;
-    NSMutableSet<LKAST *> *_breakpoints;
+    NSMutableSet<LKAST *> *_breakpointNodes;
+    NSMutableSet<LKLineBreakpointDescription *> *_breakpointLines;
 }
 
 @synthesize mode = _mode;
@@ -41,7 +43,8 @@
     if (self) {
         _mode = [LKContinueMode new];
         _mode.service = self;
-        _breakpoints = [NSMutableSet set];
+        _breakpointNodes = [NSMutableSet set];
+        _breakpointLines = [NSMutableSet set];
         _shouldStop = YES;
     }
     return self;
@@ -142,18 +145,29 @@
 
 - (void)addBreakpoint:(LKAST *)breakAtNode
 {
-    [_breakpoints addObject:breakAtNode];
+    [_breakpointNodes addObject:breakAtNode];
 }
 
 - (void)removeBreakpoint:(LKAST *)breakpoint
 {
     NSParameterAssert([self hasBreakpointAt:breakpoint]);
-    [_breakpoints removeObject:breakpoint];
+    [_breakpointNodes removeObject:breakpoint];
+}
+
+- (void)addLineBreakpoint:(LKLineBreakpointDescription *)breakpoint
+{
+    [_breakpointLines addObject:breakpoint];
+}
+
+- (void)removeLineBreakpoint:(LKLineBreakpointDescription *)breakpoint
+{
+    NSParameterAssert([_breakpointLines containsObject:breakpoint]);
+    [_breakpointLines removeObject:breakpoint];
 }
 
 - (BOOL)hasBreakpointAt:(LKAST *)aNode
 {
-    return [_breakpoints containsObject:aNode];
+    return [_breakpointNodes containsObject:aNode];
 }
 
 - (void)pause

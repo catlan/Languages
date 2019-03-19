@@ -10,6 +10,7 @@
 @protocol LKDebuggerMode;
 @class LKAST;
 @class LKInterpreterContext;
+@class LKLineBreakpointDescription;
 @class LKVariableDescription;
 
 /**
@@ -69,6 +70,16 @@
  * script execution when it encounters this node.
  */
 - (void)removeBreakpoint: (LKAST *)breakpoint;
+/**
+ * Add a line-based breakpoint to the debugger. The debugger will pause script
+ * execution when it encounters a node that is defined at this line.
+ */
+- (void)addLineBreakpoint: (LKLineBreakpointDescription *)breakpoint;
+/**
+ * Remove a breakpoint from the debugger. The debugger will no longer pause
+ * script execution when it encounters this node.
+ */
+- (void)removeLineBreakpoint: (LKLineBreakpointDescription *)breakpoint;
 /**
  * Discover whether the debugger should break when it encounters this node.
  */
