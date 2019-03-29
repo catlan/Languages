@@ -86,6 +86,10 @@
  * Source Range
  */
 @property NSRange sourceRange;
+/**
+ * The line number on which this node is defined.
+ */
+- (NSUInteger)sourceLine;
 @end
 
 /**
@@ -118,6 +122,26 @@
  * result.
  */
 - (id)interpretInContext: (LKInterpreterContext*)context;
+@end
+
+@interface LKAST (Executing)
+/**
+ * Execute the AST node withing the specified context object. Returns the result.
+ */
+- (id)executeWithReceiver:(id)receiver
+                     args:(const id *)args
+                    count:(int)count
+                inContext:(LKInterpreterContext*)context;
+/**
+ * Whether this node executes in the context of its parent.
+ */
+- (BOOL)inheritsContext;
+/**
+ * A context suitable for executing this node.
+ */
+- (LKInterpreterContext *)freshContextWithReceiver: (id)receiver
+                                         arguments: (const id *)arguments
+                                             count: (int)count;
 @end
 
 #define SAFECAST(type, obj) ([obj isKindOfClass:[type class]] ? (type*)obj : ([NSException raise:@"InvalidCast" format:@"Can not cast %@ to %s", obj, #type], (type*)nil))

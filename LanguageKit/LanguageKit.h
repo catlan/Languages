@@ -9,10 +9,14 @@
 #import <LanguageKit/LKComparison.h>
 #import <LanguageKit/LKCompiler.h>
 #import <LanguageKit/LKCompilerErrors.h>
+#import <LanguageKit/LKDebuggerMode.h>
+#import <LanguageKit/LKDebuggerService.h>
+#import <LanguageKit/LKDebuggerStatus.h>
 #import <LanguageKit/LKDeclRef.h>
 #import <LanguageKit/LKEnumReference.h>
 #import <LanguageKit/LKFunctionCall.h>
 #import <LanguageKit/LKIfStatement.h>
+#import <LanguageKit/LKLineBreakpointDescription.h>
 #import <LanguageKit/LKLiteral.h>
 #import <LanguageKit/LKLoop.h>
 #import <LanguageKit/LKMessageSend.h>
@@ -26,4 +30,3 @@
 #import <LanguageKit/LKProperty.h>
 #import <LanguageKit/LKDBClient.h>
 #import <LanguageKit/LKDBServer.h>
-

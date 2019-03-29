@@ -44,17 +44,19 @@
 - (void)addBreakpoint:(id<NSSecureCoding>)breakpoint withReply:(void (^)(id obj, NSError *error))block
 {
     NSAssert([NSThread isMainThread], @"This method must be invoked on main thread");
-    NSError *error = nil;
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:breakpoint requiringSecureCoding:YES error:&error];
-    [self sendMessage:@"addBreakpoint" parameters:data withReply:block];
+    [self sendMessage:@"addBreakpoint" parameters:breakpoint withReply:block];
 }
 
 - (void)removeBreakpoint:(id<NSSecureCoding>)breakpoint withReply:(void (^)(id obj, NSError *error))block
 {
     NSAssert([NSThread isMainThread], @"This method must be invoked on main thread");
-    NSError *error = nil;
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:breakpoint requiringSecureCoding:YES error:&error];
-    [self sendMessage:@"removeBreakpoint" parameters:data withReply:block];
+    [self sendMessage:@"removeBreakpoint" parameters:breakpoint withReply:block];
+}
+
+- (void)getStatusWithReply:(void (^)(NSString *, NSError *))block
+{
+    NSAssert([NSThread isMainThread], @"This method must be invoked on main thread");
+    [self sendMessage:@"getStatus" parameters:nil withReply:block];
 }
 
 #pragma mark Messages

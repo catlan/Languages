@@ -18,6 +18,10 @@
   NSMutableDictionary * pragmas;
   /** Manually-specified method types. */
   NSMutableDictionary *typeOverrides;
+  /** The file in which this module was defined. */
+  NSString *filename;
+  /** The source text of this module. */
+  NSString *sourceText;
 }
 /**
  * Return a new autoreleased module.
@@ -36,6 +40,14 @@
  */
 - (void) addCategory: (LKCategory*)aCategory;
 /**
+ * Define this module's filename.
+ */
+- (void) setFilename: (NSString *)aName;
+/**
+ * Set this module's source text.
+ */
+- (void) setSourceText: (NSString *)aString;
+/**
  * Returns an array of the types for a given selector name.
  */
 - (NSArray*) typesForMethod:(NSString*)methodName;
@@ -51,6 +63,14 @@
  * Returns the pragmas in this module
  */
 - (NSDictionary*) pragmas;
+/**
+ * Returns this module's filename.
+ */
+- (NSString *) filename;
+/**
+ * Returns this module's source text.
+ */
+- (NSString *) sourceText;
 @end
 
 /**

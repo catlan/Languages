@@ -118,6 +118,8 @@ static NSArray* TypesForMethodName(NSString *methodName)
         classes = [[NSMutableArray alloc] init];
         categories = [[NSMutableArray alloc] init];
         pragmas = [[NSMutableDictionary alloc] init];
+        filename = @"Anonymous";
+        sourceText = @"";
     }
 	return self;
 }
@@ -148,6 +150,14 @@ static NSArray* TypesForMethodName(NSString *methodName)
 - (void) addCategory:(LKCategory*)aCategory
 {
 	[categories addObject:aCategory];
+}
+- (void) setFilename:(NSString *)aName
+{
+    filename = [aName copy];
+}
+- (void) setSourceText:(NSString *)aString
+{
+    sourceText = [aString copy];
 }
 - (BOOL)isSelectorPolymorphic: (NSString*)methodName
 {
@@ -237,8 +247,7 @@ static NSArray* TypesForMethodName(NSString *methodName)
 }
 - (void*) compileWithGenerator: (id<LKCodeGenerator>)aGenerator
 {
-	// FIXME: Get the file name from somewhere.
-	[aGenerator startModule: @"Anonymous"];
+	[aGenerator startModule: filename];
     for (LKAST *class in classes)
 	{
 		[class compileWithGenerator: aGenerator];
@@ -269,5 +278,17 @@ static NSArray* TypesForMethodName(NSString *methodName)
 - (NSDictionary*) pragmas
 {
 	return pragmas;
+}
+- (NSString *)filename
+{
+    return filename;
+}
+- (NSString *)sourceText
+{
+    return sourceText;
+}
+- (NSUInteger)sourceLine
+{
+    return 1;
 }
 @end

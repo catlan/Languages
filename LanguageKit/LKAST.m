@@ -107,6 +107,37 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 {
 	return NO;
 }
+- (NSUInteger) sourceLine
+{
+    // get the lines that define this node in its source
+    NSString *sourceText = [[self module] sourceText];
+    if ([sourceText length] == 0) return NSNotFound;
+    NSRange lineRange = [sourceText lineRangeForRange:_sourceRange];
+    // get the first line in that range
+    __block NSString *firstLine = nil;
+    [[sourceText substringWithRange:lineRange] enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
+        firstLine = line;
+        *stop = YES;
+    }];
+    /* find out which line that is
+     * (Adding one, because IDEs use one-indexed line numbers)
+     */
+    __block NSUInteger correctLine = 1;
+    [sourceText enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
+        if ([line isEqualToString:firstLine]) {
+            *stop = YES;
+        } else {
+            correctLine++;
+        }
+    }];
+    // if we went past the end then we didn't find it
+    if (correctLine > [[sourceText componentsSeparatedByCharactersInSet:
+                        [NSCharacterSet newlineCharacterSet]] count]) {
+        return NSNotFound;
+    }
+    return correctLine;
+}
+
 @end
 @implementation LKAST (Visitor)
 - (void) visitWithVisitor:(id<LKASTVisitor>)aVisitor
@@ -137,4 +168,31 @@ static NSMutableDictionary *ASTSubclassAndCategoryNodes = nil;
 	}
 	[anArray removeObjectsAtIndexes: remove];
 }
+@end
+
+@implementation LKAST (Executing)
+
+- (BOOL)inheritsContext
+{
+    return YES;
+}
+
+- (LKInterpreterContext *)freshContextWithReceiver: (id)receiver
+                                         arguments: (const __autoreleasing id *)arguments
+                                             count: (int)count
+{
+    // subclass responsibility
+    [self doesNotRecognizeSelector:_cmd];
+    return nil;
+}
+
+- (id)executeWithReceiver:(id)receiver
+                     args:(const __autoreleasing id *)args
+                    count:(int)count
+                inContext:(LKInterpreterContext *)context
+{
+    // subclass responsibility
+    [self doesNotRecognizeSelector:_cmd];
+}
+
 @end

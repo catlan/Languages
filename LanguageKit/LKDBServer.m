@@ -8,6 +8,9 @@
 #import "LKDBServer.h"
 
 #import "LKDBConnection.h"
+#import "LKDebuggerService.h"
+#import "LKDebuggerStatus.h"
+#import "LKLineBreakpointDescription.h"
 
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -975,21 +978,39 @@ static void ListeningSocketCallback(CFSocketRef sock, CFSocketCallBackType type,
 
 @interface LKDBServer () <LKDBServerInternalDelegate, LKDBConnectionDelegate> {
     LKDBServerInternal *_serverInternal;
+    LKDebuggerService *_debugger;
 }
 
 @end
 
 @implementation LKDBServer
 
+LKDBServer *_serverLaunchedOnStart;
+
++ (void)load
+{
+    BOOL shouldLaunchDebugger = [[NSUserDefaults standardUserDefaults] boolForKey:@"LKDebugServer"];
+    if (shouldLaunchDebugger) {
+        _serverLaunchedOnStart = [[LKDBServer alloc] init];
+    }
+}
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+        _debugger = [[LKDebuggerService alloc] init];
+        [_debugger activate];
         _serverInternal = [[LKDBServerInternal alloc] initWithDomain:nil type:@"_x-lkdbserver._tcp" name:nil preferredPort:1337];
         [_serverInternal setDelegate:self];
         [_serverInternal start];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [_debugger deactivate];
 }
 
 #pragma mark Server delegate callbacks
@@ -1045,12 +1066,74 @@ static void ListeningSocketCallback(CFSocketRef sock, CFSocketCallBackType type,
 
 #pragma mark Connection delegate callbacks
 
+- (id<NSSecureCoding>)network_addBreakpoint:(NSData *)serialisedBreakpoint error:(NSError *__autoreleasing*)error
+{
+    LKLineBreakpointDescription *breakpoint = [NSKeyedUnarchiver unarchivedObjectOfClass:[LKLineBreakpointDescription class]
+                                                                                fromData:serialisedBreakpoint
+                                                                                   error:error];
+    // You still have to test that the unarchived object is of the correct class, which I didn't expect.
+    if ([breakpoint isKindOfClass:[LKLineBreakpointDescription class]]) {
+        [_debugger addLineBreakpoint:breakpoint];
+        return @"Added";
+    }
+    else {
+        return nil;
+    }
+}
+
+- (id<NSSecureCoding>)network_removeBreakpoint:(NSData *)serialisedBreakpoint error:(NSError *__autoreleasing*)error
+{
+    LKLineBreakpointDescription *breakpoint = [NSKeyedUnarchiver unarchivedObjectOfClass:[LKLineBreakpointDescription class]
+                                                                                fromData:serialisedBreakpoint
+                                                                                   error:error];
+    if ([breakpoint isKindOfClass:[LKLineBreakpointDescription class]]) {
+        [_debugger removeLineBreakpoint:breakpoint];
+        return @"Removed";
+    }
+    else {
+        return nil;
+    }
+}
+
+- (id<NSSecureCoding>)network_getStatus:(NSData *)unused error:(NSError *__autoreleasing*)error
+{
+    LKDebuggerStatus status = [_debugger status];
+    NSDictionary *responseMap = @{
+                                  @(DebuggerStatusWaitingAtBreakpoint): @"Waiting",
+                                  @(DebuggerStatusRunning): @"Running",
+                                  @(DebuggerStatusNotRunning): @"NotRunning",
+                                  };
+    return responseMap[@(status)] ?: @"Unknown";
+}
+
 - (void)connection:(LKDBConnection *)connection handleMessage:(CFHTTPMessageRef)message
 {
     NSString *messageIDStr = CFBridgingRelease(CFHTTPMessageCopyHeaderFieldValue(message, CFSTR("messageID")));
     NSNumber *messageID = [NSNumber numberWithUnsignedInteger:[messageIDStr integerValue]];
     NSLog(@"Server handleMessage messageID %@", messageIDStr);
-    [connection sendResponseMessageID:messageIDStr object:@"World"];
+    NSString *method = CFBridgingRelease(CFHTTPMessageCopyHeaderFieldValue(message, CFSTR("method")));
+    NSString *methodSelector = [NSString stringWithFormat: @"network_%@:error:", method];
+    SEL aSelector = NSSelectorFromString(methodSelector);
+    if ([self respondsToSelector:aSelector]) {
+        NSError *messageError = nil;
+        NSError * __strong *errorPointer = &messageError;
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self methodSignatureForSelector:aSelector]];
+        [invocation setTarget:self];
+        [invocation setSelector:aSelector];
+        NSData *archivedParameters = CFBridgingRelease(CFHTTPMessageCopyBody(message));
+        [invocation setArgument:&archivedParameters atIndex:2];
+        [invocation setArgument:&errorPointer atIndex:3];
+        [invocation invoke];
+        id <NSSecureCoding> result;
+        [invocation getReturnValue:&result];
+        if (result) {
+            [connection sendResponseMessageID:messageIDStr object:result];
+        } else {
+            [connection sendResponseMessageID:messageIDStr object:messageError];
+        }
+    } else {
+        [connection sendResponseMessageID:messageIDStr object:[NSString stringWithFormat:@"Unknown message %@", methodSelector]];
+    }
 }
 
 @end
