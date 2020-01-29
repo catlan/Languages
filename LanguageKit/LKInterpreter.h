@@ -1,69 +1,67 @@
-#import <LanguageKitRuntime/BlockClosure.h>
-#import <LanguageKit/LKAST.h>
-#import <LanguageKit/LKBlockExpr.h>
-#import <LanguageKit/LKMethod.h>
-#import <LanguageKit/LKSubclass.h>
+//
+//  LKInterpreter.h
+//  LanguageKit
+//
+//  Created by Graham Lee on 26/02/2019.
+//
 
-extern NSString *LKInterpreterException;
+#import <Foundation/Foundation.h>
 
-LKMethod *LKASTForMethod(Class cls, NSString *selectorName);
-
-
-/**
- * Structure for looking up the scope of a variable in interpreter contexts.
- */
-typedef struct
-{
-	/**
-	 * The scope of this symbol, once external references have been resolved.
-	 */
-	LKSymbolScope scope;
-	/**
-	 * The context where this variable can be accessed.
-	 */
-	__unsafe_unretained LKInterpreterContext *context;
-} LKInterpreterVariableContext;
+@class LKAST;
+@class LKDebuggerService;
+@class LKInterpreterContext;
 
 /**
- * Wrapper around a map table which contains the objects in a
- * Smalltalk stack frame.
+ * An interpreter is an object that executes LanguageKit syntax.
+ * It maintains a reference to the AST being executed while it is executed,
+ * and gives a point for external observers such as debuggers to hook in to
+ * the script's execution lifecycle.
  */
-@interface LKInterpreterContext : NSObject
-{
-@public
-	LKInterpreterContext *parent;
-	LKSymbolTable *symbolTable;
-@private
-	NSMutableDictionary *objects;
-}
-@property (unsafe_unretained, nonatomic) id selfObject;
-@property (strong, nonatomic) id blockContextObject;
-- (id) initWithSymbolTable: (LKSymbolTable*)aTable
-                    parent: (LKInterpreterContext*)aParent;
-- (void) setValue: (id)value forSymbol: (NSString*)symbol;
-- (id) valueForSymbol: (NSString*)symbol;
-- (LKInterpreterVariableContext)contextForSymbol: (LKSymbol*)symbol;
-@end
+@interface LKInterpreter : NSObject
 
+/**
+ * Get an interpreter for running some code.
+ * @note Never create your own interpreter; always use this method.
+ */
++ (instancetype)interpreter;
 
-@interface LKAST (LKInterpreter)
-- (id)interpretInContext: (LKInterpreterContext*)context;
-@end
+/**
+ * Get the debugger that is active for script interpretation.
+ */
++ (LKDebuggerService *)activeDebugger;
+/**
+ * Activate a debugger for script interpretation.
+ */
++ (void)setActiveDebugger: (LKDebuggerService *)aDebugger;
 
-@interface LKBlockExpr (LKInterpreter)
-- (id)interpretInContext: (LKInterpreterContext*)context;
-- (id)executeBlock: (id)block
-     WithArguments: (const id*)args
-             count: (int)count
-         inContext: (LKInterpreterContext*)context;
-@end
+/**
+ * Do it! Run the code in the interpreter.
+ */
+- (void)executeCode:(LKAST *)rootNode
+       withReceiver:(id)receiver
+          arguments:(const id*)arguments
+              count:(int)count;
 
-@interface LKMethod (LKInterpreter)
-- (id)executeInContext: (LKInterpreterContext*)context;
-- (id)executeWithReciever: (id)receiver arguments: (const id*)args count: (int)count;
-@end
+/**
+ * Find the return value of the last execution.
+ */
+- (id)returnValue;
 
-@interface LKSubclass (LKInterpreter)
-- (void)setValue: (id)value forClassVariable: (NSString*)cvar;
-- (id)valueForClassVariable: (NSString*)cvar;
+/**
+ * Push a new context to the top of this interpreter's context stack.
+ */
+- (void)pushContext: (LKInterpreterContext *)aContext;
+/**
+ * Pop the topmost interpreter context from this interpreter's context stack.
+ */
+- (void)popContext;
+/**
+ * The interpreter context at the top of this interpreter's context stack.
+ */
+- (LKInterpreterContext *)topContext;
+/**
+ * Event that is triggered by executing a node in the interpreter.
+ */
+- (void)onTracepoint: (LKAST *)aNode;
+
 @end
